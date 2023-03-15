@@ -1,0 +1,200 @@
+    /*  Reset CSS */
+
+    * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+    }
+
+    body {
+        min-height: 101vh;
+    }
+
+
+
+    
+    html {
+        font-family: monospace;
+    }
+    
+    #homepage{
+        min-height: 101vh;
+    
+    }
+    
+    #header{
+        position: fixed;
+        top: 0;
+        left: 0;
+        right: 0;
+        height: 80px;
+        background-color: rgba(255, 255, 255, 0.6);
+    
+    }
+
+    #header li {
+        font-size: 14px;
+    }
+
+
+    #header #fullnav {
+    
+    
+      display: flex;
+      padding: 0 20px;
+
+    }
+    
+    #header #fullnav li {
+        display: inline-block;
+        position: relative;
+    }
+
+    #header #fullnav #left_nav li  a {
+        color: #000;
+        text-decoration: none;
+        line-height: 80px;
+        padding: 0 8px;
+        text-transform: uppercase;
+        display: inline-block;  
+        text-align: center;  
+        
+    }
+
+
+
+    
+
+    
+
+    #header #fullnav #left_nav li:hover a {
+        color:white;
+        background-color: rgba(0, 0, 0, 0.5);
+    }
+
+    
+    #fullnav .subnav {
+        display: none;
+        position: absolute;
+        background-color: white;
+    }
+
+
+    #fullnav #left_nav {
+        width: 40%;
+
+    }
+
+    #fullnav #main_logo {
+        width: 20%;
+        height: 80px;
+    }
+
+    #fullnav #main_logo img {
+       padding: auto;
+
+    }
+
+    #fullnav #search_nav {
+        width: 20%; 
+        position: relative;
+        float: left; 
+    
+    }
+
+    .search {
+        width: 100%;
+        height: auto;
+        display: flex;
+        margin: auto;
+      }
+      
+      .searchTerm {
+        width: 150px;
+        border: 1px solid black;
+        border-right: none;
+        padding: 4px;
+        height: 30px;
+        border-radius: 20px 0 0 20px;
+        outline: none;
+        color: #ffffff;
+      }
+      
+      .searchTerm:focus{
+        color: black;
+      }
+      
+      .searchButton {
+        width: 50px;
+        height: 30px;
+        border: 1px solid black;
+        text-align: center;
+        color: white;
+        border-radius: 0 20px 20px 0;
+        cursor: pointer;
+        font-size: 10px;
+      }
+      
+      .wrap{
+        width: 100%;
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+       
+      }
+
+      .wrap img {
+        height: 20px;
+        width: 30px;
+      }
+
+
+
+    #fullnav #right_nav {
+        width: 20%;
+        height: 80px;
+        float : right;
+        
+        
+    }
+
+    #fullnav #right_nav li {
+        display: inline-block;
+       
+        
+    }
+
+    #fullnav #right_nav img {
+        height: 40px;
+        width: 30px;
+        
+    
+        
+    }
+
+    #fullnav #right_nav li a {
+        padding: 0 8px;
+        display: block;
+        height: 80px;
+    }
+    
+    #banner{
+    
+    }
+    
+    #list_category{
+    
+    }
+    
+    #container{
+    
+    }
+    
+    #footer{
+    
+    }
+    
+    
+    
+    
