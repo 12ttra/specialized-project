@@ -6,25 +6,21 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>SPREZZA</title>
     <link rel="stylesheet" href="./asset/style.css">
-    
+    <!-- Add the slick-theme.css if you want default styling -->
+    <link rel="stylesheet" type="text/css" href="./lib/slick-1.8.1/slick/slick.css">
+    <link rel="stylesheet" type="text/css" href="./lib/slick-1.8.1/slick/slick-theme.css">
 </head>
 <body>
 
-                                <!-- Main Page -->
+    <!-- Main Page -->
     <div id="homepage">
-        
-
-                                <!-- Header -->
-
+    <!-- Header -->
         <div id="header">
-
             <div id="fullnav">
-    
-
                 <div id="left_nav">
-                    <ul>
+                    <ul class="menu">
                         <li><a href="">Home</a></li>
-                        <li>
+                        <li class ="menunav">
                             <a  href="">SecondHand </a>
                             <ul class="subnav">
                                 <li><a href="">Man</a></li>
@@ -37,7 +33,7 @@
                                 <li><a href="">All Clothing</a></li>
                             </ul>
                         </li>
-                        <li>
+                        <li class ="menunav">
                             <a href="">New Clothes</a>
                             <ul class="subnav">
                                 <li><a href="">Man</a></li>
@@ -51,7 +47,7 @@
                             </ul>
                         </li>
                         <li><a href="">Seller Channel</a></li>
-                        <li>
+                        <li class ="menunav">
                             <a href="">More</a>
                             <ul class="subnav">
                                 <li><a href="">Sale</a></li>
@@ -70,13 +66,12 @@
 
                 <div id="search_nav">
 
-                    <div class="wrap">
-                        <input type="text" placeholder="Search . . ." required>
-                    
-                    </div>
-
+                    <form action="" class="search" method="post">
+                        <div>
+                            <input type="text" placeholder="Search . . ." required>
+                        </div>
+                    </form>
                 </div>
-
                 <div id="right_nav">
                     <ul>
                         <li><a href=""><img src="./asset/images/iconheader/bag.svg" alt="Addtocart"></a></li>
@@ -91,14 +86,16 @@
         </div>
 
 
-                                <!-- Banner -->
+        <!-- Banner -->
 
-        <div id="banner">
+        <div id="slider-container">
+           <div class="item"><img src="/asset/img_slider/slider2.jpeg" alt=""></div>
+           <div class="item"><img src="/asset/img_slider/slider1.jpeg" alt=""></div>
+           <div class="item"><img src="/asset/img_slider/slider3.jpeg" alt=""></div>
+          
 
         </div>
-
-
-                                <!-- List Category -->
+        <!-- List Category -->
 
         <div id="list_category">
 
@@ -121,9 +118,22 @@
 
 
     </div>
-    
-    
-
-    
+    <script type="text/javascript" src="//code.jquery.com/jquery-1.11.0.min.js"></script>
+    <script type="text/javascript" src="//code.jquery.com/jquery-migrate-1.2.1.min.js"></script>
+    <script type="text/javascript" src="//cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.min.js"></script>
+    <script>
+        $(document).ready(function(){
+            $("#slider-container").slick(
+                {
+                    dots: true,
+                    infinite: true,
+                    speed: 300,
+                    slidesToShow: 1,
+                    adaptiveHeight: true
+                    }
+            );
+        });
+  
+    </script>
 </body>
 </html>
