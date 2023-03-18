@@ -6,6 +6,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>SPREZZA</title>
     <link rel="stylesheet" href="./asset/style.css">
+    <link rel="shortcut icon" type="image/png" href="./asset/images/Image/favicon.png">
     <!-- Add the slick-theme.css if you want default styling -->
     <!-- Add the slick-theme.css if you want default styling -->
     <link rel="stylesheet" type="text/css" href="//cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.css"/>
@@ -13,7 +14,6 @@
     <link rel="stylesheet" type="text/css" href="//cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick-theme.css"/>
 </head>
 <body>
-
     <!-- Main Page -->
     <div id="homepage">
     <!-- Header -->
@@ -21,8 +21,8 @@
             <div id="fullnav">
                 <div id="left_nav">
                     <ul class="menu">
-                        <li><a href="">Home</a></li>
-                        <li class ="menunav">
+                        <li class="item lv1"><a href="">Home</a></li>
+                        <li class ="menunav item lv1">
                             <a  href="">SecondHand </a>
                             <ul class="subnav">
                                 <li><a href="">Man</a></li>
@@ -35,7 +35,7 @@
                                 <li><a href="">All Clothing</a></li>
                             </ul>
                         </li>
-                        <li class ="menunav">
+                        <li class ="menunav item lv1">
                             <a href="">New Clothes</a>
                             <ul class="subnav">
                                 <li><a href="">Man</a></li>
@@ -48,8 +48,8 @@
                                 <li><a href="">All Clothing</a></li>
                             </ul>
                         </li>
-                        <li><a href="">Seller Channel</a></li>
-                        <li class ="menunav">
+                        <li class="item lv1"><a href="">Seller Channel</a></li>
+                        <li class ="menunav item lv1">
                             <a href="">More</a>
                             <ul class="subnav">
                                 <li><a href="">Sale</a></li>
@@ -99,8 +99,22 @@
         </div>
         <!-- List Category -->
 
-        <div id="list_category">
+        <div id="section-below-header">
+            <div class="home-category-list">
+                <div class="category-name">
+                    <a href="">CATEGORY</a>
+                </div>
+                <div class="category-wrapper">
+                    <div class="category-group">
+                        <div class="caterogy-grid">
 
+                        </div>
+                        <div class="caterogy-grid">
+
+                        </div>
+                    </div>
+                </div>
+            </div>
         </div>
 
         <!-- Container (product type + content) -->
@@ -128,11 +142,11 @@
         $(document).ready(function(){
             $("#slider-container").slick(
                 {
+                    autoplay:true,
+                    autoplaySpeed:5000,
                     dots: true,
-                    infinite: true,
                     speed: 300,
                     slidesToShow: 1,
-                    adaptiveHeight: true
                     }
             );
         });
