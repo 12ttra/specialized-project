@@ -71,7 +71,10 @@
     .menu > li:hover > a {
       border-bottom: 1px solid black;
     }
-        
+    
+    .menu .menunav {
+      height: 80px;
+    } 
     #left_nav .subnav  li:hover  a
    { 
                 color:white;
@@ -127,11 +130,12 @@
     }
 
     #fullnav #search_nav {
-        width: 20%;
-        position: relative;
-        padding: 0 30px;
-        right: -5%;
-        margin-top: 7px;
+      width: 20%;
+      padding: 0 30px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+  
     }
 
     .search {
@@ -185,32 +189,24 @@
     #right_nav {
         width: 20%;
         height: 80px;
-        position: absolute;
-        right: -80px;
-        margin-top: 10px;
-    
-      
-        
-        
-        
+        display: flex;
+        justify-content: flex-end;
+    }
+    #right_nav ul {
+      display: flex;
+      align-items: center;
     }
 
-    #right_nav li {
-        display: inline-block;
-       
-        
-    }
 
     #right_nav img  {
         width: 30px;
         height: 30px;
-        margin-top: 10px;
     }
 
     #fullnav #right_nav li a {
-        padding: 0 8px;
+        padding: 0 12px;
         display: block;
-        height: 80px;
+       
     }
     #slider-container{
       margin-top: 80px;
@@ -229,24 +225,149 @@
   }
     
     #section-below-header{
-      width: 1200px;
-      height: 300px;
-      background-color: pink;
-    }
-    .category-name{
       width: 100%;
-      height: 40px;
+      height: 300px;
+      margin-top: 50px;
+      
     }
+    .home-category-list{
+      width: 1300px;
+     height: 300px;
+      margin-left: auto;
+      margin-right: auto;
+      background-image: linear-gradient(180deg, #dfe9f3 0%, white 70%);
+    }
+
+
     .category-name a {
       text-decoration: none;
       color: #000;
       line-height: 40px;
+      font-size: larger;
+      text-align: center;
+      margin-left: 100px;
       
     }
 
 
+    .category-wrapper {
+      display: flex;
+      flex-wrap: wrap;
+      
+    }
+
+    .category-wrapper .category-item {
+      width: 216px;
+      height: 130px;
+      display: flex;
+    justify-content: center;
+    flex-direction: column;
+    align-items: center;
+    }
+
+    .category-item .item-img {
+      height: 50px;
+    }
+
+    .category-item .item-img img {
+      height: 100%;
+    }
+
+    .category-item .item-descrip {
+      margin-top: 15px;
+    }
+
+    .category-item .item-descrip a {
+      text-decoration: none;
+      color: #000;
+    }
+
+
     #container{
+    min-height: 1000px;
+    width: 100%;
+    margin-left: auto;
+    margin-right: auto;
+    margin-top: 50px;
+    }
+
+    #container .brand-slider {
+      width: 1200px;
+      height: 600px;
+      margin-right: auto;
+      margin-left: auto;
+    }
+
+    #container .brand-slider img {
+      width: 450px;
+      height: 500px;
+      padding:0 50px;
+    }
+
+
+    #container .brand-product {
+      width: 100%;
+      max-height: 1000px;
+      
+        
+   
+    }
+
+    .brand-product .brand-product-wrapper {
+      width: 1200px;
+      height: 400px;
+      margin-right: auto;
+      margin-left: auto;
+      display: flex;
+      flex-wrap: wrap;
+    }
+
+    .brand-product .product-wrapper-item {
+      width: 220px ;
+      height: 360px;
+      background-color: #000;
+  
+     
+  }
+
+  .product-wrapper-item .product-item-slider {
+    width: 100%;
+    height: 210px;
+  }
+
+    .product-item-slider .product-item-img img {
+      width: 180px;
+      height: 200px;
+      padding: auto;
+      margin-top: 10px;
+      margin-right: auto;
+      margin-left: auto;
     
+
+    }
+    .product-wrapper-item .product-item-descrip {
+      width: 180px;
+      height: 130px;
+      margin-right: auto;
+      margin-left: auto;
+    }
+
+    .product-wrapper-item .product-item-descrip .product-item-name {
+      width: 100%;
+      height: 50px;
+      margin-top: 20px;
+    }
+    .product-item-descrip .product-item-price a,
+    .product-item-descrip .product-item-name a{
+      color: white;
+      text-decoration: none;
+      text-transform: uppercase;
+      text-align: center;
+
+    }
+
+    .product-item-descrip .product-item-price {
+      margin-top: 20px;
     }
     
     #footer{
