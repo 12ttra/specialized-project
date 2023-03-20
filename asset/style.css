@@ -326,7 +326,8 @@
       width: 220px ;
       height: 360px;
       background-color: #000;
-      margin: auto;
+      margin-left:5px;
+      margin-right:5px;
   
      
   }

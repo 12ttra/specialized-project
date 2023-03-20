@@ -337,10 +337,19 @@
                     slidesToShow: 3,
                     slidesToScroll: 3
             });
+            $('.brand-product-wrapper').slick({
+                    infinite: true,
+                    speed: 300,
+                    slidesToShow: 4,
+                    dots: true,
+                    slidesToScroll: 4
+            });
 
-            $('.product-item-slider').slick();
+            $('.product-item-slider').slick({
+                arrows:false,
+                autoplaySpeed:1000,
+            });
         });
-  
     </script>
 </body>
 </html>
