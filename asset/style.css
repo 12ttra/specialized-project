@@ -26,7 +26,7 @@
         left: 0;
         right: 0;
         height: 80px;
-        background-image: linear-gradient(180deg, #dfe9f3 0%, white 70%);
+        background-image: linear-gradient(0deg, #fdfbfb 30%, #ebedee 80%);
     }
 
     #header li {
@@ -232,19 +232,22 @@
     }
     .home-category-list{
       width: 1300px;
-     height: 300px;
-      margin-left: auto;
-      margin-right: auto;
-      background-image: linear-gradient(180deg, #dfe9f3 0%, white 70%);
+      height: 300px;
+      margin:auto;
+      border: 1px solid rgb(163, 161, 156);
+      background-image: linear-gradient(0deg, #fdfbfb 30%, #ebedee 80%);
+    }
+
+    .category-name {
+      border-bottom: 1px solid rgb(163, 161, 156);;
     }
 
 
     .category-name a {
       text-decoration: none;
-      color: #000;
+      color: #342f2f;
       line-height: 40px;
-      font-size: larger;
-      text-align: center;
+      font-size: x-large;
       margin-left: 100px;
       
     }
@@ -314,8 +317,8 @@
     }
 
     .brand-product .brand-product-wrapper {
-      width: 1200px;
-      height: 400px;
+      width: 1300px;
+      min-height: 500px;
       margin-right: auto;
       margin-left: auto;
       display: flex;
@@ -323,13 +326,13 @@
     }
 
     .brand-product .product-wrapper-item {
-      width: 220px ;
-      height: 360px;
+      width: 280px;
+      height: 400px;
       background-color: #000;
-      margin-left:5px;
-      margin-right:5px;
-  
-     
+      margin-left: auto;
+      margin-right: auto;
+      margin-top: 50px;
+      
   }
 
   .product-wrapper-item .product-item-slider {
@@ -338,8 +341,8 @@
   }
 
     .product-item-slider .product-item-img img {
-      width: 180px;
-      height: 200px;
+      width: 240px;
+      height: 240px;
       padding: auto;
       margin-top: 10px;
       margin-right: auto;
@@ -348,7 +351,7 @@
 
     }
     .product-wrapper-item .product-item-descrip {
-      width: 180px;
+      width: 240px;
       height: 130px;
       margin-right: auto;
       margin-left: auto;
@@ -357,7 +360,7 @@
     .product-wrapper-item .product-item-descrip .product-item-name {
       width: 100%;
       height: 50px;
-      margin-top: 20px;
+      margin-top: 50px;
     }
     .product-item-descrip .product-item-price a,
     .product-item-descrip .product-item-name a{
