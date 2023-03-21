@@ -433,7 +433,8 @@
     }
 
     #footer {
-      height: 250px;
+      height: 30px;
+      
     }
 
     #footer .footer-service{
@@ -470,11 +471,11 @@
   .col-third {
     width: 33.3333333%;
   }
-
+  .footer-social-media .social-media-img img,
   .footer-service .img-infor img {
     width: 20px;
     height: 20px;
-    margin: 0px 20px;
+    margin: 0px 15px;
   }
   .footer-service .infor-service a,
   .footer-service .img-infor p {
@@ -500,6 +501,23 @@
 
   .footer-service .wrapper-items-footer {
     margin-top: 30px;
+  }
+
+  #footer .footer-social-media {
+    width: 100%;
+    height: 50px;
+    margin-bottom: 0;
+    display: flex;
+    justify-content: center;
+    background-image: linear-gradient(0deg, #fdfbfb 30%, #ebedee 80%);
+    
+  }
+
+  .footer-social-media .social-media-img a {
+    height: 50px;
+    line-height: 50px;
+    margin-left: auto;
+    margin-right: auto;
   }
 
 
