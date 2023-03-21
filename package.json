@@ -1,0 +1,28 @@
+{
+  "dependencies": {
+    "express": "^4.18.2",
+    "less": "^4.1.3",
+    "node-sass": "^8.0.0"
+  },
+  "name": "sprezza",
+  "description": "This readme 22222 aaaaa",
+  "version": "1.0.0",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "build": "node-sass asset/scss/app.scss asset/app.css"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+ssh://git@github.com/12ttra/-n-chuy-n-ng-nh.git"
+  },
+  "keywords": [
+    "ecommerce"
+  ],
+  "author": "Nhy",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/12ttra/-n-chuy-n-ng-nh/issues"
+  },
+  "homepage": "https://github.com/12ttra/-n-chuy-n-ng-nh#readme"
+}
