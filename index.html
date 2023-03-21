@@ -206,7 +206,7 @@
             </div>
         </div>
 
-        <!-- Container (product type + content) -->
+        <!-- Container (product brand + product-item ) -->
 
         <div id="container">
             <div class="brand-slider">
@@ -348,17 +348,62 @@
 
         </div>
 
-                               
-
-        <!-- Footer (Contact + social media)-->
-
-        <div id="footer">
+        <div class="contact-send-email">
+            <div class="contact section-name">
+                <h2 class="contact-heading">#sprezza.e-commerce</h2>
+                <p class="sub-contact-heading"><i>Fashion is what you adopt when you don't know who you are.</i></p>
+                <div class="form-email-btn">
+                    <form>
+                        <input type="email" name="Email" placeholder="Enter your email!" required>
+                        <button type="submit"><img src="./asset/images/iconheader/send.svg" width="30px" alt="Send-email"></button>
+                    </form>
+                </div>
+            </div>
+        </div>
 
         </div>
+
+                               
+
+        <!-- Footer (Contact + footer)-->
+
+        <div id="footer">
+          <div class="footer-service">
+            <div class="row">
+                <div class="col col-third footer-logo">
+                    <img src="./asset/images/Image/footericon.png" alt="">
+                </div>
+                <div class="col col-third img-infor">
+                    <div class="wrapper-items-footer">
+                        <p><img src="./asset/images/iconheader/location.svg" alt="location">ThuDuc City, VietNam</p>
+                        <p><img src="./asset/images/iconheader/phone-call.svg" alt="phone">191964-202032</p>
+                        <p><img src="./asset/images/iconheader/mail.svg" alt="email">sprezza-ecommerce@gmail.com</p>
+                    </div>
+                </div>
+                <div class="col col-third infor-service">
+                    <div class="wrapper-items-footer">
+                        <h4>ABOUT SPREZZA</h4>
+                        <ul>
+                            <li><a href=""></a>About Us</li>
+                            <li><a href=""></a>Gift Card</li>
+                            <li><a href=""></a>Size Guide</li>
+                            <li><a href=""></a>Shipping & Delivery</li>
+                            <li><a href=""></a>Sign Up</li>
+                        </ul>
+                    </div>
+                </div>
+
+            </div>
+            
+        
+        </div>
+
+    </div>
+            
         <!-- End footer -->
 
 
-    </div>
+    
     <script type="text/javascript" src="//code.jquery.com/jquery-1.11.0.min.js"></script>
     <script type="text/javascript" src="//code.jquery.com/jquery-migrate-1.2.1.min.js"></script>
     <script type="text/javascript" src="//cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.min.js"></script>
@@ -387,7 +432,7 @@
             $('.product-item-slider').slick({
                 arrows:false,
                 autoplaySpeed:2000,
-                autoplay:true,
+                autoplay:false,
             });
         });
     </script>
