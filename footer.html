@@ -1,0 +1,80 @@
+<div id="footer">
+    <div class="footer-service">
+      <div class="row">
+          <div class="col col-third footer-logo">
+              <img src="./asset/images/Image/footericon.png" alt="">
+          </div>
+          <div class="col col-third img-infor">
+              <div class="wrapper-items-footer">
+                  <p><img src="./asset/images/iconheader/location.svg" alt="location">ThuDuc City, VietNam</p>
+                  <p><img src="./asset/images/iconheader/phone-call.svg" alt="phone">191964-202032</p>
+                  <p><img src="./asset/images/iconheader/mail.svg" alt="email">sprezza-ecommerce@gmail.com</p>
+              </div>
+          </div>
+          <div class="col col-third infor-service">
+              <div class="wrapper-items-footer">
+                  <h4>ABOUT SPREZZA</h4>
+                  <ul>
+                      <li><a href=""></a>About Us</li>
+                      <li><a href=""></a>Gift Card</li>
+                      <li><a href=""></a>Size Guide</li>
+                      <li><a href=""></a>Shipping & Delivery</li>
+                      <li><a href=""></a>Sign Up</li>
+                  </ul>
+              </div>
+          </div>
+
+      </div>
+      
+  
+  </div>
+
+  <div class="footer-social-media">
+      <div class="social-media-list social-media-img">
+          <a href=""><img src="./asset/images/img-social-media/facebook.svg" alt="facebook"></a>
+          <a href=""><img src="./asset/images/img-social-media/instagram.svg" alt="instagram"></a>
+          <a href=""><img src="./asset/images/img-social-media/copyright.png" alt="copy-right"></a>
+          <a href=""><img src="./asset/images/img-social-media/tik-tok.svg" alt="tik-tok"></a>
+          <a href=""><img src="./asset/images/img-social-media/twitter.svg" alt="twitter"></a>
+          
+      </div>
+  </div>
+
+</div>
+      
+  <!-- End footer -->
+
+
+
+<script type="text/javascript" src="//code.jquery.com/jquery-1.11.0.min.js"></script>
+<script type="text/javascript" src="//code.jquery.com/jquery-migrate-1.2.1.min.js"></script>
+<script type="text/javascript" src="//cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.min.js"></script>
+<script>
+  $(document).ready(function(){
+      $("#slider-container").slick(
+          {
+              autoplay:true,
+              autoplaySpeed:5000,
+              dots: true,
+              speed: 300,
+              slidesToShow: 1,
+              }
+      );
+
+      $('.brand-slider').slick({
+              infinite: true,
+              autoplay:true,
+              autoplaySpeed:3000,
+              speed: 300,
+              slidesToShow: 3,
+              slidesToScroll: 3
+      });
+      
+
+      $('.product-item-slider').slick({
+          arrows:false,
+          autoplaySpeed:2000,
+          autoplay:false,
+      });
+  });
+</script>
