@@ -14,7 +14,7 @@
     "test": "echo \"Error: no test specified\" && exit 1",
     "build": "node-sass src/source/scss/main.scss src/public/css/main.css",
     "start": "nodemon ./src/index.js",
-    "watch": "node-sass --watch ./src/source/scss/main.scss -o ./src/public/css/main.css"
+    "watch": "node-sass --watch ./src/source/scss/ -o ./src/public/css/"
   },
   "repository": {
     "type": "git",

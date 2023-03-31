@@ -2,13 +2,15 @@
 
 
 //Variable 
-$colorBackground:linear-gradient(0deg, #fdfbfb 30%, #ebedee 80%);
+$colorBackground:linear-gradient(0deg, #fdfbfb 0%, #ebedee 100%);
 
 $marginTop: 80px;
 
 $font: monospace , 'Courier New', Courier;
 
 $fontsize : 15px;
+
+$marginBot:0.5rem;
 
 
 * {
@@ -207,6 +209,14 @@ $fontsize : 15px;
       width: 30px;
       height: 30px;
     }
+
+    icon {
+      cursor: pointer;
+    }
+
+    #img-buynow{
+      cursor: pointer;
+    }
   }
   
   #fullnav #right_nav li a {
@@ -274,6 +284,7 @@ $fontsize : 15px;
   .category-item {
     .item-img {
       height: 50px;
+      margin-right: 0;
   
       img {
         height: 100%;
@@ -328,17 +339,42 @@ $fontsize : 15px;
   
     .product-wrapper-item {
       width: 280px;
-      height: 400px;
-      background-color: #000;
+      height: 380px;
+      background-color:  white;
+      box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
       margin-left: auto;
       margin-right: auto;
-      margin-top: $marginTop;
+      margin-top: 50px;
+      position: relative;
     }
+
+    .product-wrapper-item:hover {
+      padding: 5px;
+      border: 1px solid gray;
+      transition: 0.2s ;
+    }
+
+    .img-buynow{
+      width: 60px;
+      height: 60px;
+      position: absolute;
+      bottom: $marginBot;
+      right: $marginBot;
+      background-image: $colorBackground;
+      cursor: pointer;
+      padding: 10px;
+    }
+
+    .img-buynow:hover {
+      background:hsl(216, 27%, 89%);
+    }
+
+    
   }
   
   .product-wrapper-item .product-item-slider {
     width: 100%;
-    height: 210px;
+    height: auto;
   }
   
   .product-item-slider .product-item-img img {
@@ -347,31 +383,34 @@ $fontsize : 15px;
     padding: auto;
     margin-top: 10px;
     margin-right: auto;
+    margin-bottom: $marginBot;
     margin-left: auto;
   }
   
   .product-wrapper-item .product-item-descrip {
     width: 240px;
-    height: 130px;
+    min-height: 120px;
     margin-right: auto;
     margin-left: auto;
   
     .product-item-name {
-      width: 100%;
-      height: 50px;
-      margin-top: $marginTop;
+      margin-bottom: $marginBot;
+      text-transform: uppercase;
+      font-size: 1.1rem;
+      font-weight: 600;
     }
   }
   
   .product-item-descrip {
-    .product-item-price a, .product-item-name a {
-      color: white;
+    .product-item-price , .product-item-name {
+      color: black;
       text-decoration: none;
       text-transform: uppercase;
       text-align: center;
     }
   
     .product-item-price {
+      font-weight: 500;
       margin-top: 20px;
     }
   }
@@ -437,7 +476,7 @@ $fontsize : 15px;
   
     .footer-service {
       width: 1300px;
-      height: 250px;
+      min-height: 300px;
       margin-left: auto;
       margin-right: auto;
     }
