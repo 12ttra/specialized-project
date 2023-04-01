@@ -54,7 +54,7 @@ body {
             color: #FFFFFF;
             background-size: cover;
             background-repeat: no-repeat;
-            background-image: url("https://get.pxhere.com/photo/background-brand-branding-design-fabric-glitter-glittering-gold-golden-metal-metallic-mockup-product-satin-silk-sparkle-sparkling-surface-textile-texture-textured-wallpaper-black-black-and-white-material-pattern-1433407.jpg");
+            background-image: url("/images/Image/background-login-register.jpeg");
             overflow: hidden;
     
             // overlay
@@ -67,7 +67,7 @@ body {
                 box-sizing: border-box;
                 
                 h1{
-                    font-size: 10vmax;
+                    font-size: 8vmax;
                     line-height: 1;
                     font-weight: 900;
                     margin-top: 40px;
@@ -168,8 +168,6 @@ body {
         border-radius: 4px;
         color: transparent;
         left: -30px;
-        
-        transition: all 0.2s linear;
     }
     
     label:hover::before{
@@ -189,7 +187,7 @@ body {
         height: auto;
         position: relative;
         cursor: pointer;
-        transition: all 0.2s linear;
+       
     }
     label input[type="checkbox"] {display: none;}
      
