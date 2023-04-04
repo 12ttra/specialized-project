@@ -1,0 +1,71 @@
+<!--Navbar -->
+<nav class="navbar navbar-expand-lg bg-dark">
+  <div class="container-fluid">
+     <!-- Offcanvas Trigger-->
+    <button   class="navbar-toggler me-2" 
+              type="button" data-bs-toggle="offcanvas"
+              data-bs-target="#offcanvasExample"
+              aria-controls="offcanvasExample">
+             <i class="bi bi-list navbar-toggler-icon text-white"  data-bs-target="#offcanvasExample" ></i>
+    </button>
+    <!-- Offcanvas Trigger-->
+    <a class="navbar-brand text-black text-uppercase text-white fw-bold me-auto" href="#">SPREZZA</a>
+    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+      <i class="bi bi-list navbar-toggler-icon text-white"></i>
+    </button>
+    <div class="collapse navbar-collapse" id="navbarSupportedContent">
+     
+      <form class="d-flex ms-auto">
+        <div class="input-group my-3 my-lg-0">
+            <input type="text" class="form-control" placeholder="@keyword search" aria-label="Search" aria-describedby="button-addon2">
+            <button class="btn btn-primary" type="button" id="button-addon2"><i class="bi bi-search-heart text-white"></i></button>
+        </div>
+      </form>
+       <ul class="navbar-nav  mb-2 mb-lg-0">
+        <li class="nav-item dropdown">
+          <a class="nav-link dropdown-toggle text-white" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+           <i class="bi bi-person-fill text-white"></i>
+          </a>
+          <ul class="dropdown-menu dropdown-menu-end">
+            <li><a class="dropdown-item" href="#">Account Management</a></li>
+            <li><a class="dropdown-item" href="#">Product Management</a></li>
+            <li><a class="dropdown-item" href="#">Revenue Management</a></li>
+            <li><a class="dropdown-item" href="#">Payment Management</a></li>
+            <li><hr class="dropdown-divider text-white"></li>
+            <li><a class="dropdown-item" href="#">Log out</a></li>
+          </ul>
+        </li>
+      </ul>
+    </div>
+  </div>
+</nav>
+<!--Navbar -->
+
+<!--Offcanvas -->
+
+
+<div class="offcanvas offcanvas-start bg-dark text-white sidebar-nav " 
+tabindex="-1" id="offcanvasExample" 
+aria-labelledby="offcanvasExampleLabel">
+
+  <div class="offcanvas-body p-0">
+    <nav class="navbar-dark">
+      <ul class="navbar-nav">
+        <li>
+          <div class="text small text-uppercase px-3 font-monospace">CORE</div>
+        </li>
+        <li>
+          <a href="#" class="nav-link px3 active">
+            <span class="me-2">
+              <i class="bi bi-speedometer2"></i>
+            </span>
+            <span>Dashboard</span>
+          </a>
+        </li>
+      </ul>
+    </nav>
+   
+    
+  </div>
+</div>
+<!--Offcanvas -->

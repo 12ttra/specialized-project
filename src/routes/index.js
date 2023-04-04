@@ -13,6 +13,14 @@ function route(app){
         res.render('pages/catelog-cart');
     })
 
+    app.use('/category/product-cart',(req, res)=>{
+        res.render('pages/product-cart');
+    })
+
+    app.use('/admin/dashboard',(req, res)=>{
+        res.render('admin/dashboard', { title: 'Dashboard', layout: 'admin' });
+    })
+
     
     
     app.get('/', (req, res) => {
