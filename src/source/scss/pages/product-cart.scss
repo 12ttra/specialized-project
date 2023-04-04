@@ -1,12 +1,9 @@
 $marginTop1: 150px;
 
 $font: monospace , 'Courier New', Courier;
-.container{
-    width: 100%;
-    min-height: 1000px;
-    margin-top: $marginTop1;
-    margin-bottom: 50%;
+
     .product{
+        padding-top: 50px;
         width: 100%;
         min-height: 1000px;
     }
@@ -213,6 +210,3 @@ $font: monospace , 'Courier New', Courier;
        
         
     }
-    
-   
-}

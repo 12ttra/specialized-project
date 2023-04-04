@@ -17,6 +17,11 @@ function route(app){
         res.render('pages/product-cart');
     })
 
+    app.use('/cart/product-in-cart',(req, res)=>{
+        res.render('pages/product-in-cart');
+    })
+
+
     app.use('/admin/dashboard',(req, res)=>{
         res.render('admin/dashboard', { title: 'Dashboard', layout: 'admin' });
     })
