@@ -6,11 +6,13 @@ let closeCart = document.querySelector('#cart-close');
 //open Cart
 cartIcon.onclick = () => {
     cart.classList.add('active');
+    document.querySelector("#mini-cart").classList.add("active");
 };
 
 //close Cart
 closeCart.onclick = () => {
     cart.classList.remove('active');
+    document.querySelector("#mini-cart").classList.remove("active");
 };
 
 //Cart Working js
@@ -105,21 +107,6 @@ function addProductToCart(title, price,  productImg){
     
 }
 
-var cartBoxContent=`
-                    <img src="${productImg}" alt="" class="cart-img">
-                    <div class="detail-box">
-                    <div class="cart-product-tilte">${title}</div>
-                    <div class="cart-price">${price}</div>
-                    <input type="number" value ="1" class="cart-quantity">
-                    </div>
-                    <!--Remove cart-->
-                    <img src="/images/iconheader/delete.svg" alt="" class="cart-remove icon-cart">`;
-
-        
-cartShopBox.innerText = cartBoxContent;
-cartItems.append(cartShopBox);
-cartShopBox.getElementsByClassName('cart-remove ')[0].addEventListener('click',removeCartItem);
-cartShopBox.getElementsByClassName('cart-quantity')[0].addEventListener('change',quantityChanged);
 
 
 //update total

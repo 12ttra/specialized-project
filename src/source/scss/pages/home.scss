@@ -217,6 +217,33 @@ $marginBot:0.5rem;
     #img-buynow{
       cursor: pointer;
     }
+    .menunav{
+      .cart-wrap-draw{
+        display: flex;
+
+        #quatity-in-cart{
+          width: 20px;
+          height: 20px;
+          color: black;
+          background-color: white;
+          font-size: 12px;
+          border: 1px solid black;
+          border-radius: 50%;
+          line-height: 20px;
+          text-align: center;
+          position: relative;
+          top: 17px;
+          right: 15px;
+        }
+      }
+    }
+   
+    
+    li:hover .subnav{
+      display: block;
+    }
+   
+
   }
   
   #fullnav #right_nav li a {

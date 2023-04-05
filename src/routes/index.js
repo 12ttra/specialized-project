@@ -9,6 +9,10 @@ function route(app){
         res.render('pages/register', { title: 'Register', layout: 'no-header-footer' });
     })
 
+    app.use('/account/account-information',(req, res)=>{
+        res.render('pages/account-information', { title: 'Account Information' });
+    })
+
     app.use('/category/catalog-cart',(req, res)=>{
         res.render('pages/catelog-cart');
     })
