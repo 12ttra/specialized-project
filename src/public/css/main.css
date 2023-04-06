@@ -1,5 +1,10 @@
 /*  Reset CSS */
-@import url("https://fonts.googleapis.com/css2?family=Comfortaa&family=Roboto+Mono:wght@500&family=Source+Code+Pro&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Noto+Sans+Mono:wght@400;500&family=Space+Mono:wght@400;700&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Noto+Sans+Mono:wght@400;500&family=Space+Mono:wght@400;700&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Noto+Sans+Mono:wght@400;500&family=Space+Mono:wght@400;700&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Noto+Sans+Mono:wght@400;500&family=Space+Mono:wght@400;700&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Noto+Sans+Mono:wght@400;500&family=Space+Mono:wght@400;700&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Noto+Sans+Mono:wght@400;500&family=Space+Mono:wght@400;700&display=swap");
 * {
   margin: 0;
   padding: 0;
@@ -9,7 +14,7 @@ body {
   min-height: 101vh; }
 
 html {
-  font-family: monospace, "Courier New", Courier; }
+  font-family: monospace, "Space Mono"; }
 
 #homepage {
   min-height: 300vh; }
@@ -273,6 +278,8 @@ html {
   background-image: linear-gradient(0deg, #fdfbfb 0%, #ebedee 100%);
   cursor: pointer;
   padding: 10px; }
+  .brand-product .img-buynow.wish-list {
+    right: 100px; }
 
 .brand-product .img-buynow:hover {
   background: #dbe1eb; }
@@ -432,7 +439,7 @@ body {
   background-size: cover;
   background-repeat: no-repeat;
   background-attachment: fixed;
-  font-family: monospace, "Courier New", Courier;
+  font-family: monospace, "Space Mono";
   color: #333333; }
   body #login-page {
     min-height: 101vh;
@@ -565,98 +572,15 @@ body {
 
 #catelog-cart {
   margin-top: 80px; }
-  #catelog-cart .cart {
-    position: fixed;
-    top: 0;
-    right: -100%;
-    width: 360px;
-    min-height: 100vh;
-    background-color: white;
-    box-shadow: -2px 0 4px gray;
-    z-index: 1000;
-    padding: 20px; }
-    #catelog-cart .cart .cart-tilte {
-      text-align: center;
-      font-size: 1.5rem;
-      font-weight: 600;
-      text-transform: uppercase;
-      margin-top: 2rem; }
-    #catelog-cart .cart .cart-box {
-      display: grid;
-      grid-template-columns: 32% 50% 18%;
-      align-items: center;
-      gap: 1rem;
-      margin-top: 1rem; }
-    #catelog-cart .cart .cart-img {
-      width: 100px;
-      height: 100px;
-      object-fit: contain;
-      padding: 10px; }
-    #catelog-cart .cart .icon-cart {
-      width: 16px;
-      height: 16px; }
-    #catelog-cart .cart .detail-box {
-      display: grid;
-      row-gap: 0.5rem; }
-    #catelog-cart .cart .cart-product-tilte {
-      font-size: 1.5 rem;
-      text-transform: uppercase; }
-    #catelog-cart .cart .cart-price {
-      font-weight: 500; }
-    #catelog-cart .cart .cart-quantity {
-      width: 40px;
-      border: 1px solid gray;
-      outline-color: black;
-      text-align: center;
-      font-size: 0.8rem;
-      align-items: center;
-      border-radius: 30px; }
-    #catelog-cart .cart .cart-remove {
-      cursor: pointer; }
-    #catelog-cart .cart .total {
-      display: flex;
-      justify-content: flex-end;
-      margin-top: 1.5rem;
-      border-top: 1px solid black; }
-      #catelog-cart .cart .total .total-tilte {
-        font-size: 1rem;
-        font-weight: 600; }
-      #catelog-cart .cart .total .total-price {
-        margin-left: 10px; }
-    #catelog-cart .cart .btn-buy {
-      display: flex;
-      width: 100px;
-      height: 30px;
-      margin: 1.5rem auto 0 auto;
-      padding: 12px 20px;
-      border: 1px solid black;
-      border-radius: 40%;
-      background-color: white;
-      color: black;
-      font-size: 12px;
-      font-weight: 700;
-      cursor: pointer;
-      text-align: center;
-      line-height: 5px; }
-    #catelog-cart .cart .btn-buy:hover {
-      background-color: black;
-      color: white; }
-    #catelog-cart .cart #cart-close {
-      position: absolute;
-      top: 1rem;
-      right: 0.8rem;
-      cursor: pointer; }
   #catelog-cart .container {
     max-width: 101vw;
     width: 100%; }
   #catelog-cart section .section-title {
     padding-top: 20px;
-    font-family: "Poppins", sans-serif;
+    font-family: monospace, "Space Mono";
     font-size: 1.5rem;
     font-weight: 600;
     text-align: center; }
-  #catelog-cart .cart.active {
-    right: 0; }
 
 .container {
   margin-top: 80px; }

@@ -1,4 +1,5 @@
 /*  Reset CSS */
+@import url('https://fonts.googleapis.com/css2?family=Noto+Sans+Mono:wght@400;500&family=Space+Mono:wght@400;700&display=swap');
 
 
 //Variable 
@@ -6,7 +7,7 @@ $colorBackground:linear-gradient(0deg, #fdfbfb 0%, #ebedee 100%);
 
 $marginTop: 80px;
 
-$font: monospace , 'Courier New', Courier;
+$font: monospace, 'Space Mono';
 
 $fontsize : 15px;
 
@@ -390,7 +391,13 @@ $marginBot:0.5rem;
       background-image: $colorBackground;
       cursor: pointer;
       padding: 10px;
+
+      &.wish-list{
+        right: 100px;
+      }
     }
+
+   
 
     .img-buynow:hover {
       background:hsl(216, 27%, 89%);
