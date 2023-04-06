@@ -4,6 +4,7 @@
 $font: monospace, 'Space Mono';
 
 .cart{
+    font-family: $font;
     padding: 20px 0 ;
     margin-left: auto;
     margin-right:auto ;
@@ -14,7 +15,7 @@ $font: monospace, 'Space Mono';
         font-size: 30px;
         font-weight: 800;
         color: black;
-        font-family: monospace,'Courier New', Courier;
+       
     }
     .cart-top-wrapper{
         display: flex;
@@ -29,16 +30,18 @@ $font: monospace, 'Space Mono';
             justify-content: space-between;
             align-items: center;
             margin: 50px 0 100px;
-        }
 
-
-        .cart-top-cart{
-            border: 1px solid pink !important;
-            
-            i{
-                color: pink !important; 
+            .cart-top-cart{
+                border: 1px solid pink;
+                
+                i{
+                    color: pink ; 
+                }
             }
         }
+
+
+      
 
 
         .cart-top-item{
@@ -67,7 +70,12 @@ $font: monospace, 'Space Mono';
             td{
                 padding: 20px 0;
                 border-bottom: 1px solid #ddd;
+
+                
             }
+
+            
+          
 
             th {
                 padding-bottom: 10px;
@@ -87,8 +95,17 @@ $font: monospace, 'Space Mono';
             }
 
             td:nth-child(2){
-              max-width: 130px;  
+              max-width: 130px;
+              
+           a {
+                    font-size: 12px;
+                    color: black;
+                    text-decoration: none;
+                }
+ 
             }
+
+           
 
             
 
@@ -168,33 +185,43 @@ $font: monospace, 'Space Mono';
        .cart-content-right-button{
             align-items: center;
             text-align: center;
-            button {
-                padding: 0 18px;
-                height: 35px;
+            a{
+                text-decoration: none;
+            }
+            .button {
+                padding: 10px 18px;
+                display: inline-block;
                 cursor: pointer;
             }
-            button:first-child{
+            .button:first-child{
                 background-color: #fff;
                 border: 1px solid black;
                 margin-right: 20px;
             }
 
-            button:first-child:hover{
-                background-color: #000;
+            .button:first-child:hover{
+                background-color:pink;
                 color: #fff;
+                border: 1px solid pink;
+            
+
             }
 
-            button:last-child{
+            .button:last-child{
                 background-color: #000;
                 color: #fff;  
                 border: none;
                 border: 1px solid black;
             }
-            button:last-child:hover{
-                background-color: red ;
+            .button:last-child:hover{
+                background-color: pink ;
                 color: #fff;
-                border: 1px solid red;
+                border: 1px solid pink;
                 
+            }
+
+            a.button{
+
             }
        }
     }

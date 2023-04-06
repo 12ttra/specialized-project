@@ -25,6 +25,14 @@ function route(app){
         res.render('pages/cart');
     })
 
+    app.use('/cart/product-checkout',(req, res)=>{
+        res.render('pages/checkout');
+    })
+
+    app.use('/cart/product-payment',(req, res)=>{
+        res.render('pages/payment');
+    })
+
 
     app.use('/admin/dashboard',(req, res)=>{
         res.render('admin/dashboard', { title: 'Dashboard', layout: 'admin' });
