@@ -10,19 +10,19 @@ function route(app){
     })
 
     app.use('/account/account-information',(req, res)=>{
-        res.render('pages/account-information', { title: 'Account Information' });
+        res.render('pages/information', { title: 'Account Information' });
     })
 
     app.use('/category/catalog-cart',(req, res)=>{
-        res.render('pages/catelog-cart');
+        res.render('pages/sellpage');
     })
 
     app.use('/category/product-cart',(req, res)=>{
-        res.render('pages/product-cart');
+        res.render('pages/productif');
     })
 
     app.use('/cart/product-in-cart',(req, res)=>{
-        res.render('pages/product-in-cart');
+        res.render('pages/cart');
     })
 
 
