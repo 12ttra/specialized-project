@@ -1,19 +1,117 @@
 <div class="checkout">
     <div class="checkout-wrapper">
+
+        <!--Tilte-->
         <div class="checkout-title">
                 <h1>CHECKOUT</h1>
         </div>
+        <!--Thanh Checkout-->
        <div class="checkout-top-wrapper">
          <div class="checkout-top">
-            <div class="cart-top-cart checkout-top-item">
-                <i class="fa fa-shopping-cart"  aria-hidden="true"></i>
+                <div class="cart-top-cart checkout-top-item">
+                    <i class="fa fa-shopping-cart"  aria-hidden="true"></i>
+                </div>
+                <div class="cart-top-checkout checkout-top-item">
+                    <i class="fa fa-map-marker " aria-hidden="true"></i>
+                </div>
+                <div class="cart-top-payment checkout-top-item">
+                    <i class="fa fa-money " aria-hidden="true"></i>
+                </div>
             </div>
-            <div class="cart-top-checkout checkout-top-item">
-                <i class="fa fa-map-marker " aria-hidden="true"></i>
-            </div>
-            <div class="cart-top-payment checkout-top-item">
-                <i class="fa fa-money " aria-hidden="true"></i>
-            </div>
-        </div>
        </div>
+       <!--Noi dung khi checkout-->
+       <form action="#" method="post">
+        <div class="checkout-content-wrapper">
+                <div class="checkout-content row-cart">
+
+                    <!--LEFT-->
+                    <div class="checkout-content-left">
+                        <h3 class="title-address">BILLING ADDRESS</h3>
+
+                        <!--Select Address-->
+                        
+                        <!--Form Information-->
+                        <div class="form-information">
+                            <div class="form-name css-input-padding">
+                                <div class="form-name-first-name ">
+                                    <input class="first-name css-input" name="firstname" type="text" value="" placeholder="First name" required>
+                                </div>
+                                <div class="form-name-last-name ">
+                                     <input class="last-name css-input" name="lastname" type="text" value="" placeholder="Last name" required>
+                                </div>
+                            </div>
+                            <div class="form-address css-input-padding">
+                                <div class="select-address css-input-padding">
+                                    <div class="select-address">
+                                            <select class="form-select form-select-sm mb-3" id="city" aria-label=".form-select-sm">
+                                                <option value="" selected>City</option>           
+                                            </select>
+                                                    
+                                            <select class="form-select form-select-sm mb-3" id="district" aria-label=".form-select-sm">
+                                                <option value="" selected>District</option>
+                                            </select>
+
+                                            <select class="form-select form-select-sm" id="ward" aria-label=".form-select-sm">
+                                                <option value="" selected>Ward</option>
+                                            </select>
+                                    </div>                   
+                                </div>
+                                <input type="text" name="address" class="address css-input" placeholder="Address" value="" >
+                            </div>
+                        </div>                    
+                    </div>
+
+                    <!--RIGHT-->
+                    <div class="checkout-content-right">
+                        
+                        
+                    </div>
+                </div>
+        </div>
+       </form>
     </div>
+</div>
+
+ <script src="https://cdnjs.cloudflare.com/ajax/libs/axios/0.21.1/axios.min.js"></script>
+<script>
+        var citis = document.getElementById("city");
+        var districts = document.getElementById("district");
+        var wards = document.getElementById("ward");
+        var Parameter = {
+        url: "https://raw.githubusercontent.com/kenzouno1/DiaGioiHanhChinhVN/master/data.json", 
+        method: "GET", 
+        responseType: "application/json", 
+        };
+        var promise = axios(Parameter);
+        promise.then(function (result) {
+        renderCity(result.data);
+        });
+
+        function renderCity(data) {
+        for (const x of data) {
+            citis.options[citis.options.length] = new Option(x.Name, x.Id);
+        }
+        citis.onchange = function () {
+            district.length = 1;
+            ward.length = 1;
+            if(this.value != ""){
+            const result = data.filter(n => n.Id === this.value);
+
+            for (const k of result[0].Districts) {
+                district.options[district.options.length] = new Option(k.Name, k.Id);
+            }
+            }
+        };
+        district.onchange = function () {
+            ward.length = 1;
+            const dataCity = data.filter((n) => n.Id === citis.value);
+            if (this.value != "") {
+            const dataWards = dataCity[0].Districts.filter(n => n.Id === this.value)[0].Wards;
+
+            for (const w of dataWards) {
+                wards.options[wards.options.length] = new Option(w.Name, w.Id);
+            }
+            }
+        };
+        }
+</script>
