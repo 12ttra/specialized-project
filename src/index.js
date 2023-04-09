@@ -20,7 +20,35 @@ const app = express()
 require("./config/passport");
 
 // mongodb configuration
-connectDB();
+//connectDB(); 
+mongoose.connect('mongodb+srv://tratran:Tra12@cluster0.pvzatmr.mongodb.net/Sprezza?retryWrites=true&w=majority', 
+{
+
+ useNewUrlParser: true,
+
+ useUnifiedTopology: true
+
+});
+
+const db = mongoose.connection;
+
+
+
+
+db.on('error', (err) => {
+
+ console.error('Connect db err:', err);
+
+});
+
+
+
+
+db.once('open', () => {
+
+ console.log('CONNECTED MONGOODB');
+
+});
 
 // view engine setup
 app.set('views', path.join(__dirname,'/source/views'));
@@ -122,4 +150,6 @@ app.use("*", function(req, res, next){
   res.locals.absoluteUrl = `${req.protocol}://${req.get('host')}`; 
   next();
 });
+
+module.exports = route
 

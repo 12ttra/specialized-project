@@ -6,7 +6,7 @@ const Category = require("../models/category");
 const Cart = require("../models/cart");
 const Order = require("../models/order");
 const middleware = require("../middleware");
-const router = express.Router();
+const router = require('express').Router();
 
 const csrfProtection = csrf();
 router.use(csrfProtection);
