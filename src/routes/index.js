@@ -1,4 +1,4 @@
-const catalogRouter = require('./product');
+/*const catalogRouter = require('./product');
 const categoryRouter = require('./category');
 const accountRouter = require('./account');
 
@@ -15,4 +15,4 @@ function route(app){
     })
 }
 
-module.exports = route
+module.exports = route*/

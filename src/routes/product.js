@@ -1,6 +1,19 @@
-const express = require('express');
+const express = require("express");
 const router = express.Router();
-const productController = require('../app/controllers/ProductController');
+const productController = require("../controller/ProductController");
+const auth = require("../middleware/auth_middleware");
 
-router.use('/view/:id', productController.detail);
+router
+  .use(auth)
+  .route("/")
+  .get(productController.getAllProducts)
+  .post(productController.createOneProduct);[]
+
+router
+  .use(auth)
+  .route("/:id")
+  .get(productController.getOneProduct)
+  .patch(productController.patchOneProduct)
+  .delete(productController.deleteOneProduct);
+
 module.exports = router;

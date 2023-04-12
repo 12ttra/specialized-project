@@ -1,11 +1,11 @@
-const mongoose = require('mongoose');
+const { default: mongoose } = require("mongoose");
 
-async function connect(){
+async function connectDB(){
     try {
-        await mongoose.connect('mongodb://localhost:27017/d_stories_dev');
+        await mongoose.connect('mongodb+srv://tratran:Tratran12@cluster0.pvzatmr.mongodb.net/?retryWrites=true&w=majority');
         console.log("connect successfuly");
     } catch (error) {
         console.log(error);
     }
 }
-module.exports = {connect}
+module.exports = connectDB;

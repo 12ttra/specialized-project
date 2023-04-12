@@ -1,35 +1,43 @@
-const express = require('express');
-const { engine  } = require('express-handlebars');
-const path = require('path');
-const route = require("./routes")
-const morgan = require('morgan');
-const Handlebars = require('handlebars');
-const fs = require('fs');
+const express = require("express");
+const app = express();
+const port = 3001;
+const accountRoutes = require("./routes/account");
+const catogoryRoutes = require("./routes/category");
+const subCategoryRoutes = require("./routes/sub_category");
+const productRoutes = require("./routes/product");
+const cartRoutes = require("./routes/cart");
+const favouriteRoutes = require("./routes/favourite");
+const flashSale = require("./routes/flash_sale");
+const connectDb = require("./config/db/mongo");
 
-const app = express()
-const port = 3001
+/*app.get("/", (req, res) => {
+  res.status(200).send("Server Running Successfully");
+});*/
 
-//logger
-app.use(morgan("combined"))
+app.use(express.json());
 
-//static file path
-app.use(express.static(path.join(__dirname,'public')));
+app.use("/product", productRoutes);
+app.use("/account", accountRoutes);
+app.use("/category", catogoryRoutes);
+app.use("/subCategory",subCategoryRoutes)
+app.use("/cart", cartRoutes);
+app.use("/favourite", favouriteRoutes);
+app.use("/flashsale", flashSale);
 
-app.use("*", function(req, res, next){
-  res.locals.absoluteUrl = `${req.protocol}://${req.get('host')}`; 
-  next();
+app.use('/admin/dashboard',(req, res)=>{
+  res.render('admin/dashboard', { title: 'Dashboard', layout: 'admin' });
+})
+
+app.get('/', (req, res) => {
+  res.render('home');
+})
+
+app.all("*", (req, res) => {
+  res.status(404).send("Page Not Found");
 });
 
-//db.connect();
-
-//template engine
-app.engine('.hbs', engine ({extname: '.hbs'}));
-app.set('view engine','.hbs')
-app.set('views', path.join(__dirname,'/source/views'));
-
-
-route(app);
-
-app.listen(port, () => {
-  console.log(`Example app listening on port ${port}`);
-})
+connectDb().then(() =>
+  app.listen(port, () => {
+    console.log(`Server is running at ${port}`);
+  })
+);
