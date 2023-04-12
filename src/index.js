@@ -10,9 +10,9 @@ const favouriteRoutes = require("./routes/favourite");
 const flashSale = require("./routes/flash_sale");
 const connectDb = require("./config/db/mongo");
 
-/*app.get("/", (req, res) => {
+app.get("/", (req, res) => {
   res.status(200).send("Server Running Successfully");
-});*/
+});
 
 app.use(express.json());
 
@@ -28,9 +28,9 @@ app.use('/admin/dashboard',(req, res)=>{
   res.render('admin/dashboard', { title: 'Dashboard', layout: 'admin' });
 })
 
-app.get('/', (req, res) => {
+/*app.get('/', (req, res) => {
   res.render('home');
-})
+})*/
 
 app.all("*", (req, res) => {
   res.status(404).send("Page Not Found");

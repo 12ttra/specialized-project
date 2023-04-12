@@ -14,3 +14,4 @@ router
   .get(subCategoryController.getOneSubCategory);
 
 module.exports = router;
+module.exports = auth;

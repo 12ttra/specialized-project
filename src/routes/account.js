@@ -1,10 +1,10 @@
-/*const express = require('express');
+const express = require('express');
 const router = express.Router();
-const accountControler = require("../app/controllers/AccountController");
+const AccountControler = require("../controller/AccountController");
 
-router.use('/login', accountControler.login)
-router.use('/register',accountControler.register)
-router.use('/information',accountControler.information)
+router.post('/login', AccountControler.login)
+router.post('/register',AccountControler.register)
+router.post('/information',AccountControler.information)
 
 
-module.exports = router;*/
+module.exports = router;
