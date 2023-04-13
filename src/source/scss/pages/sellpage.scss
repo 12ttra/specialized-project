@@ -15,11 +15,51 @@ $fontTilte: monospace, 'Space Mono';
         .section-title {
             padding-top: 20px;
             font-family: $fontTilte;
-            font-size: 1.5rem;
-            font-weight: 600;
+            font-size: 40px;
+            font-weight: 800;
             text-align: center;
             
         }
+    }
+    .sprezza-page-controller{
+        display: flex;
+        justify-content: center;
+        margin-top: 50px;
+        .sprezza-icon-button-left{
+                text-align: right;
+                margin-right: 0.9375rem;
+        }
+        button{
+            cursor: pointer;
+            .arrow-img{
+                img{
+                    width: 20px;
+                    height: 20px;
+                }
+            }
+        } 
+        .button-no-outline{
+            display: flex;
+            padding: 0;
+            color: #4f4b4b;
+            min-width: 2.5rem;
+            text-align: center;
+            height: 40px;
+            line-height: 40px;
+            font-size: 16px;
+            position: relative;
+            overflow: visible;
+            outline: 0;
+            margin: 0;
+            margin-left: 20px;
+            margin-right: 20px; 
+            
+        }
+        .sprezza-icon-button{
+            background-color: white;
+            border: none;
+        }
+
     }
 }
 

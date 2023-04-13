@@ -382,24 +382,43 @@ $marginBot:0.5rem;
       transition: 0.2s ;
     }
 
+    .css-product-item{
+
+      a{
+        text-decoration: none;
+        font-size: 18px;
+        font-family: $font;
+        font-weight: 700;
+        color: black;
+        text-transform: uppercase;
+      }
+      img{
+        width: 25px;
+        height: 25px;
+      }
+    }
+    .wishlist{
+      position: absolute;
+      bottom: 0.5rem;
+      right: 3.9rem;
+      cursor: pointer;
+    }
+
     .img-buynow{
       width: 60px;
       height: 60px;
       position: absolute;
       bottom: $marginBot;
       right: $marginBot;
-      background-image: $colorBackground;
       cursor: pointer;
-      padding: 10px;
+      
 
-      &.wish-list{
-        right: 100px;
-      }
+     
     }
 
    
 
-    .img-buynow:hover {
+    .img-icon:hover {
       background:hsl(216, 27%, 89%);
     }
 
