@@ -853,6 +853,38 @@ body {
   padding: 0 12px;
   display: block; }
 
+@media only screen and (max-width: 1024px) {
+  #fullnav #left_nav {
+    width: 45%; }
+  #fullnav #main_logo {
+    width: 200px;
+    display: flex;
+    align-items: center; }
+    #fullnav #main_logo img {
+      width: 200px;
+      height: 60px; } }
+
+@media only screen and (max-width: 425px) {
+  #left_nav {
+    display: none; }
+  .menu-mobile {
+    display: block;
+    position: absolute;
+    top: 25px;
+    left: 0px;
+    bottom: 25px; }
+  .icon {
+    width: 30px;
+    height: 30px;
+    align-items: center;
+    cursor: pointer; }
+    .icon img {
+      width: 100%; } }
+
+@media only screen and (min-width: 986px) {
+  .menu-mobile {
+    display: none; } }
+
 .product {
   padding-top: 50px;
   width: 100%;
