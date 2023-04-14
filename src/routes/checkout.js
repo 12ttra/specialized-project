@@ -10,8 +10,9 @@ router.use('/cart',(req, res)=>{
 router.use('/address',(req, res)=>{
     res.render('pages/checkout');
 })
-
 router.use('/payment',(req, res)=>{
     res.render('pages/payment');
 })
+
+
 module.exports = router;
