@@ -1,12 +1,20 @@
-/*const catalogRouter = require('./product');
-const categoryRouter = require('./category');
-const accountRouter = require('./account');
+const accountRoutes = require("./account");
+const catogoryRoutes = require("./category");
+const subCategoryRoutes = require("./sub_category");
+const productRoutes = require("./product");
+const cartRoutes = require("./cart");
+const favouriteRoutes = require("./favourite");
+const flashSale = require("./flash_sale");
 
 function route(app){
     //product
-    app.use("/product",catalogRouter);
-    app.use("/category",categoryRouter);
-    app.use("/account",accountRouter);
+    app.use("/product", productRoutes);
+    app.use("/account", accountRoutes);
+    app.use("/category", catogoryRoutes);
+    app.use("/subCategory",subCategoryRoutes)
+    app.use("/cart", cartRoutes);
+    app.use("/favourite", favouriteRoutes);
+    app.use("/flashsale", flashSale);
     app.use('/admin/dashboard',(req, res)=>{
         res.render('admin/dashboard', { title: 'Dashboard', layout: 'admin' });
     })
@@ -15,4 +23,4 @@ function route(app){
     })
 }
 
-module.exports = route*/
+module.exports = route

@@ -1,16 +1,16 @@
 const express = require("express");
 const router = express.Router();
-const categoryController = require("../controller/FlashSaleController");
+const flashSaleController = require("../controller/FlashSaleController");
 const auth = require("../middleware/auth_middleware");
 
 router
   .use(auth)
   .route("/")
-  .get(categoryController.getAllFalshProducts);
+  .get(flashSaleController.getAllFalshProducts);
 
 router
   .use(auth)
   .route("/:id")
-  .get(categoryController.getOneFlashProduct);
+  .get(flashSaleController.getOneFlashProduct);
 
 module.exports = router;

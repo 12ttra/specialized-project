@@ -1,36 +1,32 @@
 const express = require("express");
 const app = express();
 const port = 3001;
-const accountRoutes = require("./routes/account");
-const catogoryRoutes = require("./routes/category");
-const subCategoryRoutes = require("./routes/sub_category");
-const productRoutes = require("./routes/product");
-const cartRoutes = require("./routes/cart");
-const favouriteRoutes = require("./routes/favourite");
-const flashSale = require("./routes/flash_sale");
+const route = require("./routes");
 const connectDb = require("./config/db/mongo");
-
-app.get("/", (req, res) => {
-  res.status(200).send("Server Running Successfully");
-});
+const { engine  } = require('express-handlebars');
+const path = require('path');
+const morgan = require('morgan');
+const Handlebars = require('handlebars');
+const fs = require('fs');
 
 app.use(express.json());
 
-app.use("/product", productRoutes);
-app.use("/account", accountRoutes);
-app.use("/category", catogoryRoutes);
-app.use("/subCategory",subCategoryRoutes)
-app.use("/cart", cartRoutes);
-app.use("/favourite", favouriteRoutes);
-app.use("/flashsale", flashSale);
+//logger
+app.use(morgan("combined"))
 
-app.use('/admin/dashboard',(req, res)=>{
-  res.render('admin/dashboard', { title: 'Dashboard', layout: 'admin' });
-})
+//static file path
+app.use(express.static(path.join(__dirname,'public')));
+app.use("*", function(req, res, next){
+  res.locals.absoluteUrl = `${req.protocol}://${req.get('host')}`; 
+  next();
+});
 
-/*app.get('/', (req, res) => {
-  res.render('home');
-})*/
+//template engine
+app.engine('.hbs', engine ({extname: '.hbs'}));
+app.set('view engine','.hbs')
+app.set('views', path.join(__dirname,'/source/views'));
+
+route(app);
 
 app.all("*", (req, res) => {
   res.status(404).send("Page Not Found");
