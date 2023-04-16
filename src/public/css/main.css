@@ -191,7 +191,7 @@ html {
   margin-top: 80px; }
 
 .home-category-list {
-  width: 1300px;
+  width: 100vw;
   height: 300px;
   margin: auto;
   border: 2px solid gray;
@@ -236,7 +236,7 @@ html {
   margin-right: auto;
   margin-top: 80px; }
   #container .brand-slider {
-    width: 1200px;
+    width: 100vw;
     height: 600px;
     margin-right: auto;
     margin-left: auto; }
@@ -257,7 +257,8 @@ html {
   flex-wrap: wrap; }
 
 .brand-product .product-wrapper-item {
-  width: 280px;
+  width: 24%;
+  max-width: 280px;
   height: 380px;
   background-color: white;
   box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
@@ -335,7 +336,7 @@ html {
   margin-top: 20px; }
 
 #container .contact {
-  width: 1200px;
+  width: 100vw;
   padding: 80px 0;
   margin-left: auto;
   margin-right: auto; }
@@ -352,7 +353,7 @@ html {
 
 .contact .form-email-btn {
   margin-top: 80px;
-  width: 1200px;
+  width: 100vw;
   display: flex; }
 
 #container .contact-send-email .contact form {
@@ -382,7 +383,7 @@ html {
 #footer {
   margin-top: 80px; }
   #footer .footer-service {
-    width: 1300px;
+    width: 100vw;
     min-height: 300px;
     margin-left: auto;
     margin-right: auto; }
@@ -449,6 +450,14 @@ col {
   line-height: 50px;
   margin-left: auto;
   margin-right: auto; }
+
+@media only screen and (max-width: 1024px) {
+  .category-wrapper .category-item {
+    width: 170px; }
+  .brand-product .brand-product-wrapper {
+    width: 100vw; }
+  #container .brand-slider {
+    width: 100vw; } }
 
 body {
   background-image: black;
@@ -638,7 +647,8 @@ body {
   left: 0;
   right: 0;
   height: 80px;
-  background-image: linear-gradient(0deg, #fdfbfb 0%, #ebedee 100%); }
+  background-image: linear-gradient(0deg, #fdfbfb 0%, #ebedee 100%);
+  width: 100vw; }
   #header li {
     font-size: 15px;
     list-style: none; }
@@ -856,13 +866,23 @@ body {
 @media only screen and (max-width: 1024px) {
   #fullnav #left_nav {
     width: 45%; }
+    #fullnav #left_nav li a {
+      padding: 0;
+      font-size: 14px;
+      font-weight: 400; }
   #fullnav #main_logo {
     width: 200px;
     display: flex;
     align-items: center; }
     #fullnav #main_logo img {
       width: 200px;
-      height: 60px; } }
+      height: 60px; }
+  #fullnav #search_nav {
+    padding: 0px; }
+    #fullnav #search_nav .search div > input:focus {
+      width: 150px; }
+    #fullnav #search_nav .search div > input:not(:placeholder-shown) {
+      width: 150px; } }
 
 @media only screen and (max-width: 425px) {
   #left_nav {
