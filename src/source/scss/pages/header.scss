@@ -17,6 +17,7 @@ $marginBot:0.5rem;
     right: 0;
     height: 80px;
     background-image: $colorBackground;
+    width:100vw;
   
     li {
       font-size: $fontsize;
@@ -325,6 +326,13 @@ $marginBot:0.5rem;
   #fullnav{
     #left_nav{
       width: 45% ;
+      li{
+        a{
+          padding: 0;
+          font-size: 14px;
+          font-weight: 400;
+        }
+      }
     }
     #main_logo{
       width: 200px;
@@ -335,8 +343,21 @@ $marginBot:0.5rem;
         height: 60px;
       }
     }
+    #search_nav{
+      padding: 0px;
+      .search{
+        div > input {
+          &:focus {
+            width: 150px;
+          }
+          &:not(:placeholder-shown) {
+            width: 150px;
+          }    
+        }
+      }
   }
     
+}
 }
 
 //TABLET
@@ -373,3 +394,4 @@ $marginBot:0.5rem;
     display: none;
   }
 }
+
