@@ -353,16 +353,16 @@ $marginBot:0.5rem;
   
     .brand-product {
       width: 100%;
-      max-height: 1000px;
+      height: auto;
     }
   }
   
   .brand-product {
     .brand-product-wrapper {
-      width: 100%;
+      width: 1300px;
       min-height: 500px;
-      //margin-right: auto;
-      //margin-left: auto;
+      margin-right: auto;
+      margin-left: auto;
       display: flex;
       flex-wrap: wrap;
     }
@@ -629,6 +629,7 @@ $marginBot:0.5rem;
   .brand-product{
     .brand-product-wrapper {
       width: 100vw;
+      padding-right: 10px;
       .product-wrapper-item{
         width: 220px;
       }
