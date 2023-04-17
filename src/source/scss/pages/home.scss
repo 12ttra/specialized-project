@@ -27,7 +27,9 @@ $marginBot:0.5rem;
   html {
     font-family: $font;
   }
-  
+  .container{
+    overflow-x: hidden;
+  }
   #homepage {
     min-height: 300vh;
   }
@@ -357,16 +359,16 @@ $marginBot:0.5rem;
   
   .brand-product {
     .brand-product-wrapper {
-      width: 1300px;
+      width: 100%;
       min-height: 500px;
-      margin-right: auto;
-      margin-left: auto;
+      //margin-right: auto;
+      //margin-left: auto;
       display: flex;
       flex-wrap: wrap;
     }
   
     .product-wrapper-item {
-      width: 24%;
+      width: 280px;
       max-width: 280px;
       height: 380px;
       background-color:  white;
@@ -627,6 +629,9 @@ $marginBot:0.5rem;
   .brand-product{
     .brand-product-wrapper {
       width: 100vw;
+      .product-wrapper-item{
+        width: 220px;
+      }
     }
   }
   #container{
