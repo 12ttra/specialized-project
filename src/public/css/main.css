@@ -268,7 +268,6 @@ html {
   position: relative; }
 
 .brand-product .product-wrapper-item:hover {
-  padding: 5px;
   border: 1px solid gray;
   transition: 0.2s; }
 
@@ -315,14 +314,14 @@ html {
   margin-left: auto; }
 
 .product-wrapper-item .product-item-descrip {
-  width: 240px;
+  width: 200px;
   min-height: 120px;
   margin-right: auto;
   margin-left: auto; }
   .product-wrapper-item .product-item-descrip .product-item-name {
     margin-bottom: 0.5rem;
     text-transform: uppercase;
-    font-size: 1.1rem;
+    font-size: 16px;
     font-weight: 600; }
 
 .product-item-descrip .product-item-price, .product-item-descrip .product-item-name {

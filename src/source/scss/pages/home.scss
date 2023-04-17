@@ -378,7 +378,6 @@ $marginBot:0.5rem;
     }
 
     .product-wrapper-item:hover {
-      padding: 5px;
       border: 1px solid gray;
       transition: 0.2s ;
     }
@@ -442,7 +441,7 @@ $marginBot:0.5rem;
   }
   
   .product-wrapper-item .product-item-descrip {
-    width: 240px;
+    width: 200px;
     min-height: 120px;
     margin-right: auto;
     margin-left: auto;
@@ -450,7 +449,7 @@ $marginBot:0.5rem;
     .product-item-name {
       margin-bottom: $marginBot;
       text-transform: uppercase;
-      font-size: 1.1rem;
+      font-size:16px;
       font-weight: 600;
     }
   }
