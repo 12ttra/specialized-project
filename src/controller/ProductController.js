@@ -20,7 +20,7 @@ class ProductController{
 
   async createOneProduct(req, res){
     try {
-      const response = await products_model.create(req.body);
+     const response = await products_model.create(req.body);
       if (req.body.flashsale == "true") {
         const teo = await flash_sale_model.find();
         if (teo[0]) {
@@ -65,6 +65,9 @@ class ProductController{
         message: 'Product created successfully',
         data: [],
       });
+     /* const newproduct= new products_model(req.body);
+      await newproduct.save();
+      res.status(201).json(newproduct);*/
     } catch (error) {
       res.status(404).json({ success: false, message: "Something went worng !", data: error.errors });
     }
