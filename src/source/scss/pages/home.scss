@@ -255,7 +255,7 @@ $marginBot:0.5rem;
   }
   
   #slider-container {
-    margin-top: $marginTop;
+    //margin-top: $marginTop;
     width: 100%;
   
     .item {
@@ -527,7 +527,6 @@ $marginBot:0.5rem;
   }
   
   #footer {
-    margin-top: 80px;
   
     .footer-service {
       width: 100vw;
@@ -646,6 +645,17 @@ $marginBot:0.5rem;
         height: 450px;
         padding: 0 30px;
       }
+    }
+  }
+
+  .product-item-slider {
+    .product-item-img img {
+    width: 200px;
+    }
+  }
+  #footer{
+    .footer-service{
+      margin-bottom: 30px;
     }
   }
   

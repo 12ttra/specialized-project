@@ -177,7 +177,6 @@ html {
   display: block; }
 
 #slider-container {
-  margin-top: 80px;
   width: 100%; }
   #slider-container .item {
     height: 700px; }
@@ -382,21 +381,20 @@ html {
   cursor: pointer;
   background-image: linear-gradient(0deg, #fdfbfb 0%, #ebedee 100%); }
 
-#footer {
-  margin-top: 80px; }
-  #footer .footer-service {
-    width: 100vw;
-    min-height: 300px;
-    margin-left: auto;
-    margin-right: auto; }
-  #footer .footer-logo {
-    padding: 0 30px;
-    display: flex;
-    align-items: center;
-    justify-content: center; }
-    #footer .footer-logo img {
-      width: 240px;
-      height: 200px; }
+#footer .footer-service {
+  width: 100vw;
+  min-height: 300px;
+  margin-left: auto;
+  margin-right: auto; }
+
+#footer .footer-logo {
+  padding: 0 30px;
+  display: flex;
+  align-items: center;
+  justify-content: center; }
+  #footer .footer-logo img {
+    width: 240px;
+    height: 200px; }
 
 .row {
   display: flex;
@@ -466,7 +464,11 @@ col {
   #container .brand-slider img {
     width: 350px;
     height: 450px;
-    padding: 0 30px; } }
+    padding: 0 30px; }
+  .product-item-slider .product-item-img img {
+    width: 200px; }
+  #footer .footer-service {
+    margin-bottom: 30px; } }
 
 body {
   background-image: black;
@@ -1422,7 +1424,7 @@ body {
     font-size: 18px;
     text-transform: uppercase; }
   .payment .payment-content-wrapper .payment-content .payment-content-left {
-    flex: 1;
+    flex: 3;
     padding-right: 12px; }
     .payment .payment-content-wrapper .payment-content .payment-content-left .payment-content-left-order {
       width: 100%;
