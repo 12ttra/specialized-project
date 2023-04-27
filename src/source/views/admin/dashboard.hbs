@@ -1,30 +1,219 @@
-<!-- OFF CANVAS -->
-<a class="btn btn-primary" data-bs-toggle="offcanvas" href="#offcanvasExample" role="button" aria-controls="offcanvasExample">
-  Link with href
-</a>
-<button class="btn btn-primary" type="button" data-bs-toggle="offcanvas" data-bs-target="#offcanvasExample" aria-controls="offcanvasExample">
-  Button with data-bs-target
-</button>
+<main>
 
-<div class="offcanvas offcanvas-start sidebar-nav show">
-  <div class="offcanvas-header">
-    <h5 class="offcanvas-title" id="offcanvasExampleLabel">Offcanvas</h5>
-    <button type="button" class="btn-close" data-bs-dismiss="offcanvas" aria-label="Close"></button>
-  </div>
-  <div class="offcanvas-body">
-    <div>
-      Some text as placeholder. In real life you can have the elements you have chosen. Like, text, images, lists, etc.
+  <!-- ASIDE -->
+  <aside>
+    <button id="close-btn">
+        <span class="material-icons-sharp">close</span>
+    </button>
+
+    <div class="sidebar">
+      <a href="#" class="sidebar-opt active">
+         <span class="material-icons-sharp">dashboard</span>
+         <h4>DASHBOARD</h4>
+      </a>
+       <a href="#" class="sidebar-opt">
+         <span class="material-icons-sharp">post_add</span>
+         <h4>POST</h4>
+      </a>
+       <a href="#" class="sidebar-opt"> 
+         <span class="material-icons-sharp">shopping_cart</span>
+         <h4>CART</h4>
+      </a>
+       <a href="#" class="sidebar-opt">
+         <span class="material-icons-sharp">shopping_cart</span>
+         <h4>MANAGEMENT</h4>
+      </a>
+       <a href="#" class="sidebar-opt">
+         <span class="material-icons-sharp">payments</span>
+         <h4>PAYMENT</h4>
+      </a>
+       <a href="#" class="sidebar-opt">
+         <span class="material-icons-sharp">production_quantity_limits</span>
+         <h4>QUANTITY PRODUCT</h4>
+      </a>
+       <a href="#" class="sidebar-opt">
+         <span class="material-icons-sharp">dashboard</span>
+         <h4>DASHBOARD</h4>
+      </a>
     </div>
-    <div class="dropdown mt-3">
-      <button class="btn btn-secondary dropdown-toggle" type="button" data-bs-toggle="dropdown">
-        Dropdown button
-      </button>
-      <ul class="dropdown-menu">
-        <li><a class="dropdown-item" href="#">Action</a></li>
-        <li><a class="dropdown-item" href="#">Another action</a></li>
-        <li><a class="dropdown-item" href="#">Something else here</a></li>
-      </ul>
+
+    <div class="updates">
+          <span class="material-icons-sharp">update</span>
+         <h4>UPDATES AVAILABLE</h4>
+         <p>Security Updates</p> 
+         <p>General Updates</p>
+         <a href="#">Update Now</a>
     </div>
-  </div>
-</div>
-<!-- END OFF CANVAS -->
+
+  </aside>
+  <!-- END ASIDE -->
+
+  <!-- SECTION -->
+
+    <!-- SECTION MIDDLE -->
+  <section class="middle">
+    <div class="header">
+      <h1>Overview</h1>
+      <input type="date">
+    </div>
+    <!-- Cards -->
+    <div class="cards">
+
+      <!-- Card 1-->
+        <div class="card card-1">
+          <div class="top">
+            <div class="left">
+              <h2>ORDER</h2>
+            </div>
+          </div>
+          <div class="mid">
+            <h1>$199.565</h1>
+            <span class="material-icons-sharp">auto_graph</span>
+          </div>
+          <div class="bot">
+              <div class="left">
+                <h3>Increased by : </h3>
+              </div>
+              <div class="right">
+                <h3>60%</h3>
+              </div>
+          </div>
+        </div>
+      <!-- End Card -->
+
+       <!-- Card 2-->
+        <div class="card card-2">
+          <div class="top">
+            <div class="left">
+              <h2>PENDING</h2>
+            </div>
+           
+          </div>
+          <div class="mid">
+            <h1>5648</h1>
+            <span class="material-icons-sharp">shopping_cart</span>
+          </div>
+          <div class="bot">
+              <div class="left">
+                <h3>Increased by : </h3>
+              </div>
+              <div class="right">
+                <h3>40%</h3>
+              </div>
+          </div>
+        </div>
+      <!-- End Card -->
+
+
+      <!-- Card 3-->
+        <div class="card card-3">
+          <div class="top">
+            <div class="left">
+              <h2>REVENUE</h2>
+            </div>
+          </div>
+          <div class="mid">
+            <h1>$ 98.68</h1>
+            <span class="material-icons-sharp">payments</span>
+          </div>
+          <div class="bot">
+              <div class="left">
+                <h3>Increased by : </h3>
+              </div>
+              <div class="right">
+                <h3>70%</h3>
+              </div>
+          </div>
+        </div>
+      <!-- End Card -->
+
+      <!-- Card 3-->
+        <div class="card card-4">
+          <div class="top">
+            <div class="left">
+              <h2>EXPENSE</h2>
+            </div>
+          </div>
+          <div class="mid">
+            <h1>$ 98.68</h1>
+            <span class="material-icons-sharp">payments</span>
+          </div>
+          <div class="bot">
+              <div class="left">
+                <h3>Increased by : </h3>
+              </div>
+              <div class="right">
+                <h3>70%</h3>
+              </div>
+          </div>
+        </div>
+      <!-- End Card -->
+    </div>
+    <!-- End Cards -->
+    <!-- Monthly Report -->
+      <div class="monthly-report">
+        <div class="report">
+            <h3>Total Product</h3>
+            <div>
+                <details>
+                    <h1>56.432</h1>
+                    <h5 class="success">+3.0%</h5>
+                </details>
+                <p class="text-muted">
+                  Compare to 34% , increased 34% last month
+                </p>
+            </div>
+        </div>
+
+        <div class="report">
+            <h3>Turnover</h3>
+            <div>
+                <details>
+                    <h1>$ 577.42</h1>
+                    <h5 class="success">+30.0%</h5>
+                </details>
+                <p class="text-muted">
+                  Compare to 64% last month
+                </p>
+            </div>
+        </div>
+
+        <div class="report">
+            <h3>Successful Orders</h3>
+            <div>
+                <details>
+                    <h1>678783</h1>
+                    <h5 class="success">+7.0%</h5>
+                </details>
+                <p class="text-muted">
+                  Compare to 45% last month
+                </p>
+            </div>
+        </div>
+
+        <div class="report">
+            <h3>Return Order</h3>
+            <div>
+                <details>
+                    <h1>123</h1>
+                    <h5 class="danger"> -3.0%</h5>
+                </details>
+                <p class="text-muted">
+                  Compare to 2.0% last month
+                </p>
+            </div>
+        </div>
+      </div>
+    <!-- End Monthly Report -->
+     <div class="chart">
+        <canvas id="chart">
+
+        </canvas>
+      </div>
+
+      
+  </section>
+    <!-- END SECTION MIDDLE -->
+
+  <!-- END SECTION -->
+</main>
