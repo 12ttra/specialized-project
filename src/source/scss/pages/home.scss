@@ -286,14 +286,15 @@ $marginBot:0.5rem;
   }
   
   .category-name {
-    border-bottom: 2px solid gray;
+    border-bottom: 1px solid gray;
   
     a {
       text-decoration: none;
       color: #342f2f;
       line-height: 40px;
-      font-size: x-large;
+      font-size: 25px;
       margin-left: 100px;
+      text-align: center;
     }
   }
   
@@ -410,11 +411,12 @@ $marginBot:0.5rem;
       display: flex;
       justify-content: space-between;
       img{
-        width: 27px;
-        height: 27px;
+
+        width: 30px;
+        height: 30px;
       }
       .wishlist{
-       
+       margin-left: 80px;
         cursor: pointer;
       }
       .voucher{
@@ -423,11 +425,8 @@ $marginBot:0.5rem;
       }
   
       .img-buynow{
-        
-        cursor: pointer;
-        
-  
        
+        cursor: pointer;
       }
     }
 
