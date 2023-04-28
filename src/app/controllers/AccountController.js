@@ -1,9 +1,9 @@
 class AccountController {
-    register(req, res){
+    login(req, res){
        return res.render('pages/login', { title: 'Login', layout: 'no-header-footer' });
     }
 
-    login(req, res){
+    register(req, res){
         return res.render('pages/register', { title: 'Register', layout: 'no-header-footer' });
     }
 
