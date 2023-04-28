@@ -7,4 +7,5 @@ router.use('/register',accountControler.register)
 router.use('/information',accountControler.information)
 
 
+
 module.exports = router;

@@ -361,6 +361,7 @@ $marginBot:0.5rem;
     .brand-product-wrapper {
       width: 1300px;
       min-height: 500px;
+      height: 1000px;
       margin-right: auto;
       margin-left: auto;
       display: flex;
@@ -395,27 +396,39 @@ $marginBot:0.5rem;
         text-transform: uppercase;
       }
       img{
-        width: 25px;
-        height: 25px;
+        width: 30px;
+        height: 30px;
       }
     }
-    .wishlist{
-      position: absolute;
-      bottom: 0.5rem;
-      right: 3.9rem;
-      cursor: pointer;
+    
+    .sold{
+      font-size: 10px;
+      color: gray;
     }
 
-    .img-buynow{
-      width: 60px;
-      height: 60px;
-      position: absolute;
-      bottom: $marginBot;
-      right: $marginBot;
-      cursor: pointer;
-      
-
-     
+    .icon-product{
+      display: flex;
+      justify-content: space-between;
+      img{
+        width: 27px;
+        height: 27px;
+      }
+      .wishlist{
+       
+        cursor: pointer;
+      }
+      .voucher{
+        display: flex;
+        bottom: 0.5rem;
+      }
+  
+      .img-buynow{
+        
+        cursor: pointer;
+        
+  
+       
+      }
     }
 
    
@@ -467,6 +480,10 @@ $marginBot:0.5rem;
     .product-item-price {
       font-weight: 500;
       margin-top: 20px;
+    }
+
+    .old-price{
+      text-decoration: line-through;
     }
   }
   
