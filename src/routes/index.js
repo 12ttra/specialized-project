@@ -9,6 +9,9 @@ function route(app){
     app.use("/category",categoryRouter);
     app.use("/checkout",checkoutRouter);
     app.use("/account",accountRouter);
+    app.get('/wishlist',(req, res)=>{
+        res.render('pages/wishlist');
+    })
     app.use('/admin/dashboard',(req, res)=>{
         res.render('admin/dashboard', { title: 'Dashboard', layout: 'admin' });
     })
