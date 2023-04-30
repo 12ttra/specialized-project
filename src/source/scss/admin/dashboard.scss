@@ -318,6 +318,7 @@ main{
         display: flex;
         align-items: center;
         gap: 1rem;
+        margin-bottom: 20px;
 
         input[type='date']{
             padding: 0.5rem;
@@ -325,6 +326,41 @@ main{
             background: var(--color-white);
             color: var(--color-gray-dark);
         }
+    }
+
+    .select-store{
+        display: flex;
+        width: 80%;
+        margin-left: auto;
+        margin-right: auto;
+        margin-bottom: 20px;
+        justify-content: space-around;
+
+        form{
+            
+            .sl-tilte{
+                margin-right: 10px;
+                font-size: 16px;
+            }
+
+            .sl-opt{
+                margin-right: 10px;
+                width: 100px;
+                height: 30px;
+                color: gray;
+            }
+
+            .submit{
+                background: pink;
+                border: 1px solid pink;
+                width: 50px;
+                height: 30px;
+                color: white;
+                font-size: 10px;
+                text-align: center;
+            }
+        }
+        
     }
     .cards{
         margin-top: 1rem;
@@ -406,14 +442,46 @@ main{
     margin-top: 20px;
  }
 
- /* ============= Canvas ==================== */
- canvas#chart{
-    background:var(--color-white);
-    max-width: 100%;
-    margin-top: 2rem;
-    border-radius: var(--card-border-radius);
-    padding: var(--card-padding);
+ .order-report{
+    margin-top: 30px;
+    .last-orders{
+        table {
+            width: 50%;
+            text-align: center;
+
+            td{
+                padding: 20px 0;
+                border-bottom: 1px solid #ddd;
+
+                
+            }  
+
+            th {
+                padding-bottom: 10px;
+                font-size: 12px;
+                text-transform: uppercase;
+                color: #333;
+                border-collapse: collapse;
+                border-bottom: 1px solid #ddd;   
+            }     
+           a {
+                    font-size: 12px;
+                    color: black;
+                    text-decoration: none;
+                }
+ 
+            }
+
+            p{
+                  font-size: 12px;  
+                  color: #333;
+                  
+            }
+        }
+    
  }
+
+
 
  
 
