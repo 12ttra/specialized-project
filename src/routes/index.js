@@ -15,6 +15,10 @@ function route(app){
     app.use('/admin/dashboard',(req, res)=>{
         res.render('admin/dashboard', { title: 'Dashboard', layout: 'admin' });
     })
+    app.use('/admin/newproduct',(req, res)=>{
+        res.render('admin/newproduct',{ title: 'New Product', layout: 'admin' });
+    })
+    
     app.get('/', (req, res) => {
         res.render('home');
     })
