@@ -676,6 +676,57 @@ body {
     background-color: white;
     border: none; }
 
+.form-filter .filter {
+  margin-top: 20px;
+  display: flex;
+  gap: 3rem;
+  justify-content: center; }
+  .form-filter .filter .dropbtn {
+    background-color: white;
+    color: gray;
+    border: 1px solid gray;
+    padding: 10px;
+    font-size: 12px;
+    width: 300px;
+    cursor: pointer; }
+  .form-filter .filter .dropbtn:hover,
+  .form-filter .filter .dropbtn:focus {
+    background-color: #efefef;
+    color: black; }
+  .form-filter .filter #myInput {
+    box-sizing: border-box;
+    font-size: 16px;
+    padding: 14px 20px 12px 45px;
+    border: none;
+    border-bottom: 1px solid #ddd;
+    width: 300px; }
+  .form-filter .filter #myInput:focus {
+    outline: 3px solid #ddd; }
+  .form-filter .filter .dropdown {
+    position: relative;
+    display: inline-block; }
+  .form-filter .filter .dropdown-content {
+    display: none;
+    position: absolute;
+    background-color: #f6f6f6;
+    min-width: 230px;
+    overflow: auto;
+    border: 1px solid #ddd;
+    z-index: 1;
+    width: 300px; }
+  .form-filter .filter .dropdown-content a {
+    color: black;
+    padding: 12px 16px;
+    text-decoration: none;
+    display: block; }
+  .form-filter .filter .dropdown a:hover {
+    background-color: #ddd; }
+  .form-filter .filter .show {
+    display: block; }
+  .form-filter .filter .filter-btn input {
+    font-size: 12px;
+    padding: 8px; }
+
 .container {
   margin-top: 80px; }
 

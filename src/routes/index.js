@@ -18,7 +18,12 @@ function route(app){
     app.use('/admin/newproduct',(req, res)=>{
         res.render('admin/newproduct',{ title: 'New Product', layout: 'admin' });
     })
-    
+    app.use('/admin/updateproduct',(req, res)=>{
+        res.render('admin/updateproduct',{ title: 'edit product', layout: 'admin' });
+    })
+    app.use('/admin/order-grid',(req, res)=>{
+        res.render('admin/order-grid',{ title: 'edit product', layout: 'admin' });
+    })
     app.get('/', (req, res) => {
         res.render('home');
     })

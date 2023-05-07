@@ -1,9 +1,10 @@
 @import url('https://fonts.googleapis.com/css2?family=Noto+Sans+Mono:wght@400;500&family=Space+Mono:wght@400;700&display=swap');
 
 $fontTilte: monospace, 'Space Mono';
+
 #catelog-cart {
     //Cart 
-    
+
     .container {
         max-width: 101vw;
         width: 100%;
@@ -16,27 +17,32 @@ $fontTilte: monospace, 'Space Mono';
             font-size: 40px;
             font-weight: 900;
             text-align: center;
-            
+
         }
     }
-    .sprezza-page-controller{
+
+    .sprezza-page-controller {
         display: flex;
         justify-content: center;
         margin-top: 50px;
-        .sprezza-icon-button-left{
-                text-align: right;
-                margin-right: 0.9375rem;
+
+        .sprezza-icon-button-left {
+            text-align: right;
+            margin-right: 0.9375rem;
         }
-        button{
+
+        button {
             cursor: pointer;
-            .arrow-img{
-                img{
+
+            .arrow-img {
+                img {
                     width: 20px;
                     height: 20px;
                 }
             }
-        } 
-        .button-no-outline{
+        }
+
+        .button-no-outline {
             display: flex;
             padding: 0;
             color: #4f4b4b;
@@ -50,10 +56,11 @@ $fontTilte: monospace, 'Space Mono';
             outline: 0;
             margin: 0;
             margin-left: 20px;
-            margin-right: 20px; 
-            
+            margin-right: 20px;
+
         }
-        .sprezza-icon-button{
+
+        .sprezza-icon-button {
             background-color: white;
             border: none;
         }
@@ -61,4 +68,76 @@ $fontTilte: monospace, 'Space Mono';
     }
 }
 
+.form-filter {
+    .filter {
+        margin-top: 20px;
+        display: flex;
+        gap:3rem;
+        justify-content: center;
+        .dropbtn {
+            background-color: white;
+            color: gray;
+            border: 1px solid gray;
+            padding: 10px;
+            font-size: 12px;
+           width: 300px;
+            cursor: pointer;
+        }
 
+        .dropbtn:hover,
+        .dropbtn:focus {
+            background-color:#efefef;
+            color: black;
+        }
+
+        #myInput  {
+            box-sizing: border-box;
+            font-size: 16px;
+            padding: 14px 20px 12px 45px;
+            border: none;
+            border-bottom: 1px solid #ddd;
+            width: 300px;
+        }
+
+        #myInput:focus {
+            outline: 3px solid #ddd;
+        }
+
+        .dropdown {
+            position: relative;
+            display: inline-block;
+        }
+
+        .dropdown-content {
+            display: none;
+            position: absolute;
+            background-color: #f6f6f6;
+            min-width: 230px;
+            overflow: auto;
+            border: 1px solid #ddd;
+            z-index: 1;
+            width: 300px;
+        }
+
+        .dropdown-content a {
+            color: black;
+            padding: 12px 16px;
+            text-decoration: none;
+            display: block;
+        }
+
+        .dropdown a:hover {
+            background-color: #ddd;
+        }
+
+        .show {
+            display: block;
+        }
+        .filter-btn{
+            input{
+                font-size: 12px;
+                padding: 8px;
+            }
+        }
+    }
+}
