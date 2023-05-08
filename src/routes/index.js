@@ -24,6 +24,9 @@ function route(app){
     app.use('/admin/order-grid',(req, res)=>{
         res.render('admin/order-grid',{ title: 'edit product', layout: 'admin' });
     })
+    app.use('/admin/invoice-grid',(req, res)=>{
+        res.render('admin/invoice-grid',{ title: 'edit product', layout: 'admin' });
+    })
     app.get('/', (req, res) => {
         res.render('home');
     })
