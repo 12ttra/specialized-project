@@ -27,6 +27,18 @@ function route(app){
     app.use('/admin/invoice-grid',(req, res)=>{
         res.render('admin/invoice-grid',{ title: 'edit product', layout: 'admin' });
     })
+    app.use('/admin/shipment-grid',(req, res)=>{
+        res.render('admin/shipment-grid',{ title: 'edit product', layout: 'admin' });
+    })
+    app.use('/admin/product-grid',(req, res)=>{
+        res.render('admin/product-grid',{ title: 'edit product', layout: 'admin' });
+    })
+    app.use('/admin/customer-grid',(req, res)=>{
+        res.render('admin/customer-grid',{ title: 'edit product', layout: 'admin' });
+    })
+    app.use('/admin/seller-grid',(req, res)=>{
+        res.render('admin/seller-grid',{ title: 'edit product', layout: 'admin' });
+    })
     app.get('/', (req, res) => {
         res.render('home');
     })
