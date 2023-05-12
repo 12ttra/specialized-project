@@ -1,10 +1,10 @@
 const express = require('express');
 const router = express.Router();
-const accountControler = require("../app/controllers/AccountController");
+const accountController = require("../controller/AccountController");
 
-router.use('/login', accountControler.login)
-router.use('/register',accountControler.register)
-router.use('/information',accountControler.information)
+router.post('/login', accountController.logIn)
+router.post('/register',accountController.signUp)
+//router.post('/information',AccountControler.information)
 
 
 

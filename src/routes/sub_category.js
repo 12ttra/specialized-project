@@ -1,16 +1,16 @@
 const express = require("express");
 const router = express.Router();
-const categoryController = require("../controller/CategoryController");
+const subCategoryController = require("../controller/SubCategoryController");
 const auth = require("../middleware/auth_middleware");
 
 router
   .use(auth)
   .route("/")
-  .get(categoryController.getAllCategories);
+  .get(subCategoryController.getAllSubCategories);
 
 router
   .use(auth)
   .route("/:id")
-  .get(categoryController.getOneCategory);
+  .get(subCategoryController.getOneSubCategory);
 
 module.exports = router;
