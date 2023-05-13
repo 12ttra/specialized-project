@@ -4,6 +4,15 @@ var jwt = require("jsonwebtoken");
 const saltRounds = 10;
 
 class AccountController{
+
+  information(req, res){
+    return res.render('pages/information', { title: 'Account Information' });
+  }
+
+  store(req, res){
+    return res.render('pages/register', { title: 'Register Store', layout: 'no-header-footer' });
+  }
+
   async signUp(req, res){
     try {
       if (!req.body.email || !req.body.name || !req.body.password) {
