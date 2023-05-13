@@ -29,7 +29,7 @@
                     <i class="fa fa-shopping-bag" aria-hidden="true"></i>
                     <h4>My order</h4>
                 </a>
-                 <a href="#" class="sidebar-opt">
+                <a href="#" class="sidebar-opt">
                     <i class="fa fa-shopping-bag" aria-hidden="true"></i>
                     <h4>My shop</h4>
                 </a>
@@ -37,34 +37,343 @@
         </aside>
         <!-- END ASIDE -->
 
-          
-          <section class="right">
-                <div class="form-right">
-                    
-                    <!-- Click my account-->
-                    <div class="myaccount">
-                        <div class="form-right-tilte">
+
+        <section class="right">
+            <div class="form-right">
+
+                <!-- Click my account-->
+                <div class="myaccount">
+                    <div class="form-right-tilte">
                         <h2>My Profile</h2>
                         <p>Manage profile information for account security.</p>
                     </div>
+                    <div class="form-right-content">
+                        <div class="form-left">
+                            <form action="" class="form-infor">
+                                <table class="tb-infor-account">
+                                    <tr>
+                                        <td class="user-1 ">
+                                            <p>Username
+                                            <p>
+                                        </td>
+                                        <td class="user-1-1">
+                                            <p>Xrnhy2910129</p>
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td class="user-1 ">
+                                            <p>Name
+                                            <p>
+                                        </td>
+                                        <td class="user-1-1">
+                                            <input type="text" placeholder="Thanh Nhy">
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td class="user-1">
+                                            <p>Email</p>
+                                        </td>
+                                        <td class="user-1-1">
+                                            <div class="email-1">
+                                                <div class="email-1-1">xr*******@gmail.com</div>
+                                                <button class="change-btn">Change</button>
+                                            </div>
+                                        </td>
+                                    </tr>
+
+
+                                    <tr>
+                                        <td class="user-1">
+                                            <p>Phone</p>
+                                        </td>
+                                        <td class="user-1-1">
+                                            <div class="email-1">
+                                                <div class="email-1-1">0898**888*</div>
+                                                <button class="change-btn">Change</button>
+                                            </div>
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td class="user-1">
+                                            <p>Address
+                                            <p>
+                                        </td>
+                                        <td class="user-1-1 email-1">
+                                            <p>19 52 ThuDuc City, HCM City</p>
+                                            <button class="change-btn">Change</button>
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td class="user-1">
+                                            <p>Gender</p>
+                                        </td>
+                                        <td class="user-1-1">
+                                            <input checked="checked" name="gender" type="radio" value="Man" /> Man
+                                            <input name="gender" type="radio" value="Woman" /> Woman
+                                            <input name="gender" type="radio" value="Others" /> Other
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td class="user-1">
+                                            <p>Birthday</p>
+                                        </td>
+                                        <td class="user-1-1">
+                                            <input type="date" name="bday">
+
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td class="user-1">
+                                        </td>
+                                        <td class="user-1-1-1">
+                                            <button type="button" class="btn btn-solid-primary btn--m btn--inline"
+                                                aria-disabled="false">Save</button>
+                                        </td>
+                                    </tr>
+                                </table>
+                            </form>
+                        </div>
+                        <div class="form-right">
+                            <div class="form-right-wrapper">
+                                <div class="img-wrapper">
+                                    <div class="img-bg" style="background-image: url(/images/avatar/avatar.jpeg);">
+                                    </div>
+                                </div>
+                                <input class="note" type="file" accept=".jpg,.jpeg,.png">
+                                <button type="button" class="btn btn-light btn--m btn--inline">Select Image</button>
+                                <div class="warning">
+                                    <div class="noti">Maximum capacity: 1 MB</div>
+                                    <div class="noti">Format:.JPEG, .PNG</div>
+                                </div>
+                            </div>
+                        </div>
+
+                    </div>
+                </div>
+                <!-- END click my account -->
+                <!-- ============================= CLICK Change password =================================== -->
+
+                <div class="change-password">
+
+                </div>
+
+                <!-- ============================= END Change password =================================== -->
+
+
+                <!-- ============================= CLICK MY ORDERS =================================== -->
+
+                <div class="my-order">
+                    <div class="my-order-wrapper">
+                        <div class="form-right-tilte">
+                            <h2>My Order</h2>
+                            <p>See more ... </p>
+                        </div>
+
+                        <div class="nav-my-order">
+                            <a href="#" class="title-nav active-default">
+                                <span class="title-nav-1">All</span>
+                            </a>
+                            <a href="#" class="title-nav">
+                                <span class="title-nav-1">Being Transported</span>
+                            </a>
+                            <a href="#" class="title-nav">
+                                <span class="title-nav-1">Complete</span>
+                            </a>
+                            <a href="#" class="title-nav">
+                                <span class="title-nav-1">Return/Refund</span>
+                            </a>
+                        </div>
+                        <div class="search-myorder">
+                            <i class="fa fa-search" aria-hidden="true"></i>
+                            <input autocomplete="off"
+                                placeholder="You can search by Shop name, Order ID or Product Name" value="">
+                        </div>
+
+                        <div class="id-order">
+                            <div class="id-order-wrapper">
+                                <div class="id-order-1">
+                                    <div class="shop-order">
+                                        <div class="shop-name">
+                                            Hasaki Shop Mall
+                                        </div>
+                                    </div>
+                                    <div class="product-order">
+                                        <div class="product-1">
+                                            <span class="product-1-1">
+                                                <div class="product-order-0">
+                                                    <div class="img-product">
+                                                        <img src="/images/image-product/product2_1.jpeg" alt="">
+                                                    </div>
+                                                    <div class="_7uZf6Q">
+                                                        <div>
+                                                            <div class="iJlxsT">
+                                                                <span class="x5GTyN">Black dress sexy bufferline by
+                                                                    SBHN</span>
+                                                            </div>
+                                                        </div>
+                                                        <div>
+                                                            <div class="vb0b-P">Color: Black</div>
+                                                            <div class="_3F1-5M">x1</div>
+                                                        </div>
+                                                    </div>
+                                                    <div class="_9UJGhr">
+                                                        <div>
+                                                            <span class="j2En5+">₫59.000</span>
+                                                            <span class="-x3Dqh OkfGBc">₫30.000</span>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </span>
+                                        </div>
+                                    </div>
+
+                                    <div class="product-order">
+                                        <div class="product-1">
+                                            <span class="product-1-1">
+                                                <div class="product-order-0">
+                                                    <div class="img-product">
+                                                        <img src="/images/image-product/product3_1.jpeg" alt="">
+                                                    </div>
+                                                    <div class="_7uZf6Q">
+                                                        <div>
+                                                            <div class="iJlxsT">
+                                                                <span class="x5GTyN">Black dress sexy bufferline by
+                                                                    SBHN</span>
+                                                            </div>
+                                                        </div>
+                                                        <div>
+                                                            <div class="vb0b-P">Color: Black</div>
+                                                            <div class="_3F1-5M">x1</div>
+                                                        </div>
+                                                    </div>
+                                                    <div class="_9UJGhr">
+                                                        <div>
+                                                            <span class="j2En5+">₫59.000</span>
+                                                            <span class="-x3Dqh OkfGBc">₫30.000</span>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </span>
+                                        </div>
+                                    </div>
+
+                                    <div class="product-order">
+                                        <div class="product-1">
+                                            <span class="product-1-1">
+                                                <div class="product-order-0">
+                                                    <div class="img-product">
+                                                        <img src="/images/image-product/product1_1.jpeg" alt="">
+                                                    </div>
+                                                    <div class="_7uZf6Q">
+                                                        <div>
+                                                            <div class="iJlxsT">
+                                                                <span class="x5GTyN">Black dress sexy bufferline by
+                                                                    SBHN</span>
+                                                            </div>
+                                                        </div>
+                                                        <div>
+                                                            <div class="vb0b-P">Color: Black</div>
+                                                            <div class="_3F1-5M">x1</div>
+                                                        </div>
+                                                    </div>
+                                                    <div class="_9UJGhr">
+                                                        <div>
+                                                            <span class="j2En5+">₫59.000</span>
+                                                            <span class="-x3Dqh OkfGBc">₫30.000</span>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </span>
+                                        </div>
+                                    </div>
+
+                                    <div class="product-order">
+                                        <div class="product-1">
+                                            <span class="product-1-1">
+                                                <div class="product-order-0">
+                                                    <div class="img-product">
+                                                        <img src="/images/image-product/product8_1.jpeg" alt="">
+                                                    </div>
+                                                    <div class="_7uZf6Q">
+                                                        <div>
+                                                            <div class="iJlxsT">
+                                                                <span class="x5GTyN">Black dress sexy bufferline by
+                                                                    SBHN</span>
+                                                            </div>
+                                                        </div>
+                                                        <div>
+                                                            <div class="vb0b-P">Color: Black</div>
+                                                            <div class="_3F1-5M">x1</div>
+                                                        </div>
+                                                    </div>
+                                                    <div class="_9UJGhr">
+                                                        <div>
+                                                            <span class="j2En5+">₫59.000</span>
+                                                            <span class="-x3Dqh OkfGBc">₫30.000</span>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </span>
+                                        </div>
+                                    </div>
+
+                                    <div class="product-order">
+                                        <div class="product-1">
+                                            <span class="product-1-1">
+                                                <div class="product-order-0">
+                                                    <div class="img-product">
+                                                        <img src="/images/image-product/product5_1.jpeg" alt="">
+                                                    </div>
+                                                    <div class="_7uZf6Q">
+                                                        <div>
+                                                            <div class="iJlxsT">
+                                                                <span class="x5GTyN">Black dress sexy bufferline by
+                                                                    SBHN</span>
+                                                            </div>
+                                                        </div>
+                                                        <div>
+                                                            <div class="vb0b-P">Color: Black</div>
+                                                            <div class="_3F1-5M">x1</div>
+                                                        </div>
+                                                    </div>
+                                                    <div class="_9UJGhr">
+                                                        <div>
+                                                            <span class="j2En5+">₫59.000</span>
+                                                            <span class="-x3Dqh OkfGBc">₫30.000</span>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </span>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                    </div>
+                </div>
+
+                <!-- ============================= END CLICK MY ORDERS =================================== -->
+
+                <!-- ============================= CLICK MY SHOP =================================== -->
+
+                <div class="my-shop">
+                    <div class="my-shop-wrapper">
+                        <div class="form-right-tilte">
+                            <h2>My Shop</h2>
+                            <p><a href="" class="sign-up">Sign up</a> to be a seller and post your items today!</p>
+                        </div>
                         <div class="form-right-content">
                             <div class="form-left">
-                                 <form action="" class="form-infor">
+                                <form action="" class="form-infor">
                                     <table class="tb-infor-account">
                                         <tr>
                                             <td class="user-1 ">
-                                                <p>Username<p>
+                                                <p>Shop name
+                                                <p>
                                             </td>
                                             <td class="user-1-1">
-                                                <p >Xrnhy2910129</p>
-                                            </td>
-                                        </tr>
-                                        <tr>
-                                            <td class="user-1 ">
-                                                <p>Name<p>
-                                            </td>
-                                            <td class="user-1-1">
-                                                <input type="text" placeholder="Thanh Nhy">
+                                                <p>Nhy Thanh </p>
                                             </td>
                                         </tr>
                                         <tr>
@@ -79,7 +388,7 @@
                                             </td>
                                         </tr>
 
-                                        
+
                                         <tr>
                                             <td class="user-1">
                                                 <p>Phone</p>
@@ -91,43 +400,39 @@
                                                 </div>
                                             </td>
                                         </tr>
-                                         <tr>
+                                        <tr>
                                             <td class="user-1">
-                                                <p>Address<p>
+                                                <p>Address
+                                                <p>
                                             </td>
                                             <td class="user-1-1 email-1">
-                                                <p >19 52 ThuDuc City, HCM City</p>
+                                                <p>19 52 ThuDuc City, HCM City</p>
                                                 <button class="change-btn">Change</button>
                                             </td>
                                         </tr>
                                         <tr>
                                             <td class="user-1">
-                                               <p>Gender</p>
+                                                <p>Type of product</p>
                                             </td>
                                             <td class="user-1-1">
-                                                    <input checked="checked" name="gender" type="radio" value="Man" /> Man
-                                                    <input name="gender" type="radio" value="Woman" /> Woman
-                                                    <input name="gender" type="radio" value="Others" /> Other  
+                                                <input checked="checked" name="type" type="radio" value="New" /> NEW
+                                                CLOTHES
+                                                <input name="type" type="radio" value="Secondhand" /> SECONDHAND
+                                                <input name="type" type="radio" value="Both" /> BOTH
                                             </td>
                                         </tr>
-                                        <tr>
-                                            <td class="user-1">
-                                               <p>Birthday</p>
-                                            </td>
-                                            <td class="user-1-1">
-                                                    <input type="date" name="bday">
-                                            
-                                            </td>
-                                        </tr>
+
                                         <tr>
                                             <td class="user-1">
                                             </td>
                                             <td class="user-1-1-1">
-                                                 <button type="button" class="btn btn-solid-primary btn--m btn--inline" aria-disabled="false">Lưu</button>
+                                                <button type="button" class="btn btn-solid-primary btn--m btn--inline"
+                                                    aria-disabled="false">Go to Shop</button>
                                             </td>
                                         </tr>
                                     </table>
-                                 </form>
+                                </form>
+                                
                             </div>
                             <div class="form-right">
                                 <div class="form-right-wrapper">
@@ -143,227 +448,171 @@
                                     </div>
                                 </div>
                             </div>
-                       
-                    </div>
-                    </div>
- <!-- END click my account -->
-        <!-- ============================= CLICK Change password =================================== -->
-
-<div class="change-password">
-
-</div>
-
-<!-- ============================= END Change password =================================== -->
-
-
-<!-- ============================= CLICK MY ORDERS =================================== -->
-
-<div class="my-order">
-    <div class="my-order-wrapper">
-        <div class="form-right-tilte">
-            <h2>My Order</h2>
-            <p>See more ... </p>
-        </div>
-
-        <div class="nav-my-order">
-            <a href="#" class="title-nav active-default">
-                <span class="title-nav-1">All</span>
-            </a>
-            <a href="#" class="title-nav">
-                <span class="title-nav-1">Being Transported</span>
-            </a>
-             <a href="#" class="title-nav">
-                <span class="title-nav-1">Complete</span>
-            </a>
-             <a href="#" class="title-nav">
-                <span class="title-nav-1">Return/Refund</span>
-            </a>
-        </div>
-        <div class="search-myorder">
-            <i class="fa fa-search" aria-hidden="true"></i>
-            <input autocomplete="off" placeholder="You can search by Shop name, Order ID or Product Name" value="">
-        </div>
-
-        <div class="id-order">
-            <div class="id-order-wrapper">
-                <div class="id-order-1">
-                    <div class="shop-order">
-                        <div class="shop-name">
-                            Hasaki Shop Mall
+                            
                         </div>
-                    </div>
-                    <div class="product-order">
-                        <div class="product-1">
-                            <span class="product-1-1">
-                                <div class="product-order-0">
-                                    <div class="img-product">
-                                        <img src="/images/image-product/product2_1.jpeg" alt="">
-                                    </div>
-                                    <div class="_7uZf6Q">
-                                        <div>
-                                            <div class="iJlxsT">
-                                                <span class="x5GTyN">Black dress sexy bufferline by SBHN</span>
+                        <div class="product-of-shop-wrapper">
+                            <h2 class="title-product-shop">Product in your Shop</h2>
+                                    <div class="product-wrapper">
+                                        <div class="product-wrapper-item">
+                                            <div class="product-item-slider">
+                                                <div class="product-item-img product-avatar"><img
+                                                        src="/images/image-product/product3_1.jpeg" alt="Image 1"></div>
+                                                <div class="product-item-img"><img
+                                                        src="/images/image-product/product1_2.jpeg" alt="Image2"></div>
+                                                <div class="product-item-img"><img
+                                                        src="/images/image-product/product1_1.jpeg" alt="Image 1"></div>
+                                            </div>
+                                            <div class="product-item-descrip ">
+                                                <div class="css-product-item">
+                                                    <a href="/product/view/:id">Dress| Champage so sexy by HN</a>
+
                                                 </div>
+                                                <div class="css-product-item-price">
+                                                    <span class="product-item-price old-price">$20</span>
+                                                    <span class="product-item-price new-price">$18 </span>
+                                                </div>
+                                                <span class="sold">BOUGHT : 10</span>
+                                                <div class="icon-product ">
+                                                    <div class="coupon">
+                                                        <img class="img-icon voucher"
+                                                            src="/images/iconheader/coupon20.svg" alt="coupon">
+                                                    </div>
+                                                    <div class="wishlish">
+                                                        <img class="img-icon wishlist"
+                                                            src="/images/iconheader/heart.svg" alt="wishlist">
+                                                    </div>
+                                                    <div class="add">
+                                                        <img class="img-icon img-buynow"
+                                                            src="/images/iconheader/white-shopping-bag.svg"
+                                                            alt="btn buy now">
+                                                    </div>
+                                                </div>
+                                            </div>
                                         </div>
-                                        <div>
-                                                <div class="vb0b-P">Color: Black</div>
-                                                <div class="_3F1-5M">x1</div>
+
+                                          <div class="product-wrapper-item">
+                                            <div class="product-item-slider">
+                                                <div class="product-item-img product-avatar"><img
+                                                        src="/images/image-product/product2_1.jpeg" alt="Image 1"></div>
+                                                <div class="product-item-img"><img
+                                                        src="/images/image-product/product3_2.jpeg" alt="Image2"></div>
+                                                <div class="product-item-img"><img
+                                                        src="/images/image-product/product1_1.jpeg" alt="Image 1"></div>
+                                            </div>
+                                            <div class="product-item-descrip ">
+                                                <div class="css-product-item">
+                                                    <a href="/product/view/:id">Dress| Champage so sexy by HN</a>
+
+                                                </div>
+                                                <div class="css-product-item-price">
+                                                    <span class="product-item-price old-price">$20</span>
+                                                    <span class="product-item-price new-price">$18 </span>
+                                                </div>
+                                                <span class="sold">BOUGHT : 10</span>
+                                                <div class="icon-product ">
+                                                    <div class="coupon">
+                                                        <img class="img-icon voucher"
+                                                            src="/images/iconheader/coupon20.svg" alt="coupon">
+                                                    </div>
+                                                    <div class="wishlish">
+                                                        <img class="img-icon wishlist"
+                                                            src="/images/iconheader/heart.svg" alt="wishlist">
+                                                    </div>
+                                                    <div class="add">
+                                                        <img class="img-icon img-buynow"
+                                                            src="/images/iconheader/white-shopping-bag.svg"
+                                                            alt="btn buy now">
+                                                    </div>
+                                                </div>
+                                            </div>
                                         </div>
-                                    </div>
-                                    <div class="_9UJGhr">
-                                        <div>
-                                            <span class="j2En5+">₫59.000</span>
-                                            <span class="-x3Dqh OkfGBc">₫30.000</span>
+
+                                         
+                                         <div class="product-wrapper-item">
+                                            <div class="product-item-slider">
+                                                <div class="product-item-img product-avatar"><img
+                                                        src="/images/image-product/product1_2.jpeg" alt="Image 1"></div>
+                                                <div class="product-item-img"><img
+                                                        src="/images/image-product/product1_2.jpeg" alt="Image2"></div>
+                                                <div class="product-item-img"><img
+                                                        src="/images/image-product/product1_1.jpeg" alt="Image 1"></div>
+                                            </div>
+                                            <div class="product-item-descrip ">
+                                                <div class="css-product-item">
+                                                    <a href="/product/view/:id">Dress| Champage so sexy by HN</a>
+
+                                                </div>
+                                                <div class="css-product-item-price">
+                                                    <span class="product-item-price old-price">$20</span>
+                                                    <span class="product-item-price new-price">$18 </span>
+                                                </div>
+                                                <span class="sold">BOUGHT : 10</span>
+                                                <div class="icon-product ">
+                                                    <div class="coupon">
+                                                        <img class="img-icon voucher"
+                                                            src="/images/iconheader/coupon20.svg" alt="coupon">
+                                                    </div>
+                                                    <div class="wishlish">
+                                                        <img class="img-icon wishlist"
+                                                            src="/images/iconheader/heart.svg" alt="wishlist">
+                                                    </div>
+                                                    <div class="add">
+                                                        <img class="img-icon img-buynow"
+                                                            src="/images/iconheader/white-shopping-bag.svg"
+                                                            alt="btn buy now">
+                                                    </div>
+                                                </div>
+                                            </div>
                                         </div>
+                                        
                                     </div>
                                 </div>
-                            </span>
-                        </div>
-                    </div>
-
-                     <div class="product-order">
-                        <div class="product-1">
-                            <span class="product-1-1">
-                                <div class="product-order-0">
-                                    <div class="img-product">
-                                        <img src="/images/image-product/product3_1.jpeg" alt="">
-                                    </div>
-                                    <div class="_7uZf6Q">
-                                        <div>
-                                            <div class="iJlxsT">
-                                                <span class="x5GTyN">Black dress sexy bufferline by SBHN</span>
-                                                </div>
-                                        </div>
-                                        <div>
-                                                <div class="vb0b-P">Color: Black</div>
-                                                <div class="_3F1-5M">x1</div>
-                                        </div>
-                                    </div>
-                                    <div class="_9UJGhr">
-                                        <div>
-                                            <span class="j2En5+">₫59.000</span>
-                                            <span class="-x3Dqh OkfGBc">₫30.000</span>
-                                        </div>
-                                    </div>
-                                </div>
-                            </span>
-                        </div>
-                    </div>
-
-                     <div class="product-order">
-                        <div class="product-1">
-                            <span class="product-1-1">
-                                <div class="product-order-0">
-                                    <div class="img-product">
-                                        <img src="/images/image-product/product1_1.jpeg" alt="">
-                                    </div>
-                                    <div class="_7uZf6Q">
-                                        <div>
-                                            <div class="iJlxsT">
-                                                <span class="x5GTyN">Black dress sexy bufferline by SBHN</span>
-                                                </div>
-                                        </div>
-                                        <div>
-                                                <div class="vb0b-P">Color: Black</div>
-                                                <div class="_3F1-5M">x1</div>
-                                        </div>
-                                    </div>
-                                    <div class="_9UJGhr">
-                                        <div>
-                                            <span class="j2En5+">₫59.000</span>
-                                            <span class="-x3Dqh OkfGBc">₫30.000</span>
-                                        </div>
-                                    </div>
-                                </div>
-                            </span>
-                        </div>
-                    </div>
-
-                     <div class="product-order">
-                        <div class="product-1">
-                            <span class="product-1-1">
-                                <div class="product-order-0">
-                                    <div class="img-product">
-                                        <img src="/images/image-product/product8_1.jpeg" alt="">
-                                    </div>
-                                    <div class="_7uZf6Q">
-                                        <div>
-                                            <div class="iJlxsT">
-                                                <span class="x5GTyN">Black dress sexy bufferline by SBHN</span>
-                                                </div>
-                                        </div>
-                                        <div>
-                                                <div class="vb0b-P">Color: Black</div>
-                                                <div class="_3F1-5M">x1</div>
-                                        </div>
-                                    </div>
-                                    <div class="_9UJGhr">
-                                        <div>
-                                            <span class="j2En5+">₫59.000</span>
-                                            <span class="-x3Dqh OkfGBc">₫30.000</span>
-                                        </div>
-                                    </div>
-                                </div>
-                            </span>
-                        </div>
-                    </div>
-
-                     <div class="product-order">
-                        <div class="product-1">
-                            <span class="product-1-1">
-                                <div class="product-order-0">
-                                    <div class="img-product">
-                                        <img src="/images/image-product/product5_1.jpeg" alt="">
-                                    </div>
-                                    <div class="_7uZf6Q">
-                                        <div>
-                                            <div class="iJlxsT">
-                                                <span class="x5GTyN">Black dress sexy bufferline by SBHN</span>
-                                                </div>
-                                        </div>
-                                        <div>
-                                                <div class="vb0b-P">Color: Black</div>
-                                                <div class="_3F1-5M">x1</div>
-                                        </div>
-                                    </div>
-                                    <div class="_9UJGhr">
-                                        <div>
-                                            <span class="j2En5+">₫59.000</span>
-                                            <span class="-x3Dqh OkfGBc">₫30.000</span>
-                                        </div>
-                                    </div>
-                                </div>
-                            </span>
-                        </div>
                     </div>
                 </div>
+
+                <!-- ============================= END CLICK MY ORDERS =================================== -->
+
             </div>
-        </div>
+        </section>
 
-    </div>
-</div>
-
-<!-- ============================= END CLICK MY ORDERS =================================== -->
-
-<!-- ============================= CLICK MY SHOP =================================== -->
-
-<div class="my-shop">
-    <div class="my-shop-wrapper">
-        <div class="form-right-tilte">
-            <h2>My Shop</h2>
-            <p><a href="">Sign up</a> to be a seller and post your items today!</p>
-        </div>
-    </div>
-</div>
-
-<!-- ============================= END CLICK MY ORDERS =================================== -->
-
-                </div>
-          </section>
-         
     </div>
 </div>
 
 <!-- ============================= END DIV ACCOUNT INFORMATION =================================== -->
 
+<script>
+    /* When the user clicks on the button,
+    toggle between hiding and showing the dropdown content */
+    function myFunction() {
+        document.getElementById("myDropdown").classList.toggle("show");
+    }
 
+    function filterFunction() {
+        var input, filter, ul, li, a, i;
+        input = document.getElementById("myInput");
+        filter = input.value.toUpperCase();
+        div = document.getElementById("myDropdown");
+        a = div.getElementsByTagName("a");
+        for (i = 0; i < a.length; i++) {
+            txtValue = a[i].textContent || a[i].innerText;
+            if (txtValue.toUpperCase().indexOf(filter) > -1) {
+                a[i].style.display = "";
+            } else {
+                a[i].style.display = "none";
+            }
+        }
+    }
+</script>
+
+<script type="text/javascript" src="//code.jquery.com/jquery-1.11.0.min.js"></script>
+<script type="text/javascript" src="//code.jquery.com/jquery-migrate-1.2.1.min.js"></script>
+<script type="text/javascript" src="//cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.min.js"></script>
+<script>
+    $(document).ready(function () {
+        $('.product-item-slider').slick({
+            arrows: false,
+            autoplaySpeed: 2000,
+            autoplay: false,
+        });
+    });
+</script>

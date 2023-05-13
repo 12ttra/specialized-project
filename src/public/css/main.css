@@ -1265,28 +1265,28 @@ body {
         border: 1px solid pink; }
 
 :root {
-  --color-white:#ffff;
+  --color-white: #ffff;
   --color-light: #f0f1f7;
-  --color-gray-light:#86848c;
+  --color-gray-light: #86848c;
   --color-gray-dark: #56555e;
-  --color-dark: #27282f ;
-  --color-primary:pink;
-  --color-success: rgb(34,202,75);
+  --color-dark: #27282f;
+  --color-primary: pink;
+  --color-success: rgb(34, 202, 75);
   --color-danger: rgb(235, 72, 72);
-  --color-warning:rgb(234,181,7);
+  --color-warning: rgb(234, 181, 7);
   --color-purple: rgb(180, 97, 232);
-  --color-primary-light:rgba(255,20,147,0.5);
-  --color-success-light:rgba(34,202,75,0.2);
-  --color-danger-light: rgba(46,41,41,0.2);
-  --color-purple-light: rgba(180, 97, 232,0.2);
-  --card-padding:1.6rem;
-  --padding-1:1rem;
-  --padding-2:8px;
+  --color-primary-light: rgba(255, 20, 147, 0.5);
+  --color-success-light: rgba(34, 202, 75, 0.2);
+  --color-danger-light: rgba(46, 41, 41, 0.2);
+  --color-purple-light: rgba(180, 97, 232, 0.2);
+  --card-padding: 1.6rem;
+  --padding-1: 1rem;
+  --padding-2: 8px;
   --card-border-radius: 1.6rem;
   --border-radius-1: 1rem;
   --border-radius-2: 6px;
   --text-color: rgba(159, 179, 184, 0.5);
-  --text-align-right:right; }
+  --text-align-right: right; }
 
 .information-acccount {
   width: 100%; }
@@ -1364,7 +1364,7 @@ body {
         .information-acccount .container-profile .sidebar .sub-sidebar-opt:hover span {
           margin-left: 2rem; }
     .information-acccount .container-profile .right {
-      border: 1px solid  #efefef; }
+      border: 1px solid #efefef; }
       .information-acccount .container-profile .right .form-right {
         margin: 0 auto;
         width: 90%;
@@ -1373,169 +1373,171 @@ body {
           margin-top: 20px;
           border-bottom: 1px solid #efefef;
           height: 60px; }
-        .information-acccount .container-profile .right .form-right .myaccount {
-          display: none; }
-          .information-acccount .container-profile .right .form-right .myaccount .form-right-content {
-            margin-top: 20px;
+          .information-acccount .container-profile .right .form-right .form-right-tilte .sign-up {
+            color: red; }
+        .information-acccount .container-profile .right .form-right .form-right-content {
+          margin-top: 20px;
+          display: flex;
+          flex-direction: row;
+          align-items: flex-start; }
+          .information-acccount .container-profile .right .form-right .form-right-content .form-left {
+            flex: 2;
+            padding-right: 3.125rem; }
+            .information-acccount .container-profile .right .form-right .form-right-content .form-left .form-infor table {
+              border-collapse: collapse;
+              border-spacing: 0; }
+            .information-acccount .container-profile .right .form-right .form-right-content .form-left .form-infor .tb-infor-account {
+              width: 602px; }
+          .information-acccount .container-profile .right .form-right .form-right-content .user-1 {
+            color: var(--color-gray-light);
+            text-align: var(--text-align-right);
+            overflow: hidden;
+            padding-bottom: 30px;
+            white-space: nowrap;
+            min-width: 20%;
+            font-size: 14px; }
+          .information-acccount .container-profile .right .form-right .form-right-content .user-1-1 {
+            box-sizing: border-box;
+            padding-left: 20px;
+            padding-bottom: 30px;
+            font-size: 14px;
+            color: #27282f; }
+          .information-acccount .container-profile .right .form-right .form-right-content .email-1 {
+            align-items: center;
+            display: flex; }
+          .information-acccount .container-profile .right .form-right .form-right-content .email-1-1 {
+            font-size: 12px;
+            color: #27282f; }
+          .information-acccount .container-profile .right .form-right .form-right-content .change-btn {
+            border: 0;
+            padding-left: 10px;
+            outline: none;
+            background: none;
+            color: pink;
+            font-size: 14px;
+            text-transform: capitalize;
+            text-decoration: underline; }
+          .information-acccount .container-profile .right .form-right .form-right-content .user-1-1-1 .btn-solid-primary {
+            color: #fff;
+            position: relative;
+            overflow: visible;
+            outline: 0;
+            background: var(--color-primary);
+            border: 1px solid var(--color-primary);
+            margin-bottom: 20px; }
+          .information-acccount .container-profile .right .form-right .form-right-content .user-1-1-1 .btn--m {
+            height: 30px;
+            padding: 0 20px;
+            min-width: 70px;
+            max-width: 220px;
+            line-height: 30px; }
+          .information-acccount .container-profile .right .form-right .form-right-content .user-1-1-1 .btn--inline {
+            display: inline-flex; }
+          .information-acccount .container-profile .right .form-right .form-right-content .form-right {
+            flex: 1;
+            justify-content: center;
             display: flex;
-            flex-direction: row;
-            align-items: flex-start; }
-            .information-acccount .container-profile .right .form-right .myaccount .form-right-content .form-left {
-              flex: 2;
-              padding-right: 3.125rem; }
-              .information-acccount .container-profile .right .form-right .myaccount .form-right-content .form-left .form-infor table {
-                border-collapse: collapse;
-                border-spacing: 0; }
-              .information-acccount .container-profile .right .form-right .myaccount .form-right-content .form-left .form-infor .tb-infor-account {
-                width: 602px; }
-            .information-acccount .container-profile .right .form-right .myaccount .form-right-content .user-1 {
-              color: var(--color-gray-light);
-              text-align: var(--text-align-right);
-              overflow: hidden;
-              padding-bottom: 30px;
-              white-space: nowrap;
-              min-width: 20%;
-              font-size: 14px; }
-            .information-acccount .container-profile .right .form-right .myaccount .form-right-content .user-1-1 {
-              box-sizing: border-box;
-              padding-left: 20px;
-              padding-bottom: 30px;
-              font-size: 14px;
-              color: #27282f; }
-            .information-acccount .container-profile .right .form-right .myaccount .form-right-content .email-1 {
+            overflow: hidden;
+            border-left: 0.0625rem solid #efefef; }
+            .information-acccount .container-profile .right .form-right .form-right-content .form-right .form-right-wrapper {
+              max-width: 200px;
+              margin: 0 auto;
+              flex-direction: column;
               align-items: center;
               display: flex; }
-            .information-acccount .container-profile .right .form-right .myaccount .form-right-content .email-1-1 {
-              font-size: 12px;
-              color: #27282f; }
-            .information-acccount .container-profile .right .form-right .myaccount .form-right-content .change-btn {
-              border: 0;
-              padding-left: 10px;
-              outline: none;
-              background: none;
-              color: pink;
-              font-size: 14px;
-              text-transform: capitalize;
-              text-decoration: underline; }
-            .information-acccount .container-profile .right .form-right .myaccount .form-right-content .user-1-1-1 .btn-solid-primary {
-              color: #fff;
-              position: relative;
-              overflow: visible;
-              outline: 0;
-              background: var(--color-primary);
-              border: 1px solid var(--color-primary);
-              margin-bottom: 20px; }
-            .information-acccount .container-profile .right .form-right .myaccount .form-right-content .user-1-1-1 .btn--m {
-              height: 30px;
-              padding: 0 20px;
-              min-width: 70px;
-              max-width: 220px;
-              line-height: 30px; }
-            .information-acccount .container-profile .right .form-right .myaccount .form-right-content .user-1-1-1 .btn--inline {
-              display: inline-flex; }
-            .information-acccount .container-profile .right .form-right .myaccount .form-right-content .form-right {
-              flex: 1;
-              justify-content: center;
-              display: flex;
-              overflow: hidden;
-              border-left: 0.0625rem solid #efefef; }
-              .information-acccount .container-profile .right .form-right .myaccount .form-right-content .form-right .form-right-wrapper {
-                max-width: 200px;
-                margin: 0 auto;
-                flex-direction: column;
+              .information-acccount .container-profile .right .form-right .form-right-content .form-right .form-right-wrapper .img-wrapper {
+                height: 6.25rem;
+                width: 6.25rem;
+                margin: 1.25rem 0;
+                position: relative;
+                justify-content: center;
                 align-items: center;
                 display: flex; }
-                .information-acccount .container-profile .right .form-right .myaccount .form-right-content .form-right .form-right-wrapper .img-wrapper {
-                  height: 6.25rem;
-                  width: 6.25rem;
-                  margin: 1.25rem 0;
-                  position: relative;
-                  justify-content: center;
-                  align-items: center;
-                  display: flex; }
-                  .information-acccount .container-profile .right .form-right .myaccount .form-right-content .form-right .form-right-wrapper .img-wrapper .img-bg {
-                    width: 100%;
-                    height: 100%;
-                    background-position: 50%;
-                    background-size: cover;
-                    background-repeat: no-repeat;
-                    cursor: pointer;
-                    border-radius: 50%; }
-                .information-acccount .container-profile .right .form-right .myaccount .form-right-content .form-right .form-right-wrapper .note {
-                  display: none; }
-                .information-acccount .container-profile .right .form-right .myaccount .form-right-content .form-right .form-right-wrapper input {
-                  line-height: normal; }
-                .information-acccount .container-profile .right .form-right .myaccount .form-right-content .form-right .form-right-wrapper .btn-light {
-                  outline: 0;
-                  background: #fff;
-                  color: #555;
-                  border: 1px solid rgba(0, 0, 0, 0.09);
-                  box-shadow: 0 1px 1px 0 rgba(0, 0, 0, 0.03);
-                  position: relative;
-                  overflow: visible; }
-                .information-acccount .container-profile .right .form-right .myaccount .form-right-content .form-right .form-right-wrapper .btn--m {
-                  height: 40px;
-                  padding: 0 20px;
-                  min-width: 70px;
-                  max-width: 220px; }
-                .information-acccount .container-profile .right .form-right .myaccount .form-right-content .form-right .form-right-wrapper .btn--inline {
-                  display: inline-flex; }
-                .information-acccount .container-profile .right .form-right .myaccount .form-right-content .form-right .form-right-wrapper .btn {
-                  overflow: hidden;
-                  display: -webkit-box;
-                  text-overflow: ellipsis;
-                  -webkit-line-clamp: 1;
-                  flex-direction: column;
-                  font-size: 14px;
-                  box-sizing: border-box;
-                  box-shadow: 0 5px 10px 0 rgba(0, 0, 0, 0.09);
-                  border-radius: 2px;
-                  border: 0;
-                  display: flex;
-                  align-items: center;
-                  justify-content: center;
-                  text-transform: capitalize;
-                  outline: 0;
-                  cursor: pointer; }
-                .information-acccount .container-profile .right .form-right .myaccount .form-right-content .form-right .form-right-wrapper .btn-light {
-                  outline: 0;
-                  background: #fff;
-                  color: #555;
-                  border: 1px solid rgba(0, 0, 0, 0.09);
-                  box-shadow: 0 5px 10px 0 rgba(0, 0, 0, 0.03);
-                  position: relative;
-                  overflow: visible; }
-                .information-acccount .container-profile .right .form-right .myaccount .form-right-content .form-right .form-right-wrapper .btn--m {
-                  height: 40px;
-                  padding: 0 20px;
-                  min-width: 70px;
-                  max-width: 220px; }
-                .information-acccount .container-profile .right .form-right .myaccount .form-right-content .form-right .form-right-wrapper .btn--inline {
-                  display: inline-flex; }
-                .information-acccount .container-profile .right .form-right .myaccount .form-right-content .form-right .form-right-wrapper .btn {
-                  overflow: hidden;
-                  display: -webkit-box;
-                  text-overflow: ellipsis;
-                  -webkit-line-clamp: 1;
-                  flex-direction: column;
-                  font-size: 14px;
-                  box-sizing: border-box;
-                  box-shadow: 0 5px 10px 0 rgba(0, 0, 0, 0.09);
-                  border-radius: 2px;
-                  border: 1px solid grey;
-                  display: flex;
-                  align-items: center;
-                  justify-content: center;
-                  text-transform: capitalize;
-                  outline: 0;
-                  cursor: pointer; }
-                .information-acccount .container-profile .right .form-right .myaccount .form-right-content .form-right .form-right-wrapper .warning {
-                  margin-top: 0.75rem;
-                  display: block; }
-                  .information-acccount .container-profile .right .form-right .myaccount .form-right-content .form-right .form-right-wrapper .warning .noti {
-                    color: #999;
-                    font-size: 10px;
-                    line-height: 1.25rem; }
+                .information-acccount .container-profile .right .form-right .form-right-content .form-right .form-right-wrapper .img-wrapper .img-bg {
+                  width: 100%;
+                  height: 100%;
+                  background-position: 50%;
+                  background-size: cover;
+                  background-repeat: no-repeat;
+                  cursor: pointer;
+                  border-radius: 50%; }
+              .information-acccount .container-profile .right .form-right .form-right-content .form-right .form-right-wrapper .note {
+                display: none; }
+              .information-acccount .container-profile .right .form-right .form-right-content .form-right .form-right-wrapper input {
+                line-height: normal; }
+              .information-acccount .container-profile .right .form-right .form-right-content .form-right .form-right-wrapper .btn-light {
+                outline: 0;
+                background: #fff;
+                color: #555;
+                border: 1px solid rgba(0, 0, 0, 0.09);
+                box-shadow: 0 1px 1px 0 rgba(0, 0, 0, 0.03);
+                position: relative;
+                overflow: visible; }
+              .information-acccount .container-profile .right .form-right .form-right-content .form-right .form-right-wrapper .btn--m {
+                height: 40px;
+                padding: 0 20px;
+                min-width: 70px;
+                max-width: 220px; }
+              .information-acccount .container-profile .right .form-right .form-right-content .form-right .form-right-wrapper .btn--inline {
+                display: inline-flex; }
+              .information-acccount .container-profile .right .form-right .form-right-content .form-right .form-right-wrapper .btn {
+                overflow: hidden;
+                display: -webkit-box;
+                text-overflow: ellipsis;
+                -webkit-line-clamp: 1;
+                flex-direction: column;
+                font-size: 14px;
+                box-sizing: border-box;
+                box-shadow: 0 5px 10px 0 rgba(0, 0, 0, 0.09);
+                border-radius: 2px;
+                border: 0;
+                display: flex;
+                align-items: center;
+                justify-content: center;
+                text-transform: capitalize;
+                outline: 0;
+                cursor: pointer; }
+              .information-acccount .container-profile .right .form-right .form-right-content .form-right .form-right-wrapper .btn-light {
+                outline: 0;
+                background: #fff;
+                color: #555;
+                border: 1px solid rgba(0, 0, 0, 0.09);
+                box-shadow: 0 5px 10px 0 rgba(0, 0, 0, 0.03);
+                position: relative;
+                overflow: visible; }
+              .information-acccount .container-profile .right .form-right .form-right-content .form-right .form-right-wrapper .btn--m {
+                height: 40px;
+                padding: 0 20px;
+                min-width: 70px;
+                max-width: 220px; }
+              .information-acccount .container-profile .right .form-right .form-right-content .form-right .form-right-wrapper .btn--inline {
+                display: inline-flex; }
+              .information-acccount .container-profile .right .form-right .form-right-content .form-right .form-right-wrapper .btn {
+                overflow: hidden;
+                display: -webkit-box;
+                text-overflow: ellipsis;
+                -webkit-line-clamp: 1;
+                flex-direction: column;
+                font-size: 14px;
+                box-sizing: border-box;
+                box-shadow: 0 5px 10px 0 rgba(0, 0, 0, 0.09);
+                border-radius: 2px;
+                border: 1px solid grey;
+                display: flex;
+                align-items: center;
+                justify-content: center;
+                text-transform: capitalize;
+                outline: 0;
+                cursor: pointer; }
+              .information-acccount .container-profile .right .form-right .form-right-content .form-right .form-right-wrapper .warning {
+                margin-top: 0.75rem;
+                display: block; }
+                .information-acccount .container-profile .right .form-right .form-right-content .form-right .form-right-wrapper .warning .noti {
+                  color: #999;
+                  font-size: 10px;
+                  line-height: 1.25rem; }
+        .information-acccount .container-profile .right .form-right .myaccount {
+          display: none; }
     .information-acccount .container-profile .my-order {
       display: none; }
       .information-acccount .container-profile .my-order .my-order-wrapper .nav-my-order {
@@ -1662,7 +1664,8 @@ body {
                     max-height: 48px; }
                   .information-acccount .container-profile .my-order .my-order-wrapper .id-order .id-order-wrapper .id-order-1 .product-order .product-1 .product-1-1 .product-order-0 ._7uZf6Q .vb0b-P {
                     color: rgba(0, 0, 0, 0.54); }
-                  .information-acccount .container-profile .my-order .my-order-wrapper .id-order .id-order-wrapper .id-order-1 .product-order .product-1 .product-1-1 .product-order-0 ._7uZf6Q ._3F1-5M, .information-acccount .container-profile .my-order .my-order-wrapper .id-order .id-order-wrapper .id-order-1 .product-order .product-1 .product-1-1 .product-order-0 ._7uZf6Q .vb0b-P {
+                  .information-acccount .container-profile .my-order .my-order-wrapper .id-order .id-order-wrapper .id-order-1 .product-order .product-1 .product-1-1 .product-order-0 ._7uZf6Q ._3F1-5M,
+                  .information-acccount .container-profile .my-order .my-order-wrapper .id-order .id-order-wrapper .id-order-1 .product-order .product-1 .product-1-1 .product-order-0 ._7uZf6Q .vb0b-P {
                     margin: 0 0 5px; }
                 .information-acccount .container-profile .my-order .my-order-wrapper .id-order .id-order-wrapper .id-order-1 .product-order .product-1 .product-1-1 .product-order-0 ._9UJGhr {
                   text-align: right; }
@@ -1675,7 +1678,9 @@ body {
                     opacity: .26;
                     overflow: hidden;
                     text-overflow: ellipsis; }
-                  .information-acccount .container-profile .my-order .my-order-wrapper .id-order .id-order-wrapper .id-order-1 .product-order .product-1 .product-1-1 .product-order-0 ._9UJGhr .-x3Dqh, .information-acccount .container-profile .my-order .my-order-wrapper .id-order .id-order-wrapper .id-order-1 .product-order .product-1 .product-1-1 .product-order-0 ._9UJGhr .j2En5\+, .information-acccount .container-profile .my-order .my-order-wrapper .id-order .id-order-wrapper .id-order-1 .product-order .product-1 .product-1-1 .product-order-0 ._9UJGhr .kCaFF- {
+                  .information-acccount .container-profile .my-order .my-order-wrapper .id-order .id-order-wrapper .id-order-1 .product-order .product-1 .product-1-1 .product-order-0 ._9UJGhr .-x3Dqh,
+                  .information-acccount .container-profile .my-order .my-order-wrapper .id-order .id-order-wrapper .id-order-1 .product-order .product-1 .product-1-1 .product-order-0 ._9UJGhr .j2En5\+,
+                  .information-acccount .container-profile .my-order .my-order-wrapper .id-order .id-order-wrapper .id-order-1 .product-order .product-1 .product-1-1 .product-order-0 ._9UJGhr .kCaFF- {
                     vertical-align: middle;
                     font-size: 14px;
                     line-height: 16px;
@@ -1684,6 +1689,113 @@ body {
                     color: #f4798e; }
     .information-acccount .container-profile .my-shop {
       display: block; }
+      .information-acccount .container-profile .my-shop .product-of-shop-wrapper {
+        width: 100%;
+        min-height: 500px;
+        height: auto;
+        margin-right: auto;
+        margin-left: auto; }
+        .information-acccount .container-profile .my-shop .product-of-shop-wrapper .title-product-shop {
+          font-size: 16px;
+          font-weight: 700;
+          margin-top: 20px;
+          text-transform: uppercase; }
+        .information-acccount .container-profile .my-shop .product-of-shop-wrapper .product-wrapper {
+          width: 90%;
+          margin-right: auto;
+          margin-left: auto;
+          height: 100%;
+          display: flex;
+          flex-wrap: wrap; }
+          .information-acccount .container-profile .my-shop .product-of-shop-wrapper .product-wrapper .product-wrapper-item {
+            width: 200px;
+            max-width: 250px;
+            height: 340px;
+            background-color: white;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
+            margin-left: auto;
+            margin-right: auto;
+            margin-top: 40px;
+            position: relative; }
+          .information-acccount .container-profile .my-shop .product-of-shop-wrapper .product-wrapper .css-product-item {
+            overflow: hidden;
+            white-space: nowrap;
+            text-overflow: ellipsis;
+            position: relative;
+            width: 100%;
+            height: 20px; }
+            .information-acccount .container-profile .my-shop .product-of-shop-wrapper .product-wrapper .css-product-item a {
+              text-decoration: none;
+              font-size: 13px;
+              font-weight: 700;
+              color: black;
+              text-transform: uppercase;
+              position: absolute;
+              background: white; }
+            .information-acccount .container-profile .my-shop .product-of-shop-wrapper .product-wrapper .css-product-item img {
+              width: 20px;
+              height: 20px; }
+          .information-acccount .container-profile .my-shop .product-of-shop-wrapper .product-wrapper .css-product-item:hover {
+            text-overflow: unset;
+            white-space: unset;
+            overflow: unset; }
+          .information-acccount .container-profile .my-shop .product-of-shop-wrapper .product-wrapper .sold {
+            font-size: 10px;
+            color: gray; }
+          .information-acccount .container-profile .my-shop .product-of-shop-wrapper .product-wrapper .icon-product {
+            display: flex;
+            justify-content: space-between;
+            margin-top: 20px; }
+            .information-acccount .container-profile .my-shop .product-of-shop-wrapper .product-wrapper .icon-product img {
+              width: 20px;
+              height: auto; }
+            .information-acccount .container-profile .my-shop .product-of-shop-wrapper .product-wrapper .icon-product .wishlist {
+              margin-left: 80px;
+              cursor: pointer; }
+            .information-acccount .container-profile .my-shop .product-of-shop-wrapper .product-wrapper .icon-product .voucher {
+              display: flex;
+              bottom: 0.5rem; }
+            .information-acccount .container-profile .my-shop .product-of-shop-wrapper .product-wrapper .icon-product .img-buynow {
+              cursor: pointer; }
+          .information-acccount .container-profile .my-shop .product-of-shop-wrapper .product-wrapper .css-product-item-price {
+            margin-top: 10px; }
+          .information-acccount .container-profile .my-shop .product-of-shop-wrapper .product-wrapper .img-icon:hover {
+            background: #dbe1eb; }
+        .information-acccount .container-profile .my-shop .product-of-shop-wrapper .product-wrapper-item .product-item-slider {
+          width: 100%;
+          height: auto; }
+        .information-acccount .container-profile .my-shop .product-of-shop-wrapper .product-item-slider .product-item-img {
+          width: 160px;
+          height: 180px;
+          padding: auto;
+          margin-right: auto;
+          margin-bottom: 30px;
+          margin-left: auto; }
+          .information-acccount .container-profile .my-shop .product-of-shop-wrapper .product-item-slider .product-item-img img {
+            width: 100%;
+            overflow: hidden; }
+        .information-acccount .container-profile .my-shop .product-of-shop-wrapper .product-wrapper-item .product-item-descrip {
+          width: 180px;
+          min-height: 120px;
+          margin-right: auto;
+          margin-left: auto; }
+          .information-acccount .container-profile .my-shop .product-of-shop-wrapper .product-wrapper-item .product-item-descrip .product-item-name {
+            margin-bottom: 40px;
+            text-transform: uppercase;
+            font-size: 15px;
+            font-weight: 600; }
+        .information-acccount .container-profile .my-shop .product-of-shop-wrapper .product-item-descrip .product-item-price,
+        .information-acccount .container-profile .my-shop .product-of-shop-wrapper .product-item-descrip .product-item-name {
+          color: black;
+          text-decoration: none;
+          text-transform: uppercase;
+          text-align: center;
+          font-size: 13px; }
+        .information-acccount .container-profile .my-shop .product-of-shop-wrapper .product-item-descrip .product-item-price {
+          font-weight: 100;
+          margin-top: 10px; }
+        .information-acccount .container-profile .my-shop .product-of-shop-wrapper .product-item-descrip .old-price {
+          text-decoration: line-through; }
 
 .checkout {
   font-family: monospace, "Space Mono";
