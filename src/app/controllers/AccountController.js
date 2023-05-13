@@ -7,6 +7,10 @@ class AccountController {
         return res.render('pages/register', { title: 'Register', layout: 'no-header-footer' });
     }
 
+    store(req, res){
+        return res.render('pages/register-store', { title: 'Register Store', layout: 'no-header-footer' });
+    }
+
     information(req, res){
         return res.render('pages/information', { title: 'Account Information' });
     }
