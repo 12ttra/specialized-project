@@ -1402,6 +1402,8 @@ body {
             padding-bottom: 30px;
             font-size: 14px;
             color: #27282f; }
+          .information-acccount .container-profile .right .form-right .form-right-content .center {
+            display: flex; }
           .information-acccount .container-profile .right .form-right .form-right-content .email-1 {
             align-items: center;
             display: flex; }
@@ -1417,6 +1419,10 @@ body {
             font-size: 14px;
             text-transform: capitalize;
             text-decoration: underline; }
+          .information-acccount .container-profile .right .form-right .form-right-content .user-1-1-1 .btn-bot {
+            display: block;
+            width: 100%;
+            text-align: center; }
           .information-acccount .container-profile .right .form-right .form-right-content .user-1-1-1 .btn-solid-primary {
             color: #fff;
             position: relative;
@@ -1796,6 +1802,9 @@ body {
           margin-top: 10px; }
         .information-acccount .container-profile .my-shop .product-of-shop-wrapper .product-item-descrip .old-price {
           text-decoration: line-through; }
+  .information-acccount .a-decor {
+    text-decoration: none;
+    color: #fff; }
 
 .checkout {
   font-family: monospace, "Space Mono";

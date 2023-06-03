@@ -10,7 +10,7 @@ class AccountController{
   }
 
   store(req, res){
-    return res.render('pages/register', { title: 'Register Store', layout: 'no-header-footer' });
+    return res.render('pages/registerstore', { title: 'Register Store', layout: 'no-header-footer' });
   }
 
   async signUp(req, res){
@@ -43,7 +43,12 @@ class AccountController{
       res.status(404).json({ success: false , message: "Something Went Wrong !", data: error });
     }
   }
-
+  getLogIn(req, res){
+    return res.render('pages/login', { title: 'Account Login' });
+  }
+  getSignUp(req, res){
+    return res.render('pages/register', { title: 'Account Register' });
+  }
   async logIn(req, res){
     try {
       if (!req.body.email || !req.body.password) {

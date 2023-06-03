@@ -15,6 +15,9 @@ function route(app){
     app.use("/cart", cartRoutes);
     app.use("/favourite", favouriteRoutes);
     app.use("/flashsale", flashSale);
+    app.get('/wishlist',(req, res)=>{
+        res.render('pages/wishlist');
+    })
     app.use('/admin/dashboard',(req, res)=>{
         res.render('admin/dashboard', { title: 'Dashboard', layout: 'admin' });
     })

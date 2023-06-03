@@ -202,6 +202,10 @@
                         padding-bottom: 30px;
                         font-size: 14px;
                         color: #27282f;
+                       
+                    }
+                    .center{
+                        display: flex;
                     }
 
                     .email-1 {
@@ -227,7 +231,11 @@
 
                     .user-1-1-1 {
 
-
+                        .btn-bot{
+                            display: block;
+                            width: 100%;
+                            text-align: center;
+                        }
                         .btn-solid-primary {
                             color: #fff;
                             position: relative;
@@ -778,8 +786,13 @@
                     }
 
                 }
+               
             }
         }
+    }
+    .a-decor{
+        text-decoration: none;
+        color: #fff;
     }
 
 }
