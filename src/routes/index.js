@@ -18,6 +18,7 @@ function route(app){
     app.get('/wishlist',(req, res)=>{
         res.render('pages/wishlist');
     })
+    
     app.use('/admin/dashboard',(req, res)=>{
         res.render('admin/dashboard', { title: 'Dashboard', layout: 'admin' });
     })
