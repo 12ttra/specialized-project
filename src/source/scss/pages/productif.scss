@@ -4,6 +4,11 @@
 $marginTop1: 150px;
 
 $font: monospace, 'Space Mono';
+$mg-l-r: 0 20px;
+$pad-top:20px;
+$main-bg:#fafafa;
+$main-color:#ee2d5a;
+
     .mg-bot{
         margin-bottom: 30px;
     }
@@ -46,6 +51,10 @@ $font: monospace, 'Space Mono';
     ._0voski {
         background-color: #ee2d5a;
     }
+    ._0voski-1{
+       color: #ee2d5a;
+     
+    }
     ._0voski {
         margin-left: 15px;
         font-size: 16px;
@@ -65,12 +74,14 @@ $font: monospace, 'Space Mono';
         padding-top: 50px;
         width: 100%;
         min-height: 1000px;
-    }
+        background-color: whitesmoke;
+    
     .container-product{
        margin-left: auto;
        margin-right: auto;
        width: 90%;
        height: 700px;
+       background-color: #fff;
     
     }
     .product-top{
@@ -89,10 +100,14 @@ $font: monospace, 'Space Mono';
         display: flex;
         flex-wrap: wrap;
     }
+    .product-content , .m-p-css{
+        margin: $mg-l-r;
+        padding-top: $pad-top;
+    }
 
     .product-content-left{
         width: 50%;
-        min-height: 1000px;
+        min-height:700px;
 
         .product-content-left-big-img{
             width: 80%;
@@ -229,6 +244,7 @@ $font: monospace, 'Space Mono';
                 border: 2px solid black;
                 cursor: pointer;
                 color: black;
+                gap: 5px;
             }
 
            a:hover{
@@ -277,15 +293,132 @@ $font: monospace, 'Space Mono';
            
 
         }
-        .flash-sale-wrapper{    
-             
-                
-                .fs_title{
-                 
-        }
-        .store-owner-wrapper{
-
-        }
        
         
+    
     }
+   
+    
+}
+.flash-sale-wrapper{    
+    background-color: #fff;
+    margin-top: 10px;
+    width: 90%;
+    margin-left: auto;
+    margin-right: auto;
+    .flash-sale{
+        background: #fff;
+        max-width: 1200px;
+        margin-top: 12px;
+        padding: 24px 30px;
+        display: flex;
+        height: auto;
+        .img-fs-wrapper{
+            width: 100%;
+        display: flex;
+        margin-bottom: 20px;
+            .img-fs{
+                width: 150px;
+                height: auto;
+                overflow: hidden;
+                .img-title{
+                    width: 100%;
+                    height: auto;
+                    
+                }
+        }
+    }
+        .FsAt{
+           
+            border: 1px solid $main-color;
+            border-radius: 1px;
+            padding: 0 5px;
+            font-size: 12px;
+            max-width: 600px;
+            white-space: nowrap;
+            overflow: hidden;
+            text-overflow: ellipsis;
+            display: inline-block;
+            height: 27px;
+            line-height: 27px;
+            color: var(--brand-primary-color,$main-color);
+            border-color: var(--brand-primary-color,$main-color);
+         
+        }
+        .__FsAtT{
+            margin-left: 30px;
+        }
+        .UR\+0VK {
+            margin-left: auto;
+            flex-shrink: 0;
+        }
+        .k-uwoE {
+            display: inline-block;
+            font-size: 14px;
+            color: var(--brand-primary-color,$main-color);
+            cursor: pointer;
+            text-transform: capitalize;
+            line-height: 16px;
+            display: flex;
+            align-items: center;
+            justify-content: flex-end;
+            gap:10px;
+    }
+    .text-decor{
+        text-decoration: none;
+    }
+    
+
+    
+}
+.store-owner-wrapper{
+
+}
+}
+
+/* Css cho item khi chon */
+.row-items {
+    box-sizing: border-box;
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    margin-right: -0.3125rem;
+    margin-left: -0.3125rem;
+}
+.col-xs-2 {
+    flex-basis: 16.666%;
+    max-width: 16.666%;
+    box-sizing: border-box;
+    flex: 0 0 auto;
+    padding-right: 0.3125rem;
+    padding-left: 0.3125rem;
+}
+.sz-header-iems-content{
+    width: 100%;
+    height: auto;
+    .sz-header-iems-content-wrapper{
+        margin:0 20px;
+        display: flex;
+        flex-wrap: nowrap;
+        .sz-header-item{
+            .click-item{
+                text-decoration: none;
+                .item-wrapper-collection{
+                    width: 150px;
+                    height: 150px;
+                    background-color:  white;
+                    box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
+                    margin-left: auto;
+                    margin-right: auto;
+                    margin-top: 50px;
+                    position: relative;
+                   .product-item-slider{
+                        
+                   }
+                }
+        }
+    }
+    
+}
+
+}
