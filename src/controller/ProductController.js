@@ -18,7 +18,6 @@ class ProductController{
     }
   };
 
-
   async createOneProduct(req, res){
     try {
      const response = await products_model.create(req.body);
