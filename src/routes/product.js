@@ -3,6 +3,9 @@ const router = express.Router();
 const productController = require("../controller/ProductController");
 const auth = require("../middleware/auth_middleware");
 
+router.use('/view/:id',(req, res)=>{
+    res.render('pages/productif');
+});
 router
   .use(auth)
   .route("/")

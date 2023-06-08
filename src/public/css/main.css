@@ -8,7 +8,6 @@
 @import url("https://fonts.googleapis.com/css2?family=Noto+Sans+Mono:wght@400;500&family=Space+Mono:wght@400;700&display=swap");
 @import url("https://fonts.googleapis.com/css2?family=Noto+Sans+Mono:wght@400;500&family=Space+Mono:wght@400;700&display=swap");
 @import url("https://fonts.googleapis.com/css2?family=Noto+Sans+Mono:wght@400;500&family=Space+Mono:wght@400;700&display=swap");
-@import url("https://fonts.googleapis.com/css2?family=Noto+Sans+Mono:wght@400;500&family=Space+Mono:wght@400;700&display=swap");
 * {
   margin: 0;
   padding: 0;
@@ -2463,20 +2462,3 @@ body {
     margin-top: 20px; }
   .wishlist-wrapper .wishlist-1 .product-item-descrip .old-price {
     text-decoration: line-through; }
-
-.shop-page .shop-page__wrapper {
-  font-family: monospace, "Space Mono";
-  padding: 20px 0;
-  margin-left: auto;
-  margin-right: auto; }
-  .shop-page .shop-page__wrapper .shop-page__title {
-    text-align: center;
-    line-height: 60px;
-    font-size: 30px;
-    font-weight: 800;
-    color: black;
-    text-transform: uppercase; }
-  .shop-page .shop-page__wrapper .shop-page__info {
-    background: #fff;
-    padding: 1.25rem 0;
-    box-shadow: 0 1px 1px rgba(0, 0, 0, 0.05); }
