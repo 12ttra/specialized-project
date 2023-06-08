@@ -41,4 +41,4 @@ const shopSchema = new Schema({
 });
 
 //Export the model
-module.exports = mongoose.model('DOCUMENT_NAME', shopSchema); 
+//module.exports = mongoose.model('DOCUMENT_NAME', shopSchema); 
