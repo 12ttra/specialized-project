@@ -10,7 +10,7 @@ class AccountController{
   }
 
   store(req, res){
-    return res.render('pages/register', { title: 'Register Store', layout: 'no-header-footer' });
+    return res.render('/register-store', { title: 'Register Store', layout: 'no-header-footer' });
   }
 
   async signUp(req, res){
