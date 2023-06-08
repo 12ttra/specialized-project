@@ -4,63 +4,7 @@
 $marginTop1: 150px;
 
 $font: monospace, 'Space Mono';
-    .mg-bot{
-        margin-bottom: 30px;
-    }
-    .flex{
-        display: flex;
-    }
-    .items-center{
-        align-items: center;
-    }
-    .\+o886E {
-        padding: 15px 20px;
-        background: #fafafa;
-    }
-    .flex-column {
-        flex-direction: column;
-    }
-    .nmrSND {
-        flex-wrap: wrap;
-        width: 625px;
-        flex-basis: 625px;
-        min-height: 1.875rem;
-    }
-    .Y3DvsN {
-        font-size: 1rem;
-        text-decoration: line-through;
-        color: #929292;
-        margin-right: 10px;
-    }
-    .color{
-        color: #ee2d5a; 
-    }
-    .text-align-left{
-        padding-left: 50px;
-    }
-    .pqTWkA {
-        font-size: 35px;
-        font-weight: 800;
-        color: #ee2d5a;
-    }
-    ._0voski {
-        background-color: #ee2d5a;
-    }
-    ._0voski {
-        margin-left: 15px;
-        font-size: 16px;
-        color: #fff;
-        text-transform: uppercase;
-        background: #ee2d5a;
-        border-radius: 2px;
-        padding: 2px 4px;
-        font-weight: 600;
-        line-height: 1;
-        white-space: nowrap;
-    }
-    .gap{
-        gap : 10px
-    }
+
     .product{
         padding-top: 50px;
         width: 100%;
@@ -70,11 +14,10 @@ $font: monospace, 'Space Mono';
        margin-left: auto;
        margin-right: auto;
        width: 90%;
-       height: 700px;
-    
+       height: 60%;
     }
     .product-top{
-        margin: 10px 10px;
+        margin: 0 10px;
         height: 20px;
         line-height: 20px;
     }
@@ -97,7 +40,6 @@ $font: monospace, 'Space Mono';
         .product-content-left-big-img{
             width: 80%;
             padding-right: 20px;
-            height: 700px;
             
 
             img{
@@ -105,7 +47,6 @@ $font: monospace, 'Space Mono';
                 height: 600px;
                 margin: 10px 0;
             }
-      
         }
 
         
@@ -117,9 +58,6 @@ $font: monospace, 'Space Mono';
                 width: 100%;
                 height: 22%;
                 margin: 10px 0;
-                &:hover{
-                    border: 2px solid #ee2d5a ;
-                }
             }
         }
     }
@@ -130,9 +68,8 @@ $font: monospace, 'Space Mono';
         padding-left: 50px;
 
         .product-content-right-product-name{
-          
             h1{
-                font-size: 35px;
+                font-size: 25px;
             }
             p{
                 color: #ccc;
@@ -143,13 +80,8 @@ $font: monospace, 'Space Mono';
         .product-content-right-product-price{
             margin-top: 20px;
             margin-bottom: 20px;
-            
-            .old-product-price{
-                text-decoration: line-through;
-            }
-            .new-product-price{
-                text-decoration: none;
-            }
+            font-size: 20px;
+            font-weight: bold;
         }
 
         .product-content-right-product-color-img{
@@ -166,7 +98,6 @@ $font: monospace, 'Space Mono';
 
         
         }
-        
 
 
         .product-content-right-product-size{
@@ -176,16 +107,12 @@ $font: monospace, 'Space Mono';
             .size{
                 span{
                     display: inline-block;
-                    padding: 6px 12px;
+                    padding: 3px 6px;
                     border: 1px solid #ddd;
                     border-radius: 50%;
-                    margin: 20px 10px 10px 0;
+                    margin: 20px 10px 10px0;
                     font-size: 12px;
                     cursor: pointer;
-                }
-                .size-hover:hover{
-                    background: black;
-                    color: white;
                 }
             }
         }
@@ -198,18 +125,15 @@ $font: monospace, 'Space Mono';
 
             input{
                 width: 35px;
-                margin-right: 0;
-                margin-left: 14px;
+                padding-left: 10px;
+                margin-right: 5px;
             }
         }
 
         .alert-size{
             font-size: 12px;
-            margin-top: 15px;
         }
-        .product-btn-buy-wrapper{
-            display: flex;
-         
+
         .product-btn-buy{
             width: 150px;
             height: 50px;
@@ -217,10 +141,9 @@ $font: monospace, 'Space Mono';
             margin-top: 30px;
             align-items: center;
             
-            a{
+            button{
                 margin: 20px 0;
                 width: 130px;
-                text-decoration: none;
                 height: 50px;
                 display: flex;
                 justify-content: space-evenly;
@@ -228,15 +151,13 @@ $font: monospace, 'Space Mono';
                 background-color: #fff;
                 border: 2px solid black;
                 cursor: pointer;
-                color: black;
             }
 
-           a:hover{
+            button:hover{
                 background-color: black;
                 color: #fff;
             }
         }
-    }
 
         .product-content-right-bottom{
             margin-top: 40px;
@@ -274,16 +195,20 @@ $font: monospace, 'Space Mono';
                 }
             }
 
-           
+            .product-content-right-bottom-content{
+                padding-top: 30px;
+                font-size: 12px;
+                color: #bdc6d4;
+                display:none;
+               
+            
+                .product-content-right-bottom-content-detail{
 
-        }
-        .flash-sale-wrapper{    
-             
-                
-                .fs_title{
-                 
-        }
-        .store-owner-wrapper{
+                }
+                .product-content-right-bottom-content-sizeguide{
+
+                }
+            }
 
         }
        
