@@ -352,13 +352,12 @@ $marginBot:0.5rem;
       }
     }
   
-    .brand-product {
-      width: 100%;
-      height: auto;
-    }
+    
   }
   
   .brand-product {
+    width: 100%;
+    height: auto;
     .brand-product-wrapper {
       width: 1300px;
       min-height: 500px;
@@ -505,7 +504,9 @@ $marginBot:0.5rem;
       text-decoration: line-through;
     }
   }
-  
+  .click-item{
+    text-decoration: none;
+  }
   #container {
     .contact {
       width: 100vw;
@@ -563,7 +564,7 @@ $marginBot:0.5rem;
   }
   
   #footer {
-  
+  margin-top: 20px;
     .footer-service {
       width: 100vw;
       min-height: 300px;
