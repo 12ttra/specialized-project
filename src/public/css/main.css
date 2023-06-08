@@ -357,6 +357,9 @@ html {
 .product-item-descrip .old-price {
   text-decoration: line-through; }
 
+.click-item {
+  text-decoration: none; }
+
 #container .contact {
   width: 100vw;
   padding: 80px 0;
