@@ -302,10 +302,8 @@ $main-color:#ee2d5a;
 }
 .flash-sale-wrapper{    
     background-color: #fff;
-    margin-top: 10px;
     width: 90%;
-    margin-left: auto;
-    margin-right: auto;
+   margin: 20px auto;
     .flash-sale{
         background: #fff;
         max-width: 1200px;
@@ -377,25 +375,11 @@ $main-color:#ee2d5a;
 }
 
 /* Css cho item khi chon */
-.row-items {
-    box-sizing: border-box;
-    display: flex;
-    flex-direction: row;
-    flex-wrap: wrap;
-    margin-right: -0.3125rem;
-    margin-left: -0.3125rem;
-}
-.col-xs-2 {
-    flex-basis: 16.666%;
-    max-width: 16.666%;
-    box-sizing: border-box;
-    flex: 0 0 auto;
-    padding-right: 0.3125rem;
-    padding-left: 0.3125rem;
-}
+
 .sz-header-iems-content{
     width: 100%;
-    height: auto;
+    height:500px;
+    margin-bottom: 20px;
     .sz-header-iems-content-wrapper{
         margin:0 20px;
         display: flex;
