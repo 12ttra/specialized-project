@@ -15,6 +15,11 @@ const userSchema = Schema({
     type: String,
     require: true,
   },
+  mobile:{
+    type:String,
+    required:true,
+    unique:true,
+  },
 });
 
 // encrypt the password before storing
