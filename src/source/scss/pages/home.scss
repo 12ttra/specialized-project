@@ -11,7 +11,7 @@ $font: monospace, 'Space Mono';
 
 $fontsize : 15px;
 
-$marginBot:0.5rem;
+$marginBot:20px;
 
 
 * {
@@ -463,7 +463,7 @@ $marginBot:0.5rem;
     height: auto;
   }
   
-  .product-item-slider .product-item-img img {
+  .product-item-slider .product-item-img  {
     width: 240px;
     height: 240px;
     padding: auto;
@@ -471,7 +471,16 @@ $marginBot:0.5rem;
     margin-right: auto;
     margin-bottom: $marginBot;
     margin-left: auto;
+
+    img{
+      width: 90%;
+      height: auto;
+      overflow: hidden;
+      margin: 0 auto;
+    }
   }
+
+  
   
   .product-wrapper-item .product-item-descrip {
     width: 200px;
