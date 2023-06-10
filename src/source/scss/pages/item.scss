@@ -1,4 +1,5 @@
 $font: monospace, 'Space Mono';
+$main-color:#ee2d5a;
 .product-wrapper-item {
   width: 280px;
   max-width: 280px;
@@ -56,29 +57,50 @@ $font: monospace, 'Space Mono';
 .icon-product {
   display: flex;
   justify-content: space-between;
-  margin-top: 20px;
+  margin-top: 10px;
 
   img {
 
-    width: 30px;
+    width: 34px;
     height: auto;
   }
 
   .wishlist {
-    margin-left: 80px;
+    margin-right: 20px;
     cursor: pointer;
   }
 
+  .coupon{
+    width: 100%;
+    display: flex;
+    text-align: center;
+    align-items: center;
+  }
   .voucher {
     display: flex;
-    bottom: 0.5rem;
+    height: max-content;
+    text-decoration: none;
+    font-size: 14px;
+    border: 0.5px solid $main-color;
+    color: $main-color;
+    padding:5px;
+    text-align: center;
+    align-items: center;
+    justify-content: center;
+    color: white;
+  background: $main-color;
+}
+.voucher:hover{
+  color: #ee2d5a;
+  background: black;
+}
   }
 
   .img-buynow {
 
     cursor: pointer;
   }
-}
+
 
 .css-product-item-price {
   margin-top: 10px;
@@ -87,9 +109,10 @@ $font: monospace, 'Space Mono';
 
 
 .img-icon:hover {
-  background: hsl(216, 27%, 89%);
-}
+  background: whitesmoke;
+  color: black;
 
+}
 .product-wrapper-item .product-item-slider {
   width: 100%;
   height: auto;
@@ -115,7 +138,7 @@ $font: monospace, 'Space Mono';
 
 
 .product-wrapper-item .product-item-descrip {
-  width: 200px;
+  width:90%;
   min-height: 120px;
   margin-right: auto;
   margin-left: auto;
