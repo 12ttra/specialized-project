@@ -13,6 +13,9 @@ router.use('/address',(req, res)=>{
 router.use('/payment',(req, res)=>{
     res.render('pages/payment');
 })
+router.use('/successed',(req, res)=>{
+    res.render('pages/successed');
+})
 
 
 module.exports = router;

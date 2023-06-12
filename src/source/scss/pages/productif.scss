@@ -8,6 +8,8 @@ $mg-l-r: 0 20px;
 $pad-top:20px;
 $main-bg:#fafafa;
 $main-color:#ee2d5a;
+$mg-infor: 20px auto;
+$width: 90%;
 
     .mg-bot{
         margin-bottom: 30px;
@@ -303,7 +305,7 @@ $main-color:#ee2d5a;
 .flash-sale-wrapper{    
     background-color: #fff;
     width: 90%;
-   margin: 20px auto;
+    margin: $mg-infor;
     .flash-sale{
         background: #fff;
         max-width: 1200px;
