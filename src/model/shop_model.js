@@ -1,7 +1,7 @@
 const mongoose = require("mongoose");
 const Schema = mongoose.Schema;
 //const DOCUMENT_NAME = 'Shop'
-//const COLLECTION_NAME = 'Shops'
+const COLLECTION_NAME = 'Shops'
 
 // Declare the Schema of the Mongo model
 const shopSchema = new Schema({
@@ -34,8 +34,8 @@ const shopSchema = new Schema({
         default: []
     }
 }, {
-    // timestamps: true,
-    // collection: COLLECTION_NAME
+    timestamps: true,
+    collection: COLLECTION_NAME
 });
 
 //Export the model
