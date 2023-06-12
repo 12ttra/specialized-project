@@ -7,23 +7,41 @@ class ShopController{
         return res.render('pages/myshop', { title: 'My Store' });
       }
 
-    async signUp(name, email, password){
-        // try{
-        //     // step 1: check mail exists
-        //     const holderShop = await shop_model.findOne({ email }).lean()
-        //     if(holderShop){
-        //         return {
-        //             code: 'xxxx',
-        //             message: 'Shop already registered!'
-        //         }
-        //     }
-        //     const passwordHash = await bcrypt.hash(password, 10)
-        //     const newShop = await shop_model.create({
-        //         name, email, password, roles
-        //     })
-        // }   
+    // async signUp(name, email, password){
+    //     try{
+    //         // step 1: check mail exists
+    //         const holderShop = await shop_model.findOne({ email }).lean()
+    //         if(holderShop){
+    //             return {
+    //                 code: 'xxxx',
+    //                 message: 'Shop already registered!'
+    //             }
+    //         }
+    //         const passwordHash = await bcrypt.hash(password, 10)
+    //         const newShop = await shop_model.create({
+    //             name, email, password, roles
+    //         })
+    //     };  
 
+    // }
+
+    async signUp (req, res, next){
+        try{
+            console.log(`[P]::signUp::`, req.body)
+            /*
+                200 OK
+                201 CREATED
+            */
+           return res.status(201).json({
+            code: '20001',
+            metadata: {useerid: 1}
+           })
+        }
+        catch(error){
+            next(error)
+        }
     }
+
 }
 
 module.exports = new ShopController;
