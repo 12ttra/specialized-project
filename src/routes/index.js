@@ -6,6 +6,7 @@ const cartRoutes = require("./cart");
 const favouriteRoutes = require("./favourite");
 const flashSale = require("./flash_sale");
 const shopRoutes = require("./shop")
+const checkoutRoutes = require("./checkout")
 
 function route(app){
     //product
@@ -16,6 +17,7 @@ function route(app){
     app.use("/cart", cartRoutes);
     app.use("/favourite", favouriteRoutes);
     app.use("/flashsale", flashSale);
+    app.use("/checkout", checkoutRoutes);
     //app.use("/myshop", shopRoutes);
     app.use("/v1/api", shopRoutes);
     app.get('/wishlist',(req, res)=>{
