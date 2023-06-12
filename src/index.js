@@ -6,6 +6,7 @@ const connectDb = require("./config/db/mongo");
 const { engine  } = require('express-handlebars');
 const path = require('path');
 const morgan = require('morgan');
+const compression = require('compression');
 const Handlebars = require('handlebars');
 const fs = require('fs');
 
@@ -13,6 +14,7 @@ app.use(express.json());
 
 //logger
 app.use(morgan("combined"))
+app.use(compression())
 
 //static file path
 app.use(express.static(path.join(__dirname,'public')));
@@ -37,3 +39,4 @@ connectDb().then(() =>
     console.log(`Server is running at ${port}`);
   })
 );
+
