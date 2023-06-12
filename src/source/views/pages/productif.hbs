@@ -96,26 +96,10 @@
 
             </div>
              <div class="sz-header-iems-content">
-               <div class="sz-header-iems-content-wrapper">
-                        <a class="click-item" data-sqe="link" href="#">
-                            <div class="item-wrapper-collection">
-                                <div class="product-item-slider">
-                                    <div class="product-item-img product-avatar"><img src="/images/image-product/product1_1.jpeg" alt="Image 1"></div>
-                                    <div class="product-item-img"><img src="/images/image-product/product1_2.jpeg" alt="Image2"></div>
-                                    <div class="product-item-img"><img src="/images/image-product/product1_1.jpeg" alt="Image 1"></div>
-                                </div>
-                                 
-                                
-                            </div>
-                        </a>
-                </div>
+               
+                    {{> 'products/productFlash'}}
+                
             </div>
-
-
-            
-            
-
-
     </section>
     <section class="store-owner-wrapper">
 
@@ -126,12 +110,4 @@
  <script type="text/javascript" src="//code.jquery.com/jquery-1.11.0.min.js"></script>
     <script type="text/javascript" src="//code.jquery.com/jquery-migrate-1.2.1.min.js"></script>
     <script type="text/javascript" src="//cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.min.js"></script>
-    <script>
-        $(document).ready(function(){
-            $('.product-item-slider').slick({
-                arrows:false,
-                autoplaySpeed:2000,
-                autoplay:false,
-            });
-        });
-    </script>
+   
