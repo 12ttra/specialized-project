@@ -1,10 +1,12 @@
-@url_dev = http://localhost:3001/v1/api
+# @url_dev = http://localhost:3001/v1/api
 
-POST {{url_dev}}/myshop/signup 
-Content-Type: application/json
+# POST {{url_dev}}/myshop/signup 
+# Content-Type: application/json
 
-{
-    "name": "EL REVER",
-    "email": "elrever@gmail.com",
-    "password": "abc123"
-} 
+# {
+#     "name": "EL REVER",
+#     "email": "elrever@gmail.com",
+#     "password": "abc123"
+# } 
+
+POST  http://localhost:3001/v1/api/myshop/signup

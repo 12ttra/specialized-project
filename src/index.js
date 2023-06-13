@@ -10,12 +10,11 @@ const compression = require('compression');
 const Handlebars = require('handlebars');
 const fs = require('fs');
 const { checkOverload } = require("./helpers/check.connect")
+checkOverload()
 
 app.use(express.json());
 
-checkOverload()
-
-//logger
+//init middlewares
 app.use(morgan("combined"))
 app.use(compression())
 
@@ -43,3 +42,10 @@ connectDb().then(() =>
   })
 );
 
+
+
+
+
+
+//module.exports = app
+//require('./config/db/mongo')
