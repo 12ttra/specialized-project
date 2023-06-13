@@ -845,6 +845,10 @@ body {
   .menu-mobile {
     display: none; } }
 
+.set-w-h {
+  width: 100px;
+  height: 30px; }
+
 .mg-bot {
   margin-bottom: 30px; }
 
@@ -1173,6 +1177,37 @@ body {
         flex-direction: column;
         justify-content: space-between;
         overflow: hidden; }
+        .infor-wrapper .store-wrapper .page-product__shop .shop-intro .sz-shopPI .sz-shop__name {
+          font-weight: 400;
+          font-size: 14px;
+          color: rgba(0, 0, 0, 0.87);
+          margin: 0;
+          overflow: hidden;
+          text-overflow: ellipsis;
+          white-space: nowrap;
+          text-transform: uppercase; }
+        .infor-wrapper .store-wrapper .page-product__shop .shop-intro .sz-shopPI .active-inactive__status {
+          display: flex;
+          align-items: center;
+          color: #757575; }
+          .infor-wrapper .store-wrapper .page-product__shop .shop-intro .sz-shopPI .active-inactive__status .status {
+            font-size: 10px;
+            color: rgba(0, 0, 0, 0.54);
+            text-transform: capitalize; }
+        .infor-wrapper .store-wrapper .page-product__shop .shop-intro .sz-shopPI .contact-shop {
+          display: flex;
+          flex-direction: row;
+          text-transform: capitalize;
+          margin-right: 10px;
+          gap: 10px; }
+          .infor-wrapper .store-wrapper .page-product__shop .shop-intro .sz-shopPI .contact-shop .see-shop {
+            font-size: 13px;
+            border: 1px solid black;
+            line-height: 30px; }
+            .infor-wrapper .store-wrapper .page-product__shop .shop-intro .sz-shopPI .contact-shop .see-shop .css-text {
+              text-decoration: none;
+              color: black;
+              padding: 4px; }
   .infor-wrapper .store-wrapper .shop-rate {
     display: grid;
     grid-template-columns: repeat(3, auto);

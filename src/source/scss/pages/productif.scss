@@ -11,6 +11,10 @@ $main-color:#ee2d5a;
 $mg-infor: 20px auto;
 $width-90: 90%;
 
+    .set-w-h{
+        width: 100px;
+        height: 30px;
+    }
     .mg-bot{
         margin-bottom: 30px;
     }
@@ -462,6 +466,51 @@ $width-90: 90%;
                     flex-direction: column;
                     justify-content: space-between;
                     overflow: hidden;
+                    .sz-shop__name{
+                        font-weight: 400;
+                        font-size: 14px;
+                        color: rgba(0,0,0,.87);
+                        margin: 0;
+                        overflow: hidden;
+                        text-overflow: ellipsis;
+                        white-space: nowrap;
+                        text-transform: uppercase;
+                    }
+                    .active-inactive__status{
+                    display: flex;
+                    align-items: center;
+                    color: #757575;
+               
+                        .status {
+                            font-size: 10px;
+                            color: rgba(0,0,0,.54);
+                            text-transform: capitalize;
+                        }
+                    }
+
+                    .contact-shop{
+                        display: flex;
+                        flex-direction: row;
+                        text-transform: capitalize;
+                        margin-right: 10px;
+                        gap: 10px;
+                        .btn{
+
+                        }
+                        .btn-chat{
+
+                        }
+                        .see-shop{
+                            font-size: 13px;
+                            border: 1px solid black;
+                            line-height: 30px;
+                            .css-text{
+                                text-decoration: none;
+                                color: black;
+                                padding: 4px;
+                            }
+                        }
+                    }
                 }
             }
             }
