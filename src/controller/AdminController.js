@@ -158,7 +158,7 @@ const adminBro = new AdminBro({
     },
   },
   dashboard: {
-    component: AdminBro.bundle("../views/admin/dashboard.hbs"),
+    component: AdminBro.bundle("./views/admin/dashboard.hbs"),
   },
 });
 

@@ -68,6 +68,15 @@ class CartController{
       res.status(404).json({ success: false, message: "Something went worng !", data: error });
     }
   }
+  async deleteOne(req, res){
+    try {
+      await Cart.findByIdAndRemove(req.params.id)
+      res.status(200).send({status: 'ok'})
+    } catch (e) {
+      console.log(err)
+      sendResponseError(500, `Error ${err}`, res)
+    }
+  }
 }
   
 module.exports = new CartController;
