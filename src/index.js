@@ -9,8 +9,11 @@ const morgan = require('morgan');
 const compression = require('compression');
 const Handlebars = require('handlebars');
 const fs = require('fs');
+const { checkOverload } = require("./helpers/check.connect")
 
 app.use(express.json());
+
+checkOverload()
 
 //logger
 app.use(morgan("combined"))

@@ -1,5 +1,5 @@
 const { default: mongoose } = require("mongoose");
-const countConnect = require("/Visual Studio Code/-n-chuy-n-ng-nh/src/helpers/check.connect")
+const { countConnect } = require("/Visual Studio Code/-n-chuy-n-ng-nh/src/helpers/check.connect")
 
 //const connectString = 'mongodb+srv://tra:123@cluster0.rb2ac3u.mongodb.net/Sprezza?retryWrites=true&w=majority'
 
@@ -29,7 +29,7 @@ const countConnect = require("/Visual Studio Code/-n-chuy-n-ng-nh/src/helpers/ch
 
 async function connectDB(){
     try {
-        //await mongoose.connect('mongodb+srv://tra:123@cluster0.rb2ac3u.mongodb.net/Sprezza?retryWrites=true&w=majority');
+        await mongoose.connect('mongodb+srv://tra:123@cluster0.rb2ac3u.mongodb.net/Sprezza?retryWrites=true&w=majority');
         console.log("DB connect successfuly", countConnect());
     } catch (error) {
         console.log(error);
