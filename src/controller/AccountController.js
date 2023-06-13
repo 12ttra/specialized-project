@@ -15,6 +15,7 @@ class AccountController{
 
   async signUp(req, res){
     try {
+      console.log(req.params,"aa");
       if (!req.body.email || !req.body.name || !req.body.password) {
         res.status(400).json({success: false , message: "Pass currect data", data: []});
         return;
@@ -43,11 +44,13 @@ class AccountController{
       res.status(404).json({ success: false , message: "Something Went Wrong !", data: error });
     }
   }
+
   getLogIn(req, res){
-    return res.render('pages/login', { title: 'Account Login' });
+    return res.render('pages/login', { title: 'Account Login',layout: 'no-header-footer' });
   }
+
   getSignUp(req, res){
-    return res.render('pages/register', { title: 'Account Register' });
+    return res.render('pages/register', { title: 'Account Register',layout: 'no-header-footer' });
   }
   async logIn(req, res){
     try {
