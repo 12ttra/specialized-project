@@ -28,6 +28,33 @@ class CategoryController{
       res.status(404).json({ success: false , message: "Something went worng !", data: error });
     }
   }
+
+  async createCategory(req, res) {
+    categories_model.create(req.body)
+		.then((category) => res.status(200).json(category))
+		.catch((err) => res.status(400).json(err))
+  }
+
+  async updateCategory(req, res) {
+    categories_model.update(req.body, {
+      where: {
+        id: req.params.id,
+      },
+    })
+      .then((category) => res.status(200).json(category))
+      .catch((err) => res.status(400).json(err))
+  }
+
+  async deleteCategory(req, res) {
+    Category.destroy({
+      where: {
+        id: req.params.id,
+      },
+    })
+      .then((category) => res.status(200).json(category))
+      .catch((err) => res.status(400).json(err))
+  }
+
 }
 
 module.exports = new CategoryController;

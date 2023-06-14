@@ -8,13 +8,16 @@ router.use('/view/:id',(req, res)=>{
 })
 
 router
-  .use(auth)
-  .route("/:id")
-  .get(categoryController.getOneCategory);
+.use(auth)
+.route("/:id")
+.get(categoryController.getOneCategory)
+.put(categoryController.updateCategory)
+.delete(categoryController.deleteCategory);
 
 router
 .use(auth)
 .route("/")
-.get(categoryController.getAllCategories);
+.get(categoryController.getAllCategories)
+.post(categoryController.createCategory);
 
 module.exports = router;

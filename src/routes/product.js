@@ -9,18 +9,15 @@ router.use('/view/:id', (req,res)=>{
 
 router
   .use(auth)
-  .route("/:id")
+  .route("/product/:id")
   .get(productController.getOneProduct)
   .patch(productController.patchOneProduct)
   .delete(productController.deleteOneProduct);
 
 router
   .use(auth)
-  .route("/")
+  .route("/product")
   .get(productController.getAllProducts)
-  .post(productController.createOneProduct);[]
-
-
-
+  .post(productController.createOneProduct);
 
 module.exports = router;

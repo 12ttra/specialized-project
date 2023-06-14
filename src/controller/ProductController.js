@@ -7,7 +7,7 @@ const sub_categories_model = require("../model/sub_category_model");
 class ProductController{
   async getAllProducts(req, res){
     try {
-      const products = await products_model.find();
+      const products = await products_model.findAll();
       res.json({
         success: true,
         message: "Successfully found products",
@@ -18,6 +18,19 @@ class ProductController{
     }
   };
 
+  async getOneProduct(req, res){
+    try {
+      const _id = ObjectId(req.params.id);
+      const product = await products_model.findOne({ _id });
+      res.status(200).send({
+        success: true,
+        message: 'Successfully found product',
+        data: product,
+      });
+    } catch (error) {
+      res.status(404).json({ success: false, message: "Something went worng !", data: error.errors });
+    }
+  };
 
   async createOneProduct(req, res){
     try {
@@ -66,23 +79,9 @@ class ProductController{
         message: 'Product created successfully',
         data: [],
       });
-     /* const newproduct= new products_model(req.body);
+      const newproduct= new products_model(req.body);
       await newproduct.save();
-      res.status(201).json(newproduct);*/
-    } catch (error) {
-      res.status(404).json({ success: false, message: "Something went worng !", data: error.errors });
-    }
-  };
-
-  async getOneProduct(req, res){
-    try {
-      const _id = ObjectId(req.params.id);
-      const product = await products_model.findOne({ _id });
-      res.status(200).send({
-        success: true,
-        message: 'Successfully found product',
-        data: product,
-      });
+      res.status(201).json(newproduct);
     } catch (error) {
       res.status(404).json({ success: false, message: "Something went worng !", data: error.errors });
     }
@@ -115,7 +114,6 @@ class ProductController{
       res.status(404).json({ success: false, message: "Something went worng !", data: error.errors });
     }
   }
-
 
 }
 

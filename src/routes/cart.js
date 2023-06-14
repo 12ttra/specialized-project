@@ -4,8 +4,19 @@ const cartController = require("../controller/CartController");
 const auth = require("../middleware/auth_middleware");
 router
   .use(auth)
-  .route("/:id")
+  .route("/add-to-cart/:id")
   .get(cartController.getOne)
-  .post(cartController.addOne);
+  //.post(cartController.addOne);
+
+router
+  .use(auth)
+  .route("/reduce/:id")
+  .get(cartController.reduce);
+
+router
+  .use(auth)
+  .route("/removeAll/:id")
+  .get(cartController.remove)
+
 
 module.exports = router;

@@ -1,82 +1,38 @@
-const { check, validationResult } = require("express-validator");
+/* This all of are helper function */
+const userModel = require("../model/user_model");
 
-const userSignUpValidationRules = () => {
-  return [
-    check("name", "Name is required").not().isEmpty(),
-    check("email", "Invalid email").not().isEmpty().isEmail(),
-    check("password", "Please enter a password with 4 or more characters")
-      .not()
-      .isEmpty()
-      .isLength({ min: 4 }),
-  ];
+exports.toTitleCase = function (str) {
+  return str.replace(/\w\S*/g, function (txt) {
+    return txt.charAt(0).toUpperCase() + txt.substr(1).toLowerCase();
+  });
 };
 
-const userSignInValidationRules = () => {
-  return [
-    check("email", "Invalid email").not().isEmpty().isEmail(),
-    check("password", "Invalid password").not().isEmpty().isLength({ min: 4 }),
-  ];
-};
-
-const userContactUsValidationRules = () => {
-  return [
-    check("name", "Please enter a name").not().isEmpty(),
-    check("email", "Please enter a valid email address")
-      .not()
-      .isEmpty()
-      .isEmail(),
-    check("message", "Please enter a message with at least 10 words")
-      .not()
-      .isEmpty()
-      .isLength({ min: 10 }),
-  ];
-};
-
-const validateSignup = (req, res, next) => {
-  const errors = validationResult(req);
-  if (!errors.isEmpty()) {
-    var messages = [];
-    errors.array().forEach((error) => {
-      messages.push(error.msg);
-    });
-    req.flash("error", messages);
-    return res.redirect("/pages/register");
+exports.validateEmail = function (mail) {
+  if (/^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,3})+$/.test(mail)) {
+    return true;
+  } else {
+    return false;
   }
-  next();
 };
 
-const validateSignin = (req, res, next) => {
-  const errors = validationResult(req);
-  if (!errors.isEmpty()) {
-    var messages = [];
-    errors.array().forEach((error) => {
-      messages.push(error.msg);
-    });
-    req.flash("error", messages);
-    return res.redirect("/pages/login");
-  }
-  next();
+exports.emailCheckInDatabase = async function (email) {
+  let user = await userModel.findOne({ email: email });
+  user.exec((err, data) => {
+    if (!data) {
+      return false;
+    } else {
+      return true;
+    }
+  });
 };
 
-const validateContactUs = (req, res, next) => {
-  const errors = validationResult(req);
-  if (!errors.isEmpty()) {
-    var messages = [];
-    errors.array().forEach((error) => {
-      messages.push(error.msg);
-    });
-    console.log(messages);
-    req.flash("error", messages);
-    return res.redirect("/pages/contact-us");
-  }
-  next();
-};
-
-module.exports = {
-  userSignUpValidationRules,
-  userSignInValidationRules,
-  userContactUsValidationRules,
-  validateSignup,
-  validateSignin,
-  validateContactUs,
+exports.phoneNumberCheckInDatabase = async function (phoneNumber) {
+  let user = await userModel.findOne({ phoneNumber: phoneNumber });
+  user.exec((err, data) => {
+    if (data) {
+      return true;
+    } else {
+      return false;
+    }
+  });
 };
