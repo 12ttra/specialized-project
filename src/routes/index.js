@@ -7,10 +7,14 @@ const favouriteRoutes = require("./favourite");
 const flashSale = require("./flash_sale");
 const shopRoutes = require("./shop")
 const checkoutRoutes = require("./checkout")
+const adminRouter = require("./admin/index");
+const homeRouter = require("./home");
 
-function route(app){
-    //product
+function router(app){
+
+    app.use("/home", homeRouter);
     app.use("/product", productRoutes);
+    //app.use("/v1/api", productRoutes);
     app.use("/account", accountRoutes);
     app.use("/category", catogoryRoutes);
     app.use("/subCategory",subCategoryRoutes)
@@ -19,10 +23,11 @@ function route(app){
     app.use("/flashsale", flashSale);
     app.use("/checkout", checkoutRoutes);
     //app.use("/myshop", shopRoutes);
-    app.use("/v1/api", shopRoutes);
+    app.use("/v1/myshop", shopRoutes);
     app.get('/wishlist',(req, res)=>{
         res.render('pages/wishlist');
     })
+    app.use("/admin", adminRouter)
 
     app.use('/admin/dashboard',(req, res)=>{
         res.render('admin/dashboard', { title: 'Dashboard', layout: 'admin' });
@@ -51,9 +56,5 @@ function route(app){
     app.use('/admin/seller-grid',(req, res)=>{
         res.render('admin/seller-grid',{ title: 'edit product', layout: 'admin' });
     })
-    app.get('/', (req, res) => {
-        res.render('home');
-    })
 }
-
-module.exports = route
+module.exports = router ;

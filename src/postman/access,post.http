@@ -1,7 +1,10 @@
-# @url_dev = http://localhost:3001/v1/api
+# @url_dev = http://localhost:3001/v1/
 
-# POST {{url_dev}}/myshop/signup 
+
+
+# POST http://localhost:3001/v1/myshop/signup 
 # Content-Type: application/json
+# Authorization: token xxxx
 
 # {
 #     "name": "EL REVER",
@@ -9,4 +12,5 @@
 #     "password": "abc123"
 # } 
 
-POST  http://localhost:3001/v1/api/myshop/signup
+POST http://localhost:3001/account/register-post
+
