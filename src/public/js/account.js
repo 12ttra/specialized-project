@@ -30,7 +30,7 @@ function register(e){
         dataType: "json",
         success: function (result) {
             if(result.success){
-                alert('Ban ba dang ky thang cong');
+                alert('Account created successfully! Thank you ');
                 window.location.href="/account/login";
             } else {
                 console.log("loi");
