@@ -1,5 +1,6 @@
 const { default: mongoose } = require("mongoose");
-const { countConnect } = require("/Visual Studio Code/-n-chuy-n-ng-nh/src/helpers/check.connect")
+// const { countConnect } = require("/Visual Studio Code/-n-chuy-n-ng-nh/src/helpers/check.connect")
+const { countConnect } = require("/Users/nhunhy/Documents/specialized-project/src/helpers/check.connect.js")
 
 //const connectString = 'mongodb+srv://tra:123@cluster0.rb2ac3u.mongodb.net/Sprezza?retryWrites=true&w=majority'
 

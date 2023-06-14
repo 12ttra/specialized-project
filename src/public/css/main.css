@@ -744,7 +744,8 @@ body {
               color: rgba(0, 0, 0, 0.8);
               margin: 0 10px 0 12px;
               padding: 0;
-              text-align: left; }
+              text-align: left;
+              cursor: pointer; }
         #catelog-cart .SZrsSI .sz-search-items-result .sz-soft-bar .sz-sort-by-options .css-font-color {
           color: black; }
         #catelog-cart .SZrsSI .sz-search-items-result .sz-soft-bar .sz-sort-by-options .sz-sort-by-options__option--selected {
