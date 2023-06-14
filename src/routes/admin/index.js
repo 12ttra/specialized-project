@@ -1,8 +1,8 @@
 const express = require("express");
 const router = express.Router();
-const adminController = require("/Visual Studio Code/-n-chuy-n-ng-nh/src/controller/AdminController");
-const { loginCheck, isAuth, isAdmin } = require("/Visual Studio Code/-n-chuy-n-ng-nh/src/middleware/auth_middleware");
-const { accessLevelVerifier, isAdminVerifier } = require('../middlewares/verifyToken');
+const adminController = require("../../controller/AdminController");
+const { loginCheck, isAuth, isAdmin } = require("../../middleware/auth_middleware");
+const { accessLevelVerifier, isAdminVerifier } = require('../../middlewares/verifyToken');
 
 router.use('/dashboard',(req, res)=>{
     res.render('admin/dashboard', { title: 'Dashboard', layout: 'admin' });

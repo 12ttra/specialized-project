@@ -1,5 +1,5 @@
 const { default: mongoose } = require("mongoose");
-const { countConnect } = require("/Visual Studio Code/-n-chuy-n-ng-nh/src/helpers/check.connect")
+const { countConnect } = require("../../helpers/check.connect")
 const config = require("../config");
 require('dotenv').config();
 
