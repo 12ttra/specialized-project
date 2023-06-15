@@ -1,5 +1,5 @@
 <div id="shop-page">
-    <div  role="main" class="shop-page__wrapper">
+    <div  role="main" class="shop-page__wrapper css-container">
         <div class="shop-page__info">
             <div class="section-seller-overview-horiz pad-20 css-container">
                 <div class="section-seller__leading-left">
@@ -35,21 +35,126 @@
                                 </button>
                             </a>
                         </div>
-                        <div class="section-seller-overview-horiz__info-list">
-                            <div class="section-seller-overview__item section-seller-overview__item--clickable">
-                                <i class="fa fa-archive" aria-hidden="true"></i>
-                            </div>
-                            <div class="section-seller-overview__item-text">
-                                <div class="section-seller-overview__item-text-name">products:&nbsp;</div>
-                                <div class="section-seller-overview__item-text-value">3,9k</div>
-                            </div>
+                      
+                    </div>
+                </div>
+                <div class="section-seller__leading-right__info-list">
+                    <div class="section-seller-overview__item section-seller-overview__item--clickable">
+                        <div class="section-seller-overview__item-icon-wrapper">
+                            <i class="fa fa-archive" aria-hidden="true"></i>
+                        </div>
+                        <div class="section-seller-overview__item-text">
+                            <div class="section-seller-overview__item-text-name">products&nbsp;</div>
+                            <div class="section-seller-overview__item-text-value">3,9k</div>
+                        </div>
+                    </div>
+                    <div class="section-seller-overview__item ">
+                        <div class="section-seller-overview__item-icon-wrapper">
+                            <i class="fa fa-star" aria-hidden="true"></i>
+                        </div>
+                        <div class="section-seller-overview__item-text">
+                            <div class="section-seller-overview__item-text-name">Rating&nbsp;</div>
+                            <div class="section-seller-overview__item-text-value"> 4.9 (479,7k rating)</div>
+                        </div>
+                    </div>
+                    <div class="section-seller-overview__item section-seller-overview__item--clickable">
+                        <div class="section-seller-overview__item-icon-wrapper">
+                            <i class="fa fa-users" aria-hidden="true"></i>
+                        </div>
+                        <div class="section-seller-overview__item-text">
+                            <div class="section-seller-overview__item-text-name">Joined&nbsp;</div>
+                            <div class="section-seller-overview__item-text-value">3 days ago</div>
+                        </div>
+                    </div>
+                    <div class="section-seller-overview__item section-seller-overview__item--clickable">
+                        <div class="section-seller-overview__item-icon-wrapper">
+                            <i class="fa fa-plus" aria-hidden="true"></i>
+                        </div>
+                        <div class="section-seller-overview__item-text">
+                            <div class="section-seller-overview__item-text-name">Following&nbsp;</div>
+                            <div class="section-seller-overview__item-text-value">0</div>
+                        </div>
+                    </div>
+                    <div class="section-seller-overview__item section-seller-overview__item--clickable">
+                        <div class="section-seller-overview__item-icon-wrapper">
+                           <i class="fa fa-user" aria-hidden="true"></i>
+                        </div>
+                        <div class="section-seller-overview__item-text">
+                            <div class="section-seller-overview__item-text-name">Follower:&nbsp;</div>
+                            <div class="section-seller-overview__item-text-value">3,9k</div>
+                        </div>
+                    </div>
+                    <div class="section-seller-overview__item section-seller-overview__item--clickable">
+                        <div class="section-seller-overview__item-icon-wrapper">
+                         <i class="fa fa-comment" aria-hidden="true"></i>
+                        </div>
+                        <div class="section-seller-overview__item-text">
+                            <div class="section-seller-overview__item-text-name">Chat Performance&nbsp;</div>
+                            <div class="section-seller-overview__item-text-value">98% (with in 1 hours)</div>
                         </div>
                     </div>
                 </div>
-                <div class="section-seller__leading-right">
-                    
+               
+            </div>
+        </div>
+        <div class="shop-page__menu">
+            <div class="navbar-with-more-menu navbar-with-more-menu--narrow">
+                <div class="css-container navbar-with-more-menu-wrapper navbar-with-more-menu-wrapper--no-shadow " style="background-color: rgb(255, 255, 255);">
+                    <div class="navbar-with-more-menu__items">
+                        <a class="navbar-with-more-menu__item navbar-with-more-menu__item--active" href="/myshop/myshop"><span>Home</span></a>
+                        <a class="navbar-with-more-menu__item" href="/myshop/myshop"><span>ALL PRODUCT</span></a>
+                        <a class="navbar-with-more-menu__item" href="/myshop/myshop"><span>SALE</span></a>
+                      
+                    </div>
                 </div>
             </div>
         </div>
+        <div class="sz-collection-view css-container">
+
+            
+            <div class="sz-section-simple">
+                <div class="sz-section-simple__header">
+                    <div class="sz-section-simple__header__title">RECOMMENDED FOR YOU </div>
+                    <a class="k-uwoE UR+0VK" href="#">
+                    View All<i class="fa fa-arrow-right" aria-hidden="true"></i>
+                </a>
+                </div>
+                <div class="sz-section-simple__content">
+                       {{> 'products/productFlash'}}
+                </div>
+            </div>
+
+            
+            
+        </div>
+            <!--Home-->
+        <div class="option-home-section">
+             <div class="brand-slider-shop">
+                <div class="brand"><img src="/img_slider/image-slider_brand/brand1.jpeg" alt=""></div>
+                <div class="brand"><img src="/img_slider/image-slider_brand/brand2.jpeg" alt=""></div>
+                <div class="brand"><img src="/img_slider/image-slider_brand/brand3.jpeg" alt=""></div>
+                <div class="brand"><img src="/img_slider/image-slider_brand/brand4.jpeg" alt=""></div>
+                <div class="brand"><img src="/img_slider/image-slider_brand/brand5.jpeg" alt=""></div>
+            </div>
+        </div>
+        <!--All Product-->
+        
+        <!--Voucher + Sale-->
+
+        </div>
     </div>
 </div>
+<script>
+     $('.brand-slider-shop').slick({
+                infinite: true,
+                autoplay: true,
+                autoplaySpeed: 3000,
+                speed: 300,
+                slidesToShow: 3,
+                slidesToScroll: 3
+            });
+            
+</script>
+
+
+  
