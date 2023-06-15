@@ -4,6 +4,6 @@ const shopController = require("../controller/ShopController");
 
 //signUp
 router.post('/signup',shopController.signUp)
-router.post('/myshop',shopController.index)
+router.use('/myshop',shopController.index)
 
 module.exports = router;

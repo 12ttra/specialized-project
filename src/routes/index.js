@@ -22,8 +22,8 @@ function router(app){
     app.use("/favourite", favouriteRoutes);
     app.use("/flashsale", flashSale);
     app.use("/checkout", checkoutRoutes);
-    //app.use("/myshop", shopRoutes);
-    app.use("/v1/myshop", shopRoutes);
+    app.use("/myshop", shopRoutes);
+    //app.use("/v1/myshop", shopRoutes);
     app.get('/wishlist',(req, res)=>{
         res.render('pages/wishlist');
     })

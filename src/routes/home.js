@@ -3,7 +3,7 @@ const fs = require('fs');
 const path = require('path')
 const router = express.Router();
 const homeController = require("../controller/HomepageController");
-const multer = require('multer');
+//const multer = require('multer');
 const auth = require("../middleware/auth_middleware")
 
 // const storage = multer.diskStorage({
