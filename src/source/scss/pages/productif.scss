@@ -11,7 +11,18 @@ $main-color:#ee2d5a;
 $mg-infor: 20px auto;
 $width-90: 90%;
 
-
+.k-uwoE {
+    display: inline-block;
+    font-size: 14px;
+    color: var(--brand-primary-color,$main-color);
+    cursor: pointer;
+    text-transform: capitalize;
+    line-height: 16px;
+    display: flex;
+    align-items: center;
+    justify-content: flex-end;
+    gap:10px;
+}
     .items-center {
         align-items: center;
     }
@@ -396,18 +407,7 @@ $width-90: 90%;
             margin-left: auto;
             flex-shrink: 0;
         }
-        .k-uwoE {
-            display: inline-block;
-            font-size: 14px;
-            color: var(--brand-primary-color,$main-color);
-            cursor: pointer;
-            text-transform: capitalize;
-            line-height: 16px;
-            display: flex;
-            align-items: center;
-            justify-content: flex-end;
-            gap:10px;
-    }
+        
     .text-decor{
         text-decoration: none;
     }
