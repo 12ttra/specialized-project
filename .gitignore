@@ -1,5 +1,5 @@
 node_modules
 src/public/css/*
-.env 
+# .env 
 server.js 
-src/config/config.js
+# src/config/config.js

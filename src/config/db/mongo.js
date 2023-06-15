@@ -1,5 +1,6 @@
 const { default: mongoose } = require("mongoose");
-// const { countConnect } = require("/Visual Studio Code/-n-chuy-n-ng-nh/src/helpers/check.connect")
+
+//const { countConnect } = require("/Visual Studio Code/-n-chuy-n-ng-nh/src/helpers/check.connect")
 const { countConnect } = require("/Users/nhunhy/Documents/specialized-project/src/helpers/check.connect.js")
 
 //const connectString = 'mongodb+srv://tra:123@cluster0.rb2ac3u.mongodb.net/Sprezza?retryWrites=true&w=majority'
@@ -28,12 +29,22 @@ const { countConnect } = require("/Users/nhunhy/Documents/specialized-project/sr
 // const connectDB = Database.getInstance()
 
 
+const { countConnect } = require("../../helpers/check.connect")
+const config = require("../config");
+require('dotenv').config();
+
+
 async function connectDB(){
     try {
-        await mongoose.connect('mongodb+srv://tra:123@cluster0.rb2ac3u.mongodb.net/Sprezza?retryWrites=true&w=majority');
+        await mongoose.connect(config.MONGO_URL, {
+            useNewUrlParser: true,
+            //useCreateIndex: true,
+            useUnifiedTopology: true,
+        });
         console.log("DB connect successfuly", countConnect());
     } catch (error) {
         console.log(error);
+        return error;
     }
 }
 module.exports = connectDB;

@@ -1,7 +1,8 @@
-const usera_model = require("../model/user_model");
+const userModel = require("../model/user_model");
 const bcrypt = require("bcrypt");
 var jwt = require("jsonwebtoken");
-const saltRounds = 10;
+const { JWT_SECRET } = require("../config/config");
+const { toTitleCase, validateEmail } = require("../config/validator");
 
 class AccountController{
 
@@ -12,39 +13,7 @@ class AccountController{
   store(req, res){
     return res.render('pages/registerstore', { title: 'Register Store', layout: 'no-header-footer' });
   }
-
-  async signUp(req, res){
-    try {
-      console.log(req.params,"aa");
-      if (!req.body.email || !req.body.name || !req.body.password) {
-        res.status(400).json({success: false , message: "Pass currect data", data: []});
-        return;
-      }
-      const user = await usera_model.findOne({ email: req.body.email });
-      if (user) {
-        res.status(200).json({ success: false , message: "User Already Exists !", data: []});
-        return;
-      }
-      const password = await bcrypt.hash(req.body.password, saltRounds);
-      const data = { ...req.body, password };
-      const userData = await usera_model.create(data);
-      const token = await jwt.sign({ user }, "fake-jwt-secret");
-      res.status(201).json(
-        {
-          success: true,
-          message: "User Created Succefully ",
-          data: {
-            name: userData.name,
-            email: userData.email,
-            id: userData.id,
-            access_token: token,
-         },
-        });
-    } catch (error) {
-      res.status(404).json({ success: false , message: "Something Went Wrong !", data: error });
-    }
-  }
-
+  
   getLogIn(req, res){
     return res.render('pages/login', { title: 'Account Login',layout: 'no-header-footer' });
   }
@@ -52,39 +21,117 @@ class AccountController{
   getSignUp(req, res){
     return res.render('pages/register', { title: 'Account Register',layout: 'no-header-footer' });
   }
-  async logIn(req, res){
-    try {
-      if (!req.body.email || !req.body.password) {
-        res.status(400).json({success: false , message: "Pass currect data", data: []});
-        return;
-      }
-      const user = await usera_model.findOne({ email: req.body.email });
-      if (!user) {
-        res.status(204).json({success: false , message: "User not found !", data: []});
-        return;
-      }
-  
-      if (!(await bcrypt.compare(req.body.password, user.password))) {
-        res.status(200).json({success: false , message: "Wrong password", data: [] });
-        return;
-      }
-  
-      const token = await jwt.sign({ user }, "fake-jwt-secret");
-  
-      res.status(201).json(
-        {
-          success: true,
-          message: "User Successfully Logged ",
-          data: {
-            name: user.name,
-            email: user.email,
-            id: user.id,
-            access_token: token,
-          },
+
+  /* User Registration/Signup controller  */
+  async postSignup(req, res) {
+    let { name, email, password, cPassword } = req.body;
+    let error = {};
+    if (!name || !email || !password || !cPassword) {
+      error = {
+        ...error,
+        name: "Filed must not be empty",
+        email: "Filed must not be empty",
+        password: "Filed must not be empty",
+        cPassword: "Filed must not be empty",
+      };
+      return res.json({ error });
+    }
+    if (name.length < 3 || name.length > 25) {
+      error = { ...error, name: "Name must be 3-25 charecter" };
+      return res.json({ error });
+    } else {
+      if (validateEmail(email)) {
+        name = toTitleCase(name);
+        if ((password.length > 255) | (password.length < 8)) {
+          error = {
+            ...error,
+            password: "Password must be 8 charecter",
+            name: "",
+            email: "",
+          };
+          return res.json({ error });
+        } else {
+          // If Email & Number exists in Database then:
+          try {
+            password = bcrypt.hashSync(password, 10);
+            const data = await userModel.findOne({ email: email });
+            if (data) {
+              error = {
+                ...error,
+                password: "",
+                name: "",
+                email: "Email already exists",
+              };
+              return res.json({ error });
+            } else {
+              let newUser = new userModel({
+                name,
+                email,
+                password,
+                // ========= Here role 1 for admin signup role 0 for customer signup =========
+                userRole: 1, // Field Name change to userRole from role
+              });
+              newUser
+                .save()
+                .then((data) => {
+                  return res.json({
+                    success: "Account create successfully. Please login",
+                  });
+                })
+                .catch((err) => {
+                  console.log(err);
+                });
+            }
+          } catch (err) {
+            console.log(err);
+          }
         }
-        );
-    } catch (error) {
-      res.status(404).json({ success: false , message: "Something went worng !", data: error });
+      } else {
+        error = {
+          ...error,
+          password: "",
+          name: "",
+          email: "Email is not valid",
+        };
+        return res.json({ error });
+      }
+    }
+  }
+
+  /* User Login/Signin controller  */
+  async postSignin(req, res) {
+    let { email, password } = req.body;
+    if (!email || !password) {
+      return res.json({
+        error: "Fields must not be empty",
+      });
+    }
+    try {
+      const data = await userModel.findOne({ email: email });
+      if (!data) {
+        return res.json({
+          error: "Invalid email or password",
+        });
+      } else {
+        const login = await bcrypt.compare(password, data.password);
+        if (login) {
+          const token = jwt.sign(
+            { _id: data._id, role: data.userRole },
+            JWT_SECRET
+          );
+          const encode = jwt.verify(token, JWT_SECRET);
+          return res.json({
+            token: token,
+            user: encode,
+          });
+        } else {
+          return res.json({
+            error: "Invalid email or password",
+          });
+        }
+      }
+    } catch (err) {
+      console.log(err);
     }
   }
 }

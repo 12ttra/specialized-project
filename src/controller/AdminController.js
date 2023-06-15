@@ -1,181 +1,138 @@
-const AdminBro = require("admin-bro");
-const AdminBroExpress = require("admin-bro-expressjs");
-const AdminBroMongoose = require("admin-bro-mongoose");
-const mongoose = require("mongoose");
-const Product = require("../model/product_model");
-const User = require("../model/user_model");
-const Order = require("../model/order_model");
-const Category = require("../model/category_model");
-AdminBro.registerAdapter(AdminBroMongoose);
+const { toTitleCase, validateEmail } = require("../config/validator");
+const bcrypt = require("bcryptjs");
+const userModel = require("../model/user_model");
+const jwt = require("jsonwebtoken");
+const { JWT_SECRET } = require("../config/config");
 
-const express = require("express");
-const app = express();
-
-const adminBro = new AdminBro({
-  databases: [mongoose],
-  rootPath: "/admin/dashboard",
-  branding: {
-    companyName: "Sprezza",
-    logo: "/images/Image/favicon.png",
-    softwareBrothers: false,
-  },
-  resources: [
-    {
-      resource: Product,
-      options: {
-        parent: {
-          name: "Admin Content",
-          icon: "InventoryManagement",
-        },
-        properties: {
-          description: {
-            type: "richtext",
-            isVisible: { list: false, filter: true, show: true, edit: true },
-          },
-          _id: {
-            isVisible: { list: false, filter: true, show: true, edit: false },
-          },
-          title: {
-            isTitle: true,
-          },
-          price: {
-            type: "number",
-          },
-          imagePath: {
-            isVisible: { list: false, filter: false, show: true, edit: true },
-            components: {
-              show: AdminBro.bundle(
-                "../components/admin-imgPath-component.jsx"
-              ),
-            },
-          },
-        },
-      },
-    },
-    {
-      resource: User,
-      options: {
-        parent: {
-          name: "User Content",
-          icon: "User",
-        },
-        properties: {
-          _id: {
-            isVisible: { list: false, filter: true, show: true, edit: false },
-          },
-          username: {
-            isTitle: true,
-          },
-        },
-      },
-    },
-    {
-      resource: Order,
-      options: {
-        parent: {
-          name: "User Content",
-          icon: "User",
-        },
-        properties: {
-          user: {
-            isTitle: true,
-          },
-          _id: {
-            isVisible: { list: false, filter: true, show: true, edit: false },
-          },
-          paymentId: {
-            isVisible: { list: false, filter: true, show: true, edit: false },
-          },
-          address: {
-            isVisible: { list: false, filter: true, show: true, edit: false },
-          },
-          createdAt: {
-            isVisible: { list: true, filter: true, show: true, edit: false },
-          },
-          cart: {
-            isVisible: { list: false, filter: false, show: true, edit: false },
-            components: {
-              show: AdminBro.bundle("../views/admin/order-grid.hbs"),
-            },
-          },
-          "cart.items": {
-            isVisible: {
-              list: false,
-              filter: false,
-              show: false,
-              edit: false,
-            },
-          },
-          "cart.totalQty": {
-            isVisible: {
-              list: false,
-              filter: false,
-              show: false,
-              edit: false,
-            },
-          },
-          "cart.totalCost": {
-            isVisible: {
-              list: false,
-              filter: false,
-              show: false,
-              edit: false,
-            },
-          },
-        },
-      },
-    },
-    {
-      resource: Category,
-      options: {
-        parent: {
-          name: "Admin Content",
-          icon: "User",
-        },
-        properties: {
-          _id: {
-            isVisible: { list: false, filter: true, show: true, edit: false },
-          },
-          slug: {
-            isVisible: { list: false, filter: false, show: false, edit: false },
-          },
-          title: {
-            isTitle: true,
-          },
-        },
-      },
-    },
-  ],
-  locale: {
-    translations: {
-      labels: {
-        loginWelcome: "Admin Panel Login",
-      },
-      messages: {
-        loginWelcome:
-          "Please enter your credentials to log in and manage your website contents",
-      },
-    },
-  },
-  dashboard: {
-    component: AdminBro.bundle("./views/admin/dashboard.hbs"),
-  },
-});
-
-const ADMIN = {
-  email: process.env.ADMIN_EMAIL,
-  password: process.env.ADMIN_PASSWORD,
-};
-
-const router = AdminBroExpress.buildAuthenticatedRouter(adminBro, {
-  authenticate: async (email, password) => {
-    if (ADMIN.password === password && ADMIN.email === email) {
-      return ADMIN;
+class AdminController {
+  async isAdmin(req, res) {
+    let { loggedInUserId } = req.body;
+    try {
+      let loggedInUserRole = await userModel.findById(loggedInUserId);
+      res.json({ role: loggedInUserRole.userRole });
+    } catch {
+      res.status(404);
     }
-    return null;
-  },
-  cookieName: process.env.ADMIN_COOKIE_NAME,
-  cookiePassword: process.env.ADMIN_COOKIE_PASSWORD,
-});
+  }
 
-module.exports = router;
+  async allUser(req, res) {
+    try {
+      let allUser = await userModel.find({});
+      res.json({ users: allUser });
+    } catch {
+      res.status(404);
+    }
+  }
+
+  /* get all users */
+  async get_users(req, res) {
+    try {
+        const users = await User.find();
+        res.status(200).json({
+            type: "success",
+            users
+        });
+    } catch (err) {
+        res.status(500).json({
+            type: "error",
+            message: "Something went wrong please try again",
+            err
+        })
+    }
+   
+  }
+
+  /* get single user */
+  async get_user(req, res) {
+      try {
+          const user = await User.findById(req.params.id);
+          const { password, ...data } = user._doc;
+          res.status(200).json({
+              type: "success",
+              data
+          });
+
+      } catch (err) {
+          res.status(500).json({
+              type: "error",
+              message: "Something went wrong please try again",
+              err
+          })
+      }
+  }
+
+  /* get user stats */
+  async get_stats(req, res) {
+      const date = new Date();
+      const lastYear = new Date(date.setFullYear(date.getFullYear() - 1));
+      try {
+          const data = await User.aggregate([
+              { $match : { 
+                  createdAt: { $gte: lastYear }
+              }},
+              { $project: { 
+                  month: { $month: "$createdAt"}
+              }},
+              { $group : {
+                  _id: "$month", 
+                  total: { $sum: 1},
+              }}
+          ]);
+          res.status(200).json({
+              type: "success",
+              data
+          })
+      } catch (err) {
+          res.status(500).json({
+              type: "error",
+              message: "Something went wrong please try again",
+              err
+          })
+      }
+  }
+
+  /* update user */
+  async update_user(req, res) {
+      if(req.body.password) {
+          req.body.password = bcrypt.hashSync(req.body.password, 10)
+      }
+      
+      try {
+          const updatedUser = await User.findByIdAndUpdate(req.params.id, {
+              $set: req.body
+          }, 
+          { new: true }
+          );
+          res.status(200).json({
+              type: "success",
+              message: "User updated successfully",
+              updatedUser
+          })
+      } catch (err) {
+          res.status(500).json({
+              type: "error",
+              message: "Something went wrong please try again",
+              err
+          })
+      }
+  }
+
+  /* delete user */
+  async delete_user(req, res) {
+      try {
+          await User.findByIdAndDelete(req.params.id)
+          res.status(200).json({
+              type: "success",
+              message: "User has been deleted successfully"
+          });
+      } catch (err) {
+          res.status(500).json({
+              type: "error",
+              message: "Something went wrong please try again",
+              err
+          })
+      }
+  }
+}
+
+module.exports = new AdminController;

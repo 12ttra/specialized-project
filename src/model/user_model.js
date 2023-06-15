@@ -6,10 +6,12 @@ const userSchema = Schema({
   username: {
     type: String,
     require: true,
+    unique: true
   },
   email: {
     type: String,
     require: true,
+    unique: true
   },
   password: {
     type: String,
@@ -20,7 +22,13 @@ const userSchema = Schema({
     required:true,
     unique:true,
   },
-});
+  isAdmin: {
+    type: Boolean,
+    default: false
+  }
+},
+{ timestamps: true}
+);
 
 // encrypt the password before storing
 userSchema.methods.encryptPassword = (password) => {
