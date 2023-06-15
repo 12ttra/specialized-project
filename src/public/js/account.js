@@ -10,23 +10,13 @@ function register(e){
         'name': fullname,
         'birthday': birthday,
         'email': email,
-        'password': pass
+        'password': pass,
+        'cPassword': pass
     };
     $.ajax({
         url: "/account/register-post",
         type: 'POST',
-        data: {
-            'name': fullname,
-            'birthday': birthday,
-            'email': email,
-            'password': pass
-        },
-        xhrFields: {
-            withCredentials: false
-        },
-        headers: {
-
-        },
+        data: params,
         dataType: "json",
         success: function (result) {
             if(result.success){
@@ -34,7 +24,7 @@ function register(e){
                 window.location.href="/account/login";
             } else {
                 console.log("loi");
-                alert(result.message);
+                alert("Loi dang ky");
             }
         },
         error: function (error) {

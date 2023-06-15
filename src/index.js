@@ -1,5 +1,6 @@
 require("dotenv").config();
 const express = require("express");
+const bodyParser = require('body-parser');
 const app = express();
 const route = require("./routes");
 const connectDb = require("./config/db/mongo");
@@ -7,8 +8,6 @@ const { engine  } = require('express-handlebars');
 const path = require('path');
 const morgan = require('morgan');
 const compression = require('compression');
-const Handlebars = require('handlebars');
-const fs = require('fs');
 const passport = require('passport');
 const flash = require("connect-flash");
 const { checkOverload } = require("./helpers/check.connect")
@@ -16,8 +15,9 @@ checkOverload()
 require("./config/passport");
 const Category = require("./model/category_model");
 
+app.use(bodyParser.json());
+app.use(bodyParser.urlencoded({ extended: true }));
 route(app);
-
 //init middlewares
 app.use(morgan("combined"))
 app.use(compression())
