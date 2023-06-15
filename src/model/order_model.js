@@ -1,61 +1,48 @@
 const mongoose = require("mongoose");
-const Schema = mongoose.Schema;
+const { ObjectId } = mongoose.Schema.Types;
 
-const orderSchema = Schema({
-  user: {
-    type: Schema.Types.ObjectId,
-    ref: "User",
-  },
-  cart: {
-    totalQty: {
-      type: Number,
-      default: 0,
-      required: true,
-    },
-    totalCost: {
-      type: Number,
-      default: 0,
-      required: true,
-    },
-    items: [
+const orderSchema = new mongoose.Schema(
+  {
+    allProduct: [
       {
-        productId: {
-          type: mongoose.Schema.Types.ObjectId,
-          ref: "Product",
-        },
-        qty: {
-          type: Number,
-          default: 0,
-        },
-        price: {
-          type: Number,
-          default: 0,
-        },
-        title: {
-          type: String,
-        },
-        productCode: {
-          type: String,
-        },
+        id: { type: ObjectId, ref: "products" },
+        quantitiy: Number,
       },
     ],
+    user: {
+      type: ObjectId,
+      ref: "users",
+      required: true,
+    },
+    amount: {
+      type: Number,
+      required: true,
+    },
+    transactionId: {
+      type: String,
+      required: true,
+    },
+    address: {
+      type: String,
+      required: true,
+    },
+    phone: {
+      type: Number,
+      required: true,
+    },
+    status: {
+      type: String,
+      default: "Not processed",
+      enum: [
+        "Not processed",
+        "Processing",
+        "Shipped",
+        "Delivered",
+        "Cancelled",
+      ],
+    },
   },
-  address: {
-    type: String,
-    required: true,
-  },
-  paymentId: {
-    type: String,
-    required: true,
-  },
-  createdAt: {
-    type: Date,
-    default: Date.now,
-  },
-  Delivered: {
-    type: Boolean,
-    default: false,
-  },
-});
+  { timestamps: true }
+);
 
 module.exports = mongoose.model("Order", orderSchema);

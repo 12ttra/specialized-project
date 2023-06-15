@@ -9,12 +9,12 @@ const shopRoutes = require("./shop")
 const checkoutRoutes = require("./checkout")
 const adminRouter = require("./admin/index");
 const homeRouter = require("./home");
+const orderRouter = require("./order");
 
 function router(app){
 
     app.use("/home", homeRouter);
     app.use("/product", productRoutes);
-    //app.use("/v1/api", productRoutes);
     app.use("/account", accountRoutes);
     app.use("/category", catogoryRoutes);
     app.use("/subCategory",subCategoryRoutes)
@@ -22,8 +22,8 @@ function router(app){
     app.use("/favourite", favouriteRoutes);
     app.use("/flashsale", flashSale);
     app.use("/checkout", checkoutRoutes);
-    //app.use("/myshop", shopRoutes);
-    app.use("/v1/myshop", shopRoutes);
+    app.use("/myshop", shopRoutes);
+    app.use("/order", orderRouter);
     app.get('/wishlist',(req, res)=>{
         res.render('pages/wishlist');
     })

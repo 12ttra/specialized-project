@@ -1,56 +1,62 @@
 const mongoose = require("mongoose");
-const Schema = mongoose.Schema;
+const { ObjectId } = mongoose.Schema.Types;
 
-const productSchema = Schema({
-  productCode: {
-    type: String,
-    required: true,
-    unique: true,
+const productSchema = new mongoose.Schema(
+  {
+    productCode: {
+      type: String,
+      required: true,
+      unique: true,
+    },
+    pName: {
+      type: String,
+      required: true,
+    },
+    pDescription: {
+      type: String,
+      required: true,
+    },
+    pPrice: {
+      type: Number,
+      required: true,
+    },
+    pSold: {
+      type: Number,
+      default: 0,
+    },
+    pQuantity: {
+      type: Number,
+      default: 0,
+    },
+    pCategory: {
+      type: ObjectId,
+      ref: "categories",
+    },
+    pImages: {
+      type: Array,
+      required: true,
+    },
+    pOffer: {
+      type: String,
+      default: null,
+    },
+    pRatingsReviews: [
+      {
+        review: String,
+        user: { type: ObjectId, ref: "users" },
+        rating: String,
+        createdAt: {
+          type: Date,
+          default: Date.now(),
+        },
+      },
+    ],
+    pStatus: {
+      type: String,
+      required: true,
+    },
   },
-  title: {
-    type: String,
-    required: true,
-  },
-  actualPrice: {
-    type: Number,
-    required: true,
-  },
-  currentPrice: {
-    type: Number,
-    required: true,
-  },
-  offInPercentage: {
-    type: String,
-    required: true,
-  },
-  imagePath: {
-    type: String,
-    required: true,
-  },
-  description: {
-    type: String,
-    required: true,
-  },
-  price: {
-    type: Number,
-    required: true,
-  },
-  category: {
-    type: mongoose.Schema.Types.ObjectId,
-    ref: "Category",
-  },
-  available: {
-    type: Boolean,
-    required: true,
-  },
-  size: {
-    type: Array,
-    required: true,
-  },
-  createdAt: {
-    type: Date,
-    default: Date.now,
-  },
-});
+  { timestamps: true }
+);
 
 module.exports = mongoose.model("Product", productSchema);
