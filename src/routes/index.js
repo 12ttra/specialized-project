@@ -28,13 +28,6 @@ function router(app){
         res.render('pages/wishlist');
     })
     app.use("/admin", adminRouter)
-
-    
-   
-    
-   
-
-    
   
 }
 module.exports = router ;
