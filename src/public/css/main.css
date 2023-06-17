@@ -9,6 +9,7 @@
 @import url("https://fonts.googleapis.com/css2?family=Noto+Sans+Mono:wght@400;500&family=Space+Mono:wght@400;700&display=swap");
 @import url("https://fonts.googleapis.com/css2?family=Noto+Sans+Mono:wght@400;500&family=Space+Mono:wght@400;700&display=swap");
 @import url("https://fonts.googleapis.com/css2?family=Noto+Sans+Mono:wght@400;500&family=Space+Mono:wght@400;700&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Noto+Sans+Mono:wght@400;500&family=Space+Mono:wght@400;700&display=swap");
 * {
   margin: 0;
   padding: 0;
@@ -3301,3 +3302,51 @@ a {
       .product-wrapper-item-small .product-item-descrip-small .icon-product-small .img-icon-small:hover {
         background: whitesmoke;
         color: black; }
+
+#success-order {
+  width: 100%;
+  height: auto; }
+  #success-order .success-order-wrapper {
+    width: 90%;
+    margin: 0 auto; }
+    #success-order .success-order-wrapper .order-confirmation {
+      width: 600px;
+      height: 200px;
+      margin: auto;
+      background-color: rgba(255, 192, 203, 0.778);
+      border: 2px dotted #ee2d5a; }
+      #success-order .success-order-wrapper .order-confirmation .title-thanks {
+        text-transform: uppercase;
+        font-size: 30px;
+        font-weight: 600;
+        color: #ee2d5a;
+        text-align: center;
+        margin-top: 20px;
+        margin-bottom: 20px; }
+      #success-order .success-order-wrapper .order-confirmation .content-thanks {
+        padding: 0 30px; }
+        #success-order .success-order-wrapper .order-confirmation .content-thanks .id-order {
+          display: flex;
+          justify-content: center; }
+          #success-order .success-order-wrapper .order-confirmation .content-thanks .id-order .css-p {
+            font-size: 14px; }
+          #success-order .success-order-wrapper .order-confirmation .content-thanks .id-order .css-p-numb {
+            font-size: 18px;
+            font-weight: 800;
+            margin-left: 10px;
+            color: blue; }
+        #success-order .success-order-wrapper .order-confirmation .content-thanks .remind-order {
+          color: black;
+          font-size: 16px; }
+          #success-order .success-order-wrapper .order-confirmation .content-thanks .remind-order .css-color-text {
+            color: #ee2d5a; }
+          #success-order .success-order-wrapper .order-confirmation .content-thanks .remind-order .money-order {
+            color: #ee2d5a;
+            font-size: 22px; }
+        #success-order .success-order-wrapper .order-confirmation .content-thanks .shop-name {
+          font-size: 25px;
+          font-weight: 900;
+          text-align: end; }
+
+a {
+  text-decoration: none; }
