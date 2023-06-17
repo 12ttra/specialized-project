@@ -1,93 +1,72 @@
 <div id="add-category" class="add-product">
-    <div class="add-product-wrapper">
-        <!--Tilte-->
-        <div class="add-product-title">
-            <h1>ADD NEW CATEGORY</h1>
-        </div>
-
-        <div class="add-product-items">
-
-            <form action="#" class="send-form">
-
-                <table class="add-product-item">
-                    <tr>
-                        <td class="title-item name">
-                            <p>category Name:
-                            <p>
-
-                        </td>
-                        <td class="value-item name-1">
-                            <input type="text">
-                            
-                        </td>
-                    </tr>
-
-                    <tr>
-                        <td class="title-item size">
-                            <p>SubCategory</p>
-                        </td>
-                        <td class="size-1">
-                            <select name="subCategoryIds" class="select-box" multiple>
-                                <option value="">Please select subCategory</option>
-                                <option value="1">S</option>
-                                <option value="2">M</option>
-                                <option value="3">L</option>
-                            </select>
-                        </td>
-                    </tr>
-                     <tr>
-                        <td class="title-item size">
-                            <p>Status</p>
-                        </td>
-                        <td class="size-1">
-                            <select name="cStatus" class="select-box" >
-                                <option value="">0</option>
-                                <option value="1">1</option>
-                            </select>
-                        </td>
-                    </tr>
-                   
-                      <tr>
-                        <td class="title-item name">
-                            <p>category URL:
-                            <p>
-
-                        </td>
-                        <td class="value-item name-1">
-                            <input type="text">
-                            
-                        </td>
-                    </tr>
-
-                    <tr>
-                        <td class="title-item img">
-                            <p>Category Image1:
-                            <p>
-                        </td>
-                        <td class="value-item img-1">
-                            <input type="file" name="image">
-                            <img class="add-img" src="/images/iconheader/image.svg" alt="">
-                            <p class="warning-noti">Only 1 imagetype .jpeg , .jpg , .png</p>
-                        </td>
-                    </tr>
-
-                </table>
-                <div class="btn-wrapper">
-                    <div class="width">
-                        <button  id="save-category" type="button" class="hover btn-buy">Save</button>
-                    </div>
-                    <div class="width">
-                        <button id="clear-category" type="button" class="hover btn-detele">Clear</button>
-                    </div>
-                </div>
-                <div class="back">
-                    <a href="#" class="a-back"><span class="material-icons-sharp">arrow_back</span>Back</a>
-                </div>
-
-
-            </form>
-        </div>
-    </div>
-</div>\
-
-   <script type="text/javascript" src="/admin/js/category.js"></script>
+   <div class="add-product-wrapper">
+      <!--Tilte-->
+      <div class="add-product-title">
+         <h1>ADD NEW CATEGORY</h1>
+      </div>
+      <div class="add-product-items">
+         <form action="/category/add-category" method="POST" enctype="multipart/form-data" class="send-form">
+            <table class="add-product-item">
+               <tr>
+                  <td class="title-item name">
+                     <p>category Name:</p>
+                  </td>
+                  <td class="value-item name-1">
+                     <input name="cName" type="text">
+                  </td>
+               </tr>
+               <tr>
+                  <td class="title-item size">
+                     <p>SubCategory</p>
+                  </td>
+                  <td class="size-1">
+                     <select name="subCategoryIds" class="select-box" multiple>
+                        <option value="">Please select subCategory</option>
+                     </select>
+                  </td>
+               </tr>
+               <tr>
+                  <td class="title-item size">
+                     <p>Status</p>
+                  </td>
+                  <td class="size-1">
+                     <select name="cStatus" class="select-box" >
+                        <option value="">0</option>
+                        <option value="1">1</option>
+                     </select>
+                  </td>
+               </tr>
+               <tr>
+                  <td class="title-item name">
+                     <p>category URL:</p>
+                  </td>
+                  <td class="value-item name-1">
+                     <input name="slug" type="text">
+                  </td>
+               </tr>
+               <tr>
+                  <td class="title-item img">
+                     <p>Category Image1:</p>
+                  </td>
+                  <td class="value-item img-1">
+                     <input type="file" name="cImage">
+                     <img class="add-img" src="/images/iconheader/image.svg" alt="">
+                     <p class="warning-noti">Only 1 imagetype .jpeg , .jpg , .png</p>
+                  </td>
+               </tr>
+            </table>
+            <div class="btn-wrapper">
+               <div class="width">
+                  <button  id="save-category" type="submit" class="hover btn-buy">Save</button>
+               </div>
+               <div class="width">
+                  <button id="clear-category" type="button" class="hover btn-detele">Clear</button>
+               </div>
+            </div>
+            <div class="back">
+               <a href="#" class="a-back"><span class="material-icons-sharp">arrow_back</span>Back</a>
+            </div>
+         </form>
+      </div>
+   </div>
+</div>
