@@ -42,8 +42,8 @@ function register(e){
 }
 
 //PAGE LOGIN 
-const btnLogin = document.querySelector("#btn-login");
-btnRegister.addEventListener("click", login);
+//const btnLogin = document.querySelector("#btn-login");
+//btnRegister.addEventListener("click", login);
 
 const login = (e)=>{
     let email = document.getElementById("email-login").value;
