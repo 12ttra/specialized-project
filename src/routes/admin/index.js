@@ -11,7 +11,9 @@ router.use('/dashboard',(req, res)=>{
 router.get('/newproduct',(req, res)=>{
     res.render('admin/newproduct',{ title: 'Dashboard', layout: 'admin' });
 })
-
+router.get('/newcategory',(req, res)=>{
+    res.render('admin/newcategory',{ title: 'New Category', layout: 'admin' });
+})
 router.post("/isadmin", adminController.isAdmin);
 router.post("/user", function(req, res){
     loginCheck, isAuth, isAdmin, adminController.allUser
