@@ -57,6 +57,7 @@ $font: monospace, 'Space Mono';
                 font-size: 40px;
                 font-weight: 900;
                 color: black;
+                text-transform:uppercase ;
             }
         }
 
@@ -80,6 +81,7 @@ $font: monospace, 'Space Mono';
                     .title-item {
                         padding-bottom: 30px;
                         width: 20%;
+                        text-transform: capitalize;
 
                         p {
                             color: black;
