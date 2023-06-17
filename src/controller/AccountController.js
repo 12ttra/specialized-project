@@ -28,8 +28,9 @@ class AccountController{
     let error = { name: "",email: "",password: "",cPassword: ""};
 
     if(!name) {
-      error.name = "Filed must not be empty";
-    } else if(error.name.length > 3) {
+      error.name = "Name must not be empty";
+    // } else if(error.name.length > 3) {
+    } else if(!toTitleCase(name)) {
       error.name = "Name must be greater than 3 character";
     }
     if(!email) {
@@ -43,9 +44,12 @@ class AccountController{
       }
     }
     if(!password) {
-      error.password = "password must not be empty";
+      error.password = "Password must not be empty";
     } else if((password.length > 255) || (password.length < 8)){
       error.password =  "Password must be greater than 8 charecter and less than 255";
+    }
+    if(!cPassword) {
+      error.cPassword = "Confirm password must not be empty"
     }
 
     if(error.email != "" || error.cPassword != "" || error.password != "" || error.name != ""){
@@ -99,38 +103,61 @@ class AccountController{
   /* User Login/Signin controller  */
   async postSignin(req, res) {
     let { email, password } = req.body;
-    if (!email || !password) {
-      return res.status(200).json({
-        error: "Fields must not be empty",
-      });
-    }
-    try {
+    let error = { email: "",password: ""};
+    
+    if(!email) {
+      error.email = "Email must not be empty";
+    } else{
       const data = await userModel.findOne({ email: email });
-      if (!data) {
+      if (data) {
+        error.email = "Email already exists";
+      }
+    }
+    if(!password) {
+      error.password = "Password must not be empty";
+    }
+
+    if(error.email != "" || error.password != ""){
+      return res.status(200).json(
+        {
+          status: 0,
+          message: "Data is invalid",
+          data: error
+        }
+      );
+    }
+
+    try {
+      const login = await bcrypt.compare(password, data.password);
+      if (login) {
+        const token = jwt.sign(
+          { _id: data._id, role: data.userRole },
+          JWT_SECRET
+        );
+        const encode = jwt.verify(token, JWT_SECRET);
         return res.status(200).json({
-          error: "Invalid email or password",
+          token: token,
+          user: encode,
         });
       } else {
-        const login = await bcrypt.compare(password, data.password);
-        if (login) {
-          const token = jwt.sign(
-            { _id: data._id, role: data.userRole },
-            JWT_SECRET
-          );
-          const encode = jwt.verify(token, JWT_SECRET);
-          return res.status(200).json({
-            token: token,
-            user: encode,
-          });
-        } else {
-          return res.status(200).json({
-            error: "Invalid email or password",
-          });
-        }
+        return res.status(200).json(
+          {
+            status: 0,
+            message: "Data is invalid",
+            data: error
+          }
+        );
       }
     } catch (err) {
-      console.log(err);
+      return res.status(200).json(
+        {
+          status: 1,
+          message: "Success",
+          data: {}
+        }
+      )
     }
+
   }
 
   async changePassword(req, res) {
