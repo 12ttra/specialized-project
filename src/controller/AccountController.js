@@ -25,91 +25,75 @@ class AccountController{
   /* User Registration/Signup controller  */
   async postSignup(req, res) {
     let { name, email, password, cPassword } = req.body;
-    let error = {};
-    if (!name || !email || !password || !cPassword) {
-      error = {
-        ...error,
-        name: "",
-        email: "",
-        password: "",
-        cPassword: "",
-      };
-      return res.status(200).json({status: 0, message:"Error", data: { error }});
-    }
+    let error = { name: "",email: "",password: "",cPassword: ""};
 
     if(!name) {
-      error = {error, name : "Filed must not be empty"}
+      error.name = "Filed must not be empty";
+    } else if(error.name.length > 3) {
+      error.name = "Name must be greater than 3 character";
     }
     if(!email) {
-      error = {error, name : "Filed must not be empty"}
-    }
-    if(!password) {
-      error = {error, name : "Filed must not be empty"}
-    }
-    if(!cPassword) {
-      error = {error, name : "Filed must not be empty"}
-    }
-
-    if (name.length < 3 || name.length > 25) {
-      error = { ...error, name: "Name must be 3-25 charecter" };
-      return res.status(200).json({ error });
-    } else {
-      if (validateEmail(email)) {
-        name = toTitleCase(name);
-        if ((password.length > 255) | (password.length < 8)) {
-          error = {
-            ...error,
-            password: "Password must be 8 charecter",
-            name: "",
-            email: "",
-          };
-          return res.status(200).json({ error });
-        } else {
-          // If Email & Number exists in Database then:
-          try {
-            password = bcrypt.hashSync(password, 10);
-            const data = await userModel.findOne({ email: email });
-            if (data) {
-              error = {
-                ...error,
-                password: "",
-                name: "",
-                email: "Email already exists",
-              };
-              return res.status(200).json({ error });
-            } else {
-              let newUser = new userModel({
-                name,
-                email,
-                password,
-                // ========= Here role 1 for admin signup role 0 for customer signup =========
-                userRole: 1, // Field Name change to userRole from role
-              });
-              newUser
-                .save()
-                .then((data) => {
-                  return res.status(200).json({
-                    success: "Account create successfully. Please login",
-                  });
-                })
-                .catch((err) => {
-                  console.log(err);
-                });
-            }
-          } catch (err) {
-            console.log(err);
-          }
-        }
-      } else {
-        error = {
-          ...error,
-          password: "",
-          name: "",
-          email: "Email is not valid",
-        };
-        return res.status(200).json({ error });
+      error.email = "Email must not be empty";
+    } else if(!validateEmail(email)) {
+      error.email = "Email is not correct format";
+    } else{
+      const data = await userModel.findOne({ email: email });
+      if (data) {
+        error.email = "Email already exists";
       }
     }
+    if(!password) {
+      error.password = "password must not be empty";
+    } else if((password.length > 255) || (password.length < 8)){
+      error.password =  "Password must be greater than 8 charecter and less than 255";
+    }
+
+    if(error.email != "" || error.cPassword != "" || error.password != "" || error.name != ""){
+      return res.status(200).json(
+        {
+          status: 0,
+          message: "Data is invalid",
+          data: error
+        }
+      );
+    }
+
+    try {
+      password = bcrypt.hashSync(password, 10);
+      let newUser = new userModel({
+        name,
+        email,
+        password,
+        // ========= Here role 1 for admin signup role 0 for customer signup =========
+        userRole: 1, // Field Name change to userRole from role
+      });
+      newUser
+        .save()
+        .then((data) => {
+          return res.status(200).json({
+            success: "Account create successfully. Please login",
+          });
+        }).catch((err) => {
+          throw(err);
+        });
+      
+    } catch (err) {
+      return res.status(200).json(
+        {
+          status: 0,
+          message: "Data is invalid",
+          data: error
+        }
+      )
+    }
+
+    return res.status(200).json(
+      {
+        status: 1,
+        message: "Success",
+        data: {}
+      }
+    )
   }
 
   /* User Login/Signin controller  */
