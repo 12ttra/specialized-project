@@ -6,6 +6,7 @@ function register(e){
     let birthday = document.getElementById("birthday").value;
     let email = document.getElementById("email").value;
     let pass = document.getElementById("password").value;
+    let message_noti= document.getElementsByClassName("message__noti");
     let params = {
         'name': fullname,
         'birthday': birthday,
@@ -19,16 +20,18 @@ function register(e){
         data: params,
         dataType: "json",
         success: function (result) {
-            if(result.success){
-                alert('Account created successfully! Thank you ');
+            if(result.status == '1'){
+                message_noti.innerHTML = result.message;
+                btnRegister.style.visibility = "hidden";
                 window.location.href="/account/login";
             } else {
-                console.log("loi");
-                alert("Loi dang ky");
+                message_noti.innerHTML = result.message;
+                btnRegister.style.visibility = "visible";
+               
             }
         },
         error: function (error) {
-            console.log("loi");
+            console.log("Error");
             alert(error.responseJSON.message);
         }
     }).done(function (msg){
