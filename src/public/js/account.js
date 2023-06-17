@@ -1,3 +1,5 @@
+//PAGE REGISTER
+
 const btnRegister = document.querySelector("#register-page .right button");
 btnRegister.addEventListener("click", register);
 
@@ -27,6 +29,40 @@ function register(e){
             } else {
                 message_noti.innerHTML = result.message;
                 btnRegister.style.visibility = "visible";
+               
+            }
+        },
+        error: function (error) {
+            console.log("Error");
+            alert(error.responseJSON.message);
+        }
+    }).done(function (msg){
+        console.log(msg);
+    });
+}
+
+//PAGE LOGIN 
+const btnLogin = document.querySelector("#btn-login");
+btnRegister.addEventListener("click", login);
+
+const login = (e)=>{
+    let email = document.getElementById("email-login").value;
+    let password = document.getElementById("pass-login").value;
+    let message_noti= document.getElementsByClassName("message-error");
+    let params = {
+        'email': email,
+        'password': password,
+    };
+    $.ajax({
+        url: "/account/login",
+        type: 'POST',
+        data: params,
+        dataType: "json",
+        success: function (result) {
+            if(result.status == '1'){
+                window.location.href = "/home";
+            } else {
+                message_noti.innerHTML = result.message;
                
             }
         },
