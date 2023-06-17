@@ -1,7 +1,10 @@
 //PAGE REGISTER
 
 const btnRegister = document.querySelector("#register-page .right button");
-btnRegister.addEventListener("click", register);
+if(btnRegister){
+    btnRegister.addEventListener("click", register);
+}
+
 
 function register(e){
     let fullname = document.getElementById("fullname").value;
@@ -41,10 +44,6 @@ function register(e){
     });
 }
 
-//PAGE LOGIN 
-//const btnLogin = document.querySelector("#btn-login");
-//btnRegister.addEventListener("click", login);
-
 const login = (e)=>{
     let email = document.getElementById("email-login").value;
     let password = document.getElementById("pass-login").value;
@@ -74,3 +73,11 @@ const login = (e)=>{
         console.log(msg);
     });
 }
+
+//PAGE LOGIN 
+const btnLogin = document.querySelector("#btn-login");
+if(btnLogin){
+    btnLogin.addEventListener("click", login);
+}
+
+

@@ -14,8 +14,10 @@ router.use('/payment',(req, res)=>{
     res.render('pages/payment');
 })
 router.use('/successed',(req, res)=>{
-    res.render('pages/successed');
+    res.render('pages/successed', { title: 'edit product', layout: 'no-header-footer'});
+
 })
+
 
 
 module.exports = router;
