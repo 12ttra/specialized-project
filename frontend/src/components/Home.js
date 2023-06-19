@@ -13,7 +13,7 @@ import { getProducts } from '../actions/productActions';
 
 import Sliderr from '../components/layout/Slider'
 
-
+import '../../src/components/layout/Category.css';
 
 
 
@@ -24,23 +24,9 @@ const Range = createSliderWithTooltip(Slider.Range)
 const Home = ({ match }) => {
     const [currentPage, setCurrentPage] = useState(1)
     const [price, setPrice] = useState([1, 1000000])
-    const [category, setCategory] = useState('')
     const [rating, setRating] = useState(0)
 
-    const categories = [
-        'Rau-Củ-Trái cây',
-        'Thịt-Trứng-Hải sản',
-        'Thực phẩm chế biến',
-        'Thực phẩm đông lạnh',
-        'Thực phẩm Khô - Gia Vị',
-        'Bánh kẹo - Đồ ăn vặt',
-        "Sữa - Sản phẩm từ sữa",
-        'Đồ uống - Giải khát',
-        'Hóa Mỹ phẩm',
-        'Chăm sóc cá nhân',
-        // 'Chăm sóc mẹ và bé',
-        // 'Thể thao'
-    ]
+    
 
     const alert = useAlert();
     const dispatch = useDispatch();
@@ -54,10 +40,10 @@ const Home = ({ match }) => {
             return alert.error(error)
         }
 
-        dispatch(getProducts(keyword, currentPage, price, category, rating));
+        dispatch(getProducts(keyword, currentPage, price,  rating));
 
 
-    }, [dispatch, alert, error, keyword, currentPage, price, category, rating])
+    }, [dispatch, alert, error, keyword, currentPage, price, rating])
 
     function setCurrentPageNo(pageNumber) {
         setCurrentPage(pageNumber)
@@ -74,30 +60,112 @@ const Home = ({ match }) => {
             <slideCategoryy />
             <Sliderr />
             <br />
-            <h3 className='text-center'>Danh mục sản phẩm</h3>
-            <div id="products_heading" className='container container-fluid'>
-                <ul id="ul_top_hypers">
-                    {categories.map(category => (
-                        <li
-                            style={{
-                                cursor: 'pointer',
-                                listStyleType: 'none'
-                            }}
-                            key={category}
-                            onClick={() => setCategory(category)}
-                        >
-                            <div className="button">
-                                <p className="btnText">{category}</p>
-                                <div className="btnTwo">
-                                    <p className="btnText2">Chọn!</p>
-                                </div>
-
+            <div id="section-below-header">
+                <div className="home-category-list">
+                    <div className="category-name">
+                        <a href="#"><b>CATEGORY</b></a>
+                    </div>
+                    <div className="category-wrapper">
+                        <div className="category-item">
+                            <div className="item-img">
+                                <img src="/images/image-category/second-hand.png" alt="schand" className="item-img" />
                             </div>
-
-                        </li>
-                    ))}
-                </ul>
+                            <div className="item-descrip">
+                                <a href="#">Secondhand</a>
+                            </div>
+                        </div>
+                        <div className="category-item">
+                            <div className="item-img">
+                                <img src="/images/image-category/man.png" alt="man-clothing" className="item-img" />
+                            </div>
+                            <div className="item-descrip">
+                                <a href="#">Man</a>
+                            </div>
+                        </div>
+                        <div className="category-item">
+                            <div className="item-img">
+                                <img src="/images/image-category/homosexual.png" alt="gender" className="item-img" />
+                            </div>
+                            <div className="item-descrip">
+                                <a href="#">Unisex</a>
+                            </div>
+                        </div>
+                        <div className="category-item">
+                            <div className="item-img">
+                                <img src="/images/image-category/tshirt.png" alt="t-shirt" className="item-img" />
+                            </div>
+                            <div className="item-descrip">
+                                <a href="#">T-Shirt</a>
+                            </div>
+                        </div>
+                        <div className="category-item">
+                            <div className="item-img">
+                                <img src="/images/image-category/trousers.png" alt="trousers" className="item-img" />
+                            </div>
+                            <div className="item-descrip">
+                                <a href="#">Pant</a>
+                            </div>
+                        </div>
+                        <div className="category-item">
+                            <div className="item-img">
+                                <img src="/images/image-category/voucher.png" alt="coupon" className="item-img" />
+                            </div>
+                            <div className="item-descrip">
+                                <a href="#">Voucher</a>
+                            </div>
+                        </div>
+                        <div className="category-item">
+                            <div className="item-img">
+                                <img src="/images/image-category/new.png" alt="new-clothing" className="item-img" />
+                            </div>
+                            <div className="item-descrip">
+                                <a href="#">New Clothing</a>
+                            </div>
+                        </div>
+                        <div className="category-item">
+                            <div className="item-img">
+                                <img src="/images/image-category/woman.png" alt="women-clothing" className="item-img" />
+                            </div>
+                            <div className="item-descrip">
+                                <a href="#">Woman</a>
+                            </div>
+                        </div>
+                        <div className="category-item">
+                            <div className="item-img">
+                                <img src="/images/image-category/dress.png" alt="dress" className="item-img" />
+                            </div>
+                            <div className="item-descrip">
+                                <a href="#">Dress</a>
+                            </div>
+                        </div>
+                        <div className="category-item">
+                            <div className="item-img">
+                                <img src="/images/image-category/cloth.png" alt="somi" className="item-img" />
+                            </div>
+                            <div className="item-descrip">
+                                <a href="#">Somi</a>
+                            </div>
+                        </div>
+                        <div className="category-item">
+                            <div className="item-img">
+                                <img src="/images/image-category/gift-box.png" alt="gift" className="item-img" />
+                            </div>
+                            <div className="item-descrip">
+                                <a href="#">Gifts</a>
+                            </div>
+                        </div>
+                        <div className="category-item">
+                            <div className="item-img">
+                                <img src="/images/image-category/delivery-truck.png" alt="truck" className="item-img" />
+                            </div>
+                            <div className="item-descrip">
+                                <a href="#">Delivery</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
             </div>
+
             <br />
             {/* <br />
             <div className="button">
@@ -108,17 +176,17 @@ const Home = ({ match }) => {
             </div> */}
             {loading ? <Loader /> : (
                 <Fragment>
-                    <MetaData title={'Website bán hàng trực tuyến'} />
+                    <MetaData title={'SPREZZA-Ecommerce'} />
 
                     <h1 id="products_heading" className="container container-fluid">&emsp;&emsp;&emsp;</h1>
-                    <h3 className='text-center'>Sản phẩm</h3>
+                    <h3 className='text-center'>Products</h3>
 
                     <section id="products" className="container mt-5">
                         {<div className="row">
 
                             {keyword ? (
                                 <Fragment>
-                                    <div className="col-6 col-md-3 mt-5 mb-5">
+                                    <div className="col-6 col-md-3">
 
                                         <div className="px-5">
                                             <h4 className="mb-5">
@@ -140,7 +208,7 @@ const Home = ({ match }) => {
                                                 value={price}
                                                 onChange={price => setPrice(price)}
                                             />
-                                            <br/>
+                                            <br />
                                             <hr className="my-3" />
 
                                             <div className="mt-5">
@@ -174,7 +242,7 @@ const Home = ({ match }) => {
                                         </div>
                                     </div>
 
-                                    <div className="col-6 col-md-9">
+                                    <div className="col-4 ">
                                         <div className="row">
                                             {products.map(product => (
                                                 <Product key={product._id} product={product} col={4} />
@@ -184,7 +252,7 @@ const Home = ({ match }) => {
                                 </Fragment>
                             ) : (
                                 products.map(product => (
-                                    <Product key={product._id} product={product} col={3}/>
+                                    <Product key={product._id} product={product} col={3} />
                                 ))
                             )}
 

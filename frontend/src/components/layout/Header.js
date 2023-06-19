@@ -7,7 +7,8 @@ import { logout } from '../../actions/userActions'
 
 import Search from './Search'
 
-import '../../App.css'
+
+import '../../Header.css'
 
 const Header = () => {
     const alert = useAlert();
@@ -18,75 +19,165 @@ const Header = () => {
 
     const logoutHandler = () => {
         dispatch(logout());
-        alert.success('Đăng xuất thành công')
+        alert.success('Logout Successed!')
     }
 
     return (
         <Fragment>
-            <nav className="navbar row">
-                <div className="col-12 col-md-3">
-                    <div className="navbar-brand">
-                        <Link to="/">
-                            <img src="/images/logo.png" alt='' />
-                        </Link>
+            <div id="header">
+                <div id="fullnav">
+                    <div id="left_nav">
+                        <ul className="menu">
+                            <li className="item lv1"><a href="/">Home</a></li>
+                            <li className="menunav item lv1">
+                                <a href="/">SecondHand</a>
+                                <ul className="subnav">
+                                    <li><a href="/">Man</a></li>
+                                    <li><a href="/">Woman</a></li>
+                                    <li><a href="/">Unisex</a></li>
+                                    <li><a href="/">T-Shirt</a></li>
+                                    <li><a href="/">Dress</a></li>
+                                    <li><a href="/">Shirts</a></li>
+                                    <li><a href="/">Pants</a></li>
+                                    <li><a href="/">All Clothing</a></li>
+                                </ul>
+                            </li>
+                            <li className="menunav item lv1">
+                                <a href="/">New Clothes</a>
+                                <ul className="subnav">
+                                    <li><a href="/">Man</a></li>
+                                    <li><a href="/">Woman</a></li>
+                                    <li><a href="/">Unisex</a></li>
+                                    <li><a href="/">T-Shirt</a></li>
+                                    <li><a href="/">Dress</a></li>
+                                    <li><a href="/">Shirts</a></li>
+                                    <li><a href="/">Pants</a></li>
+                                    <li><a href="/">All Clothing</a></li>
+                                </ul>
+                            </li>
+                            <li className="item lv1"><a href="/">Seller Channel</a></li>
+                            <li className="menunav item lv1">
+                                <a href="/">More</a>
+                                <ul className="subnav">
+                                    <li><a href="/">Sale</a></li>
+                                    <li><a href="/">Contact</a></li>
+                                    <li><a href="/">Transport</a></li>
+                                    <li><a href="/">About Us</a></li>
+                                    <li><a href="/">Language</a></li>
+                                </ul>
+                            </li>
+                        </ul>
+                    </div>
+
+                    <div id="main_logo">
+                        <img src="/images/Image/mainlogo.png" alt="SPREZZA_logo"/>
+                    </div>
+
+                    <div id="search_nav">
+                        <form action="" className="search" method="post">
+                            <div>
+                                <input type="text" placeholder="Search . . ." required />
+                            </div>
+                        </form>
+                    </div>
+                    <div id="right_nav">
+                        <ul>
+                            <li className="menunav item lv1">
+                                <div className="cart-wrap-draw" id="cart-icon">
+                                    <img
+                                        id="img-buynow"
+                                        className="icon bag-img"
+                                        src="/images/iconheader/bag.svg"
+                                        alt="Addtocart"
+                                    />
+                                    <div id="quatity-in-cart">21</div>
+
+                                    <div className="cart" id="mini-cart">
+                                        <h2 className="cart-tilte">Your Cart</h2>
+                                        {/* Content cart */}
+                                        <div className="cart-content">
+                                            <div className="cart-box">
+                                                <img
+                                                    src="/images/image-product/product1_1.jpeg"
+                                                    alt=""
+                                                    className="cart-img"
+                                                />
+                                                <div className="detail-box">
+                                                    <div className="cart-product-tilte">
+                                                        SUMMERSTIME DRESS BALCLOS
+                                                    </div>
+                                                    <div className="cart-price">$36</div>
+                                                    <input
+                                                        type="number"
+                                                        defaultValue="1"
+                                                        className="cart-quantity"
+                                                    />
+                                                </div>
+                                                {/* Remove cart */}
+                                                <img
+                                                    src="/images/iconheader/delete.svg"
+                                                    alt=""
+                                                    className="cart-remove icon-cart"
+                                                />
+                                            </div>
+                                        </div>
+                                        {/* Total */}
+                                        <div className="total">
+                                            <div className="total-tilte">Subtotal: </div>
+                                            <div className="total-price">$0</div>
+                                        </div>
+
+                                        {/* Buy Button */}
+                                        <button type="button" className="btn-buy">
+                                            Checkout
+                                        </button>
+                                        <a className="view-cart" href="/cart/product-in-cart">
+                                            View cart &#8594;
+                                        </a>
+                                        {/* Cart Close */}
+                                        <img
+                                            src="/images/iconheader/close.svg"
+                                            alt=""
+                                            className="icon-cart"
+                                            id="cart-close"
+                                        />
+                                    </div>
+                                </div>
+                            </li>
+                            <li className="menunav item lv1">
+                                <a href="/wishlist">
+                                    <img
+                                        className="icon like-img"
+                                        src="/images/iconheader/heart.svg"
+                                        alt="Like"
+                                    />
+                                </a>
+                            </li>
+                            <li className="menunav item lv1">
+                                <a href="">
+                                    <img
+                                        className="icon bell-img"
+                                        src="/images/iconheader/bell.svg"
+                                        alt="Notice"
+                                    />
+                                </a>
+                            </li>
+                            <li className="menunav item lv1">
+                                <a href="/account/login">
+                                    <img
+                                        className="icon account-img"
+                                        src="/images/iconheader/profile.svg"
+                                        alt="Login"
+                                    />
+                                </a>
+                            </li>
+                        </ul>
                     </div>
                 </div>
-
-                <div className="col-12 col-md-6 mt-2 mt-md-0">
-                    <Route render={({ history }) => <Search history={history} />} />
-                </div>
-
-                <div className="col-12 col-md-3 mt-4 mt-md-0 text-center">
-                    {user && user.role === 'admin' ? (
-                        <p></p>
-                    ) : (
-                        
-                        <Link to="/cart" style={{ textDecoration: 'none' }} >
-                            <span id="cart" className="ml-3">Giỏ hàng</span>
-                            <span className="ml-1" id="cart_count"><i class="bi bi-cart4"></i>{cartItems.length}</span>
-                        </Link>
-                    )}
-
-                    {user ? (
-                        <div className="ml-4 dropdown d-inline">
-                            <Link to="#!" className="btn dropdown-toggle text-white mr-4" type="button" id="dropDownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-
-                                <figure className="avatar avatar-nav">
-                                    <img
-                                        src={user.avatar && user.avatar.url}
-                                        alt={user && user.name}
-                                        className="rounded-circle"
-                                    />
-                                </figure>
-                                <span>{user && user.name}</span>
-                            </Link>
-
-                            <div className="dropdown-menu" aria-labelledby="dropDownMenuButton">
-
-                                {user && user.role === 'admin' && (
-                                    <Link className="dropdown-item" to="/dashboard">Trang quản trị</Link>
-                                )}
-                                {user && user.role !== 'admin' && (
-                                    <Link className="dropdown-item" to="/orders/me">Đơn đặt hàng</Link>
-                                )}
-
-                                <Link className="dropdown-item" to="/me">Thông tin cá nhân</Link>
-                                <Link className="dropdown-item text-danger" to="/" onClick={logoutHandler}>
-                                    Đăng xuất
-                                </Link>
-
-                            </div>
-
-
-                        </div>
-
-                    ) : !loading && <Link to="/login" className="btn ml-4" id="login_btn">Đăng nhập</Link>}
-
-
-                </div>
-            </nav>
+            </div>
+            
         </Fragment>
-    )
+    );
 }
 
 export default Header

@@ -1,0 +1,135 @@
+@import url("https://fonts.googleapis.com/css2?family=Noto+Sans+Mono:wght@400;500&family=Space+Mono:wght@400;700&display=swap");
+.cart {
+  font-family: monospace, "Space Mono";
+  padding: 20px 0;
+  margin-left: auto;
+  margin-right: auto; }
+  .cart .cart-title {
+    text-align: center;
+    line-height: 60px;
+    font-size: 30px;
+    font-weight: 800;
+    color: black; }
+  .cart .cart-top-wrapper {
+    display: flex;
+    justify-content: center;
+    align-items: center; }
+    .cart .cart-top-wrapper .cart-top {
+      height: 2px;
+      width: 60%;
+      background-color: #ddd;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      margin: 50px 0 100px; }
+      .cart .cart-top-wrapper .cart-top .cart-top-cart {
+        border: 1px solid pink; }
+        .cart .cart-top-wrapper .cart-top .cart-top-cart i {
+          color: pink; }
+    .cart .cart-top-wrapper .cart-top-item {
+      width: 40px;
+      height: 40px;
+      border-radius: 50%;
+      border: 1px solid #ddd;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      background-color: #fff; }
+      .cart .cart-top-wrapper .cart-top-item i {
+        color: #ccc; }
+  .cart .cart-content-left {
+    flex: 2;
+    padding-right: 12px; }
+    .cart .cart-content-left table {
+      width: 100%;
+      text-align: center; }
+      .cart .cart-content-left table td {
+        padding: 20px 0;
+        border-bottom: 1px solid #ddd; }
+      .cart .cart-content-left table th {
+        padding-bottom: 10px;
+        font-size: 12px;
+        text-transform: uppercase;
+        color: #333;
+        border-collapse: collapse;
+        border-bottom: 1px solid #ddd; }
+      .cart .cart-content-left table td:first-child img {
+        width: 130px;
+        height: 130px; }
+      .cart .cart-content-left table td:nth-child(2) {
+        max-width: 130px; }
+        .cart .cart-content-left table td:nth-child(2) a {
+          font-size: 12px;
+          color: black;
+          text-decoration: none; }
+      .cart .cart-content-left table .img-color {
+        width: 20px;
+        height: 20px; }
+      .cart .cart-content-left table p {
+        font-size: 12px;
+        color: #333; }
+      .cart .cart-content-left table input {
+        width: 30px; }
+      .cart .cart-content-left table span {
+        text-align: center;
+        justify-items: center;
+        width: 20px;
+        height: 20px;
+        border: 1px solid #dddd;
+        cursor: pointer; }
+  .cart .cart-content-right {
+    flex: 1;
+    padding-left: 12px;
+    border-left: 1px solid #ddd;
+    width: 50%; }
+    .cart .cart-content-right table {
+      width: 100%; }
+      .cart .cart-content-right table th {
+        padding-bottom: 10px;
+        font-size: 12px;
+        color: #333;
+        text-transform: uppercase;
+        border-collapse: collapse;
+        border-bottom: 1px solid #ddd; }
+      .cart .cart-content-right table td {
+        font-size: 12px;
+        color: #333;
+        text-transform: uppercase;
+        padding: 6px 0; }
+    .cart .cart-content-right tr:nth-child(4) td {
+      border-bottom: 1px solid #ddd; }
+    .cart .cart-content-right tr td:last-child {
+      text-align: right; }
+    .cart .cart-content-right .cart-content-right-text {
+      margin: 20px 0;
+      text-align: center; }
+      .cart .cart-content-right .cart-content-right-text p {
+        font-size: 12px;
+        color: #333; }
+    .cart .cart-content-right .cart-content-right-button {
+      align-items: center;
+      text-align: center; }
+      .cart .cart-content-right .cart-content-right-button a {
+        text-decoration: none;
+        color: #000; }
+      .cart .cart-content-right .cart-content-right-button .button {
+        padding: 10px 18px;
+        display: inline-block;
+        cursor: pointer; }
+      .cart .cart-content-right .cart-content-right-button .button:first-child {
+        background-color: #fff;
+        border: 1px solid black;
+        margin-right: 20px; }
+      .cart .cart-content-right .cart-content-right-button .button:first-child:hover {
+        background-color: pink;
+        color: #fff;
+        border: 1px solid pink; }
+      .cart .cart-content-right .cart-content-right-button .button:last-child {
+        background-color: #000;
+        color: #fff;
+        border: none;
+        border: 1px solid black; }
+      .cart .cart-content-right .cart-content-right-button .button:last-child:hover {
+        background-color: pink;
+        color: #fff;
+        border: 1px solid pink; }

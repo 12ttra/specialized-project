@@ -1,0 +1,16 @@
+.add-product-container {
+  height: 30px;
+  border: 1px solid black;
+  margin-top: 8px;
+  width: 90px;
+  text-align: center;
+  line-height: 30px;
+  background: white; }
+  .add-product-container a {
+    color: gray;
+    font-size: 12px;
+    font-weight: 500; }
+    .add-product-container a:hover {
+      color: #fff; }
+  .add-product-container:hover {
+    background: black; }
