@@ -3,7 +3,7 @@ import { Link } from 'react-router-dom'
 
 import Loader from '../layout/Loader'
 import MetaData from '../layout/MetaData'
-
+import '../../App.css'
 import { useAlert } from 'react-alert'
 import { useDispatch, useSelector } from 'react-redux'
 import { login, clearErrors } from '../../actions/userActions'
@@ -44,42 +44,47 @@ const Login = ({ history, location }) => {
                 <Fragment>
                     <MetaData title={'Login'} />
 
-                    <div className="row wrapper">
-                        <div className="col-10 col-lg-5">
-                            <form className="shadow-lg" onSubmit={submitHandler}>
-                                <h1 className="mb-3">Đăng Nhập</h1>
-                                <div className="form-group">
-                                    <label htmlFor="email_field">Email</label>
-                                    <input
-                                        type="email"
-                                        id="email_field"
-                                        className="form-control"
-                                        value={email}
-                                        onChange={(e) => setEmail(e.target.value)}
-                                    />
+                    <div id="login-page">
+                        <div className="box-form">
+                            <div className="left">
+                                <div className="overlay">
+                                    <h1>Sprezza</h1>
+                                    <p>Fashion is what you adopt when you don't know who you are.</p>
+                                    <span>
+                                        <p>login with social media</p>
+                                        <a href="#"><i className="fa fa-facebook" aria-hidden="true"></i></a>
+                                        <a href="#"><i className="fa fa-google" aria-hidden="true"></i> Login with Google</a>
+                                    </span>
+                                </div>
+                            </div>
+
+                            <div className="right">
+                                <h5>Login</h5>
+                                <p>Don't have an account? <a href="/register" className="css-a">Create Your Account</a> it takes less than a minute</p>
+                                <div className="inputs">
+                                    <input id="email-login" type="text" placeholder="Enter your email" />
+                                    <br />
+                                    <input id="pass-login" type="password" placeholder="Password" />
                                 </div>
 
-                                <div className="form-group">
-                                    <label htmlFor="password_field">Mật khẩu</label>
-                                    <input
-                                        type="password"
-                                        id="password_field"
-                                        className="form-control"
-                                        value={password}
-                                        onChange={(e) => setPassword(e.target.value)}
-                                    />
+                                <br /><br />
+
+                                <div className="remember-me--forget-password">
+                                    {/* Angular */}
+                                    <label>
+                                        <input type="checkbox" name="item" checked />
+                                        <span className="text-checkbox">Remember me</span>
+                                    </label>
+                                    <p>Forget password?</p>
                                 </div>
 
-                                <button
-                                    id="login_button"
-                                    type="submit"
-                                    className="btn btn-block py-3"
-                                >
-                                    ĐĂNG NHẬP
-                                </button>
+                                <div className="message-error">
 
-                                <Link to="/register" className="float-right mt-3">Bạn chưa có tài khoản?</Link>
-                            </form>
+                                </div>
+
+                                <br />
+                                <button id="btn-login">Login</button>
+                            </div>
                         </div>
                     </div>
 

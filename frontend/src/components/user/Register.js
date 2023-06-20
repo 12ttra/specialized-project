@@ -6,7 +6,7 @@ import Loader from '../layout/Loader'
 import { useAlert } from 'react-alert'
 import { useDispatch, useSelector } from 'react-redux'
 import { register, clearErrors } from '../../actions/userActions'
-
+import '../../App.css'
 const Register = ({ history }) => {
 
     const [user, setUser] = useState({
@@ -72,51 +72,41 @@ const Register = ({ history }) => {
     return (
         <Fragment>
 
-            <MetaData title={'Đăng ký'} />
+            <MetaData title={'Register'} />
 
-            <div className="row wrapper">
-                <div className="col-10 col-lg-5">
-                    <form className="shadow-lg" onSubmit={submitHandler} encType='multipart/form-data'>
-                        <h1 className="mb-3">Đăng ký</h1>
+            <div id="register-page">
+        <div className="box-form">
+          <div className="left">
+            <div className="overlay">
+              <h1>Sprezza</h1>
+              <p>Fashion is what you adopt when you don't know who you are.</p>
+              <span>
+                <p>Register with social media</p>
+                <a href="#"><i className="fa fa-facebook" aria-hidden="true"></i></a>
+                <a href="#"><i className="fa fa-google" aria-hidden="true"></i> Login with Google</a>
+              </span>
+            </div>
+          </div>
 
-                        <div className="form-group">
-                            <label htmlFor="email_field">Tên</label>
-                            <input
-                                type="name"
-                                id="name_field"
-                                className="form-control"
-                                name='name'
-                                value={name}
-                                onChange={onChange}
-                            />
-                        </div>
+          <div className="right">
+            <h5>Register</h5>
+            <p>You Already have an account? <a href="#" className="css-a">Log in</a> now!</p>
 
-                        <div className="form-group">
-                            <label htmlFor="email_field">Email</label>
-                            <input
-                                type="email"
-                                id="email_field"
-                                className="form-control"
-                                name='email'
-                                value={email}
-                                onChange={onChange}
-                            />
-                        </div>
+            <div className="inputs">
+              <input id="fullname" className="fullname" type="text" placeholder="Enter your name" />
+              <br />
+              <input id="birthday" type="datetime" placeholder="Your birthday" />
+              <br />
+              <input id="email" type="text" placeholder="Enter your email" />
+              <br />
+              <input id="password" type="password" placeholder="Password" />
+              <input id="password" type="password" placeholder="Confirm Password" />
+              <div className="message__noti"></div>
+            </div>
 
-                        <div className="form-group">
-                            <label htmlFor="password_field">Mật khẩu</label>
-                            <input
-                                type="password"
-                                id="password_field"
-                                className="form-control"
-                                name='password'
-                                value={password}
-                                onChange={onChange}
-                            />
-                        </div>
-
-                        <div className='form-group'>
-                            <label htmlFor='avatar_upload'>Hình nền</label>
+            <br />
+            <div className='form-group-av'>
+                            <h2 htmlFor='avatar_upload'>Avatar</h2>
                             <div className='d-flex align-items-center'>
                                 <div>
                                     <figure className='avatar mr-3 item-rtl'>
@@ -131,30 +121,23 @@ const Register = ({ history }) => {
                                     <input
                                         type='file'
                                         name='avatar'
-                                        className='custom-file-input'
+                                        className='inputs input-custom'
                                         id='customFile'
-                                        accept="iamges/*"
+                                        accept="images/*"
                                         onChange={onChange}
+                                        placeholder='Select Images'
                                     />
-                                    <label className='custom-file-label' htmlFor='customFile'>
-                                        Chọn ảnh
-                                    </label>
+                                   
                                 </div>
                             </div>
-                        </div>
-                        {loading ? <Loader /> : (
-                            <button
-                                id="register_button"
-                                type="submit"
-                                className="btn btn-block py-3"
-                                disabled={loading ? true : false}
-                            >
-                                ĐĂNG KÝ
-                            </button>
-                        )}
-                    </form>
-                </div>
-            </div>
+                        </div> 
+                        <br />
+            <br />
+
+            <button type="submit">Register</button>
+          </div>
+        </div>
+      </div>
 
         </Fragment>
     )
