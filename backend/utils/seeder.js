@@ -9,6 +9,7 @@ dotenv.config({ path: 'backend/config/config.env' })
 
 connectDatabase();
 
+//khởi tạo dữ liệu ban đầu 
 const seedProducts = async () => {
     try {
 

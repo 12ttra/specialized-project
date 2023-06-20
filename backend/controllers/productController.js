@@ -88,7 +88,7 @@ exports.getSingleProduct = catchAsyncErrors(async (req, res, next) => {
     const product = await Product.findById(req.params.id);
 
     if (!product) {
-        return next(new ErrorHandler('Không tìm thấy sản phẩm', 404));
+        return next(new ErrorHandler('Cant find product!', 404));
     }
 
 
@@ -105,7 +105,7 @@ exports.updateProduct = catchAsyncErrors(async (req, res, next) => {
     let product = await Product.findById(req.params.id);
 
     if (!product) {
-        return next(new ErrorHandler('Không tìm thấy sản phẩm', 404));
+        return next(new ErrorHandler('Cant find product!', 404));
     }
 
     let images = []
@@ -160,7 +160,7 @@ exports.deleteProduct = catchAsyncErrors(async (req, res, next) => {
     const product = await Product.findById(req.params.id);
 
     if (!product) {
-        return next(new ErrorHandler('Không tìm thấy sản phẩm', 404));
+        return next(new ErrorHandler('Cant find product!', 404));
     }
 
     // Deleting images associated with the product
@@ -172,7 +172,7 @@ exports.deleteProduct = catchAsyncErrors(async (req, res, next) => {
 
     res.status(200).json({
         success: true,
-        message: 'Xóa sản phẩm thành công'
+        message: 'Product deleted successfully'
     })
 
 })
@@ -231,7 +231,7 @@ exports.getProductReviews = catchAsyncErrors(async (req, res, next) => {
         })
     } catch (error) {
         res.status(200).json({
-            message: 'Không tìm thấy review với id'
+            message: 'Cant find review with id'
         })
     }
 })
