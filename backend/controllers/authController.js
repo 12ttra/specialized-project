@@ -13,16 +13,16 @@ exports.registerUser = catchAsyncErrors(async (req, res, next) => {
     const { name, email, password, avatar } = req.body;
 
     if (!name) {
-        return next(new ErrorHandler('Tên không được để trống', 401))
+        return next(new ErrorHandler('Name must not be empty', 401))
     }
     if (!email) {
-        return next(new ErrorHandler('Email không được để trống', 401))
+        return next(new ErrorHandler('Email must not be empty', 401))
     }
     if (!password) {
-        return next(new ErrorHandler('Mật khẩu không được để trống', 401))
+        return next(new ErrorHandler('Password must not be empty', 401))
     }
     if (!avatar) {
-        return next(new ErrorHandler('Hình đại diện không được để trống', 401))
+        return next(new ErrorHandler('Avatar must not be empty', 401))
     }
 
     const result = await cloudinary.v2.uploader.upload(req.body.avatar, {
@@ -46,27 +46,27 @@ exports.registerUser = catchAsyncErrors(async (req, res, next) => {
 
 })
 
-// Login User  =>  /a[i/v1/login
+// Login User  =>  /api/v1/login
 exports.loginUser = catchAsyncErrors(async (req, res, next) => {
     const { email, password } = req.body;
 
     // Checks if email and password is entered by user
     if (!email || !password) {
-        return next(new ErrorHandler('Email và Mật khẩu không được để trống', 400))
+        return next(new ErrorHandler('Email and Password must not be empty', 400))
     }
 
     // Finding user in database
     const user = await User.findOne({ email }).select('+password')
 
     if (!user) {
-        return next(new ErrorHandler('Email không tồn tại', 401));
+        return next(new ErrorHandler('Email not exists', 401));
     }
 
     // Checks if password is correct or not
     const isPasswordMatched = await user.comparePassword(password);
 
     if (!isPasswordMatched) {
-        return next(new ErrorHandler('Mật khẩu không đúng', 401));
+        return next(new ErrorHandler('Password is wrong!', 401));
     }
 
     sendToken(user, 200, res)
@@ -91,7 +91,7 @@ exports.updatePassword = catchAsyncErrors(async (req, res, next) => {
     // Check previous user password
     const isMatched = await user.comparePassword(req.body.oldPassword)
     if (!isMatched) {
-        return next(new ErrorHandler('Mật khẩu cũ không đúng'));
+        return next(new ErrorHandler('Old password is wrong!'));
     }
 
     user.password = req.body.password;
@@ -149,7 +149,7 @@ exports.logout = catchAsyncErrors(async (req, res, next) => {
 
     res.status(200).json({
         success: true,
-        message: 'Đã đăng xuất'
+        message: 'Successfully logged out'
     })
 })
 
@@ -171,7 +171,7 @@ exports.getUserDetails = catchAsyncErrors(async (req, res, next) => {
     const user = await User.findById(req.params.id);
 
     if (!user) {
-        return next(new ErrorHandler(`Không tìm thấy người dùng có id: ${req.params.id}`))
+        return next(new ErrorHandler(`Can't find user has id: ${req.params.id}`))
     }
 
     res.status(200).json({

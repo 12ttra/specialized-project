@@ -8,7 +8,7 @@ exports.lookUser = catchAsyncErrors(async (req, res, next) => {
 
     // Checks if email and password is entered by user
     if (!email || !password) {
-        return next(new ErrorHandler('Email và Mật khẩu không được để trống', 400))
+        return next(new ErrorHandler('Email and Password must not be empty', 400))
     }
 
     // Finding user in database
@@ -16,18 +16,18 @@ exports.lookUser = catchAsyncErrors(async (req, res, next) => {
 
 
     if (!user) {
-        return next(new ErrorHandler('Email không tồn tại', 401));
+        return next(new ErrorHandler('Email does not exist', 401));
     }
 
     // Checks if password is correct or not
     const isPasswordMatched = await user.comparePassword(password);
 
     if (!isPasswordMatched) {
-        return next(new ErrorHandler('Mật khẩu không đúng', 401));
+        return next(new ErrorHandler('Password is wrong!', 401));
     }
 
     if(user.role === "look"){
-        return next(new ErrorHandler("Tài khoản của bạn đã bị khóa. Vui lòng liên hệ với quản trị viên!"))
+        return next(new ErrorHandler("Your account has been locked. Please contact the admin!"))
     }
     next()
 })

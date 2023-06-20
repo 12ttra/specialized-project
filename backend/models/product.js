@@ -3,19 +3,19 @@ const mongoose = require('mongoose')
 const productSchema = new mongoose.Schema({
     name: {
         type: String,
-        required: [true, 'Tên sản phẩm không được để trống'],
+        required: [true, 'The product name must not be empty'],
         trim: true,
-        maxLength: [100, 'Tên sản phẩm không được vượt quá 100 ký tự']
+        maxLength: [100, 'The product name must be less than 100 character']
     },
     price: {
         type: Number,
-        required: [true, 'Giá không được để trống'],
-        maxLength: [7, 'Giá không được vượt quá 7 ký tự'],
+        required: [true, 'Price must not be empty'],
+        maxLength: [7, 'Price must be less than 7 character'],
         default: 0.0
     },
     description: {
         type: String,
-        required: [true, 'Mô tả không được để trống'],
+        required: [true, 'Description must not be empty'],
     },
     ratings: {
         type: Number,
@@ -35,33 +35,33 @@ const productSchema = new mongoose.Schema({
     ],
     category: {
         type: String,
-        required: [true, 'Vui lòng chọn danh mục cho sản phẩm này'],
+        required: [true, 'Please select a category for this product'],
         enum: {
             values: [
-                'Rau-Củ-Trái cây',
-                'Thịt-Trứng-Hải sản',
-                'Thực phẩm chế biến',
-                'Thực phẩm đông lạnh',
-                'Thực phẩm Khô - Gia Vị',
-                'Bánh kẹo - Đồ ăn vặt',
-                "Sữa - Sản phẩm từ sữa",
-                'Đồ uống - Giải khát',
-                'Hóa Mỹ phẩm',
-                'Chăm sóc cá nhân',
-                'Chăm sóc mẹ và bé',
-                'Thể thao'
+                'Secondhand',
+                'New Clothing',
+                'Man',
+                'Woman',
+                'Unisex',
+                'Dress',
+                "T-Shirt",
+                'Somi',
+                'Pant',
+                'Gifts',
+                'Voucher',
+                'Delivery'
             ],
-            message: 'Vui lòng chọn đúng danh mục cho sản phẩm'
+            message: 'Please select the correct category for the product'
         }
     },
     seller: {
         type: String,
-        required: [true, 'Vui lòng nhập người bán sản phẩm']
+        required: [true, 'Please enter the seller of the product']
     },
     stock: {
         type: Number,
-        required: [true, 'Số lượng không được để trống'],
-        maxLength: [5, 'Số lượng không được vượt quá 5 ký tự'],
+        required: [true, 'Stock must not be empty'],
+        maxLength: [5, 'Stock must be less than 5 character'],
         default: 0
     },
     numOfReviews: {

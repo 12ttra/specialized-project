@@ -41,7 +41,7 @@ exports.getSingleOrder = catchAsyncErrors(async (req, res, next) => {
     const order = await Order.findById(req.params.id).populate('user', 'name email')
 
     if (!order) {
-        return next(new ErrorHandler('Không tìm thấy đơn hàng nào có ID này', 404))
+        return next(new ErrorHandler('Cant found order has this id!', 404))
     }
 
     res.status(200).json({
@@ -82,8 +82,8 @@ exports.allOrders = catchAsyncErrors(async (req, res, next) => {
 exports.updateOrder = catchAsyncErrors(async (req, res, next) => {
     const order = await Order.findById(req.params.id)
 
-    if (order.orderStatus === 'Đã giao hàng') {
-        return next(new ErrorHandler('Bạn đã giao đơn đặt hàng này', 400))
+    if (order.orderStatus === 'Delivered') {
+        return next(new ErrorHandler('This order has been delivered', 400))
     }
 
     order.orderItems.forEach(async item => {
