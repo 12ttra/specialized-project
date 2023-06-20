@@ -6,18 +6,14 @@ import { Link } from 'react-router-dom'
 
 import ProductItem from './ProductItem.js'
 import './ProductItem.css';
-const Product = ({ product}) => {
+export const Product = ({ product}) => {
 
     return (
-        <div class="brand-product">
-            <div class="brand-product-wrapper">
+            
             <ProductItem />
-            <ProductItem />
-            <ProductItem />
-            <ProductItem />
+
            
-            </div>
-        </div>
+           
         
         
     )

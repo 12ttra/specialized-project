@@ -1,8 +1,8 @@
 import React, { Fragment, useState, useEffect } from 'react'
 import Pagination from 'react-js-pagination'
 import Slider from 'rc-slider'
-import 'rc-slider/assets/index.css';
 
+import '../App.css'
 import MetaData from './layout/MetaData'
 import Product from './product/Product'
 import Loader from './layout/Loader'
@@ -26,7 +26,7 @@ const Home = ({ match }) => {
     const [price, setPrice] = useState([1, 1000000])
     const [rating, setRating] = useState(0)
 
-    
+
 
     const alert = useAlert();
     const dispatch = useDispatch();
@@ -40,7 +40,7 @@ const Home = ({ match }) => {
             return alert.error(error)
         }
 
-        dispatch(getProducts(keyword, currentPage, price,  rating));
+        dispatch(getProducts(keyword, currentPage, price, rating));
 
 
     }, [dispatch, alert, error, keyword, currentPage, price, rating])
@@ -178,85 +178,90 @@ const Home = ({ match }) => {
                 <Fragment>
                     <MetaData title={'SPREZZA-Ecommerce'} />
 
-                    <h1 id="products_heading" className="container container-fluid">&emsp;&emsp;&emsp;</h1>
+                    <h1 id="products-heading" className="product_title">&emsp;&emsp;&emsp;</h1>
                     <h3 className='text-center'>Products</h3>
 
-                    <section id="products" className="container mt-5">
-                        {<div className="row">
+                    <section id="products" className="">
+                        {
+                            <div className="brand-product">
 
-                            {keyword ? (
-                                <Fragment>
-                                    <div className="col-6 col-md-3">
+                                {keyword ? (
+                                    <Fragment>
+                                        <div className="col-6 col-md-3">
 
-                                        <div className="px-5">
-                                            <h4 className="mb-5">
-                                                Khoảng giá
-                                            </h4>
-                                            <Range
-                                                marks={{
-                                                    10000: `10.000`,
-                                                    1000000: `1.000.000`
-                                                }}
-                                                min={10}
-                                                max={1000000}
-                                                defaultValue={[1, 1000000]}
-                                                tipFormatter={value => `${value}`}
-                                                tipProps={{
-                                                    placement: "top",
-                                                    visible: true
-                                                }}
-                                                value={price}
-                                                onChange={price => setPrice(price)}
-                                            />
-                                            <br />
-                                            <hr className="my-3" />
-
-                                            <div className="mt-5">
-                                                <h4 className="mb-3">
-                                                    Đánh giá
+                                            <div className="px-5">
+                                                <h4 className="mb-5">
+                                                    Khoảng giá
                                                 </h4>
+                                                <Range
+                                                    marks={{
+                                                        10000: `10.000`,
+                                                        1000000: `1.000.000`
+                                                    }}
+                                                    min={10}
+                                                    max={1000000}
+                                                    defaultValue={[1, 1000000]}
+                                                    tipFormatter={value => `${value}`}
+                                                    tipProps={{
+                                                        placement: "top",
+                                                        visible: true
+                                                    }}
+                                                    value={price}
+                                                    onChange={price => setPrice(price)}
+                                                />
+                                                <br />
+                                                <hr className="my-3" />
 
-                                                <ul className="pl-0">
-                                                    {[5, 4, 3, 2, 1].map(star => (
-                                                        <li
-                                                            style={{
-                                                                cursor: 'pointer',
-                                                                listStyleType: 'none'
-                                                            }}
-                                                            key={star}
-                                                            onClick={() => setRating(star)}
-                                                        >
-                                                            <div className="rating-outer">
-                                                                <div className="rating-inner"
-                                                                    style={{
-                                                                        width: `${star * 20}%`
-                                                                    }}
-                                                                >
+                                                <div className="mt-5">
+                                                    <h4 className="mb-3">
+                                                        Đánh giá
+                                                    </h4>
+
+                                                    <ul className="pl-0">
+                                                        {[5, 4, 3, 2, 1].map(star => (
+                                                            <li
+                                                                style={{
+                                                                    cursor: 'pointer',
+                                                                    listStyleType: 'none'
+                                                                }}
+                                                                key={star}
+                                                                onClick={() => setRating(star)}
+                                                            >
+                                                                <div className="rating-outer">
+                                                                    <div className="rating-inner"
+                                                                        style={{
+                                                                            width: `${star * 20}%`
+                                                                        }}
+                                                                    >
+                                                                    </div>
                                                                 </div>
-                                                            </div>
-                                                        </li>
-                                                    ))}
-                                                </ul>
+                                                            </li>
+                                                        ))}
+                                                    </ul>
+                                                </div>
+
                                             </div>
-
+                                        </div>'
+                                        <div class="brand-product-wrapper">
+                                            <Product />
                                         </div>
-                                    </div>
 
-                                    <div className="col-4 ">
-                                        <div className="row">
-                                            {products.map(product => (
-                                                <Product key={product._id} product={product} col={4} />
-                                            ))}
+                                        <div className="brand-product ">
+                                            <div className="brand-product-wrapper">
+                                                {products.map(product => (
+                                                    <Product key={product._id} product={product} col={4} />
+                                                ))}
+                                            </div>
                                         </div>
-                                    </div>
-                                </Fragment>
-                            ) : (
-                                products.map(product => (
-                                    <Product key={product._id} product={product} col={3} />
-                                ))
-                            )}
+                                    </Fragment>
+                                ) : (
+                                    products.map(product => (
+                                        <Product key={product._id} product={product} col={2} />
+                                    ))
+                                )}
 
-                        </div>}
+                            </div>
+                        }
                     </section>
 
                     {resPerPage <= count && (
@@ -266,10 +271,10 @@ const Home = ({ match }) => {
                                 itemsCountPerPage={resPerPage}
                                 totalItemsCount={productsCount}
                                 onChange={setCurrentPageNo}
-                                nextPageText={'Tiếp'}
-                                prevPageText={'Trở về'}
-                                firstPageText={'Đầu tiên'}
-                                lastPageText={'Cuối cùng'}
+                                nextPageText={'Next'}
+                                prevPageText={'Back'}
+                                firstPageText={'First'}
+                                lastPageText={'Last'}
                                 itemClass="page-item"
                                 linkClass="page-link"
                             />
@@ -277,9 +282,25 @@ const Home = ({ match }) => {
                     )}
 
                 </Fragment>
+
             )}
+            <Fragment>
+                <div className="contact-send-email">
+                    <div className="contact section-name">
+                        <h2 className="contact-heading">#sprezza.e-commerce</h2>
+                        <p className="sub-contact-heading"><i>Fashion is what you adopt when you don't know who you are.</i></p>
+                        <div className="form-email-btn">
+                            <form>
+                                <input type="email" name="Email" placeholder="Enter your email!" required />
+                                <button type="submit"><img src="/images/iconheader/send.svg" width="30px" alt="Send-email" /></button>
+                            </form>
+                        </div>
+                    </div>
+                </div>
+            </Fragment>
 
         </Fragment>
+
     )
 }
 
