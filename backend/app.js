@@ -6,6 +6,8 @@ const bodyParser = require('body-parser')
 const fileUpload = require('express-fileupload')
 const dotenv = require('dotenv');
 const path = require('path')
+const { checkOverload } = require("./check.connect")
+checkOverload()
 
 const errorMiddleware = require('./middlewares/errors')
 
