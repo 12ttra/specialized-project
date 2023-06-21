@@ -91,7 +91,7 @@ const Register = ({ history }) => {
                     <div className="right">
                         <form className="shadow-lg" onSubmit={submitHandler} encType='multipart/form-data'>
                             <h5>Register</h5>
-                            <p>You Already have an account? <link to="/login" className="css-a">Log in</link> now!</p>
+                            <p>You Already have an account?  <a href="#" className="css-a">Login</a> now!</p>
 
                             <div className="inputs">
                                 <input id="fullname" className="fullname" type="text" placeholder="Enter your name" />
