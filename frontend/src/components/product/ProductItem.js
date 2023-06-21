@@ -5,7 +5,7 @@ const ProductItem = () => {
   return (
     <div className="product-wrapper-item">
         <div className="product-item-slider">
-      <ProductItemSlider />
+      
       </div>
       <div className="product-item-descrip">
         <div className="css-product-item">

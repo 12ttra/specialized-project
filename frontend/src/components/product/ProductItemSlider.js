@@ -14,20 +14,13 @@ export class ProductItemSlider extends Component {
         slidesToShow: 1,
         slidesToScroll: 1,
       };
-  
+      const { images } = this.props;
+      const html = images.map((image, index)=>{
+        return <div className="product-item-img product-avatar"><img src={image.url}alt="Image 1" /> </div>
+     });
       return (
         <Slider {...settings}>
-          
-          <div className="product-item-img product-avatar">
-            <img src="/images/image-product/product1_1.jpeg" alt="Image 1" />
-          </div>
-          <div className="product-item-img">
-            <img src="/images/image-product/product1_2.jpeg" alt="Image 2" />
-          </div>
-          <div className="product-item-img">
-            <img src="/images/image-product/product1_1.jpeg" alt="Image 1" />
-          </div>
-      
+          <div>{html}</div>
         </Slider>
       );
     }
