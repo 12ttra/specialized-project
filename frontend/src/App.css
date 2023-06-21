@@ -1019,6 +1019,12 @@ body {
       .search > div > input:not(:placeholder-shown) {
         width: 200px; }
 
+
+        .new-price-small{
+          color: #ee2d5a;
+          margin-left: 10px;
+          font-size: 16px;
+        }
 #right_nav {
   width: 20%;
   height: 80px;
@@ -1267,8 +1273,7 @@ a {
 .product {
   padding-top: 50px;
   width: 100%;
-  min-height: 1000px;
-  background-color: whitesmoke; }
+  }
   .product .container-product {
     margin-left: auto;
     margin-right: auto;
@@ -1431,9 +1436,15 @@ a {
         .flash-sale-wrapper .flash-sale .img-fs-wrapper .img-fs .img-title {
           width: 100%;
           height: auto; }
-    .flash-sale-wrapper .flash-sale .sz-header-iems-content {
-      width: 100%;
-      height: auto; }
+ 
+      .sz-header-iems-content {
+        width: 100%;
+        height: 300px;
+        margin-bottom: 20px;
+        display: flex;
+        flex-wrap: wrap;
+        gap :5px;
+    }
       .flash-sale-wrapper .flash-sale .sz-header-iems-content .sz-header-iems-content-wrapper {
         width: 90%;
         min-height: 0px;
@@ -3319,7 +3330,7 @@ a {
       .product-wrapper-item-small .product-item-descrip-small .css-product-item-price-small .product-item-price-small {
         font-weight: 500;
         margin-top: 20px;
-        color: black;
+       
         text-decoration: none;
         text-transform: uppercase;
         text-align: center; }
