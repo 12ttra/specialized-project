@@ -7,6 +7,11 @@ const productSchema = new mongoose.Schema({
         trim: true,
         maxLength: [100, 'The product name must be less than 100 character']
     },
+    best_seller:{
+        type: Number,
+        maxLength: [1],
+        default: 0
+    },
     price: {
         type: Number,
         required: [true, 'Price must not be empty'],
