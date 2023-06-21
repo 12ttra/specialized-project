@@ -68,12 +68,14 @@ const Login = ({ history, location }) => {
                                     id="email_field"
                                     className="form-control"
                                     value={email}
+                                    onChange={(e) => setEmail(e.target.value)}
                                    
 />                        <br />
                                     <input  type="password" placeholder="Password" 
                                     id="password_field"
                                     className="form-control"
                                     value={password}
+                                    onChange={(e) => setPassword(e.target.value)}
                                     />
                                 </div>
 
