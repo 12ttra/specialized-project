@@ -59,26 +59,15 @@ const Login = ({ history, location }) => {
                             </div>
 
                             <div className="right">
-                            <form className="shadow-lg" onSubmit={submitHandler}>
                                 <h5>Login</h5>
-                                <p>Don't have an account? <link to="/register" className="css-a">Create Your Account</link> it takes less than a minute</p>
+                                <p>Don't have an account? <a href="/register" className="css-a">Create Your Account</a> it takes less than a minute</p>
                                 <div className="inputs">
-                                    <input   placeholder="Enter your email"
-                                    type="email"
-                                    id="email_field"
-                                    className="form-control"
-                                    value={email}
-                                    onChange={(e) => setEmail(e.target.value)}
-/>
+                                    <input id="email-login" type="text" placeholder="Enter your email" />
                                     <br />
-                                    <input  type="password" placeholder="Password" 
-                                    id="password_field"
-                                    className="form-control"
-                                    value={password}
-                                    onChange={(e) => setPassword(e.target.value)}/>
+                                    <input id="pass-login" type="password" placeholder="Password" />
                                 </div>
 
-                                <br/><br />
+                                <br /><br />
 
                                 <div className="remember-me--forget-password">
                                     {/* Angular */}
@@ -89,16 +78,12 @@ const Login = ({ history, location }) => {
                                     <p>Forget password?</p>
                                 </div>
 
-                               
+                                <div className="message-error">
+
+                                </div>
+
                                 <br />
-                                <button
-                                    id="login_button"
-                                    type="submit"
-                                >
-                                   Login
-                                </button>
-                            
-                            </form>
+                                <button id="btn-login">Login</button>
                             </div>
                         </div>
                     </div>

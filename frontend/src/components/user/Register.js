@@ -75,80 +75,69 @@ const Register = ({ history }) => {
             <MetaData title={'Register'} />
 
             <div id="register-page">
-                <div className="box-form">
-                    <div className="left">
-                        <div className="overlay">
-                            <h1>Sprezza</h1>
-                            <p>Fashion is what you adopt when you don't know who you are.</p>
-                            <span>
-                                <p>Register with social media</p>
-                                <a href="#"><i className="fa fa-facebook" aria-hidden="true"></i></a>
-                                <a href="#"><i className="fa fa-google" aria-hidden="true"></i> Login with Google</a>
-                            </span>
-                        </div>
-                    </div>
+        <div className="box-form">
+          <div className="left">
+            <div className="overlay">
+              <h1>Sprezza</h1>
+              <p>Fashion is what you adopt when you don't know who you are.</p>
+              <span>
+                <p>Register with social media</p>
+                <a href="#"><i className="fa fa-facebook" aria-hidden="true"></i></a>
+                <a href="#"><i className="fa fa-google" aria-hidden="true"></i> Login with Google</a>
+              </span>
+            </div>
+          </div>
 
-                    <div className="right">
-                        <form className="shadow-lg" onSubmit={submitHandler} encType='multipart/form-data'>
-                            <h5>Register</h5>
-                            <p>You Already have an account? <link to="/login" className="css-a">Log in</link> now!</p>
+          <div className="right">
+            <h5>Register</h5>
+            <p>You Already have an account? <a href="#" className="css-a">Log in</a> now!</p>
 
-                            <div className="inputs">
-                                <input id="fullname" className="fullname" type="text" placeholder="Enter your name" />
-                                <br />
-                                <input id="birthday" type="datetime" placeholder="Your birthday" />
-                                <br />
-                                <input id="email" type="text" placeholder="Enter your email" />
-                                <br />
-                                <input id="password" type="password" placeholder="Password" />
-                                <input id="password" type="password" placeholder="Confirm Password" />
-                                <div className="message__noti"></div>
-                            </div>
+            <div className="inputs">
+              <input id="fullname" className="fullname" type="text" placeholder="Enter your name" />
+              <br />
+              <input id="birthday" type="datetime" placeholder="Your birthday" />
+              <br />
+              <input id="email" type="text" placeholder="Enter your email" />
+              <br />
+              <input id="password" type="password" placeholder="Password" />
+              <input id="password" type="password" placeholder="Confirm Password" />
+              <div className="message__noti"></div>
+            </div>
 
-                            <br />
-                            <div className='form-group-av'>
-                                <h2 htmlFor='avatar_upload'>Avatar</h2>
-                                <div className='d-flex align-items-center'>
-                                    <div>
-                                        <figure className='avatar mr-3 item-rtl'>
-                                            <img
-                                                src={avatarPreview}
-                                                className='rounded-circle'
-                                                alt='Ảnh nền'
-                                            />
-                                        </figure>
-                                    </div>
-                                    <div className='custom-file'>
-                                        <input
-                                            type='file'
-                                            name='avatar'
-                                            className=' input-custom'
-                                            id='customFile'
-                                            accept="images/*"
-                                            onChange={onChange}
-                                            placeholder='Select Images'
+            <br />
+            <div className='form-group-av'>
+                            <h2 htmlFor='avatar_upload'>Avatar</h2>
+                            <div className='d-flex align-items-center'>
+                                <div>
+                                    <figure className='avatar mr-3 item-rtl'>
+                                        <img
+                                            src={avatarPreview}
+                                            className='rounded-circle'
+                                            alt='Ảnh nền'
                                         />
-
-                                    </div>
+                                    </figure>
+                                </div>
+                                <div className='custom-file'>
+                                    <input
+                                        type='file'
+                                        name='avatar'
+                                        className='inputs input-custom'
+                                        id='customFile'
+                                        accept="images/*"
+                                        onChange={onChange}
+                                        placeholder='Select Images'
+                                    />
+                                   
                                 </div>
                             </div>
+                        </div> 
+                        <br />
+            <br />
 
-                            <br />
-                            <br />
-
-                            {loading ? <Loader /> : (
-                                <button
-                                    id="register_button"
-                                    type="submit"
-                                    disabled={loading ? true : false}
-                                >
-                                    Register
-                                </button>
-                            )}
-                            </form>
-                    </div>
-                </div>
-            </div>
+            <button type="submit">Register</button>
+          </div>
+        </div>
+      </div>
 
         </Fragment>
     )
