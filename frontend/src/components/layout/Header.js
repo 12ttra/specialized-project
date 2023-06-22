@@ -119,7 +119,7 @@ const Header = () => {
                                         alt="Login"
                                     />
                                 </a>
-                                <div className="dropdown-menu" aria-labelledby="dropDownMenuButton">
+                                <div className="dropdown-menu-login" aria-labelledby="dropDownMenuButton">
 
                                     {user && user.role === 'admin' && (
                                         <Link className="dropdown-item" to="/dashboard">Trang quản trị</Link>
