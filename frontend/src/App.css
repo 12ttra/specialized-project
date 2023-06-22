@@ -1382,10 +1382,16 @@ a {
         display: block;
         margin-top: 30px;
         align-items: center; }
-        .product .product-content-right .product-btn-buy-wrapper .product-btn-buy a {
+    .product .product-content-right .product-btn-buy-wrapper .product-btn-buy a{
+      color: black;
+      font-size: 14px;
+    }
+.product .product-content-right .product-btn-buy-wrapper .product-btn-buy button:hover a{
+  color: white;
+}
+        .product .product-content-right .product-btn-buy-wrapper .product-btn-buy button {
           margin: 20px 0;
-          width: 130px;
-          text-decoration: none;
+          width: 150px;
           height: 50px;
           display: flex;
           justify-content: space-evenly;
@@ -1395,7 +1401,7 @@ a {
           cursor: pointer;
           color: black;
           gap: 5px; }
-        .product .product-content-right .product-btn-buy-wrapper .product-btn-buy a:hover {
+        .product .product-content-right .product-btn-buy-wrapper .product-btn-buy button:hover {
           background-color: black;
           color: #fff; }
     .product .product-content-right .product-content-right-bottom {

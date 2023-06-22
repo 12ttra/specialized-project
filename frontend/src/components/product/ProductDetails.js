@@ -19,8 +19,8 @@ const ProductDetails = ({ match }) => {
 
     const dispatch = useDispatch();
     const alert = useAlert();
-
     const { loading, error, product } = useSelector(state => state.productDetails)
+    let firstImage = product.images ? product.images[0].url : "#";
     const { user } = useSelector(state => state.auth)
     const { error: reviewError, success } = useSelector(state => state.newReview)
 
@@ -116,6 +116,14 @@ const ProductDetails = ({ match }) => {
 
         dispatch(newReview(formData));
     }
+
+    const getFirstImage = ()=>{
+        console.log(product.images,"aaaa");
+        if(product.images.length){
+            return product.images[0].url;
+        }
+        return "#";
+    }
     return (
         <Fragment>
             {loading ? <Loader /> : (
@@ -134,30 +142,26 @@ const ProductDetails = ({ match }) => {
                                 {/* Product Content Left */}
                                 <div className="product-content-left row-cart">
                                     <div className="product-content-left-big-img">
-                                        <img src="/images/image-product/product5_2.jpeg" alt="Image Product of Cart" />
+                                        <img src={firstImage} id="main-image-pdp" alt="Image Product of Cart" />
                                     </div>
                                     <div className="product-content-left-small-img">
-                                        <img className="img-small" src="/images/image-product/product5_1.jpeg" alt="Image Product of Cart" />
-                                        <img className="img-small" src="/images/image-product/product5_2.jpeg" alt="Image Product of Cart" />
-                                        <img className="img-small" src="/images/image-product/product5_2.jpeg" alt="Image Product of Cart" />
-                                        <img className="img-small" src="/images/image-product/product5_1.jpeg" alt="Image Product of Cart" />
+                                        {product.images && product.images.map(image => (
+                                            <img className="d-block w-100 img-thumbnail" src={image.url} alt={product.title} />
+                                        ))}
                                     </div>
                                 </div>
                                 {/* End Product Content Left */}
                                 {/* Product Content Right */}
                                 <div className="product-content-right">
                                     <div className="product-content-right-product-name mg-bot">
-                                        <h1>MY CHAMPAGE | DRESS IN SUMMER BY SBHN</h1>
-                                        <p>ID : 0001DR</p>
+                                        <h1>{product.name}</h1>
                                     </div>
 
                                     <div className="flex flex-column +o886E mg-bot">
                                         <div className="flex items-center">
                                             <div className="flex items-center nmrSND">
-                                                <div className="Y3DvsN">₫499.000</div>
                                                 <div className="flex items-center">
-                                                    <div className="pqTWkA">₫369.000</div>
-                                                    <div className="_0voski">26% giảm</div>
+                                                    <div className="pqTWkA">{product.price}đ</div>
                                                 </div>
                                             </div>
                                         </div>
@@ -178,22 +182,21 @@ const ProductDetails = ({ match }) => {
                                             <span className="size-hover">...</span>
                                         </div>
                                     </div>
-                                    <div className="quantity mg-bot">
-                                        <p className="gap" style={{ fontWeight: 'bold' }}>Quantity: </p>
-                                        <input type="number" min="0" defaultValue="1" />
+                                    <div className="stockCounter d-inline">
+                                        <span className="btn btn-danger minus" onClick={decreaseQty}>-</span>
+
+                                        <input type="number" className="form-control count d-inline" value={quantity} readOnly />
+
+                                        <span className="btn btn-primary plus" onClick={increaseQty}>+</span>
                                     </div>
+                                    <p>Tình trạng hàng: <span id="stock_status" className={product.stock > 0 ? 'greenColor' : 'redColor'} >{product.stock > 0 ? 'Còn hàng' : 'Hết hàng'}</span></p>
                                     <p className="alert-size" style={{ color: 'rgb(229, 62, 62)' }}>Size can't be blank, please!</p>
                                     <div className="product-btn-buy-wrapper">
                                         <div className="product-btn-buy mg-bot">
-                                            <a href="#">
+                                            <button disabled={product.stock === 0} onClick={addToCart}>
                                                 <i className="fa fa-shopping-cart" aria-hidden="true"></i>
-                                                <p>ADD TO CART</p>
-                                            </a>
-                                        </div>
-                                        <div className="product-btn-buy mg-bot">
-                                            <a href="#">
-                                                <p>BUY NOW</p>
-                                            </a>
+                                                <a href="javascript:void(0)">ADD TO CART</a>
+                                            </button>
                                         </div>
                                     </div>
                                 </div>
@@ -322,16 +325,8 @@ const ProductDetails = ({ match }) => {
                                             <div className="szNPD123">PRODUCT DESCRIPTION</div>
                                             <div className="PDO123">
                                                 <div className="SZPDD-1">
-                                                    <p className="DcssP">
-                                                        Size:
-                                                        S ngực &lt;86, eo &lt;65, mông &lt;88 M ngực &lt;92, eo &lt;72, mông &lt;93 Đầm tà xéo, một bên
-                                                        dài ~95cm, bên còn lại dài ~145cm (tính từ vai). Lin có hỗ trợ sửa theo số
-                                                        đo (có phí). Trừơng hợp số đo nằm giữa 2 size, bạn search sp “Sửa theo số
-                                                        đo, mua kèm gói sửa này và ghi chú số đo 3 vòng. Trừơng hợp ghi chú số đo
-                                                        nhưng ko mua kèm gói sửa, Lin mặc định giao size chuẩn bạn đặt. - Phom dáng:
-                                                        đầm cột dây, nhún 2 bên ngực, tà xéo - Chất liệu: lụa, có co giãn nhẹ, thấm
-                                                        hút tốt - Ứng dụng: dạo phố, đi tiệc - Bảo quản: giặt riêng với quần áo có
-                                                        phụ kiện sắc cạnh, ủi mặt trái.</p>
+                                                    <p className="DcssP">{product.description}</p>
+                                                    <p id="product_seller mb-3">Xuất xứ: <strong>{product.seller}</strong></p>
                                                 </div>
                                             </div>
                                         </div>

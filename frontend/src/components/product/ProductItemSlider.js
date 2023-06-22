@@ -15,13 +15,14 @@ export class ProductItemSlider extends Component {
         slidesToScroll: 1,
       };
       const { images } = this.props;
-      const html = images.map((image, index)=>{
-        return <div className="product-item-img product-avatar"><img src={image.url}alt="Image 1" /> </div>
-     });
       return (
-        <Slider {...settings}>
-          <div>{html}</div>
-        </Slider>
+          <div className="product-item-slider">
+                <Slider {...settings}>
+                    {images.map((image, index)=>{
+                    return <div className="product-item-img product-avatar"><img src={image.url}alt="Image 1" /> </div>
+                })}
+                </Slider>
+          </div>
       );
     }
   }
