@@ -94,14 +94,32 @@ const Register = ({ history }) => {
                             <p>You Already have an account?  <a href="#" className="css-a">Login</a> now!</p>
 
                             <div className="inputs">
-                                <input id="fullname" className="fullname" type="text" placeholder="Enter your name" />
+                                <input className="fullname" placeholder="Enter your name" 
+                                    type="name"
+                                    id="name_field"
+                                    name='name'
+                                    value={name}
+                                    onChange={onChange}
+                                />
                                 <br />
-                                <input id="birthday" type="datetime" placeholder="Your birthday" />
+                                {/* <input id="birthday" type="datetime" placeholder="Your birthday" /> */}
                                 <br />
-                                <input id="email" type="text" placeholder="Enter your email" />
+                                <input placeholder="Enter your email" 
+                                    type="email"
+                                    id="email_field"
+                                    name='email'
+                                    value={email}
+                                    onChange={onChange}
+                                />
                                 <br />
-                                <input id="password" type="password" placeholder="Password" />
-                                <input id="password" type="password" placeholder="Confirm Password" />
+                                <input placeholder="Password" 
+                                    type="password"
+                                    id="password_field"
+                                    name='password'
+                                    value={password}
+                                    onChange={onChange}
+                                />
+                                {/* <input id="password" type="password" placeholder="Confirm Password" /> */}
                                 <div className="message__noti"></div>
                             </div>
 
