@@ -18,11 +18,7 @@
       #footer .footer-logo img {
         width: 240px;
         height: 200px; }
-  
-  .row {
-    display: flex;
-    flex-wrap: wrap;
-    height: 200px; }
+
   
   col {
     float: left;

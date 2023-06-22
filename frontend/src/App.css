@@ -350,11 +350,6 @@ html {
       width: 240px;
       height: 200px; }
 
-.row {
-  display: flex;
-  flex-wrap: wrap;
-  height: 200px; }
-
 col {
   float: left;
   padding-left: 8px;
@@ -965,7 +960,9 @@ body {
       background-color: rgba(0, 0, 0, 0.3); }
     #left_nav .subnav li a {
       width: 100%;
-      text-align: left; }
+      text-align: left;
+      background: white;
+    }
 
 #fullnav .subnav {
   top: 80px;
