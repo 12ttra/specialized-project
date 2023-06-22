@@ -61,7 +61,7 @@ const Login = ({ history, location }) => {
                             <div className="right">
                             <form className="shadow-lg" onSubmit={submitHandler}>
                                 <h5>Login</h5>
-                                <p>Don't have an account? <a href="#" className="css-a">Create Your Account</a> it takes less than a minute</p>
+                                <p>Don't have an account? <Link to="/register" className="css-a">Create Your Account</Link> it takes less than a minute</p>
                                 <div className="inputs">
                                     <input   placeholder="Enter your email"
                                     type="email"
@@ -70,7 +70,8 @@ const Login = ({ history, location }) => {
                                     value={email}
                                     onChange={(e) => setEmail(e.target.value)}
                                    
-/>                        <br />
+                                    />                        
+                                    <br />
                                     <input  type="password" placeholder="Password" 
                                     id="password_field"
                                     className="form-control"
