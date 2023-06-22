@@ -98,7 +98,7 @@ const NewProduct = ({ history }) => {
     return (
         <Fragment>
             <MetaData title={'Thêm sản phẩm mới'} />
-            <div className="row">
+            <div className="row- height-auto mg-top">
                 <div className="col-12 col-md-2">
                     <Sidebar />
                 </div>
