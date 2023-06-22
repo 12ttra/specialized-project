@@ -16,23 +16,23 @@ const NewProduct = ({ history }) => {
     const [category, setCategory] = useState('');
     const [stock, setStock] = useState(0);
     const [seller, setSeller] = useState('');
+    const [best_seller, setBestSeller] = useState(0);
     const [images, setImages] = useState([]);
     const [imagesPreview, setImagesPreview] = useState([])
 
     const categories = [
-        'Rau-Củ-Trái cây',
-        'Rau-Củ-Trái cây',
-        'Thịt-Trứng-Hải sản',
-        'Thực phẩm chế biến',
-        'Thực phẩm đông lạnh',
-        'Thực phẩm Khô - Gia Vị',
-        'Bánh kẹo - Đồ ăn vặt',
-        "Sữa - Sản phẩm từ sữa",
-        'Đồ uống - Giải khát',
-        'Hóa Mỹ phẩm',
-        'Chăm sóc cá nhân',
-        'Chăm sóc mẹ và bé',
-        'Thể thao'
+        'Secondhand',
+        'New Clothing',
+        'Man',
+        'Woman',
+        'Unisex',
+        'Dress',
+        "T-Shirt",
+        'Somi',
+        'Pant',
+        'Gifts',
+        'Voucher',
+        'Delivery'
     ]
 
     const alert = useAlert();
@@ -61,6 +61,7 @@ const NewProduct = ({ history }) => {
         const formData = new FormData();
         formData.set('name', name);
         formData.set('price', price);
+        formData.set('best_seller', best_seller);
         formData.set('description', description);
         formData.set('category', category);
         formData.set('stock', stock);
@@ -98,7 +99,7 @@ const NewProduct = ({ history }) => {
     return (
         <Fragment>
             <MetaData title={'Thêm sản phẩm mới'} />
-            <div className="row- height-auto mg-top">
+            <div className="row height-auto mg-top">
                 <div className="col-12 col-md-2">
                     <Sidebar />
                 </div>
@@ -106,7 +107,7 @@ const NewProduct = ({ history }) => {
                 <div className="col-12 col-md-10">
                     <Fragment>
                         <div className="wrapper my-5">
-                            <form className="shadow-lg" onSubmit={submitHandler} encType='multipart/form-data'>
+                            <form className="shadow-lg product-form" onSubmit={submitHandler} encType='multipart/form-data'>
                                 <h1 className="mb-4">Thêm sản phẩm mới</h1>
 
                                 <div className="form-group">
@@ -130,7 +131,13 @@ const NewProduct = ({ history }) => {
                                         onChange={(e) => setPrice(e.target.value)}
                                     />
                                 </div>
-
+                                <div className="form-group">
+                                    <label htmlFor="best_seller">Best Selle</label>
+                                    <select className="form-control" id="best_seller"  onChange={(e) => setBestSeller(e.target.value)}>
+                                        <option key="0" value="0" >No</option>
+                                        <option key="1" value="1" >Yes</option>
+                                    </select>
+                                </div>
                                 <div className="form-group">
                                     <label htmlFor="description_field">Mô tả</label>
                                     <textarea className="form-control" id="description_field" rows="8" value={description} onChange={(e) => setDescription(e.target.value)}></textarea>

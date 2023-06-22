@@ -571,11 +571,11 @@ body {
         outline: 0;
         box-shadow: 0px 4px 20px 0px gray;
         background-image: linear-gradient(to right, #434343 0%, black 100%); }
-  body label {
+#login-page label {
     display: block;
     position: relative;
     margin-left: 30px; }
-  body label::before {
+  #login-page label::before {
     content: ' \f00c';
     position: absolute;
     font-family: FontAwesome;
@@ -584,7 +584,7 @@ body {
     border-radius: 4px;
     color: transparent;
     left: -30px; }
-  body label:hover::before {
+  #login-page label:hover::before {
     font-family: FontAwesome;
     content: ' \f00c';
     color: #fff;

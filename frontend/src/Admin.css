@@ -7,7 +7,12 @@ body {
     padding: 0px;
     overflow-x: hidden;
 }
-
+.product-form{
+    width: 100%;
+}
+#header{
+    display: none;
+}
 /* Scroll Bar */
 
 ::-webkit-scrollbar-track {

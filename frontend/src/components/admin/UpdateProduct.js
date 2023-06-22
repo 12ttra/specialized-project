@@ -12,6 +12,7 @@ const UpdateProduct = ({ match, history }) => {
 
     const [name, setName] = useState('');
     const [price, setPrice] = useState(0);
+    const [best_seller, setBestSeller] = useState(0);
     const [description, setDescription] = useState('');
     const [category, setCategory] = useState('');
     const [stock, setStock] = useState(0);
@@ -22,19 +23,18 @@ const UpdateProduct = ({ match, history }) => {
     const [imagesPreview, setImagesPreview] = useState([])
 
     const categories = [
-        'Rau-Củ-Trái cây',
-        'Rau-Củ-Trái cây',
-        'Thịt-Trứng-Hải sản',
-        'Thực phẩm chế biến',
-        'Thực phẩm đông lạnh',
-        'Thực phẩm Khô - Gia Vị',
-        'Bánh kẹo - Đồ ăn vặt',
-        "Sữa - Sản phẩm từ sữa",
-        'Đồ uống - Giải khát',
-        'Hóa Mỹ phẩm',
-        'Chăm sóc cá nhân',
-        'Chăm sóc mẹ và bé',
-        'Thể thao'
+        'Secondhand',
+        'New Clothing',
+        'Man',
+        'Woman',
+        'Unisex',
+        'Dress',
+        "T-Shirt",
+        'Somi',
+        'Pant',
+        'Gifts',
+        'Voucher',
+        'Delivery'
     ]
 
     const alert = useAlert();
@@ -51,6 +51,7 @@ const UpdateProduct = ({ match, history }) => {
             dispatch(getProductDetails(productId));
         } else {
             setName(product.name);
+            setBestSeller(product.best_seller);
             setPrice(product.price);
             setDescription(product.description);
             setCategory(product.category);
@@ -85,6 +86,7 @@ const UpdateProduct = ({ match, history }) => {
         const formData = new FormData();
         formData.set('name', name);
         formData.set('price', price);
+        formData.set('best_seller', best_seller);
         formData.set('description', description);
         formData.set('category', category);
         formData.set('stock', stock);
@@ -131,7 +133,7 @@ const UpdateProduct = ({ match, history }) => {
                 <div className="col-12 col-md-10">
                     <Fragment>
                         <div className="wrapper my-5">
-                            <form className="shadow-lg" onSubmit={submitHandler} encType='multipart/form-data'>
+                            <form className="shadow-lg product-form" onSubmit={submitHandler} encType='multipart/form-data'>
                                 <h1 className="mb-4">Cập nhật sản phẩm</h1>
 
                                 <div className="form-group">
@@ -155,7 +157,13 @@ const UpdateProduct = ({ match, history }) => {
                                         onChange={(e) => setPrice(e.target.value)}
                                     />
                                 </div>
-
+                                <div className="form-group">
+                                    <label htmlFor="best_seller">Best Selle</label>
+                                    <select className="form-control" id="best_seller" value={best_seller} onChange={(e) => setBestSeller(e.target.value)}>
+                                        <option key="0" value="0" >No</option>
+                                        <option key="1" value="1" >Yes</option>
+                                    </select>
+                                </div>
                                 <div className="form-group">
                                     <label htmlFor="description_field">Mô tả</label>
                                     <textarea className="form-control" id="description_field" rows="8" value={description} onChange={(e) => setDescription(e.target.value)}></textarea>
