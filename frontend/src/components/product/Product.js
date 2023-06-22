@@ -4,7 +4,6 @@ import { Link } from 'react-router-dom'
 // import { useDispatch } from 'react-redux'
 // import { useAlert } from 'react-alert';
 import { ProductItemSlider } from './ProductItemSlider';
-import ProductItem from './ProductItem.js'
 import './ProductItem.css';
 export const Product = ({ product, col}) => {
 
