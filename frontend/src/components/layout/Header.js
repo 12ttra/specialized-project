@@ -90,7 +90,7 @@ const Header = () => {
                                         src="/images/iconheader/bag.svg"
                                         alt="Addtocart"
                                     />
-                                    <div id="quatity-in-cart">{cartItems.length}</div>
+                                    <Link to="/cart" style={{ textDecoration: 'none' }} ><div id="quatity-in-cart">{cartItems.length}</div></Link>
                                 </div>
                             </li>
                             <li className="menunav item lv1">
