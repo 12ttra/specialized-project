@@ -1,5 +1,6 @@
-import React, { Fragment } from 'react'
+import React, { Fragment, useState } from 'react'
 import { Route, Link } from 'react-router-dom'
+import { useHistory } from 'react-router-dom';
 
 import { useDispatch, useSelector } from 'react-redux'
 import { useAlert } from 'react-alert'
@@ -13,15 +14,18 @@ import '../../Header.css'
 const Header = () => {
     const alert = useAlert();
     const dispatch = useDispatch();
-
+    const [showAdminPage, setShowAdminPage] = useState(false);
     const { user, loading } = useSelector(state => state.auth)
     const { cartItems } = useSelector(state => state.cart)
 
     const logoutHandler = () => {
         dispatch(logout());
         alert.success('Logout Successed!')
-    }
 
+    }
+    const handleAdminPageToggle = () => {
+        setShowAdminPage(!showAdminPage);
+    };
     return (
         <Fragment>
             <div id="header">
@@ -70,17 +74,16 @@ const Header = () => {
                     </div>
 
                     <div id="main_logo">
-                        <img src="/images/Image/mainlogo.png" alt="SPREZZA_logo"/>
+                        <Link to="/">
+                            <img src="/images/Image/mainlogo.png" alt="SPREZZA_logo" />
+                        </Link>
                     </div>
 
                     <div id="search_nav">
-                        <form action="" className="search" method="post">
-                            <div>
-                                <input type="text" placeholder="Search . . ." required />
-                            </div>
-                        </form>
+                        <Route render={({ history }) => <Search history={history} />} />
                     </div>
                     <div id="right_nav">
+
                         <ul>
                             <li className="menunav item lv1">
                                 <div className="cart-wrap-draw" id="cart-icon">
@@ -162,20 +165,69 @@ const Header = () => {
                                     />
                                 </a>
                             </li>
-                            <li className="menunav item lv1">
-                                <a href="/account/login">
-                                    <img
-                                        className="icon account-img"
-                                        src="/images/iconheader/profile.svg"
-                                        alt="Login"
-                                    />
-                                </a>
+                            <li>
+                                <div className="btn-login text-center">
+                                    {user && user.role === 'admin' ? (
+                                        <p></p>
+                                    ) : (
+                                        <Link to="/cart" style={{ textDecoration: 'none' }}>
+                                            <span id="cart" className="ml-3">Cart</span>
+                                            <span className="ml-1" id="cart_count"><i className="bi bi-cart4"></i>{cartItems.length}</span>
+                                        </Link>
+                                    )}
+
+                                    {user ? (
+                                        <div className="ml-4 dropdown">
+                                            <a
+                                                href="#!"
+                                                className="btn dropdown-toggle text-white mr-4"
+                                                id="dropDownMenuButton"
+                                                data-bs-toggle="dropdown"
+                                                aria-expanded="false"
+                                                onClick={handleAdminPageToggle}
+                                            >
+                                                <figure className="avatar avatar-nav">
+                                                    <img
+                                                        src={user.avatar && user.avatar.url}
+                                                        alt={user && user.name}
+                                                        className="rounded-circle"
+                                                    />
+                                                </figure>
+                                                <span>{user && user.name}</span>
+                                            </a>
+
+                                            {showAdminPage && (<ul className="dropdown-menu" aria-labelledby="dropDownMenuButton">
+                                                {user.role == 'admin'? (
+                                                    <li>
+                                                        <Link className="dropdown-item" to="/dashboard">Admin Page</Link>
+                                                        
+                                                        
+                                                    </li>
+                                                ):(
+                                                    <li>
+                                                        <Link className="dropdown-item" to="/orders/me">My Order</Link>
+                                                    </li>
+                                                )}
+
+                                                <li>
+                                                    <Link className="dropdown-item" to="/me">My Information</Link>
+                                                </li>
+                                                <li>
+                                                    <Link className="dropdown-item text-danger" to="/" onClick={logoutHandler}>
+                                                        Logout
+                                                    </Link>
+                                                </li>
+                                            </ul>)}
+                                        </div>
+                                    ) : (!loading || <Link to="/login" className="btn ml-4" id="login_btn">Login</Link>)}
+                                </div>
                             </li>
                         </ul>
+
                     </div>
                 </div>
             </div>
-            
+
         </Fragment>
     );
 }

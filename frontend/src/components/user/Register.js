@@ -27,9 +27,9 @@ const Register = ({ history }) => {
 
     useEffect(() => {
 
-        if (isAuthenticated) {
-            history.push('/')
-        }
+        // if (isAuthenticated) {
+        //     history.push('/')
+        // }
 
         if (error) {
             alert.error(error);

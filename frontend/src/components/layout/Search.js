@@ -13,22 +13,22 @@ const Search = ({ history }) => {
             history.push('/')
         }
     }
+    const handleKeyDown = (e) => {
+        if (e.key === 'Enter') {
+          searchHandler(e);
+        }
+      };
 
     return (
-        <form onSubmit={searchHandler} >
-            <div className="input-group">
+        <form className="search" onSubmit={searchHandler} >
+            <div >
                 <input
-                    type="text"
-                    id="search_field"
-                    className="form-control"
-                    placeholder="Điển tên sản phẩm cần tìm ..."
+                    type="text"    
+                    placeholder="Search... "
                     onChange={(e) => setKeyword(e.target.value)}
+                    onKeyDown={handleKeyDown}
                 />
-                <div className="input-group-append">
-                    <button id="search_btn" className="btn">
-                        <i className="fa fa-search" aria-hidden="true"></i>
-                    </button>
-                </div>
+                
             </div>
         </form>
     )
