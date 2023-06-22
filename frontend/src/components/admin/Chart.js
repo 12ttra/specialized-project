@@ -1,4 +1,4 @@
-import "../../App.css";
+import "../../Admin.css";
 import {
     LineChart,
     Line,
