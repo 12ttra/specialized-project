@@ -90,58 +90,7 @@ const Header = () => {
                                         src="/images/iconheader/bag.svg"
                                         alt="Addtocart"
                                     />
-                                    <div id="quatity-in-cart">21</div>
-
-                                    <div className="cart" id="mini-cart">
-                                        <h2 className="cart-tilte">Your Cart</h2>
-                                        {/* Content cart */}
-                                        <div className="cart-content">
-                                            <div className="cart-box">
-                                                <img
-                                                    src="/images/image-product/product1_1.jpeg"
-                                                    alt=""
-                                                    className="cart-img"
-                                                />
-                                                <div className="detail-box">
-                                                    <div className="cart-product-tilte">
-                                                        SUMMERSTIME DRESS BALCLOS
-                                                    </div>
-                                                    <div className="cart-price">$36</div>
-                                                    <input
-                                                        type="number"
-                                                        defaultValue="1"
-                                                        className="cart-quantity"
-                                                    />
-                                                </div>
-                                                {/* Remove cart */}
-                                                <img
-                                                    src="/images/iconheader/delete.svg"
-                                                    alt=""
-                                                    className="cart-remove icon-cart"
-                                                />
-                                            </div>
-                                        </div>
-                                        {/* Total */}
-                                        <div className="total">
-                                            <div className="total-tilte">Subtotal: </div>
-                                            <div className="total-price">$0</div>
-                                        </div>
-
-                                        {/* Buy Button */}
-                                        <button type="button" className="btn-buy">
-                                            Checkout
-                                        </button>
-                                        <a className="view-cart" href="/cart/product-in-cart">
-                                            View cart &#8594;
-                                        </a>
-                                        {/* Cart Close */}
-                                        <img
-                                            src="/images/iconheader/close.svg"
-                                            alt=""
-                                            className="icon-cart"
-                                            id="cart-close"
-                                        />
-                                    </div>
+                                    <div id="quatity-in-cart">{cartItems.length}</div>
                                 </div>
                             </li>
                             <li className="menunav item lv1">
@@ -170,6 +119,21 @@ const Header = () => {
                                         alt="Login"
                                     />
                                 </a>
+                                <div className="dropdown-menu" aria-labelledby="dropDownMenuButton">
+
+                                    {user && user.role === 'admin' && (
+                                        <Link className="dropdown-item" to="/dashboard">Trang quản trị</Link>
+                                    )}
+                                    {user && user.role !== 'admin' && (
+                                        <Link className="dropdown-item" to="/orders/me">Đơn đặt hàng</Link>
+                                    )}
+
+                                    <Link className="dropdown-item" to="/me">Thông tin cá nhân</Link>
+                                    <Link className="dropdown-item text-danger" to="/" onClick={logoutHandler}>
+                                        Đăng xuất
+                                    </Link>
+
+                                </div>
                             </li>
                         </ul>
                     </div>
