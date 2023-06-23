@@ -35,7 +35,7 @@ const Cart = ({ history }) => {
     }
 
     const checkoutHandler = () => {
-        history.push('/login?redirect=shipping')
+        history.push('/shipping')
     }
 
     return (

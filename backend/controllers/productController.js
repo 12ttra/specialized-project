@@ -18,13 +18,13 @@ exports.newProduct = catchAsyncErrors(async (req, res, next) => {
     let imagesLinks = [];
 
     for (let i = 0; i < images.length; i++) {
-        // const result = await cloudinary.v2.uploader.upload(images[i], {
-        //     folder: 'products'
-        // });
+        const result = await cloudinary.v2.uploader.upload(images[i], {
+            folder: 'image-product'
+        });
 
-        const result = await cloudinary.v2.uploader.upload("https://upload.wikimedia.org/wikipedia/commons/a/ae/Olympic_flag.jpg",
-        { public_id: "olympic_flag" }, 
-        function(error, result) {console.log(result); });
+        // const result = await cloudinary.v2.uploader.upload("https://upload.wikimedia.org/wikipedia/commons/a/ae/Olympic_flag.jpg",
+        // { public_id: "olympic_flag" }, 
+        // function(error, result) {console.log(result); });
 
         imagesLinks.push({
             public_id: result.public_id,
