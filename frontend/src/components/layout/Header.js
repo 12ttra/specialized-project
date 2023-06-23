@@ -10,6 +10,7 @@ import Search from './Search'
 
 
 import '../../Header.css'
+import '../../App.css'
 
 const Header = () => {
     const alert = useAlert();
@@ -84,7 +85,7 @@ const Header = () => {
                         </form>
                     </div>
                     <div id="right_nav">
-                        <ul>
+                        <ul >
                             <li className="menunav item lv1">
                                 <div className="cart-wrap-draw" id="cart-icon">
                                     <img
@@ -95,7 +96,8 @@ const Header = () => {
                                     />
                                     <Link to="/cart" style={{ textDecoration: 'none' }} ><div id="quatity-in-cart">{cartItems.length}</div></Link>
                                 </div>
-                            </li>
+                            </li> 
+                       
                             <li className="menunav item lv1">
                                 <a href="/wishlist">
                                     <img
@@ -117,20 +119,12 @@ const Header = () => {
                             <li className="menunav item lv1">
                                
                                 <div className="btn-login text-center">
-                                    {user && user.role === 'admin' ? (
-                                        <p></p>
-                                    ) : (
-                                        <Link to="/cart" style={{ textDecoration: 'none' }}>
-                                            <span id="cart" className="ml-3">Cart</span>
-                                            <span className="ml-1" id="cart_count"><i className="bi bi-cart4"></i>{cartItems.length}</span>
-                                        </Link>
-                                    )}
-
-                                    {user ? (
-                                        <div className="ml-4 dropdown">
+                                   
+                                    {user ? <>
+                                        <div className="dropdown ">
                                             <a
                                                 href="#!"
-                                                className="btn dropdown-toggle text-white mr-4"
+                                                className="btn dropdown-toggle-1 text-white mr-4"
                                                 id="dropDownMenuButton"
                                                 data-bs-toggle="dropdown"
                                                 aria-expanded="false"
@@ -143,33 +137,35 @@ const Header = () => {
                                                         className="rounded-circle"
                                                     />
                                                 </figure>
-                                                <span>{user && user.name}</span>
+                                                <span className='css-username' >{user && user.name}</span>
                                             </a>
 
-                                            {showAdminPage && (<ul className="dropdown-menu" aria-labelledby="dropDownMenuButton">
+                                            {showAdminPage && (<ul className="dropdown-menu " aria-labelledby="dropDownMenuButton">
                                                 {user.role == 'admin'? (
+                                                 
                                                     <li>
                                                         <Link className="dropdown-item" to="/dashboard">Admin Page</Link>
+                                                        <Link className="dropdown-item" to="/dashboard">Profile</Link>
+                                                        <Link className="dropdown-item text-danger" to="/" onClick={logoutHandler}>
+                                                        Logout
+                                                    </Link>
 
 
                                                     </li>
+                                                  
                                                 ):(
                                                     <li>
                                                         <Link className="dropdown-item" to="/orders/me">My Order</Link>
+                                                        <Link className="dropdown-item" to="/me">My Information</Link>
+                                                        <Link className="dropdown-item text-danger" to="/" onClick={logoutHandler}>
+                                                        Logout
+                                                    </Link>
                                                     </li>
                                                 )}
 
-                                                <li>
-                                                    <Link className="dropdown-item" to="/me">My Information</Link>
-                                                </li>
-                                                <li>
-                                                    <Link className="dropdown-item text-danger" to="/" onClick={logoutHandler}>
-                                                        Logout
-                                                    </Link>
-                                                </li>
                                             </ul>)}
                                         </div>
-                                    ) : (!loading || <Link to="/login" className="btn ml-4" id="login_btn">Login</Link>)}
+                                        </> : (<Link to="/login" className="btn ml-4" id="login_btn">Login</Link>)}
                                 </div>
                             </li>
                         </ul>
