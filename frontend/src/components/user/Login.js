@@ -94,7 +94,7 @@ const Login = ({ history, location }) => {
                                
                                 <br />
                                 <button
-                                    id="login_button"
+                                    id="login_button" className='btn-full'
                                     type="submit"
                                 >
                                    Login

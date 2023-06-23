@@ -158,6 +158,7 @@ const Register = ({ history }) => {
                             {loading ? <Loader /> : (
                                 <button
                                     id="register_button"
+                                    className='btn-full'
                                     type="submit"
                                     disabled={loading ? true : false}
                                 >
