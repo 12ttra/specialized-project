@@ -23,8 +23,8 @@ const Login = ({ history, location }) => {
     useEffect(() => {
 
         if (isAuthenticated) {
-            history.push('/')
-        }
+             history.push('/');
+         }
 
         if (error) {
             alert.error(error);
