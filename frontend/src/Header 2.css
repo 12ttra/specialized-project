@@ -120,10 +120,19 @@ height: 100%;}
         width: 200px; }
 
 #right_nav {
-  width: 20%;
+  width: 21%;
   height: 80px;
   display: flex;
-  justify-content: flex-end; }
+  justify-content: flex-end;
+align-items: center; }
+#right_nav .subnav-1{
+  width: 150px; 
+  top: 80px;
+display: block;
+position: absolute;
+background-color: white;
+box-shadow: 0 0 10px rgba(0, 0, 0, 0.3);
+}
   #right_nav ul {
     display: flex;
     align-items: center; }

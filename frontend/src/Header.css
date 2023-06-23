@@ -119,14 +119,25 @@ height: 100%;}
       .search > div > input:not(:placeholder-shown) {
         width: 200px; }
 
-#right_nav {
-  width: 20%;
-  height: 80px;
-  display: flex;
-  justify-content: flex-end; }
+  #right_nav {
+  width: 22%;
+    height: 80px;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+  margin-bottom: 0; } 
+  #right_nav .subnav-1{
+    width: 150px; 
+    top: 80px;
+  display: block;
+  position: absolute;
+  background-color: white;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.3);
+  }
   #right_nav ul {
     display: flex;
-    align-items: center; }
+    align-items: center;
+  position: absolute; }
   #right_nav img {
     width: 30px;
     height: 30px; }

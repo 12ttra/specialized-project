@@ -47,7 +47,7 @@ const NewProduct = ({ history }) => {
 
         if (success) {
             history.push('/admin/products');
-            alert.success('Thêm sản phẩm thành công');
+            alert.success('Added Product');
             dispatch({ type: NEW_PRODUCT_RESET })
         }
 
@@ -96,7 +96,7 @@ const NewProduct = ({ history }) => {
 
     return (
         <Fragment>
-            <MetaData title={'Thêm sản phẩm mới'} />
+            <MetaData title={'Add Product'} />
             <div className="row height-auto mg-top">
                 <div className="col-12 col-md-2">
                     <Sidebar />
@@ -106,10 +106,10 @@ const NewProduct = ({ history }) => {
                     <Fragment>
                         <div className="wrapper my-5">
                             <form className="shadow-lg product-form" onSubmit={submitHandler} encType='multipart/form-data'>
-                                <h1 className="mb-4">Thêm sản phẩm mới</h1>
+                                <h1 className="mb-4">Add New Product</h1>
 
                                 <div className="form-group">
-                                    <label htmlFor="name_field">Tên sản phẩm</label>
+                                    <label htmlFor="name_field">Name</label>
                                     <input
                                         type="text"
                                         id="name_field"
@@ -120,7 +120,7 @@ const NewProduct = ({ history }) => {
                                 </div>
 
                                 <div className="form-group">
-                                    <label htmlFor="price_field">Giá</label>
+                                    <label htmlFor="price_field">Price</label>
                                     <input
                                         type="text"
                                         id="price_field"
@@ -130,19 +130,19 @@ const NewProduct = ({ history }) => {
                                     />
                                 </div>
                                 <div className="form-group">
-                                    <label htmlFor="best_seller">Best Selle</label>
+                                    <label htmlFor="best_seller">Best Seller</label>
                                     <select className="form-control" id="best_seller"  onChange={(e) => setBestSeller(e.target.value)}>
                                         <option key="0" value="0" >No</option>
                                         <option key="1" value="1" >Yes</option>
                                     </select>
                                 </div>
                                 <div className="form-group">
-                                    <label htmlFor="description_field">Mô tả</label>
+                                    <label htmlFor="description_field">Description</label>
                                     <textarea className="form-control" id="description_field" rows="8" value={description} onChange={(e) => setDescription(e.target.value)}></textarea>
                                 </div>
 
                                 <div className="form-group">
-                                    <label htmlFor="category_field">Danh mục</label>
+                                    <label htmlFor="category_field">Category</label>
                                     <select className="form-control" id="category_field" value={category} onChange={(e) => setCategory(e.target.value)}>
                                         {categories.map(category => (
                                             <option key={category} value={category} >{category}</option>
@@ -151,7 +151,7 @@ const NewProduct = ({ history }) => {
                                     </select>
                                 </div>
                                 <div className="form-group">
-                                    <label htmlFor="stock_field">Số lượng tồn</label>
+                                    <label htmlFor="stock_field">Inventory number</label>
                                     <input
                                         type="number"
                                         id="stock_field"
