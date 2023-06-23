@@ -30,9 +30,7 @@ const NewProduct = ({ history }) => {
         "T-Shirt",
         'Somi',
         'Pant',
-        'Gifts',
-        'Voucher',
-        'Delivery'
+
     ]
 
     const alert = useAlert();

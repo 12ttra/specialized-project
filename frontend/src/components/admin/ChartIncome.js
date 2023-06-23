@@ -33,7 +33,7 @@ export default function ChartIncome() {
                 res.data.map((item) =>
                     setUserStats((prev) => [
                         ...prev,
-                        { name: MONTHS[item._id - 1], "Danh thu": item.total },
+                        { name: MONTHS[item._id - 1], "Doanh thu": item.total },
                     ])
                 );
 
@@ -46,9 +46,9 @@ export default function ChartIncome() {
         <div>
             <Chart
                 data={userStats}
-                title="Danh thu hàng tháng"
+                title="Doanh thu hàng tháng"
                 grid
-                dataKey="Danh thu"
+                dataKey="Doanh thu"
             />
         </div>
     );

@@ -90,50 +90,60 @@ const Dashboard = () => {
         ],
     };
     // radar chart
-    let kho_giavi = 0;
-    let dong_lanh = 0;
-    let che_bien = 0;
-    let thit_trung_haisan = 0;
-    let rau_cu_traicay = 0;
-    let banh_keo = 0;
-    let do_uong = 0;
+    let Secondhand = 0;
+    let New_Clothing = 0;
+    let Man = 0;
+    let Woman = 0;
+    let Unisex = 0;
+    let Dress = 0;
+    let T_Shirt = 0;
+    let Somi = 0;
+    let Pant = 0;
     products &&
         products.forEach((product) => {
-            if (product.category === "Thực phẩm Khô - Gia Vị") {
-                kho_giavi += 1;
+            if (product.category === "Secondhand") {
+                Secondhand += 1;
             }
-            if (product.category === "Rau-Củ-Trái cây") {
-                rau_cu_traicay += 1;
+            if (product.category === "New Clothing") {
+                New_Clothing += 1;
             }
-            if (product.category === "Đồ uống - Giải khát") {
-                do_uong += 1;
+            if (product.category === "Man") {
+                Man += 1;
             }
-            if (product.category === "Bánh kẹo - Đồ ăn vặt") {
-                banh_keo += 1;
+            if (product.category === "Woman") {
+                Woman += 1;
             }
-            if (product.category === "Thực phẩm chế biến") {
-                che_bien += 1;
+            if (product.category === "Unisex") {
+                Unisex += 1;
             }
-            if (product.category === "Thịt-Trứng-Hải sản") {
-                thit_trung_haisan += 1;
+            if (product.category === "Dress") {
+                Dress += 1;
             }
-            if (product.category === "Thực phẩm đông lạnh") {
-                dong_lanh += 1;
+            if (product.category === "T-Shirt") {
+                T_Shirt += 1;
+            }
+            if (product.category === "Somi") {
+                Somi += 1;
+            }
+            if (product.category === "Pant") {
+                Pant += 1;
             }
         });
     const data = {
         labels: [
-            'Thực phẩm khô - Gia vị',
-            'Thực phẩm đông lạnh',
-            'Thực phẩm chế biến',
-            'Thịt - Trứng - Hải sản',
-            'Rau - Củ - Trái cây',
-            'Bánh kẹo - Đồ ăn vặt',
-            'Đồ uống - Giải khát'
+            'Secondhand',
+            'New Clothing',
+            'Man',
+            'Woman',
+            'Unisex',
+            'Dress',
+            'T-Shirt',
+            'Somi',
+            'Pant'
         ],
         datasets: [{
             label: 'Danh mục sản phẩm',
-            data: [kho_giavi, dong_lanh, che_bien, thit_trung_haisan, rau_cu_traicay, banh_keo, do_uong],
+            data: [Secondhand, New_Clothing, Man, Woman, Unisex, Dress, T_Shirt, Somi, Pant],
             fill: true,
             backgroundColor: 'rgba(54, 162, 235, 0.2)',
             borderColor: 'rgb(54, 162, 235)',
