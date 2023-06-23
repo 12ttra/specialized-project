@@ -39,7 +39,7 @@ const UpdateUser = ({ history, match }) => {
         }
 
         if (isUpdated) {
-            alert.success('Cập nhật người dùng thành công')
+            alert.success('Update User Successfully!')
 
             history.push('/admin/users')
 
@@ -65,19 +65,19 @@ const UpdateUser = ({ history, match }) => {
     return (
         <Fragment>
             <MetaData title={`Update User`} />
-            <div className="row">
+            <div className="row-1 mg-top">
                 <div className="col-12 col-md-2">
                     <Sidebar />
                 </div>
 
-                <div className="col-12 col-md-10">
-                    <div className="row wrapper">
-                        <div className="col-10 col-lg-5">
+                <div className="col-12 col-md-10 mg-top">
+                    <div className="row-1 wrapper">
+                        <div className="col-10 col-lg-5 ">
                             <form className="shadow-lg" onSubmit={submitHandler}>
-                                <h1 className="mt-2 mb-5">Cập nhật người dùng</h1>
+                                <h1 className="mt-2 mb-5">Update User</h1>
 
                                 <div className="form-group">
-                                    <label htmlFor="name_field">Tên</label>
+                                    <label htmlFor="name_field">Name</label>
                                     <input
                                         type="name"
                                         id="name_field"
@@ -101,7 +101,7 @@ const UpdateUser = ({ history, match }) => {
                                 </div>
 
                                 <div className="form-group">
-                                    <label htmlFor="role_field">Quyền</label>
+                                    <label htmlFor="role_field">Privacy</label>
 
                                     <select
                                         id="role_field"
@@ -110,13 +110,13 @@ const UpdateUser = ({ history, match }) => {
                                         value={role}
                                         onChange={(e) => setRole(e.target.value)}
                                     >
-                                        <option value="user">Người dùng</option>
-                                        <option value="admin">Quản trị</option>
-                                        <option value="look">Khóa tài khoản</option>
+                                        <option value="user">User</option>
+                                        <option value="admin">Admin</option>
+                                        <option value="look">Lock</option>
                                     </select>
                                 </div>
 
-                                <button type="submit" className="btn update-btn btn-block mt-4 mb-3" >Cập nhật</button>
+                                <button type="submit" className="btn update-btn btn-block mt-4 mb-3" >Update</button>
                             </form>
                         </div>
                     </div>

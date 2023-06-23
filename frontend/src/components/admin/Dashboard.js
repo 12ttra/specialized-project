@@ -156,7 +156,7 @@ const Dashboard = () => {
 
     return (
         <Fragment>
-            <div class="grid-bg ba-grid anim">
+            <div class="grid-bg ba-grid anim mg-top">
                 <div class="inner">
                     <div className="row">
                         <div className="col-12 col-md-2">
@@ -164,34 +164,34 @@ const Dashboard = () => {
                         </div>
 
                         <div className="col-12 col-md-10">
-                            <h1 className="my-4">Tổng quan</h1>
+                            <h1 className="my-4">OVERVIEW</h1>
 
                             {loading ? <Loader /> : (
                                 <Fragment>
                                     <MetaData title={'Admin Dashboard'} />
 
-                                    <div className="row-1 height-auto mg-top pr-4">
-                                        <div className="col-xl-3 col-sm-6 mb-3">
+                                    <div className="row-1 height-auto   gap5" >
+                                        <div className="col-xl-3-1 ">
                                             <div className="card text-white bg-primary o-hidden h-100">
                                                 <div className="card-body">
-                                                    <div className="text-center card-font-size">Tổng danh thu<br /> <b>{totalAmount && totalAmount.toLocaleString()} VNĐ</b>
+                                                    <div className="text-center card-font-size">TOTAL REVENUE<br /> <b>$ {totalAmount && totalAmount.toLocaleString()} </b>
                                                     </div>
                                                 </div>
                                                 <Link className="card-footer text-white clearfix small z-1" to="/admin/orders">
-                                                    <span className="float-left">Xem chi tiết</span>
+                                                    <span className="float-left">View Details</span>
                                                     <span className="float-right">
                                                         <i className="fa fa-angle-right"></i>
                                                     </span>
                                                 </Link>
                                             </div>
                                         </div>
-                                        <div className="col-xl-3 col-sm-6 mb-3">
+                                        <div className="col-xl-3-1 ">
                                             <div className="card text-white bg-success o-hidden h-100">
                                                 <div className="card-body">
-                                                    <div className="text-center card-font-size">Tổng sản phẩm<br /> <b>{products && products.length}</b></div>
+                                                    <div className="text-center card-font-size">TOTAL PRODUCTS<br /> <b>{products && products.length}</b></div>
                                                 </div>
                                                 <Link className="card-footer text-white clearfix small z-1" to="/admin/products">
-                                                    <span className="float-left">Xem chi tiết</span>
+                                                    <span className="float-left">View Details</span>
                                                     <span className="float-right">
                                                         <i className="fa fa-angle-right"></i>
                                                     </span>
@@ -200,7 +200,7 @@ const Dashboard = () => {
                                         </div>
 
 
-                                        <div className="col-xl-3 col-sm-6 mb-3">
+                                        <div className="col-xl-3-1 ">
                                             <div className="card text-white bg-danger o-hidden h-100">
                                                 <div className="card-body">
                                                     <div className="text-center card-font-size">Tổng hóa đơn<br /> <b>{orders && orders.length}</b></div>
@@ -215,13 +215,13 @@ const Dashboard = () => {
                                         </div>
 
 
-                                        <div className="col-xl-3 col-sm-6 mb-3">
+                                        <div className="col-xl-3-1 ">
                                             <div className="card text-white bg-info o-hidden h-100">
                                                 <div className="card-body">
-                                                    <div className="text-center card-font-size">Tổng người dùng<br /> <b>{users && users.length}</b></div>
+                                                    <div className="text-center card-font-size">TOTAL USER<br /> <b>{users && users.length}</b></div>
                                                 </div>
                                                 <Link className="card-footer text-white clearfix small z-1" to="/admin/users">
-                                                    <span className="float-left">Xem chi tiết</span>
+                                                    <span className="float-left">View Details</span>
                                                     <span className="float-right">
                                                         <i className="fa fa-angle-right"></i>
                                                     </span>
@@ -229,11 +229,11 @@ const Dashboard = () => {
                                             </div>
                                         </div>
 
-                                        <div className="col-xl-3 col-sm-6 mb-3">
+                                        <div className="col-xl-3-1">
                                             <div className="card text-white bg-light o-hidden h-100">
                                                 <div className="card-body">
                                                     {/* Doughnut Chart */}
-                                                    <h6 className='text-dark'>Tình trạng số lượng hàng</h6>
+                                                    <h6 className='text-dark'>QUANTITY PRODUCT STATUS</h6>
                                                     <div className="doughnutChart">
                                                         <Doughnut data={doughnutState} />
                                                     </div>
@@ -241,11 +241,11 @@ const Dashboard = () => {
                                             </div>
                                         </div>
 
-                                        <div className="col-xl-3 col-sm-6 mb-3">
+                                        <div className="col-xl-3-1 ">
                                             <div className="card text-white bg-light o-hidden h-100">
                                                 <div className="card-body">
                                                     {/* Doughnut Chart */}
-                                                    <h6 className='text-dark'>Tình trạng đơn hàng</h6>
+                                                    <h6 className='text-dark'>ORDER STATUS</h6>
                                                     {/* Doughnut Chart */}
                                                     <div className="doughnutChart">
                                                         <Doughnut data={doughnutStateOrder} />
@@ -257,7 +257,7 @@ const Dashboard = () => {
                                         <div className="col-xl-6 col-sm-12 mb-3">
                                             <div className="card text-white bg-light o-hidden h-100">
                                                 <div className="card-body">
-                                                    <h6 className='text-dark'>Tổng doanh thu</h6>
+                                                    <h6 className='text-dark'>TOTAL REVENUE</h6>
                                                     {/* Line chart */}
                                                     <div className="lineChart">
                                                         <Line

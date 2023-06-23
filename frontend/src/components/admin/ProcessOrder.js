@@ -55,7 +55,7 @@ const ProcessOrder = ({ match }) => {
     return (
         <Fragment>
             <MetaData title={`Process Order # ${order && order._id}`} />
-            <div className="row">
+            <div className="row mg-top">
                 <div className="col-12 col-md-2">
                     <Sidebar />
                 </div>
@@ -66,28 +66,28 @@ const ProcessOrder = ({ match }) => {
                             <div className="row d-flex justify-content-around">
                                 <div className="col-12 col-lg-7 order-details">
 
-                                    <h2 className="my-5">Đơn hàng # {order._id}</h2>
+                                    <h2 className="my-5">Order # {order._id}</h2>
 
-                                    <h4 className="mb-4">Thông tin vận chuyển</h4>
-                                    <p><b>Tên khách hàng:</b> {user && user.name}</p>
-                                    <p><b>Số điện thoại:</b> {shippingInfo && shippingInfo.phoneNo}</p>
-                                    <p className="mb-4"><b>Địa chỉ:</b>{shippingDetails}</p>
-                                    <p><b>Tổng tiền:</b> {totalPrice} VNĐ</p>
+                                    <h4 className="mb-4">Ship Information</h4>
+                                    <p><b>Customer name:</b> {user && user.name}</p>
+                                    <p><b>Phone Number:</b> {shippingInfo && shippingInfo.phoneNo}</p>
+                                    <p className="mb-4"><b>Address:</b>{shippingDetails}</p>
+                                    <p><b>Total:</b> {totalPrice} VND</p>
 
                                     <hr />
 
-                                    <h4 className="my-4">Tình trạng thanh toán</h4>
+                                    <h4 className="my-4">Status Payment</h4>
                                     <p className={isPaid ? "greenColor" : "redColor"}><b>{isPaid ? "Đã thanh toán" : "Chưa thanh toán"}</b></p>
 
                                     <h4 className="my-4">Stripe ID</h4>
                                     <p><b>{paymentInfo && paymentInfo.id}</b></p>
 
-                                    <h4 className="my-4">Trạng thái hóa đơn:</h4>
+                                    <h4 className="my-4">Invoice Status</h4>
                                     <p className={order.orderStatus && String(order.orderStatus).includes('Đã giao hàng') ? "greenColor" : "redColor"} ><b>{orderStatus}</b></p>
 
 
 
-                                    <h4 className="my-4">Các mặt hàng đã đặt:</h4>
+                                    <h4 className="my-4">Items ordered:</h4>
 
                                     <hr />
                                     <div className="cart-item my-1">
@@ -103,11 +103,11 @@ const ProcessOrder = ({ match }) => {
 
 
                                                 <div className="col-4 col-lg-2 mt-4 mt-lg-0">
-                                                    <p>{item.price} VNĐ</p>
+                                                    <p>{item.price} VND</p>
                                                 </div>
 
                                                 <div className="col-4 col-lg-3 mt-4 mt-lg-0">
-                                                    <p>Số lượng {item.quantity} </p>
+                                                    <p>Quantity {item.quantity} </p>
                                                 </div>
                                             </div>
                                         ))}
@@ -116,7 +116,7 @@ const ProcessOrder = ({ match }) => {
                                 </div>
 
                                 <div className="col-12 col-lg-3 mt-5">
-                                    <h4 className="my-4">Trạng thái</h4>
+                                    <h4 className="my-4">Status</h4>
 
                                     <div className="form-group">
                                         <select
@@ -125,14 +125,14 @@ const ProcessOrder = ({ match }) => {
                                             value={status}
                                             onChange={(e) => setStatus(e.target.value)}
                                         >
-                                            <option value="Đã đặt hàng">Đã đặt hàng</option>
-                                            <option value="Đang vận chuyển">Đang vận chuyển</option>
-                                            <option value="Đã giao hàng">Đã giao hàng</option>
+                                            <option value="Đã đặt hàng">Ordered</option>
+                                            <option value="Đang vận chuyển">Shipping</option>
+                                            <option value="Đã giao hàng">Delivered</option>
                                         </select>
                                     </div>
 
                                     <button className="btn btn-primary btn-block" onClick={() => updateOrderHandler(order._id)}>
-                                        Cập nhật trạng thái
+                                            Update Status
                                     </button>
                                 </div>
 

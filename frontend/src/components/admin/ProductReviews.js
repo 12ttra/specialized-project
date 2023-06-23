@@ -62,22 +62,22 @@ const ProductReviews = () => {
                     sort: 'asc'
                 },
                 {
-                    label: 'Xếp hạng',
+                    label: 'Rate',
                     field: 'rating',
                     sort: 'asc'
                 },
                 {
-                    label: 'Nội dung đánh giá',
+                    label: 'Comment',
                     field: 'comment',
                     sort: 'asc'
                 },
                 {
-                    label: 'Người dùng',
+                    label: 'User',
                     field: 'user',
                     sort: 'asc'
                 },
                 {
-                    label: 'Hành động',
+                    label: 'Action',
                     field: 'actions',
                 },
             ],
@@ -104,18 +104,18 @@ const ProductReviews = () => {
     return (
         <Fragment>
             <MetaData title={'Product Reviews'} />
-            <div className="row">
+            <div className="row mg-top">
                 <div className="col-12 col-md-2">
                     <Sidebar />
                 </div>
 
-                <div className="col-12 col-md-10">
+                <div className="col-12 col-md-10 ">
                     <Fragment>
-                        <div className="row justify-content-center mt-5">
+                        <div className="row justify-content-center mg-top mt-5">
                             <div className="col-5">
                                 <form onSubmit={submitHandler}>
                                     <div className="form-group">
-                                        <label htmlFor="productId_field">Nhập ID sản phẩm</label>
+                                        <label htmlFor="productId_field">Enter ID Product</label>
                                         <input
                                             type="text"
                                             id="productId_field"
@@ -130,7 +130,7 @@ const ProductReviews = () => {
                                         type="submit"
                                         className="btn btn-primary btn-block py-2"
                                     >
-                                        TÌM KIẾM
+                                        Search
                                     </button>
                                 </ form>
                             </div>
@@ -146,7 +146,7 @@ const ProductReviews = () => {
                                 hover
                             />
                         ) : (
-                            <p className="mt-5 text-center">Không có bình luận cho sản phẩm này.</p>
+                            <p className="mt-5 text-center">No Comment</p>
                         )}
 
 

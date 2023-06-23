@@ -9,18 +9,18 @@ export default function ChartIncome() {
 
     const MONTHS = useMemo(
         () => [
-            "Tháng 1",
-            "Tháng 2",
-            "Tháng 3",
-            "Tháng 4",
-            "Tháng 5",
-            "Tháng 6",
-            "Tháng 7",
-            "Tháng 8",
-            "Tháng 9",
-            "Tháng 10",
-            "Tháng 11",
-            "Tháng 12",
+            "January",
+            "February",
+            "March",
+            "Arpil",
+            "May",
+            "June",
+            "July",
+            "August",
+            "September",
+            "October",
+            "November",
+            "December",
         ],
         []
     );
@@ -33,7 +33,7 @@ export default function ChartIncome() {
                 res.data.map((item) =>
                     setUserStats((prev) => [
                         ...prev,
-                        { name: MONTHS[item._id - 1], "Doanh thu": item.total },
+                        { name: MONTHS[item._id - 1], "Revenue": item.total },
                     ])
                 );
 
@@ -46,9 +46,9 @@ export default function ChartIncome() {
         <div>
             <Chart
                 data={userStats}
-                title="Doanh thu hàng tháng"
+                title="Renueve per Month"
                 grid
-                dataKey="Doanh thu"
+                dataKey="Revenue"
             />
         </div>
     );
