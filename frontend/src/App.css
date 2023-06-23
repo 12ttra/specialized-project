@@ -18,6 +18,20 @@ font-family:  monospace, 'Courier New', Courier,; }
 .dropdown-menu-login{
   display:block;
 }
+.css-edit {
+  margin: 10px auto;
+  width: 25%;
+}
+.mg-left-100{
+  margin-left: 100px;
+}
+.mgtf{
+  
+  font-size: 30px;
+  text-align: center;
+
+}
+.mg-bot-30{margin-bottom: 30px;}
 body {
   min-height: 101vh; }
 .mg-top{

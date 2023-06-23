@@ -72,15 +72,15 @@ const UpdateProfile = ({ history }) => {
     }
     return (
         <Fragment>
-            <MetaData title={'Sửa thông tin cá nhân'} />
+            <MetaData title={'Update Profile'} />
 
-            <div className="row wrapper">
+            <div className="row-1 mg-top wrapper ">
                 <div className="col-10 col-lg-5">
                     <form className="shadow-lg" onSubmit={submitHandler} encType='multipart/form-data'>
-                        <h1 className="mt-2 mb-5">Sửa thông tin cá nhân</h1>
+                        <h1 className="mt-2 mb-5">Update Profile</h1>
 
-                        <div className="form-group">
-                            <label htmlFor="email_field">Tên</label>
+                        <div className="form-group mg-bot-30">
+                            <label htmlFor="email_field">Name</label>
                             <input
                                 type="name"
                                 id="name_field"
@@ -91,7 +91,7 @@ const UpdateProfile = ({ history }) => {
                             />
                         </div>
 
-                        <div className="form-group">
+                        <div className="form-group mg-bot-30">
                             <label htmlFor="email_field">Email</label>
                             <input
                                 type="email"
@@ -103,8 +103,8 @@ const UpdateProfile = ({ history }) => {
                             />
                         </div>
 
-                        <div className='form-group'>
-                            <label htmlFor='avatar_upload'>Ảnh đại diện</label>
+                        <div className='form-group mg-bot-30'>
+                            <label htmlFor='avatar_upload'>Avatar</label>
                             <div className='d-flex align-items-center'>
                                 <div>
                                     <figure className='avatar mr-3 item-rtl'>
@@ -115,7 +115,7 @@ const UpdateProfile = ({ history }) => {
                                         />
                                     </figure>
                                 </div>
-                                <div className='custom-file'>
+                                <div className='custom-file mg-bot-30'>
                                     <input
                                         type='file'
                                         name='avatar'
@@ -125,13 +125,13 @@ const UpdateProfile = ({ history }) => {
                                         onChange={onChange}
                                     />
                                     <label className='custom-file-label' htmlFor='customFile'>
-                                        Chọn ảnh
+                                       Select Image
                                 </label>
                                 </div>
                             </div>
                         </div>
 
-                        <button type="submit" className="btn update-btn btn-block mt-4 mb-3" disabled={loading ? true : false} >Xác nhận</button>
+                        <button type="submit" className="btn update-btn btn-block mt-4 mb-3 mg-bot-30" disabled={loading ? true : false} >Confirm</button>
                     </form>
                 </div>
             </div>

@@ -15,7 +15,38 @@ const Profile = () => {
                 <Fragment>
                     <MetaData title={'Profile'} />
 
-                    
+                    <h2 className="mg-top mgtf">Profile</h2>
+                    <div className="row justify-content-around mt-5 user-info">
+                        <div className="col-12 col-md-3 ">
+                            <figure className='avatar avatar-profile'>
+                                <img className="rounded-circle img-fluid" src={user.avatar.url} alt={user.name} />
+                            </figure>
+                            <Link to="/me/update" id="edit_profile" className="btn btn-primary btn-block my-5">
+                                Edit..
+                            </Link>
+                        </div>
+
+                        <div className="col-12 col-md-5">
+                            <h4>Fullname</h4>
+                            <p>{user.name}</p>
+
+                            <h4>Email</h4>
+                            <p>{user.email}</p>
+
+                            <h4>Join Date</h4>
+                            <p>{String(user.createdAt).substring(0, 10)}</p>
+
+                            {user.role !== 'admin' && (
+                                <Link to="/orders/me" className="btn btn-danger btn-block mt-3">
+                                   Order
+                                </Link>
+                            )}
+
+                            <Link to="/password/update" className="btn btn-primary btn-block mt-3 mg-left-100">
+                               Change Password
+                            </Link>
+                        </div>
+                    </div>
                 </Fragment>
             )}
         </Fragment>
