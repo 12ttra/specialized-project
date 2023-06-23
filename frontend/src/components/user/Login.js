@@ -22,9 +22,9 @@ const Login = ({ history, location }) => {
 
     useEffect(() => {
 
-        // if (isAuthenticated) {
-        //     history.push(redirect)
-        // }
+        if (isAuthenticated) {
+             history.push('/');
+         }
 
         if (error) {
             alert.error(error);

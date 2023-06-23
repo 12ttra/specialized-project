@@ -1,6 +1,6 @@
 import React, { Fragment ,useState} from 'react'
 import { Route, Link } from 'react-router-dom'
-import { useHistory } from 'react-router-dom';
+import { BrowserRouter as Router } from 'react-router-dom';
 
 import { useDispatch, useSelector } from 'react-redux'
 import { useAlert } from 'react-alert'
@@ -78,11 +78,7 @@ const Header = () => {
                     </div>
 
                     <div id="search_nav">
-                        <form action="" className="search" method="post">
-                            <div>
-                                <input type="text" placeholder="Search . . ." required />
-                            </div>
-                        </form>
+                    <Route render={({ history }) => <Search history={history} />} />
                     </div>
                     <div id="right_nav">
                         <ul >

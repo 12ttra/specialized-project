@@ -30,6 +30,11 @@ body {
 .gap5{
   gap:5px;
 }
+.css-edit{
+  position: absolute;
+    display: flex;
+    justify-content: space-between;
+}
 .dp-flex{
   display: flex;
 }
