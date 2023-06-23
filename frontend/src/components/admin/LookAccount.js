@@ -39,7 +39,7 @@ const LookAccount = ({ history, match }) => {
         }
 
         if (isUpdated) {
-            alert.success('Khóa tài khoản thành công!')
+            alert.success('Lock Account!')
 
             history.push('/admin/users')
 
@@ -65,7 +65,7 @@ const LookAccount = ({ history, match }) => {
     return (
         <Fragment>
             <MetaData title={`Update User`} />
-            <div className="row">
+            <div className="row mg-top">
                 <div className="col-12 col-md-2">
                     <Sidebar />
                 </div>
@@ -74,7 +74,7 @@ const LookAccount = ({ history, match }) => {
                     <div className="row wrapper">
                         <div className="col-10 col-lg-5">
                             <form className="shadow-lg" onSubmit={submitHandler}>
-                                <h1 className="mt-2 mb-5">KHÓA TÀI KHOẢN</h1>
+                                <h1 className="mt-2 mb-5">Lock Account</h1>
                                 <img className='img_look container' src='https://us.123rf.com/450wm/yupiramos/yupiramos1709/yupiramos170901899/85031041-viejo-dise%C3%B1o-aislado-clave-del-ejemplo-del-vector-del-icono.jpg?ver=6' alt='' />
                                 <div className="form-group">
                                     <label htmlFor="email_field">Email</label>
@@ -90,7 +90,7 @@ const LookAccount = ({ history, match }) => {
                                 </div>
 
                                 <div className="form-group">
-                                    <label htmlFor="role_field">Quyền</label>
+                                    <label htmlFor="role_field">Privacy </label>
 
                                     <select
                                         id="role_field"
@@ -99,12 +99,12 @@ const LookAccount = ({ history, match }) => {
                                         value="look"
                                         onChange={(e) => setRole1(e.target.value)}
                                     >
-                                        <option value="look">Khóa tài khoản</option>
-                                        <option value="look">Khóa tài khoản</option>
+                                        <option value="look">Lock Account</option>
+                                        <option value="look">Lock Account</option>
                                     </select>
                                 </div>
 
-                                <button type="submit" className="btn update-btn btn-block mt-4 mb-3" >Khóa tài khoản</button>
+                                <button type="submit" className="btn update-btn btn-block mt-4 mb-3" >Lock Account</button>
                             </form>
                         </div>
                     </div>

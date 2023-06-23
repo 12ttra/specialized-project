@@ -49,22 +49,22 @@ const ProductsList = ({ history }) => {
                     sort: 'asc'
                 },
                 {
-                    label: 'Tên sản phẩm',
+                    label: 'Name',
                     field: 'name',
                     sort: 'asc'
                 },
                 {
-                    label: 'Giá',
+                    label: 'Price',
                     field: 'price',
                     sort: 'asc'
                 },
                 {
-                    label: 'Số lượng còn lại',
+                    label: 'Stock',
                     field: 'stock',
                     sort: 'asc'
                 },
                 {
-                    label: 'Hành động',
+                    label: 'Action',
                     field: 'actions',
                 },
             ],
@@ -75,7 +75,7 @@ const ProductsList = ({ history }) => {
             data.rows.push({
                 id: product._id,
                 name: product.name,
-                price: `${(product.price).toLocaleString()} VNĐ`,
+                price: `${(product.price).toLocaleString()} VND`,
                 stock: product.stock,
                 actions: <Fragment>
                     <Link to={`/admin/product/${product._id}`} className="btn btn-primary py-1 px-2">
@@ -90,17 +90,17 @@ const ProductsList = ({ history }) => {
                             <div className="modal-dialog" role="document">
                                 <div className="modal-content">
                                     <div className="modal-header">
-                                        <h5 className="modal-title" id="exampleModalLabel">Thông báo!</h5>
+                                        <h5 className="modal-title" id="exampleModalLabel">Notifications!</h5>
                                         <button type="button" className="close" data-dismiss="modal" aria-label="Close">
                                             <span aria-hidden="true">×</span>
                                         </button>
                                     </div>
                                     <div class="modal-body">
-                                        Bạn có muốn xóa không
+                                        Do you want to delete?
                                     </div>
                                     <div className="modal-footer">
-                                        <button type="button" className="btn btn-secondary" data-dismiss="modal">Hủy</button>
-                                        <button type="button" className="btn btn-danger" onClick={() => deleteProductHandler(product._id)} data-dismiss="modal">Xóa</button>
+                                        <button type="button" className="btn btn-secondary" data-dismiss="modal">Cancel</button>
+                                        <button type="button" className="btn btn-danger" onClick={() => deleteProductHandler(product._id)} data-dismiss="modal">Delete</button>
                                     </div>
                                 </div>
                             </div>
@@ -119,7 +119,7 @@ const ProductsList = ({ history }) => {
 
     return (
         <Fragment>
-            <MetaData title={'Tất cả sản phẩm'} />
+            <MetaData title={'All Products'} />
 
             <div className="row">
                 <div className="col-12 col-md-2">
@@ -128,8 +128,8 @@ const ProductsList = ({ history }) => {
 
                 <div className="col-12 col-md-10">
                     <Fragment>
-                        <h1 className="my-5">Tất cả sản phẩm</h1>
-                        <Link to='/admin/product'><button type="button" className="btn btn-primary">Thêm sản phẩm mới</button></Link>
+                        <h1 className="my-5">ALL PRODUCTS</h1>
+                        <Link to='/admin/product'><button type="button" className="btn btn-primary">Add new Product</button></Link>
 
                         {loading ? <Loader /> : (
                             <MDBDataTable

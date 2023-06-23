@@ -28,7 +28,7 @@ const OrdersList = ({ history }) => {
         }
 
         if (isDeleted) {
-            alert.success('Xóa hóa đơn thành công');
+            alert.success('Delete Invoice Successfully!');
             history.push('/admin/orders');
             dispatch({ type: DELETE_ORDER_RESET })
         }
@@ -46,27 +46,27 @@ const OrdersList = ({ history }) => {
                     sort: 'asc'
                 },
                 {
-                    label: 'Số mặt hàng',
+                    label: 'Item number',
                     field: 'numofItems',
                     sort: 'asc'
                 },
                 {
-                    label: 'Tổng tiền',
+                    label: 'Total',
                     field: 'amount',
                     sort: 'asc'
                 },
                 {
-                    label: 'Ngày tạo hóa đơn',
+                    label: 'Invoice Creation Date',
                     field: 'createdAt',
                     sort: 'asc'
                 },
                 {
-                    label: 'Trạng thái',
+                    label: 'Status',
                     field: 'status',
                     sort: 'asc'
                 },
                 {
-                    label: 'Hành động',
+                    label: 'Action',
                     field: 'actions',
                 },
             ],
@@ -77,9 +77,9 @@ const OrdersList = ({ history }) => {
             data.rows.push({
                 id: order._id,
                 numofItems: order.orderItems.length,
-                amount: `${order.totalPrice} VNĐ`,
+                amount: `${order.totalPrice} VND`,
                 createdAt: order.createdAt,
-                status: order.orderStatus && String(order.orderStatus).includes('Đã giao hàng')
+                status: order.orderStatus && String(order.orderStatus).includes('shipped')
                     ? <p style={{ color: 'green' }}>{order.orderStatus}</p>
                     : <p style={{ color: 'red' }}>{order.orderStatus}</p>,
                 actions: <Fragment>
@@ -106,7 +106,7 @@ const OrdersList = ({ history }) => {
 
                 <div className="col-12 col-md-10">
                     <Fragment>
-                        <h1 className="my-5">Tất cả đơn hàng</h1>
+                        <h1 className="my-5">ALL ORDER</h1>
 
                         {loading ? <Loader /> : (
                             <MDBDataTable

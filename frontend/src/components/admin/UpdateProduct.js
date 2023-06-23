@@ -125,19 +125,19 @@ const UpdateProduct = ({ match, history }) => {
     return (
         <Fragment>
             <MetaData title={'Update Product'} />
-            <div className="row">
+            <div className="row mg-top">
                 <div className="col-12 col-md-2">
                     <Sidebar />
                 </div>
 
-                <div className="col-12 col-md-10">
+                <div className="col-12 col-md-10 mg-top">
                     <Fragment>
-                        <div className="wrapper my-5">
+                        <div className="wrapper my-5 ">
                             <form className="shadow-lg product-form" onSubmit={submitHandler} encType='multipart/form-data'>
-                                <h1 className="mb-4">Cập nhật sản phẩm</h1>
+                                <h1 className="mb-4">Update Product</h1>
 
                                 <div className="form-group">
-                                    <label htmlFor="name_field">Tên sản phẩm</label>
+                                    <label htmlFor="name_field">Name</label>
                                     <input
                                         type="text"
                                         id="name_field"
@@ -148,7 +148,7 @@ const UpdateProduct = ({ match, history }) => {
                                 </div>
 
                                 <div className="form-group">
-                                    <label htmlFor="price_field">Giá</label>
+                                    <label htmlFor="price_field">Price</label>
                                     <input
                                         type="text"
                                         id="price_field"
@@ -158,19 +158,19 @@ const UpdateProduct = ({ match, history }) => {
                                     />
                                 </div>
                                 <div className="form-group">
-                                    <label htmlFor="best_seller">Best Selle</label>
+                                    <label htmlFor="best_seller">Best Seller</label>
                                     <select className="form-control" id="best_seller" value={best_seller} onChange={(e) => setBestSeller(e.target.value)}>
                                         <option key="0" value="0" >No</option>
                                         <option key="1" value="1" >Yes</option>
                                     </select>
                                 </div>
                                 <div className="form-group">
-                                    <label htmlFor="description_field">Mô tả</label>
+                                    <label htmlFor="description_field">Description</label>
                                     <textarea className="form-control" id="description_field" rows="8" value={description} onChange={(e) => setDescription(e.target.value)}></textarea>
                                 </div>
 
                                 <div className="form-group">
-                                    <label htmlFor="category_field">Danh mục</label>
+                                    <label htmlFor="category_field">Category</label>
                                     <select className="form-control" id="category_field" value={category} onChange={(e) => setCategory(e.target.value)}>
                                         {categories.map(category => (
                                             <option key={category} value={category} >{category}</option>
@@ -179,7 +179,7 @@ const UpdateProduct = ({ match, history }) => {
                                     </select>
                                 </div>
                                 <div className="form-group">
-                                    <label htmlFor="stock_field">Số lượng</label>
+                                    <label htmlFor="stock_field">Quantity</label>
                                     <input
                                         type="number"
                                         id="stock_field"
@@ -190,7 +190,7 @@ const UpdateProduct = ({ match, history }) => {
                                 </div>
 
                                 <div className="form-group">
-                                    <label htmlFor="seller_field">Xuất xứ</label>
+                                    <label htmlFor="seller_field">Source</label>
                                     <input
                                         type="text"
                                         id="seller_field"
@@ -201,7 +201,7 @@ const UpdateProduct = ({ match, history }) => {
                                 </div>
 
                                 <div className='form-group'>
-                                    <label>Ảnh</label>
+                                    <label>Image</label>
 
                                     <div className='custom-file'>
                                         <input
@@ -213,7 +213,7 @@ const UpdateProduct = ({ match, history }) => {
                                             multiple
                                         />
                                         <label className='custom-file-label' htmlFor='customFile'>
-                                            Chọn hình
+                                           Select Image
                                  </label>
                                     </div>
 
@@ -234,7 +234,7 @@ const UpdateProduct = ({ match, history }) => {
                                     className="btn btn-block py-3"
                                     disabled={loading ? true : false}
                                 >
-                                    Cập nhật
+                                    Update
                             </button>
 
                             </form>

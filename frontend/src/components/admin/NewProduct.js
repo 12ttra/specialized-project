@@ -162,7 +162,7 @@ const NewProduct = ({ history }) => {
                                 </div>
 
                                 <div className="form-group">
-                                    <label htmlFor="seller_field">Nhà sản xuất</label>
+                                    <label htmlFor="seller_field">Producer</label>
                                     <input
                                         type="text"
                                         id="seller_field"
@@ -173,7 +173,7 @@ const NewProduct = ({ history }) => {
                                 </div>
 
                                 <div className='form-group'>
-                                    <label>Hình sản phẩm</label>
+                                    <label>Product Image</label>
 
                                     <div className='custom-file'>
                                         <input
@@ -185,7 +185,7 @@ const NewProduct = ({ history }) => {
                                             multiple
                                         />
                                         <label className='custom-file-label' htmlFor='customFile'>
-                                            Chọn hình
+                                           Seclect Image
                                         </label>
                                     </div>
 
@@ -202,7 +202,7 @@ const NewProduct = ({ history }) => {
                                     className="btn btn-block py-3"
                                     
                                 >
-                                    Thêm mới
+                                    ADD
                                 </button>
 
                             </form>

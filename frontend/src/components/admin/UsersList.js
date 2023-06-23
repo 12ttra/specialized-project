@@ -45,7 +45,7 @@ const UsersList = ({ history }) => {
                     sort: 'asc'
                 },
                 {
-                    label: 'Tên người dùng',
+                    label: 'User name',
                     field: 'name',
                     sort: 'asc'
                 },
@@ -55,17 +55,17 @@ const UsersList = ({ history }) => {
                     sort: 'asc'
                 },
                 {
-                    label: 'Quyền',
+                    label: 'Role',
                     field: 'role',
                     sort: 'asc'
                 },
                 {
-                    label: 'Trạng thái tài khoản    ',
+                    label: 'Status    ',
                     field: 'status',
                     sort: 'asc'
                 },
                 {
-                    label: 'Hành động',
+                    label: 'Action',
                     field: 'actions',
                 },
             ],
@@ -75,16 +75,16 @@ const UsersList = ({ history }) => {
         users.forEach(userr => {
             let hoat_dong = '';
             if (userr.role === "look") {
-                userr.role = "Đã bị khóa"
+                userr.role = "Locked"
             }
             if (userr.role === "user") {
-                userr.role = "Người dùng"
+                userr.role = "User"
             }
             if (userr.role === "admin") {
-                userr.role = "Quản trị"
+                userr.role = "Admin"
             }
-            if (userr.role === "Người dùng" || "Quản trị") {
-                hoat_dong = "Hoạt động"
+            if (userr.role === "User" || "Admin") {
+                hoat_dong = "Action"
             }
 
             data.rows.push({
@@ -92,7 +92,7 @@ const UsersList = ({ history }) => {
                 name: userr.name,
                 email: userr.email,
                 role: userr.role,
-                status: userr.role && String(userr.role).includes('Đã bị khóa')
+                status: userr.role && String(userr.role).includes('Locked')
                     ? <p style={{ color: 'red' }}><i class="bi bi-key-fill"></i> {userr.role}</p>
                     : <p style={{ color: 'green' }}><i class="bi bi-activity"></i> {hoat_dong}</p>,
                 actions: <Fragment>
@@ -115,14 +115,14 @@ const UsersList = ({ history }) => {
     return (
         <Fragment>
             <MetaData title={'All Users'} />
-            <div className="row">
+            <div className="row-1 ">
                 <div className="col-12 col-md-2">
                     <Sidebar />
                 </div>
 
-                <div className="col-12 col-md-10">
+                <div className="col-12 col-md-10  mg-top">
                     <Fragment>
-                        <h1 className="my-5">Tất cả người dùng</h1>
+                        <h1 className="my-5">All users</h1>
 
                         {loading ? <Loader /> : (
                             <MDBDataTable

@@ -23,6 +23,16 @@ body {
 .mg-top{
   margin-top: 80px;
 }
+.col-xl-3-1{
+  flex: 0 0 auto;
+    width: 24%;
+}
+.gap5{
+  gap:5px;
+}
+.dp-flex{
+  display: flex;
+}
 .row-1{
   --bs-gutter-x: 1.5rem;
     --bs-gutter-y: 0;

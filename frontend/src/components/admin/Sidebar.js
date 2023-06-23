@@ -1,10 +1,10 @@
 import React from 'react'
 import { Link } from 'react-router-dom'
-
+import '../../App.css'
 const Sidebar = () => {
     return (
-        <div className="sidebar-wrapper">
-            <nav id="sidebar">
+        <div className="sidebar-wrapper mg-top">
+            <nav id="sidebar" className='mg-top'>
                 <ul className="list-unstyled components">
                     <li>
                         <Link to="/dashboard"><i className="fa fa-tachometer"></i> Tổng quan</Link>
