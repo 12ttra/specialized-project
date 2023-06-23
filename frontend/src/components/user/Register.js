@@ -1,4 +1,5 @@
 import React, { Fragment, useState, useEffect } from 'react'
+import { Link } from 'react-router-dom'
 
 import MetaData from '../layout/MetaData'
 import Loader from '../layout/Loader'
@@ -27,9 +28,9 @@ const Register = ({ history }) => {
 
     useEffect(() => {
 
-        // if (isAuthenticated) {
-        //     history.push('/')
-        // }
+        if (isAuthenticated) {
+            history.push('/login')
+        }
 
         if (error) {
             alert.error(error);
@@ -91,7 +92,7 @@ const Register = ({ history }) => {
                     <div className="right">
                         <form className="shadow-lg" onSubmit={submitHandler} encType='multipart/form-data'>
                             <h5>Register</h5>
-                            <p>You Already have an account?  <a href="#" className="css-a">Login</a> now!</p>
+                            <p>You Already have an account?  <Link to="/login" className="css-a">Login</Link> now!</p>
 
                             <div className="inputs">
                                 <input className="fullname" placeholder="Enter your name" 
