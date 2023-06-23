@@ -99,14 +99,14 @@ const OrdersList = ({ history }) => {
     return (
         <Fragment>
             <MetaData title={'All Orders'} />
-            <div className="row">
+            <div className="row-1 ">
                 <div className="col-12 col-md-2">
                     <Sidebar />
                 </div>
 
-                <div className="col-12 col-md-10">
+                <div className="col-12 col-md-10 mg-top">
                     <Fragment>
-                        <h1 className="my-5">ALL ORDER</h1>
+                        <h1 className="">ALL ORDER</h1>
 
                         {loading ? <Loader /> : (
                             <MDBDataTable
