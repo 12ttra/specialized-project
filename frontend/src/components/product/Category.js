@@ -28,7 +28,7 @@ const Category = ({ match }) => {
 
     const { loading, products, error, productsCount, resPerPage, filteredProductsCount } = useSelector(state => state.products)
 
-    const keyword = match.params.keyword
+    const keyword = match.params.name
 
     useEffect(() => {
         if (error) {
@@ -62,76 +62,85 @@ const Category = ({ match }) => {
             {loading ? <Loader /> : (
                 <Fragment>
                     <MetaData title={'SPREZZA-Ecommerce'} />
-                    <h1 id="products-heading" className="product_title"> Search result "{keyword}"</h1>
+                    <div className="SZPD-X flex items-center">
+                        <a href="#">
+                            <div className="flex color-1 size-text">
+                                <p className="text-1">Home</p>
+                                <span>⟶ </span>
+                                <p className="text-1">{keyword}</p>
+                            </div>
+                        </a>
+                    </div>
+                    <h1 id="products-heading" className="product_title">{keyword}</h1>
                     <section id="products" className="">
                         {
                             <div className="brand-product">
-                                    <Fragment>
-                                        <div className="col-6 col-md-3">
+                                <Fragment>
+                                    <div className="col-6 col-md-3">
 
-                                            <div className="px-5">
-                                                <h4 className="mb-5">
-                                                    Khoảng giá
+                                        <div className="px-5">
+                                            <h4 className="mb-5">
+                                                Khoảng giá
+                                            </h4>
+                                            <Range
+                                                marks={{
+                                                    10000: `10.000`,
+                                                    1000000: `1.000.000`
+                                                }}
+                                                min={10}
+                                                max={1000000}
+                                                defaultValue={[1, 1000000]}
+                                                tipFormatter={value => `${value}`}
+                                                tipProps={{
+                                                    placement: "top",
+                                                    visible: false
+                                                }}
+                                                value={price}
+                                                onChange={price => setPrice(price)}
+                                            />
+                                            <br />
+                                            <hr className="my-3" />
+
+                                            <div className="mt-5">
+                                                <h4 className="mb-3">
+                                                    Đánh giá
                                                 </h4>
-                                                <Range
-                                                    marks={{
-                                                        10000: `10.000`,
-                                                        1000000: `1.000.000`
-                                                    }}
-                                                    min={10}
-                                                    max={1000000}
-                                                    defaultValue={[1, 1000000]}
-                                                    tipFormatter={value => `${value}`}
-                                                    tipProps={{
-                                                        placement: "top",
-                                                        visible: false
-                                                    }}
-                                                    value={price}
-                                                    onChange={price => setPrice(price)}
-                                                />
-                                                <br />
-                                                <hr className="my-3" />
 
-                                                <div className="mt-5">
-                                                    <h4 className="mb-3">
-                                                        Đánh giá
-                                                    </h4>
-
-                                                    <ul className="pl-0">
-                                                        {[5, 4, 3, 2, 1].map(star => (
-                                                            <li
-                                                                style={{
-                                                                    cursor: 'pointer',
-                                                                    listStyleType: 'none'
-                                                                }}
-                                                                key={star}
-                                                                onClick={() => setRating(star)}
-                                                            >
-                                                                <div className="rating-outer">
-                                                                    <div className="rating-inner"
-                                                                         style={{
-                                                                             width: `${star * 20}%`
-                                                                         }}
-                                                                    >
-                                                                    </div>
+                                                <ul className="pl-0">
+                                                    {[5, 4, 3, 2, 1].map(star => (
+                                                        <li
+                                                            style={{
+                                                                cursor: 'pointer',
+                                                                listStyleType: 'none'
+                                                            }}
+                                                            key={star}
+                                                            onClick={() => setRating(star)}
+                                                        >
+                                                            <div className="rating-outer">
+                                                                <div className="rating-inner"
+                                                                     style={{
+                                                                         width: `${star * 20}%`
+                                                                     }}
+                                                                >
                                                                 </div>
-                                                            </li>
-                                                        ))}
-                                                    </ul>
-                                                </div>
-
+                                                            </div>
+                                                        </li>
+                                                    ))}
+                                                </ul>
                                             </div>
-                                        </div>'
 
-
-                                        <div className="brand-product col-6 col-md-3">
-                                            <div className="brand-product-wrapper">
-                                                {products.map(product => (
-                                                    <Product key={product._id} product={product} col={4} />
-                                                ))}
-                                            </div>
                                         </div>
-                                    </Fragment>
+                                    </div>'
+
+
+                                    <div className="brand-product col-6 col-md-3">
+                                        <div className="brand-product-wrapper">
+                                            {products.map(product => (
+                                                <Product key={product._id} product={product} col={4} />
+                                            ))}
+                                        </div>
+                                    </div>
+                                </Fragment>
                             </div>
                         }
                     </section>
