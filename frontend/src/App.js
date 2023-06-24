@@ -5,6 +5,7 @@ import Header from './components/layout/Header'
 import Footer from './components/layout/Footer'
 
 import Home from './components/Home'
+import Category from "./components/product/Category";
 import ProductDetails from './components/product/ProductDetails'
 
 
@@ -76,7 +77,7 @@ function App() {
         <Header />
         <div>
           <Route path="/" component={Home} exact />
-          <Route path="/search/:keyword" component={Home} />
+          <Route path="/search/:keyword" component={Category} />
           <Route path="/product/:id" component={ProductDetails} exact />
 
           {!loading && (!isAuthenticated || user.role !== 'admin') && (
