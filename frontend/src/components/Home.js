@@ -190,7 +190,7 @@ const Home = ({ match }) => {
 
                                             <div className="px-5">
                                                 <h4 className="mb-5">
-                                                    Khoảng giá
+                                                    Range
                                                 </h4>
                                                 <Range
                                                     marks={{
@@ -213,7 +213,7 @@ const Home = ({ match }) => {
 
                                                 <div className="mt-5">
                                                     <h4 className="mb-3">
-                                                        Đánh giá
+                                                        Rate
                                                     </h4>
 
                                                     <ul className="pl-0">

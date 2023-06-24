@@ -152,7 +152,7 @@ const Header = () => {
                                                 ):(
                                                     <li>
                                                         <Link className="dropdown-item" to="/orders/me">My Order</Link>
-                                                        <Link className="dropdown-item" to="/me">My Information</Link>
+                                                        <Link className="dropdown-item" to="/me">Profile</Link>
                                                         <Link className="dropdown-item text-danger" to="/" onClick={logoutHandler}>
                                                         Logout
                                                     </Link>
