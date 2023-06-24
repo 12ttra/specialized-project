@@ -20,15 +20,15 @@ const Search = ({ history }) => {
       };
 
     return (
-        <form onSubmit={searchHandler} className='search' >
+        <form onSubmit={searchHandler} className='search'>
             <div>
                 <input
                     type="text"
-                    placeholder="Keywords search ..."
+                    id="search-field"
+                    placeholder="Điển tên sản phẩm cần tìm ..."
                     onChange={(e) => setKeyword(e.target.value)}
-                    onKeyDown={handleKeyDown}
                 />
-                
+
             </div>
         </form>
     )
