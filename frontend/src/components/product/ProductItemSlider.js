@@ -27,5 +27,4 @@ export class ProductItemSlider extends Component {
     }
   }
 
-  export default ProductItemSlider;
   

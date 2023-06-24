@@ -5,6 +5,7 @@ import Header from './components/layout/Header'
 import Footer from './components/layout/Footer'
 
 import Home from './components/Home'
+import Search from "./components/product/Search";
 import ProductDetails from './components/product/ProductDetails'
 
 
@@ -49,6 +50,7 @@ import { useSelector } from 'react-redux'
 // Payment
 import { Elements } from '@stripe/react-stripe-js'
 import { loadStripe } from '@stripe/stripe-js'
+import Category from "./components/product/Category";
 
 
 
@@ -76,8 +78,9 @@ function App() {
         <Header />
         <div>
           <Route path="/" component={Home} exact />
-          <Route path="/search/:keyword" component={Home} />
+          <Route path="/search/:keyword" component={Search} />
           <Route path="/product/:id" component={ProductDetails} exact />
+          <Route path="/category/:name" component={Category} exact />
 
           {!loading && (!isAuthenticated || user.role !== 'admin') && (
             <Route path="/cart" component={Cart} exact />       
