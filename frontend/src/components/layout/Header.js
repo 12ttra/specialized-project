@@ -18,6 +18,8 @@ const Header = () => {
     const [showAdminPage, setShowAdminPage] = useState(false);
     const { user, loading } = useSelector(state => state.auth)
     const { cartItems } = useSelector(state => state.cart)
+    const { wishlistItems } = useSelector(state => state.wishlist)
+
 
     const logoutHandler = () => {
         dispatch(logout());
@@ -95,13 +97,16 @@ const Header = () => {
                             </li> 
                        
                             <li className="menunav item lv1">
-                                <a href="/wishlist">
-                                    <img
-                                        className="icon like-img"
-                                        src="/images/iconheader/heart.svg"
-                                        alt="Like"
-                                    />
-                                </a>
+                                <div className="wishlist-wrap-draw" id="wishlist-icon">
+                                    <Link to="/wishlist" style={{ textDecoration: 'none' }} >
+                                        <img
+                                            id="wishlist"
+                                            className="icon like-img"
+                                            src="/images/iconheader/heart.svg"
+                                            alt="wishlist"
+                                        />
+                                    </Link>
+                                </div>
                             </li>
                             <li className="menunav item lv1">
                                 <a href="">

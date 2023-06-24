@@ -10,7 +10,7 @@ const Wishlist = ({ history }) => {
 
     const dispatch = useDispatch();
 
-    const { wishlistItems } = useSelector(state => state.cart)
+    const { wishlistItems } = useSelector(state => state.wishlist)
 
     const removeWishlistItemHandler = (id) => {
         dispatch(removeItemFromWishlist(id))
@@ -55,7 +55,7 @@ const Wishlist = ({ history }) => {
                               <div className="card-body cart">
                                   <div className="col-sm-12 empty-cart-cls text-center"> <img src="https://cdn-icons-png.flaticon.com/512/2037/2037457.png" width={130} height={130} className="img-fluid mb-4 mr-3" alt='' />
                                       <h3><strong>Wishlist của bạn trống</strong></h3>
-                                      <h4>Hãy thêm một cái gì đó để Wishlist đầy ắp tình yêu thương!</h4> <Link to="/" className="btn btn-primary cart-btn-transform m-3" data-abc="true">Tiếp tục mua sắm</Link>
+                                      <h4>Hãy thêm một cái gì đó để Wishlist đầy ắp tình yêu thương!</h4> <Link to="/" className="btn btn-primary wishlist-btn-transform m-3" data-abc="true">Tiếp tục mua sắm</Link>
                                   </div>
                               </div>
                           </div>
@@ -73,7 +73,7 @@ const Wishlist = ({ history }) => {
                                   <Fragment>
                                       <hr />
 
-                                      <div className="cart-item" key={item.product}>
+                                      <div className="wishlist-item" key={item.product}>
                                           <div className="row">
                                               <div className="col-4 col-lg-3">
                                                   <img src={item.image} alt="Laptop" height="90" width="115" />
@@ -99,7 +99,7 @@ const Wishlist = ({ history }) => {
                                               </div>
 
                                               <div className="col-4 col-lg-1 mt-4 mt-lg-0">
-                                                  <i id="delete_cart_item" className="fa fa-trash btn btn-danger" onClick={() => removeWishlistItemHandler(item.product)} ></i>
+                                                  <i id="delete_wishlist_item" className="fa fa-trash btn btn-danger" onClick={() => removeWishlistItemHandler(item.product)} ></i>
                                               </div>
 
                                           </div>
