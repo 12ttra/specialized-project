@@ -6,11 +6,11 @@ import { Link } from 'react-router-dom'
 import { ProductItemSlider } from './ProductItemSlider';
 import './ProductItem.css';
 export const Product = ({ product, col}) => {
-
+    const images = product ? product.images : '#';
     return (
         <div className="product-wrapper-item">
         <div className="product-item-slider">
-            <ProductItemSlider images={product.images}/>
+            <ProductItemSlider images={images}/>
         </div>
       <div className="product-item-descrip">
         <div className="css-product-item">
