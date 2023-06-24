@@ -25,7 +25,7 @@ const Search = ({ history }) => {
                 <input
                     type="text"
                     id="search-field"
-                    placeholder="Điển tên sản phẩm cần tìm ..."
+                    placeholder="Search..."
                     onChange={(e) => setKeyword(e.target.value)}
                 />
 

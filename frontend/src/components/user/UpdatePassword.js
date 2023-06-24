@@ -25,7 +25,7 @@ const UpdatePassword = ({ history }) => {
         }
 
         if (isUpdated) {
-            alert.success('Cập nhật mật khẩu thành công')
+            alert.success('Updated password successfully!')
 
             history.push('/me')
 
@@ -50,12 +50,12 @@ const UpdatePassword = ({ history }) => {
         <Fragment>
             <MetaData title={'Change Password'} />
 
-            <div className="row wrapper">
+            <div className="row-1 mg-top wrapper">
                 <div className="col-10 col-lg-5">
                     <form className="shadow-lg" onSubmit={submitHandler}>
-                        <h1 className="mt-2 mb-5">Thay đổi mật khẩu</h1>
+                        <h1 className="mt-2 mb-5">Change password</h1>
                         <div className="form-group">
-                            <label for="old_password_field">Mật khẩu cũ:</label>
+                            <label for="old_password_field">Old password:</label>
                             <input
                                 type="password"
                                 id="old_password_field"
@@ -66,7 +66,7 @@ const UpdatePassword = ({ history }) => {
                         </div>
 
                         <div className="form-group">
-                            <label for="new_password_field">Mật khẩu mới:</label>
+                            <label for="new_password_field">New pasword:</label>
                             <input
                                 type="password"
                                 id="new_password_field"
@@ -76,7 +76,7 @@ const UpdatePassword = ({ history }) => {
                             />
                         </div>
 
-                        <button type="submit" className="btn update-btn btn-block mt-4 mb-3" disabled={loading ? true : false} >Xác nhận</button>
+                        <button type="submit" className="btn update-btn btn-block mt-4 mb-3" disabled={loading ? true : false} >Confirm</button>
                     </form>
                 </div>
             </div>
