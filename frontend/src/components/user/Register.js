@@ -90,7 +90,7 @@ const Register = ({ history }) => {
                     </div>
 
                     <div className="right">
-                        <form className="shadow-lg" onSubmit={submitHandler} encType='multipart/form-data'>
+                        <form className="ghgsg" onSubmit={submitHandler} encType='multipart/form-data'>
                             <h5>Register</h5>
                             <p>You Already have an account?  <Link to="/login" className="css-a">Login</Link> now!</p>
 

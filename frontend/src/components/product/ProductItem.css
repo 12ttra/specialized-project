@@ -95,7 +95,6 @@
   display: flex; }
     .css-product-item-price .new-price{
       color: #ee2d5a;
-      margin-left: 10px;
       font-size: 16px;
     }
   .img-icon:hover {
@@ -140,11 +139,9 @@
   
   .product-item-descrip .product-item-price {
     font-weight: 500;
-    margin-top: 20px; }
+    margin-top: 10px; }
   
-  .product-item-descrip .old-price {
-    text-decoration: line-through; }
-  
+ 
   .click-item {
     text-decoration: none; }
   

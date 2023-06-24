@@ -59,7 +59,7 @@ const Login = ({ history, location }) => {
                             </div>
 
                             <div className="right">
-                            <form className="shadow-lg" onSubmit={submitHandler}>
+                            <form className="ghgsg" onSubmit={submitHandler}>
                                 <h5>Login</h5>
                                 <p>Don't have an account? <Link to="/register" className="css-a">Create Your Account</Link> it takes less than a minute</p>
                                 <div className="inputs">
@@ -84,11 +84,11 @@ const Login = ({ history, location }) => {
 
                                 <div className="remember-me--forget-password">
                                     {/* Angular */}
-                                    <label>
-                                        <input type="checkbox" name="item" checked />
-                                        <span className="text-checkbox">Remember me</span>
-                                    </label>
-                                    <p>Forget password?</p>
+                                    <p>
+                                    <input type="checkbox" name="item" checked/>
+                                    <span class="text-checkbox">Remember me</span>
+                                    </p>
+                                            <p>Forget password?</p>
                                 </div>
 
                                

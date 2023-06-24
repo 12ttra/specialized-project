@@ -36,16 +36,16 @@ const ConfirmOrder = ({ history }) => {
 
             <CheckoutSteps shipping confirmOrder />
 
-            <div className="row d-flex justify-content-between">
+            <div className="row d-flex justify-content-between mg-top">
                 <div className="col-12 col-lg-8 mt-5 order-confirm">
 
-                    <h4 className="mb-3">Thông tin vận chuyển</h4>
-                    <p><b>Tên khách hàng:</b> {user && user.name}</p>
-                    <p><b>Số điện thoại:</b> {shippingInfo.phoneNo}</p>
-                    <p className="mb-4"><b>Địa chỉ:</b> {`${shippingInfo.address}, ${shippingInfo.city}, ${shippingInfo.postalCode}, ${shippingInfo.country}`}</p>
+                    <h4 className="mb-3">Shipping Information</h4>
+                    <p><b>Customer name:</b> {user && user.name}</p>
+                    <p><b>Phonenumber:</b> {shippingInfo.phoneNo}</p>
+                    <p className="mb-4"><b>Address:</b> {`${shippingInfo.address}, ${shippingInfo.city}, ${shippingInfo.postalCode}, ${shippingInfo.country}`}</p>
 
                     <hr />
-                    <h4 className="mt-4">Các mặt hàng trong giỏ hàng của bạn:</h4>
+                    <h4 className="mt-4">Items in the shoppig cart</h4>
 
                     {cartItems.map(item => (
                         <Fragment>
@@ -76,7 +76,7 @@ const ConfirmOrder = ({ history }) => {
 
                 <div className="col-12 col-lg-3 my-4">
                     <div id="order_summary">
-                        <h4>Tổng giá trị đơn hàng</h4>
+                        <h4>Total Order Value</h4>
                         <hr />
                         <p>Thành tiền:  <span className="order-summary-values">{(itemsPrice).toLocaleString()}đ</span></p>
                         <p>Phí vận chuyển: <span className="order-summary-values">{(shippingPrice).toLocaleString()}đ</span></p>

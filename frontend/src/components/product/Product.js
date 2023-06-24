@@ -17,8 +17,7 @@ export const Product = ({ product, col}) => {
         <Link to={`/product/${product._id}`}>{product.name}</Link>
         </div>
         <div className="css-product-item-price">
-          <p className="product-item-price old-price"></p>
-          <p className="product-item-price new-price">{(product.price).toLocaleString()}đ</p>
+          <h2 className="product-item-price new-price">{(product.price).toLocaleString()}  VND</h2>
         </div>
         <div className="icon-product">
           <div className="coupon">

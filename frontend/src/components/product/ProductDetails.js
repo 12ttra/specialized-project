@@ -38,7 +38,7 @@ const ProductDetails = ({ match }) => {
         }
 
         if (success) {
-            alert.success('Đánh giá thành công')
+            alert.success('Rate Successfully!')
             dispatch({ type: NEW_REVIEW_RESET })
         }
 
@@ -46,7 +46,7 @@ const ProductDetails = ({ match }) => {
 
     const addToCart = () => {
         dispatch(addItemToCart(match.params.id, quantity));
-        alert.success('Đã thêm vào giỏ hàng')
+        alert.success('Added to cart!')
     }
 
     const increaseQty = () => {
@@ -189,7 +189,7 @@ const ProductDetails = ({ match }) => {
 
                                         <span className="btn btn-primary plus" onClick={increaseQty}>+</span>
                                     </div>
-                                    <p>Tình trạng hàng: <span id="stock_status" className={product.stock > 0 ? 'greenColor' : 'redColor'} >{product.stock > 0 ? 'Còn hàng' : 'Hết hàng'}</span></p>
+                                    <p>Product Status: <span id="stock_status" className={product.stock > 0 ? 'greenColor' : 'redColor'} >{product.stock > 0 ? 'STOCK' : 'SOLD OUT'}</span></p>
                                     <p className="alert-size" style={{ color: 'rgb(229, 62, 62)' }}>Size can't be blank, please!</p>
                                     <div className="product-btn-buy-wrapper">
                                         <div className="product-btn-buy mg-bot">

@@ -69,7 +69,7 @@ const Dashboard = () => {
     };
     // Doughnut tính số lượng hàng còn và hết hàng
     const doughnutState = {
-        labels: ["Hết hàng", "Còn hàng"],
+        labels: ["Sold out", "Stock"],
         datasets: [
             {
                 backgroundColor: ["#00A6B4", "#6800B4"],
@@ -80,7 +80,7 @@ const Dashboard = () => {
     };
     // Doughnut thống kê trạng thái đơn hàng
     const doughnutStateOrder = {
-        labels: ["Đã đặt hàng", "Đang vận chuyển", "Đã giao hàng"],
+        labels: ["Ordered", "Shipping", "Shipped"],
         datasets: [
             {
                 backgroundColor: ["#00A6B4", "#6800B4", "#FF7F50"],
@@ -142,7 +142,7 @@ const Dashboard = () => {
             'Pant'
         ],
         datasets: [{
-            label: 'Danh mục sản phẩm',
+            label: 'Category',
             data: [Secondhand, New_Clothing, Man, Woman, Unisex, Dress, T_Shirt, Somi, Pant],
             fill: true,
             backgroundColor: 'rgba(54, 162, 235, 0.2)',
@@ -203,10 +203,10 @@ const Dashboard = () => {
                                         <div className="col-xl-3-1 ">
                                             <div className="card text-white bg-danger o-hidden h-100">
                                                 <div className="card-body">
-                                                    <div className="text-center card-font-size">Tổng hóa đơn<br /> <b>{orders && orders.length}</b></div>
+                                                    <div className="text-center card-font-size">TOTAL INVOICE<br /> <b>{orders && orders.length}</b></div>
                                                 </div>
                                                 <Link className="card-footer text-white clearfix small z-1" to="/admin/orders">
-                                                    <span className="float-left">Xem chi tiết</span>
+                                                    <span className="float-left">View Details</span>
                                                     <span className="float-right">
                                                         <i className="fa fa-angle-right"></i>
                                                     </span>

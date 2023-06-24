@@ -29,27 +29,28 @@ const ListOrders = () => {
         const data = {
             columns: [
                 {
+                    
                     label: 'ID',
                     field: 'id',
                     sort: 'asc'
                 },
                 {
-                    label: 'Số lượng',
+                    label: 'Quantity',
                     field: 'numOfItems',
                     sort: 'asc'
                 },
                 {
-                    label: 'Tổng tiền',
+                    label: 'Total',
                     field: 'amount',
                     sort: 'asc'
                 },
                 {
-                    label: 'Trạng thái',
+                    label: 'Status',
                     field: 'status',
                     sort: 'asc'
                 },
                 {
-                    label: 'Hành động',
+                    label: 'Action',
                     field: 'actions',
                     sort: 'asc'
                 },
@@ -62,7 +63,7 @@ const ListOrders = () => {
                 id: order._id,
                 numOfItems: order.orderItems.length,
                 amount: `${(order.totalPrice).toLocaleString()}đ`,
-                status: order.orderStatus && String(order.orderStatus).includes('Đã giao hàng')
+                status: order.orderStatus && String(order.orderStatus).includes('Delivered')
                     ? <p style={{ color: 'green' }}>{order.orderStatus}</p>
                     : <p style={{ color: 'red' }}>{order.orderStatus}</p>,
                 actions:
@@ -78,9 +79,9 @@ const ListOrders = () => {
     return (
         <Fragment>
 
-            <MetaData title={'Đơn hàng của tôi'} />
+            <MetaData title={'My Order'} />
 
-            <h1 className="my-5">Đơn hàng của tôi</h1>
+            <h1 className=" mg-top mg-bot" >My Order</h1>
 
             {loading ? <Loader /> : (
                 <MDBDataTableV5
