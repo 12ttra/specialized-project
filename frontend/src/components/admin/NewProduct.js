@@ -105,11 +105,7 @@ const NewProduct = ({ history }) => {
     const onChange = e => {
 
         const files = Array.from(e.target.files)
-        const selectedOptions = Array.from(e.target.options)
-            .filter(option => option.selected)
-            .map(option => option.value);
-        setSize(selectedOptions);
-
+    
         setImagesPreview([]);
         setImages([])
         files.forEach(file => {
@@ -163,7 +159,7 @@ const NewProduct = ({ history }) => {
                                 </div>
                                 <div className="form-group">
                                     <label htmlFor="size_field">Size</label>
-                                    <select className="form-control" id="size_field" value={sizes} onChange={(e) => setSize(e.target.value)}>
+                                    <select className="form-control" id="size_field" value={size} onChange={(e) => setSize(e.target.value)}>
                                         {sizes.map(size => (
                                             <option key={size} value={size}>{size}</option>
                                         ))}
