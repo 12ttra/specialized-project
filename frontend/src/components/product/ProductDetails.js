@@ -7,9 +7,10 @@ import ListReviews from '../review/ListReviews'
 import '../../App.css'
 import { useAlert } from 'react-alert'
 import { useDispatch, useSelector } from 'react-redux'
-import { getProductDetails, newReview, clearErrors } from '../../actions/productActions'
+import { getProductDetails, newReview, clearErrors, getSaleProducts } from '../../actions/productActions'
 import { addItemToCart } from '../../actions/cartActions'
 import { NEW_REVIEW_RESET } from '../../constants/productConstants'
+import Product from "./Product";
 
 const ProductDetails = ({ match }) => {
 
@@ -21,10 +22,13 @@ const ProductDetails = ({ match }) => {
 
     const dispatch = useDispatch();
     const alert = useAlert();
-    const { loading, error, product } = useSelector(state => state.productDetails)
+    const { loading, error, product } = useSelector(state => state.productDetails);
     let firstImage = product.images ? product.images[0].url : "#";
     const { user } = useSelector(state => state.auth)
-    const { error: reviewError, success } = useSelector(state => state.newReview)
+    const { error: reviewError, success } = useSelector(state => state.newReview);
+    const { loading: saleLoading, error: saleError, saleProducts} = useSelector(state => {
+        return state.saleProducts;
+    })
     const colors = [
         'Black',
         'White',
@@ -53,6 +57,7 @@ const ProductDetails = ({ match }) => {
     ]
     useEffect(() => {
         dispatch(getProductDetails(match.params.id))
+        dispatch(getSaleProducts())
 
         if (error) {
             alert.error(error);
@@ -143,7 +148,7 @@ const ProductDetails = ({ match }) => {
 
         dispatch(newReview(formData));
     }
-
+    let finalPrice = product.price - parseFloat(product.price)*(parseFloat(product.dist_count)/100);
     const getFirstImage = ()=>{
         console.log(product.images,"aaaa");
         if(product.images.length){
@@ -187,8 +192,9 @@ const ProductDetails = ({ match }) => {
                                     <div className="flex flex-column +o886E mg-bot">
                                         <div className="flex items-center">
                                             <div className="flex items-center nmrSND">
-                                                <div className="flex items-center">
-                                                    <div className="pqTWkA">{product.price}đ</div>
+                                                <div className="flex items-center css-product-item-price-small">
+                                                    <div className="final-price pqTWkA ">{finalPrice}đ</div>
+                                                    {product.dist_count > 0 && <span className="product-item-price old-price-small">{product.price}đ</span>}
                                                 </div>
                                             </div>
                                         </div>
@@ -248,16 +254,17 @@ const ProductDetails = ({ match }) => {
                                 </a>
                             </div>
                         </div>
-                        <div className="sz-header-iems-content">
-                            <ProductItemSmall />
-                            <ProductItemSmall />
-                            <ProductItemSmall />
-                            <ProductItemSmall />
-                            <ProductItemSmall />
-                            <ProductItemSmall />
-
-
-                        </div>
+                        {saleProducts.length ? (
+                            <div className="sz-header-iems-content">
+                                {saleProducts.map(product => (
+                                    <ProductItemSmall key={product._id} product={product} />
+                                ))}
+                            </div>)
+                            : (
+                                <div className="sz-header-iems-content">
+                                </div>
+                            )
+                        }
                     </section>
                     <section className="infor-wrapper">
                         <div className="store-wrapper">

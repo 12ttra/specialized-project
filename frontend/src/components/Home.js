@@ -23,7 +23,6 @@ const Home = ({ match }) => {
     const alert = useAlert();
     const dispatch = useDispatch();
     const { loading, error, bestProducts} = useSelector(state => {
-        console.log(state.bestSellerProducts);
         return state.bestSellerProducts;
     })
 

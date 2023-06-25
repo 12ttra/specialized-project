@@ -4315,3 +4315,7 @@ a {
 #products-heading{
   margin-top: 95px;
 }
+span.product-item-price.old-price-small{
+  margin-left: 15px;
+  text-decoration: line-through;
+}

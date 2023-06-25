@@ -18,3 +18,17 @@ exports.getBestSeller = catchAsyncErrors(async (req, res, next) => {
     })
 
 })
+
+// Get sale products   =>   /api/v1/products/sale-product
+exports.getSaleProduct = catchAsyncErrors(async (req, res, next) => {
+
+    let products = await Product.find(
+        { dist_count: { $gt: 0 } }
+    ).limit(20);
+
+    return res.status(200).json({
+        success: true,
+        products
+    })
+
+})

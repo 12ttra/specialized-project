@@ -17,6 +17,7 @@ const NewProduct = ({ history }) => {
     const [stock, setStock] = useState(0);
     const [seller, setSeller] = useState('');
     const [best_seller, setBestSeller] = useState(0);
+    const [dist_count, setDistCount] = useState(0);
     const [images, setImages] = useState([]);
     const [imagesPreview, setImagesPreview] = useState([])
     const [size, setSize] = useState([]);
@@ -87,6 +88,7 @@ const NewProduct = ({ history }) => {
         formData.set('name', name);
         formData.set('price', price);
         formData.set('best_seller', best_seller);
+        formData.set('dist_count', dist_count);
         formData.set('description', description);
         formData.set('category', category);
         formData.set('stock', stock);
@@ -155,6 +157,16 @@ const NewProduct = ({ history }) => {
                                         className="form-control"
                                         value={price}
                                         onChange={(e) => setPrice(e.target.value)}
+                                    />
+                                </div>
+                                <div className="form-group">
+                                    <label htmlFor="dist_count_field">Dist Count(%)</label>
+                                    <input
+                                        type="text"
+                                        id="dist_count_field"
+                                        className="form-control"
+                                        value={dist_count}
+                                        onChange={(e) => setDistCount(e.target.value)}
                                     />
                                 </div>
                                 <div className="form-group">
