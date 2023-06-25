@@ -15,9 +15,7 @@
   padding: 0;
   box-sizing: border-box;
 font-family:  monospace, 'Courier New', Courier; }
-body{
-  margin: 0 !important;
-}
+
 .dropdown-menu-login{
   display:block;
 }
@@ -85,7 +83,7 @@ html {
   min-height: 300vh; }
 
 #header {
-  z-index: 999;
+  z-index: 999 !important;
   position: fixed;
   top: 0;
   left: 0;
@@ -125,7 +123,8 @@ html {
   height: 80px; }
 
 #left_nav .subnav {
-  width: 200px; }
+  width: 200px; 
+  z-index: 999;}
   #left_nav .subnav li {
     width: 100%; }
     #left_nav .subnav li:hover a {

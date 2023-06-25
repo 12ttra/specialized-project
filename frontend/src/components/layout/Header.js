@@ -32,8 +32,8 @@ const Header = () => {
     };
     return (
         <Fragment>
-            <div id="header " className='header-mb'>
-                  {/*mobile*/}
+            <div id="header " >
+                  {/*mobile
                   <div className="menu-mb">
                         <div className='icon-wrapper'>
                             <i class="fa fa-bars icon-mb css-mgl" aria-hidden="true"></i>
@@ -51,7 +51,7 @@ const Header = () => {
                                 </a>
                         </div>
 
-                    </div>
+                    </div>*/}
                         {/*Desktop*/}
                 <div id="fullnav" >
                     <div id="left_nav" >
