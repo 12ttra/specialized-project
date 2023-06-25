@@ -15,8 +15,19 @@
   padding: 0;
   box-sizing: border-box;
 font-family:  monospace, 'Courier New', Courier; }
+body{
+  margin: 0 !important;
+}
 .dropdown-menu-login{
   display:block;
+}
+.css-item{
+  text-align: center;
+  
+}
+.css-item h5{
+  font-size: 30px;
+  font-weight: 700;
 }
 .mg-bot{
   margin-bottom: 30px;
@@ -1237,9 +1248,7 @@ body {
     .icon img {
       width: 100%; } }
 
-@media only screen and (min-width: 986px) {
-  .menu-mobile {
-    display: none; } }
+
 
 .k-uwoE {
   display: inline-block;

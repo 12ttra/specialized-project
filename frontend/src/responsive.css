@@ -1,0 +1,61 @@
+* , body{
+    margin: 0 !important;
+}
+@media (max-width: 767px) {
+
+   .header-mb{
+   width: 100%;
+   height: 40px;
+ 
+   }
+   .icon-mb{
+    width: 20px;
+    height: 20px;
+   }
+   .css-mgl{
+   padding-left: 20px;
+    text-align: left;
+    line-height: 42px;
+   }
+   .menu-mb{
+    display: flex;
+    flex-wrap: nowrap;
+    justify-content: space-between;
+ 
+   }
+   .img-wrapper-mb{
+        width: 140px;
+        height: 40px;
+        margin: 0 30px;
+   }
+   .img-wrapper-mb img {
+     width: 100%;
+     height: auto;
+   }
+   #fullnav{
+    display: none;
+   }
+   .left_nav-mb{
+
+   }
+   .icon-login-mb{
+    display: flex;
+   align-items: center;
+ padding-right: 10px;
+   
+   }
+  
+  }
+  
+  /* Các kiểu CSS cho màn hình tablet */
+  @media (min-width: 768px) and (max-width: 1023px) {
+    /* ... */
+  }
+  
+  /* Các kiểu CSS cho màn hình desktop */
+  @media (min-width: 1024px) {
+    /* ... */
+    .menu-mb{
+        display: none;
+    }
+  }

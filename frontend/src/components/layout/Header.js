@@ -11,6 +11,8 @@ import Search from './Search'
 
 import '../../Header.css'
 import '../../App.css'
+import '../../responsive.css'
+
 
 const Header = () => {
     const alert = useAlert();
@@ -30,9 +32,31 @@ const Header = () => {
     };
     return (
         <Fragment>
-            <div id="header">
-                <div id="fullnav">
-                    <div id="left_nav">
+            <div id="header " className='header-mb'>
+                  {/*mobile*/}
+                  <div className="menu-mb">
+                        <div className='icon-wrapper'>
+                            <i class="fa fa-bars icon-mb css-mgl" aria-hidden="true"></i>
+                        </div>
+                        <div className='img-wrapper-mb'>
+                             <img src="/images/Image/mainlogo.png" alt="SPREZZA_logo"/>  
+                        </div>
+                        <div className='icon-login-mb'>
+                        <a href="/login">
+                                    <img
+                                        className="icon-mb "
+                                        src="/images/iconheader/profile.svg"
+                                        alt="Login"
+                                    />
+                                </a>
+                        </div>
+
+                    </div>
+                        {/*Desktop*/}
+                <div id="fullnav" >
+                    <div id="left_nav" >
+                      
+                         
                         <ul className="menu">
                             <li className="item lv1"><a href="/">Home</a></li>
                             <li className="menunav item lv1">
@@ -73,6 +97,7 @@ const Header = () => {
                                 </ul>
                             </li>
                         </ul>
+                         {/*end Desktop*/}
                     </div>
 
                     <div id="main_logo">
