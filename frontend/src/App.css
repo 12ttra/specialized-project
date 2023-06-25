@@ -23,6 +23,10 @@ font-family:  monospace, 'Courier New', Courier; }
   text-align: center;
   
 }
+.css-order-details{
+  margin: 0 auto;
+    width: 67%;
+}
 .css-item h5{
   font-size: 30px;
   font-weight: 700;
@@ -54,6 +58,9 @@ body {
 }
 .gap5{
   gap:5px;
+}
+.css-order{
+  margin: 0 auto;
 }
 .css-edit{
   position: absolute;
