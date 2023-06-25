@@ -7,6 +7,9 @@ import {
     BEST_PRODUCTS_REQUEST,
     BEST_PRODUCTS_SUCCESS,
     BEST_PRODUCTS_FAIL,
+    SALE_PRODUCTS_REQUEST,
+    SALE_PRODUCTS_SUCCESS,
+    SALE_PRODUCTS_FAIL,
     ADMIN_PRODUCTS_REQUEST,
     ADMIN_PRODUCTS_SUCCESS,
     ADMIN_PRODUCTS_FAIL,
@@ -78,6 +81,28 @@ export const getBestSellerProducts = () => async (dispatch) => {
     } catch (error) {
         dispatch({
             type: BEST_PRODUCTS_FAIL,
+            payload: error.response.data.message
+        })
+    }
+}
+
+export const getSaleProducts = () => async (dispatch) => {
+    try {
+
+        dispatch({ type: SALE_PRODUCTS_REQUEST })
+
+        let link = `/api/v1/products/sale-product`
+
+        const { data } = await axios.get(link)
+
+        dispatch({
+            type: SALE_PRODUCTS_SUCCESS,
+            payload: data
+        })
+
+    } catch (error) {
+        dispatch({
+            type: SALE_PRODUCTS_FAIL,
             payload: error.response.data.message
         })
     }

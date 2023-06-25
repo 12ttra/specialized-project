@@ -3,13 +3,14 @@ import { ADD_TO_CART, REMOVE_ITEM_CART, SAVE_SHIPPING_INFO } from '../constants/
 
 export const addItemToCart = (id, quantity) => async (dispatch, getState) => {
     const { data } = await axios.get(`/api/v1/product/${id}`)
-
+    let product = data.product;
+    let finalPrice = product.dist_count ? product.price - parseFloat(product.price)*(parseFloat(product.dist_count)/100) : product.price
     dispatch({
         type: ADD_TO_CART,
         payload: {
             product: data.product._id,
             name: data.product.name,
-            price: data.product.price,
+            price: finalPrice,
             image: data.product.images[0].url,
             stock: data.product.stock,
             quantity

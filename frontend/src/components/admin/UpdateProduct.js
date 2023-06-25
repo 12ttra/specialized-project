@@ -13,6 +13,7 @@ const UpdateProduct = ({ match, history }) => {
     const [name, setName] = useState('');
     const [price, setPrice] = useState(0);
     const [best_seller, setBestSeller] = useState(0);
+    const [dist_count, setDistCount] = useState(0);
     const [description, setDescription] = useState('');
     const [category, setCategory] = useState('');
     const [stock, setStock] = useState(0);
@@ -80,6 +81,7 @@ const UpdateProduct = ({ match, history }) => {
         } else {
             setName(product.name);
             setBestSeller(product.best_seller);
+            setDistCount(product.dist_count);
             setPrice(product.price);
             setDescription(product.description);
             setCategory(product.category);
@@ -118,6 +120,7 @@ const UpdateProduct = ({ match, history }) => {
         formData.set('price', price);
         formData.set('best_seller', best_seller);
         formData.set('description', description);
+        formData.set('dist_count', dist_count);
         formData.set('category', category);
         formData.set('stock', stock);
         formData.set('seller', seller);
@@ -187,6 +190,17 @@ const UpdateProduct = ({ match, history }) => {
                                         className="form-control"
                                         value={price}
                                         onChange={(e) => setPrice(e.target.value)}
+                                    />
+                                </div>
+
+                                <div className="form-group">
+                                    <label htmlFor="dist_count_field">Dist Count(%)</label>
+                                    <input
+                                        type="text"
+                                        id="dist_count_field"
+                                        className="form-control"
+                                        value={dist_count}
+                                        onChange={(e) => setDistCount(e.target.value)}
                                     />
                                 </div>
                                 <div className="form-group">
