@@ -20,9 +20,6 @@ const Category = ({ match }) => {
     const [currentPage, setCurrentPage] = useState(1)
     const [price, setPrice] = useState([1, 1000000])
     const [rating, setRating] = useState(0)
-
-
-
     const alert = useAlert();
     const dispatch = useDispatch();
 
@@ -35,10 +32,10 @@ const Category = ({ match }) => {
             return alert.error(error)
         }
 
-        dispatch(getProducts(keyword, currentPage, price, rating));
+        dispatch(getProducts(keyword, currentPage, price, keyword, rating));
 
 
-    }, [dispatch, alert, error, keyword, currentPage, price, rating])
+    }, [dispatch, alert, error, keyword, currentPage, price, keyword, rating])
 
     function setCurrentPageNo(pageNumber) {
         setCurrentPage(pageNumber)
@@ -62,15 +59,6 @@ const Category = ({ match }) => {
             {loading ? <Loader /> : (
                 <Fragment>
                     <MetaData title={'SPREZZA-Ecommerce'} />
-                    <div className="SZPD-X flex items-center">
-                        <a href="#">
-                            <div className="flex color-1 size-text">
-                                <p className="text-1">Home</p>
-                                <span>⟶ </span>
-                                <p className="text-1">{keyword}</p>
-                            </div>
-                        </a>
-                    </div>
                     <h1 id="products-heading" className="product_title">{keyword}</h1>
                     <section id="products" className="">
                         {
