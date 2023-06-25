@@ -46,7 +46,7 @@ const Wishlist = ({ history }) => {
           {wishlistItems.length === 0 ?
           // wishlist is empty
               <div className="container-fluid mt-100">
-                  <div className="row">
+                  <div className="row-1 mg-top css-item">
                       <div className="col-md-12">
                           <div className="card">
                               <div className="card-header">
@@ -54,8 +54,8 @@ const Wishlist = ({ history }) => {
                               </div>
                               <div className="card-body cart">
                                   <div className="col-sm-12 empty-cart-cls text-center"> <img src="https://cdn-icons-png.flaticon.com/512/2037/2037457.png" width={130} height={130} className="img-fluid mb-4 mr-3" alt='' />
-                                      <h3><strong>Wishlist của bạn trống</strong></h3>
-                                      <h4>Hãy thêm một cái gì đó để Wishlist đầy ắp tình yêu thương!</h4> <Link to="/" className="btn btn-primary wishlist-btn-transform m-3" data-abc="true">Tiếp tục mua sắm</Link>
+                                      <h3><strong>Your wishlist is empty</strong></h3>
+                                      <h4>Let's add something to the Wishlist filled with love!</h4> <Link to="/" className="btn btn-primary wishlist-btn-transform m-3" data-abc="true">Continue Shopping</Link>
                                   </div>
                               </div>
                           </div>
@@ -64,9 +64,9 @@ const Wishlist = ({ history }) => {
               </div>
               : (
                   <Fragment>
-                      <h3 className="mt-5">Wishlist của bạn đang có: <b>{wishlistItems.length} sản phẩm</b></h3>
+                      <h3 className="mt-5">Your wishlist is available : <b>{wishlistItems.length} Item</b></h3>
 
-                      <div className="row d-flex justify-content-between">
+                      <div className="row d-flex justify-content-between mg-top">
                           <div className="col-12 col-lg-8">
 
                               {wishlistItems.map(item => (
@@ -74,9 +74,9 @@ const Wishlist = ({ history }) => {
                                       <hr />
 
                                       <div className="wishlist-item" key={item.product}>
-                                          <div className="row">
+                                          <div className="row ">
                                               <div className="col-4 col-lg-3">
-                                                  <img src={item.image} alt="Laptop" height="90" width="115" />
+                                                  <img src={item.image} alt=".." height="90" width="115" />
                                               </div>
 
                                               <div className="col-5 col-lg-3">
@@ -112,10 +112,10 @@ const Wishlist = ({ history }) => {
 
                           <div className="col-12 col-lg-4 my-4">
                               <div id="order_summary">
-                                  <h4 className='text-center'>Tổng giá trị Wishlist</h4>
+                                  <h4 className='text-center'>Total Wishlist Value</h4>
                                   <hr />
-                                  <p>Số lượng:  <span className="order-summary-values">{wishlistItems.reduce((acc, item) => (acc + Number(item.quantity)), 0)} (Sản phẩm)</span></p>
-                                  <p>Tổng tiền: <span className="order-summary-values">{(wishlistItems.reduce((acc, item) => acc + item.quantity * item.price, 0)).toLocaleString()}đ</span></p>
+                                  <p>Quantity:  <span className="order-summary-values">{wishlistItems.reduce((acc, item) => (acc + Number(item.quantity)), 0)} (Items)</span></p>
+                                  <p>Total: <span className="order-summary-values">{(wishlistItems.reduce((acc, item) => acc + item.quantity * item.price, 0)).toLocaleString()}VND</span></p>
 
                                   <hr />
                                   <button id="checkout_btn" className="btn btn-primary btn-block" onClick={checkoutHandler}>Home</button> {/* onClick={checkoutHandler} */}

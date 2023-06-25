@@ -24,7 +24,7 @@ export const Product = ({ product, col}) => {
             <a className="img-icon voucher" href="#">Sale 20%</a>
           </div>
           <div className="wishlish">
-            <img className="img-icon wishlist" src="/images/iconheader/heart.svg" alt="wishlist" />
+            <a href='/wishlist'><img className="img-icon wishlist" src="/images/iconheader/heart.svg" alt="wishlist" /></a>
           </div>
           <div className="add">
             <img className="img-icon img-buynow" src="/images/iconheader/white-shopping-bag.svg" alt="btn buy now" />
