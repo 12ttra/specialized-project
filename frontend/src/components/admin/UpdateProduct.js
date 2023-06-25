@@ -18,6 +18,8 @@ const UpdateProduct = ({ match, history }) => {
     const [stock, setStock] = useState(0);
     const [seller, setSeller] = useState('');
     const [images, setImages] = useState([]);
+    const [size, setSize] = useState([]);
+    const [color, setColor] = useState('');
 
     const [oldImages, setOldImages] = useState([]);
     const [imagesPreview, setImagesPreview] = useState([])
@@ -35,6 +37,32 @@ const UpdateProduct = ({ match, history }) => {
         'Gifts',
         'Voucher',
         'Delivery'
+    ]
+    const sizes = [
+        'S',
+        'M',
+        'L',
+        'XL',
+        'XXL'
+    ]
+    const colors = [
+        'Black',
+        'White',
+        'Pastel',
+        'Yellow',
+        'Pink',
+        'Orange',
+        'Blue',
+        'Pastel',
+        'Purples',
+        'Reds',
+        'Burnt oranges',
+        'Browns',
+        'Darker greens',
+        'Royal blue',
+        'Emerald green',
+        'Hot pink',
+        'Sea blue'
     ]
 
     const alert = useAlert();
@@ -56,6 +84,8 @@ const UpdateProduct = ({ match, history }) => {
             setDescription(product.description);
             setCategory(product.category);
             setSeller(product.seller);
+            setSize(product.size);
+            setColor(product.color);
             setStock(product.stock)
             setOldImages(product.images)
         }
@@ -91,6 +121,8 @@ const UpdateProduct = ({ match, history }) => {
         formData.set('category', category);
         formData.set('stock', stock);
         formData.set('seller', seller);
+        formData.set('size', size);
+        formData.set('color', color);
 
         images.forEach(image => {
             formData.append('images', image)
@@ -156,6 +188,24 @@ const UpdateProduct = ({ match, history }) => {
                                         value={price}
                                         onChange={(e) => setPrice(e.target.value)}
                                     />
+                                </div>
+                                <div className="form-group">
+                                    <label htmlFor="size_field">Size</label>
+                                    <select className="form-control" id="size_field" value={size} onChange={(e) => setSize(e.target.value)}>
+                                        {sizes.map(size => (
+                                            <option key={size} value={size}>{size}</option>
+                                        ))}
+                                    </select>
+                                    
+                                </div>
+                                <div className="form-group">
+                                    <label htmlFor="color_field">Color</label>
+                                    <select className="form-control" id="color_field" value={color} onChange={(e) => setColor(e.target.value)}>
+                                        {colors.map(color => (
+                                            <option key={color} value={color} >{color}</option>
+                                        ))}
+
+                                    </select>
                                 </div>
                                 <div className="form-group">
                                     <label htmlFor="best_seller">Best Seller</label>

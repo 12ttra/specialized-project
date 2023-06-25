@@ -16,6 +16,8 @@ const ProductDetails = ({ match }) => {
     const [quantity, setQuantity] = useState(1)
     const [rating, setRating] = useState(0);
     const [comment, setComment] = useState('');
+    const [color, setColor] = useState('');
+    const [size, setSize] = useState('');
 
     const dispatch = useDispatch();
     const alert = useAlert();
@@ -23,7 +25,32 @@ const ProductDetails = ({ match }) => {
     let firstImage = product.images ? product.images[0].url : "#";
     const { user } = useSelector(state => state.auth)
     const { error: reviewError, success } = useSelector(state => state.newReview)
-
+    const colors = [
+        'Black',
+        'White',
+        'Pastel',
+        'Yellow',
+        'Pink',
+        'Orange',
+        'Blue',
+        'Pastel',
+        'Purples',
+        'Reds',
+        'Burnt oranges',
+        'Browns',
+        'Darker greens',
+        'Royal blue',
+        'Emerald green',
+        'Hot pink',
+        'Sea blue'
+    ]
+    const sizes = [
+        'S',
+        'M',
+        'L',
+        'XL',
+        'XXL'
+    ]
     useEffect(() => {
         dispatch(getProductDetails(match.params.id))
 
@@ -38,7 +65,7 @@ const ProductDetails = ({ match }) => {
         }
 
         if (success) {
-            alert.success('Đánh giá thành công')
+            alert.success('Rate Successfully!')
             dispatch({ type: NEW_REVIEW_RESET })
         }
 
@@ -46,7 +73,7 @@ const ProductDetails = ({ match }) => {
 
     const addToCart = () => {
         dispatch(addItemToCart(match.params.id, quantity));
-        alert.success('Đã thêm vào giỏ hàng')
+        alert.success('Added to cart!')
     }
 
     const increaseQty = () => {
@@ -168,19 +195,23 @@ const ProductDetails = ({ match }) => {
                                     </div>
 
                                     <div className="product-content-right-product-color-img row-cart mg-bot">
-                                        <img src="/images/image-color/spcolor1.jpeg" alt="pinkcolor" />
-                                        <img src="/images/image-color/spcolor3.jpeg" alt="blackcolor" />
+                                        <label htmlFor="color_field" style={{ marginRight: '10px' }}>Color</label>
+                                        <select className="form-control" id="color_field" value={color} onChange={(e) => setColor(e.target.value)} style={{ width: '30%' }}>
+                                            {colors.map(color => (
+                                                <option key={color} value={color} >{color}</option>
+                                            ))}
+
+                                        </select>
                                     </div>
 
-                                    <div className="product-content-right-product-size mg-bot">
-                                        <p>SIZE GUIDE</p>
-                                        <div className="size">
-                                            <span className="size-hover">S</span>
-                                            <span className="size-hover"> M</span>
-                                            <span className="size-hover">L</span>
-                                            <span className="size-hover">XL</span>
-                                            <span className="size-hover">...</span>
-                                        </div>
+                                    <div className="product-content-right-product-size-img row-cart mg-bot">
+                                        <label htmlFor="size_field" style={{ marginRight: '10px' }}>Size</label>
+                                        <select className="form-control" id="size_field" value={size} onChange={(e) => setSize(e.target.value)} style={{ width: '30%' }}>
+                                            {sizes.map(size => (
+                                                <option key={size} value={size} >{size}</option>
+                                            ))}
+
+                                        </select>
                                     </div>
                                     <div className="stockCounter d-inline">
                                         <span className="btn btn-danger minus" onClick={decreaseQty}>-</span>
@@ -189,8 +220,8 @@ const ProductDetails = ({ match }) => {
 
                                         <span className="btn btn-primary plus" onClick={increaseQty}>+</span>
                                     </div>
-                                    <p>Tình trạng hàng: <span id="stock_status" className={product.stock > 0 ? 'greenColor' : 'redColor'} >{product.stock > 0 ? 'Còn hàng' : 'Hết hàng'}</span></p>
-                                    <p className="alert-size" style={{ color: 'rgb(229, 62, 62)' }}>Size can't be blank, please!</p>
+                                    <p>Product Status: <span id="stock_status" className={product.stock > 0 ? 'greenColor' : 'redColor'} >{product.stock > 0 ? 'STOCK' : 'SOLD OUT'}</span></p>
+                                    {/* <p className="alert-size" style={{ color: 'rgb(229, 62, 62)' }}>Size can't be blank, please!</p> */}
                                     <div className="product-btn-buy-wrapper">
                                         <div className="product-btn-buy mg-bot">
                                             <button disabled={product.stock === 0} onClick={addToCart}>

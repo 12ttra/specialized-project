@@ -125,9 +125,9 @@ const ProcessOrder = ({ match }) => {
                                             value={status}
                                             onChange={(e) => setStatus(e.target.value)}
                                         >
-                                            <option value="Đã đặt hàng">Ordered</option>
-                                            <option value="Đang vận chuyển">Shipping</option>
-                                            <option value="Đã giao hàng">Delivered</option>
+                                            <option value="ordered">Ordered</option>
+                                            <option value="shipping">Shipping</option>
+                                            <option value="delivered">Delivered</option>
                                         </select>
                                     </div>
 

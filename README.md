@@ -42,7 +42,7 @@ npm run prod
 # Tài khoản đăng nhập vào website:
 ```
 + Khách hàng
-	Tài khoản: thang@gmail.com
+	Tài khoản: nhy@gmail.com
 	Mật khẩu: 123456
 + Quản trị
 	Tài khoản: admin@gmail.com
@@ -52,9 +52,9 @@ npm run prod
 # Thông tin thẻ để test thanh toán:
 ```
 
-MÃ THẺ: 4242424242424242
-HẠN THẺ: 12/34
-CVC: 567
+MÃ THẺ: 4000000400000008
+HẠN THẺ: 12/24
+CVC: 123
 
 ```
 # Video hướng dẫn chi tiết:

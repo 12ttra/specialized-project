@@ -26,6 +26,46 @@ const productSchema = new mongoose.Schema({
         type: Number,
         default: 0
     },
+    size: {
+        type: String,
+        required: [true, 'Please select a size for this product'],
+        enum: {
+            values: [
+                'S',
+                'M',
+                'L',
+                'XL',
+                'XXL'
+            ],
+            message: 'Please select the correct size for the product'
+        }
+    },
+    color: {
+        type: String,
+        required: [true, 'Please select a color for this product'],
+        enum: {
+            values: [
+                'Black',
+                'White',
+                'Pastel',
+                'Yellow',
+                'Pink',
+                'Orange',
+                'Blue',
+                'Pastel',
+                'Purples',
+                'Reds',
+                'Burnt oranges',
+                'Browns',
+                'Darker greens',
+                'Royal blue',
+                'Emerald green',
+                'Hot pink',
+                'Sea blue'
+            ],
+            message: 'Please select the correct color for the product'
+        }
+    },
     images: [
         {
             public_id: {

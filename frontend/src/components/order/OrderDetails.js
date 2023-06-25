@@ -31,32 +31,32 @@ const OrderDetails = ({ match }) => {
 
     return (
         <Fragment>
-            <MetaData title={'Danh sách đơn hàng'} />
+            <MetaData title={'List Order'} />
 
             {loading ? <Loader /> : (
                 <Fragment>
-                    <div className="row d-flex justify-content-between">
+                    <div className="row-1 mg-top d-flex justify-content-between">
                         <div className="col-12 col-lg-8 mt-5 order-details">
 
-                            <h1 className="my-5">Mã đơn: {order._id}</h1>
+                            <h1 className="my-5">SKU: {order._id}</h1>
 
-                            <h4 className="mb-4">Thông tin đặt hàng</h4>
-                            <p><b>Tên người nhận:</b> {user && user.name}</p>
-                            <p><b>Số điện thoại:</b> {shippingInfo && shippingInfo.phoneNo}</p>
-                            <p className="mb-4"><b>Địa chỉ giao:</b>{shippingDetails}</p>
-                            <p><b>Tổng tiền:</b> {totalPrice}đ</p>
+                            <h4 className="mb-4">Order Information</h4>
+                            <p><b>Recipient's name:</b> {user && user.name}</p>
+                            <p><b>Phone:</b> {shippingInfo && shippingInfo.phoneNo}</p>
+                            <p className="mb-4"><b>Shipping Address:</b>{shippingDetails}</p>
+                            <p><b>Total:</b> {totalPrice}đ</p>
 
                             <hr />
 
-                            <h4 className="my-4">Thanh toán</h4>
-                            <p className={isPaid ? "greenColor" : "redColor"}><b>{isPaid ? "Đã thanh toán" : "Chưa thanh toán"}</b></p>
+                            <h4 className="my-4">Payment</h4>
+                            <p className={isPaid ? "greenColor" : "redColor"}><b>{isPaid ? "Paid" : "Unpaid"}</b></p>
 
 
-                            <h4 className="my-4">Tình trạng đặt hàng:</h4>
-                            <p className={order.orderStatus && String(order.orderStatus).includes('Đã giao hàng') ? "greenColor" : "redColor"} ><b>{orderStatus}</b></p>
+                            <h4 className="my-4">Order Status:</h4>
+                            <p className={order.orderStatus && String(order.orderStatus).includes('Delivered') ? "greenColor" : "redColor"} ><b>{orderStatus}</b></p>
 
 
-                            <h4 className="my-4">Sản phẩm:</h4>
+                            <h4 className="my-4">Product:</h4>
 
                             <hr />
                             <div className="cart-item my-1">
@@ -76,7 +76,7 @@ const OrderDetails = ({ match }) => {
                                         </div>
 
                                         <div className="col-4 col-lg-3 mt-4 mt-lg-0">
-                                            <p>{item.quantity} Sản phẩm</p>
+                                            <p>{item.quantity} Product</p>
                                         </div>
                                     </div>
                                 ))}

@@ -68,64 +68,9 @@ const Category = ({ match }) => {
                     <h1 id="products-heading" className="product_title">{keyword}</h1>
                     <section id="products" className="">
                         {
-                            <div className="brand-product">
+                           
                                 <Fragment>
-                                    <div className="col-6 col-md-3">
-
-                                        <div className="px-5">
-                                            <h4 className="mb-5">
-                                                Khoảng giá
-                                            </h4>
-                                            <Range
-                                                marks={{
-                                                    10000: `10.000`,
-                                                    1000000: `1.000.000`
-                                                }}
-                                                min={10}
-                                                max={1000000}
-                                                defaultValue={[1, 1000000]}
-                                                tipFormatter={value => `${value}`}
-                                                tipProps={{
-                                                    placement: "top",
-                                                    visible: false
-                                                }}
-                                                value={price}
-                                                onChange={price => setPrice(price)}
-                                            />
-                                            <br />
-                                            <hr className="my-3" />
-
-                                            <div className="mt-5">
-                                                <h4 className="mb-3">
-                                                    Đánh giá
-                                                </h4>
-
-                                                <ul className="pl-0">
-                                                    {[5, 4, 3, 2, 1].map(star => (
-                                                        <li
-                                                            style={{
-                                                                cursor: 'pointer',
-                                                                listStyleType: 'none'
-                                                            }}
-                                                            key={star}
-                                                            onClick={() => setRating(star)}
-                                                        >
-                                                            <div className="rating-outer">
-                                                                <div className="rating-inner"
-                                                                     style={{
-                                                                         width: `${star * 20}%`
-                                                                     }}
-                                                                >
-                                                                </div>
-                                                            </div>
-                                                        </li>
-                                                    ))}
-                                                </ul>
-                                            </div>
-
-                                        </div>
-                                    </div>'
-
+                                    
 
                                     <div className="brand-product col-6 col-md-3">
                                         <div className="brand-product-wrapper">
@@ -135,7 +80,7 @@ const Category = ({ match }) => {
                                         </div>
                                     </div>
                                 </Fragment>
-                            </div>
+                            
                         }
                     </section>
 

@@ -7,31 +7,31 @@ const CheckoutSteps = ({ shipping, confirmOrder, payment }) => {
 
             {shipping ? <Link to='/shipping' className="float-right">
                 <div className="triangle2-active"></div>
-                <div className="step active-step">Vận chuyển</div>
+                <div className="step active-step">Transport</div>
                 <div className="triangle-active"></div>
             </Link> : <Link to="#!" disabled>
                 <div className="triangle2-incomplete"></div>
-                <div className="step incomplete">Vận chuyển</div>
+                <div className="step incomplete">Transport</div>
                 <div className="triangle-incomplete"></div>
             </Link>}
 
             {confirmOrder ? <Link to='/confirm' className="float-right">
                 <div className="triangle2-active"></div>
-                <div className="step active-step">Xác nhận hóa đơn</div>
+                <div className="step active-step">Confirm Invoice</div>
                 <div className="triangle-active"></div>
             </Link> : <Link to="#!" disabled>
                 <div className="triangle2-incomplete"></div>
-                <div className="step incomplete">Xác nhận hóa đơn</div>
+                <div className="step incomplete">Confirm Invoice</div>
                 <div className="triangle-incomplete"></div>
             </Link>}
 
             {payment ? <Link to='/payment' className="float-right">
                 <div className="triangle2-active"></div>
-                <div className="step active-step">Thanh toán</div>
+                <div className="step active-step">Payment</div>
                 <div className="triangle-active"></div>
             </Link> : <Link to="#!" disabled>
                 <div className="triangle2-incomplete"></div>
-                <div className="step incomplete">Thanh toán</div>
+                <div className="step incomplete">Payment</div>
                 <div className="triangle-incomplete"></div>
             </Link>}
 

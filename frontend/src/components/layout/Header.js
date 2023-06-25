@@ -11,6 +11,8 @@ import Search from './Search'
 
 import '../../Header.css'
 import '../../App.css'
+import '../../responsive.css'
+
 
 const Header = () => {
     const alert = useAlert();
@@ -18,7 +20,9 @@ const Header = () => {
     const [showAdminPage, setShowAdminPage] = useState(false);
     const { user, loading } = useSelector(state => state.auth)
     const { cartItems } = useSelector(state => state.cart)
-    const [category, setCategory] = useState('')
+    const { wishlistItems } = useSelector(state => state.wishlist)
+
+
     const logoutHandler = () => {
         dispatch(logout());
         alert.success('Logout Successed!')
@@ -28,13 +32,35 @@ const Header = () => {
     };
     return (
         <Fragment>
-            <div id="header">
-                <div id="fullnav">
-                    <div id="left_nav">
+            <div id="header " >
+                  {/*mobile
+                  <div className="menu-mb">
+                        <div className='icon-wrapper'>
+                            <i class="fa fa-bars icon-mb css-mgl" aria-hidden="true"></i>
+                        </div>
+                        <div className='img-wrapper-mb'>
+                             <img src="/images/Image/mainlogo.png" alt="SPREZZA_logo"/>  
+                        </div>
+                        <div className='icon-login-mb'>
+                        <a href="/login">
+                                    <img
+                                        className="icon-mb "
+                                        src="/images/iconheader/profile.svg"
+                                        alt="Login"
+                                    />
+                                </a>
+                        </div>
+
+                    </div>*/}
+                        {/*Desktop*/}
+                <div id="fullnav" >
+                    <div id="left_nav" >
+                      
+                         
                         <ul className="menu">
                             <li className="item lv1"><a href="/">Home</a></li>
                             <li className="menunav item lv1">
-                                <a href="#" onClick={() => setCategory(category)}>SecondHand</a>
+                                <a href="/">SecondHand</a>
                                 <ul className="subnav">
                                     <li><a href="/">Man</a></li>
                                     <li><a href="/">Woman</a></li>
@@ -71,6 +97,7 @@ const Header = () => {
                                 </ul>
                             </li>
                         </ul>
+                         {/*end Desktop*/}
                     </div>
 
                     <div id="main_logo">
@@ -95,13 +122,16 @@ const Header = () => {
                             </li> 
                        
                             <li className="menunav item lv1">
-                                <a href="/wishlist">
-                                    <img
-                                        className="icon like-img"
-                                        src="/images/iconheader/heart.svg"
-                                        alt="Like"
-                                    />
-                                </a>
+                                <div className="wishlist-wrap-draw" id="wishlist-icon">
+                                    <Link to="/wishlist" style={{ textDecoration: 'none' }} >
+                                        <img
+                                            id="wishlist"
+                                            className="icon like-img"
+                                            src="/images/iconheader/heart.svg"
+                                            alt="wishlist"
+                                        />
+                                    </Link>
+                                </div>
                             </li>
                             <li className="menunav item lv1">
                                 <a href="">
@@ -152,7 +182,7 @@ const Header = () => {
                                                 ):(
                                                     <li>
                                                         <Link className="dropdown-item" to="/orders/me">My Order</Link>
-                                                        <Link className="dropdown-item" to="/me">My Information</Link>
+                                                        <Link className="dropdown-item" to="/me">Profile</Link>
                                                         <Link className="dropdown-item text-danger" to="/" onClick={logoutHandler}>
                                                         Logout
                                                     </Link>

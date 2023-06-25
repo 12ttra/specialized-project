@@ -39,6 +39,9 @@ import UsersList from './components/admin/UsersList'
 import UpdateUser from './components/admin/UpdateUser'
 import ProductReviews from './components/admin/ProductReviews'
 
+//Wishlist Imports
+import Wishlist from './components/wishlist/wishlist'
+
 
 import ProtectedRoute from './components/route/ProtectedRoute'
 import { loadUser } from './actions/userActions'
@@ -100,6 +103,10 @@ function App() {
               <ProtectedRoute path="/payment" component={Payment} />
             </Elements>
           }
+
+          {!loading && (!isAuthenticated || user.role !== 'admin') && (
+            <Route path="/wishlist" component={Wishlist} exact />       
+          )}
 
           <Route path="/login" component={Login} />
           <Route path="/register" component={Register} />
