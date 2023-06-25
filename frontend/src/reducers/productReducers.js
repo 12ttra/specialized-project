@@ -2,6 +2,9 @@ import {
     ALL_PRODUCTS_REQUEST,
     ALL_PRODUCTS_SUCCESS,
     ALL_PRODUCTS_FAIL,
+    BEST_PRODUCTS_REQUEST,
+    BEST_PRODUCTS_SUCCESS,
+    BEST_PRODUCTS_FAIL,
     ADMIN_PRODUCTS_REQUEST,
     ADMIN_PRODUCTS_SUCCESS,
     ADMIN_PRODUCTS_FAIL,
@@ -60,6 +63,45 @@ export const productsReducer = (state = { products: [] }, action) => {
             }
 
         case ALL_PRODUCTS_FAIL:
+        case ADMIN_PRODUCTS_FAIL:
+            return {
+                loading: false,
+                error: action.payload
+            }
+
+        case CLEAR_ERRORS:
+            return {
+                ...state,
+                error: null
+            }
+
+        default:
+            return state;
+    }
+}
+
+export const bestSellerProductsReducer = (state = { bestProducts: [] }, action) => {
+    switch (action.type) {
+        case BEST_PRODUCTS_REQUEST:
+        case ADMIN_PRODUCTS_REQUEST:
+            return {
+                loading: true,
+                bestProducts: []
+            }
+
+        case BEST_PRODUCTS_SUCCESS:
+            return {
+                loading: false,
+                bestProducts: action.payload.products,
+            }
+
+        case ADMIN_PRODUCTS_SUCCESS:
+            return {
+                loading: false,
+                bestProducts: action.payload
+            }
+
+        case BEST_PRODUCTS_FAIL:
         case ADMIN_PRODUCTS_FAIL:
             return {
                 loading: false,

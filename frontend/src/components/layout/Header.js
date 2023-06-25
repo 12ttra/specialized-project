@@ -109,13 +109,12 @@ const Header = () => {
                         <ul >
                             <li className="menunav item lv1">
                                 <div className="cart-wrap-draw" id="cart-icon">
-                                    <img
+                                    <Link to="/cart" style={{ textDecoration: 'none' }} > <img
                                         id="img-buynow"
                                         className="icon bag-img"
                                         src="/images/iconheader/bag.svg"
                                         alt="Addtocart"
-                                    />
-                                    <Link to="/cart" style={{ textDecoration: 'none' }} ><div id="quatity-in-cart">{cartItems.length}</div></Link>
+                                    /><div id="quatity-in-cart">{cartItems.length}</div></Link>
                                 </div>
                             </li> 
                        
@@ -189,7 +188,11 @@ const Header = () => {
 
                                             </ul>)}
                                         </div>
-                                        </> : (<Link to="/login" className="btn ml-4" id="login_btn">Login</Link>)}
+                                        </> : (<Link to="/login" className="btn ml-4"><img
+                                        className="icon account-img"
+                                        src="/images/iconheader/profile.svg"
+                                        alt="Login"
+                                    /></Link>)}
                                 </div>
                             </li>
                         </ul>
