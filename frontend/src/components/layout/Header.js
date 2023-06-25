@@ -18,7 +18,7 @@ const Header = () => {
     const [showAdminPage, setShowAdminPage] = useState(false);
     const { user, loading } = useSelector(state => state.auth)
     const { cartItems } = useSelector(state => state.cart)
-
+    const [category, setCategory] = useState('')
     const logoutHandler = () => {
         dispatch(logout());
         alert.success('Logout Successed!')
@@ -34,7 +34,7 @@ const Header = () => {
                         <ul className="menu">
                             <li className="item lv1"><a href="/">Home</a></li>
                             <li className="menunav item lv1">
-                                <a href="/">SecondHand</a>
+                                <a href="#" onClick={() => setCategory(category)}>SecondHand</a>
                                 <ul className="subnav">
                                     <li><a href="/">Man</a></li>
                                     <li><a href="/">Woman</a></li>

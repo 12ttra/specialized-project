@@ -10,9 +10,6 @@ import { useAlert } from 'react-alert';
 import { getProducts } from '../../actions/productActions';
 import '../../../src/components/layout/Category.css';
 
-
-
-
 const { createSliderWithTooltip } = Slider;
 const Range = createSliderWithTooltip(Slider.Range)
 
@@ -20,9 +17,6 @@ const Category = ({ match }) => {
     const [currentPage, setCurrentPage] = useState(1)
     const [price, setPrice] = useState([1, 1000000])
     const [rating, setRating] = useState(0)
-
-
-
     const alert = useAlert();
     const dispatch = useDispatch();
 
@@ -35,7 +29,7 @@ const Category = ({ match }) => {
             return alert.error(error)
         }
 
-        dispatch(getProducts(keyword, currentPage, price, rating));
+        dispatch(getProducts(keyword, currentPage, price, 1, rating));
 
 
     }, [dispatch, alert, error, keyword, currentPage, price, rating])

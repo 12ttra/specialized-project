@@ -25,7 +25,7 @@ const Home = ({ match }) => {
     const [currentPage, setCurrentPage] = useState(1)
     const [price, setPrice] = useState([1, 1000000])
     const [rating, setRating] = useState(0)
-
+    const [category, setCategory] = useState('')
 
 
     const alert = useAlert();
