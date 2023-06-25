@@ -46,7 +46,7 @@ const Wishlist = ({ history }) => {
           {wishlistItems.length === 0 ?
           // wishlist is empty
               <div className="container-fluid mt-100">
-                  <div className="row-1 mg-top css-item">
+                  <div className="row-1 css-item">
                       <div className="col-md-12">
                           <div className="card">
                               <div className="card-header">

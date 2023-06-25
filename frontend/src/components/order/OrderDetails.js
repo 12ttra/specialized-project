@@ -35,8 +35,8 @@ const OrderDetails = ({ match }) => {
 
             {loading ? <Loader /> : (
                 <Fragment>
-                    <div className="row-1 mg-top d-flex justify-content-between">
-                        <div className="col-12 col-lg-8 mt-5 order-details">
+                    <div className="row-1  d-flex ">
+                        <div className=" css-order-details">
 
                             <h1 className="my-5">SKU: {order._id}</h1>
 

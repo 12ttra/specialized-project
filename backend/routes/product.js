@@ -11,13 +11,14 @@ const {
     deleteProduct,
     createProductReview,
     getProductReviews,
-    deleteReview,
+    deleteReview, getProductsBycategory,
 
 } = require('../controllers/productController')
 
 const { isAuthenticatedUser, authorizeRoles } = require('../middlewares/auth');
 
 router.route('/products/best-seller').get(getBestSeller);
+router.route('/category').get(getProductsBycategory);
 router.route('/products').get(getProducts);
 router.route('/admin/products').get(getAdminProducts);
 router.route('/product/:id').get(getSingleProduct);

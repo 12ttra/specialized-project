@@ -21,8 +21,6 @@ const Header = () => {
     const { user, loading } = useSelector(state => state.auth)
     const { cartItems } = useSelector(state => state.cart)
     const { wishlistItems } = useSelector(state => state.wishlist)
-
-
     const logoutHandler = () => {
         dispatch(logout());
         alert.success('Logout Successed!')
@@ -60,39 +58,39 @@ const Header = () => {
                         <ul className="menu">
                             <li className="item lv1"><a href="/">Home</a></li>
                             <li className="menunav item lv1">
-                                <a href="/">SecondHand</a>
+                                <a href="/category/secondHand">SecondHand</a>
                                 <ul className="subnav">
-                                    <li><a href="/">Man</a></li>
-                                    <li><a href="/">Woman</a></li>
-                                    <li><a href="/">Unisex</a></li>
-                                    <li><a href="/">T-Shirt</a></li>
-                                    <li><a href="/">Dress</a></li>
-                                    <li><a href="/">Shirts</a></li>
-                                    <li><a href="/">Pants</a></li>
+                                    <li><a href="/category/man">Man</a></li>
+                                    <li><a href="/category/woman">Woman</a></li>
+                                    <li><a href="/category/unisex">Unisex</a></li>
+                                    <li><a href="/category/t-shirt">T-Shirt</a></li>
+                                    <li><a href="/category/dress">Dress</a></li>
+                                    <li><a href="/category/shirts">Shirts</a></li>
+                                    <li><a href="/category/pants">Pants</a></li>
                                     <li><a href="/">All Clothing</a></li>
                                 </ul>
                             </li>
                             <li className="menunav item lv1">
                                 <a href="/">New Clothes</a>
                                 <ul className="subnav">
-                                    <li><a href="/">Man</a></li>
-                                    <li><a href="/">Woman</a></li>
-                                    <li><a href="/">Unisex</a></li>
-                                    <li><a href="/">T-Shirt</a></li>
-                                    <li><a href="/">Dress</a></li>
-                                    <li><a href="/">Shirts</a></li>
-                                    <li><a href="/">Pants</a></li>
+                                    <li><a href="/category/man">Man</a></li>
+                                    <li><a href="/category/woman">Woman</a></li>
+                                    <li><a href="/category/unisex">Unisex</a></li>
+                                    <li><a href="/category/t-shirt">T-Shirt</a></li>
+                                    <li><a href="/category/dress">Dress</a></li>
+                                    <li><a href="/category/shirts">Shirts</a></li>
+                                    <li><a href="/category/pants">Pants</a></li>
                                     <li><a href="/">All Clothing</a></li>
                                 </ul>
                             </li>
-                            <li className="item lv1"><a href="/">Seller Channel</a></li>
+                            <li className="item lv1"><a href="/category/Seller Channel">Seller Channel</a></li>
                             <li className="menunav item lv1">
                                 <a href="/">More</a>
                                 <ul className="subnav">
-                                    <li><a href="/">Sale</a></li>
-                                    <li><a href="/">Contact</a></li>
-                                    <li><a href="/">Transport</a></li>
-                                    <li><a href="/">About Us</a></li>
+                                    <li><a href="/category/sale">Sale</a></li>
+                                    <li><a href="/contact">Contact</a></li>
+                                    <li><a href="/transport">Transport</a></li>
+                                    <li><a href="/about-us">About Us</a></li>
                                     <li><a href="/">Language</a></li>
                                 </ul>
                             </li>

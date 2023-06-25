@@ -74,6 +74,37 @@ exports.getProducts = catchAsyncErrors(async (req, res, next) => {
 
 })
 
+// Get all products   =>   /api/v1/category?keyword=apple
+exports.getProductsBycategory = catchAsyncErrors(async (req, res, next) => {
+
+    const resPerPage = 12;
+    const productsCount = await Product.countDocuments();
+
+    const apiFeatures = new APIFeatures(Product.find(), req.query)
+        .getByCategory()
+        .filter()
+
+    let products = await apiFeatures.query;
+    let filteredProductsCount = products.length;
+
+    apiFeatures.pagination(resPerPage)
+    products = await apiFeatures.query;
+
+
+    setTimeout(function () {
+        res.status(200).json({
+            success: true,
+            productsCount,
+            resPerPage,
+            filteredProductsCount,
+            products
+        })
+    }, 2000)
+
+
+})
+
+
 // Get all products (Admin)  =>   /api/v1/admin/products
 exports.getAdminProducts = catchAsyncErrors(async (req, res, next) => {
 
