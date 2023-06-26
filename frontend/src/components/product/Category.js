@@ -66,7 +66,7 @@ const Category = ({ match }) => {
                                 <Fragment>
                                     
 
-                                    <div className="brand-product col-6 col-md-3">
+                                    <div className="brand-product">
                                         <div className="brand-product-wrapper">
                                             {products.map(product => (
                                                 <Product key={product._id} product={product} col={4} />

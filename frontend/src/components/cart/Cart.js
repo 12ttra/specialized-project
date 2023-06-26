@@ -48,12 +48,12 @@ const Cart = ({ history }) => {
                         <div className="col-md-12">
                             <div className="card">
                                 <div className="card-header">
-                                    <h5>Giỏ hàng</h5>
+                                    <h5>CART</h5>
                                 </div>
                                 <div className="card-body cart">
                                     <div className="col-sm-12 empty-cart-cls text-center"> <img src="https://cdn-icons-png.flaticon.com/512/2037/2037457.png" width={130} height={130} className="img-fluid mb-4 mr-3" alt='' />
-                                        <h3><strong>Giỏ hàng của bạn trống</strong></h3>
-                                        <h4>Hãy thêm một cái gì đó để giỏ hàng đầy ắp tình yêu thương!</h4> <Link to="/" className="btn btn-primary cart-btn-transform m-3" data-abc="true">Tiếp tục mua sắm</Link>
+                                        <h3><strong>Cart is empty!</strong></h3>
+                                        <h4>SHOPPING NOW !!</h4> <Link to="/" className="btn btn-primary cart-btn-transform m-3" data-abc="true">CONTINUE SHOPPING</Link>
                                     </div>
                                 </div>
                             </div>
@@ -62,7 +62,7 @@ const Cart = ({ history }) => {
                 </div>
                 : (
                     <Fragment>
-                        <h3 className="mt-5">Giỏ hàng của bạn đang có: <b>{cartItems.length} sản phẩm</b></h3>
+                        <h3 className="mt-5">Cart: <b>{cartItems.length} Items</b></h3>
 
                         <div className="row d-flex justify-content-between">
                             <div className="col-12 col-lg-8">
@@ -97,7 +97,7 @@ const Cart = ({ history }) => {
                                                 </div>
 
                                                 <div className="col-4 col-lg-1 mt-4 mt-lg-0">
-                                                    <i id="delete_cart_item" className="fa btn btn-danger" onClick={() => removeCartItemHandler(item.product)} >Xóa</i>
+                                                    <i id="delete_cart_item" className="fa btn btn-danger" onClick={() => removeCartItemHandler(item.product)} >Delete</i>
                                                 </div>
 
                                             </div>
@@ -110,13 +110,13 @@ const Cart = ({ history }) => {
 
                             <div className="col-12 col-lg-4 my-4">
                                 <div id="order_summary">
-                                    <h4 className='text-center'>Tổng giá trị đơn hàng</h4>
+                                    <h4 className='text-center'>Total</h4>
                                     <hr />
-                                    <p>Số lượng:  <span className="order-summary-values">{cartItems.reduce((acc, item) => (acc + Number(item.quantity)), 0)} (Sản phẩm)</span></p>
-                                    <p>Tổng tiền: <span className="order-summary-values">{(cartItems.reduce((acc, item) => acc + item.quantity * item.price, 0)).toLocaleString()}đ</span></p>
+                                    <p>Quantity:  <span className="order-summary-values">{cartItems.reduce((acc, item) => (acc + Number(item.quantity)), 0)} (Item)</span></p>
+                                    <p>Sub Total: <span className="order-summary-values">{(cartItems.reduce((acc, item) => acc + item.quantity * item.price, 0)).toLocaleString()}đ</span></p>
 
                                     <hr />
-                                    <button id="checkout_btn" className="btn btn-primary btn-block" onClick={checkoutHandler}>Đặt hàng</button> {/* onClick={checkoutHandler} */}
+                                    <button id="checkout_btn" className="btn btn-primary btn-block" onClick={checkoutHandler}>Place Order</button> {/* onClick={checkoutHandler} */}
 
                                 </div>
                             </div>

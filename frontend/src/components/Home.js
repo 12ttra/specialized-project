@@ -158,9 +158,11 @@ const Home = ({ match }) => {
                 <Fragment>
                     <MetaData title={'SPREZZA-Ecommerce'} />
                     <section id="products" className="">
+                    <h2 className='title-h2-hp'>BEST SELLER</h2>
                         {
+                            
                             <div className="brand-product">
-                                <div className='brand-product-wrapper'>
+                                <div className='brand-product-wrapper css-pd-hp'>
                                 {bestProducts.map(product => (
                                     <Product key={product._id} product={product} col={4} />
                                 ))}

@@ -1,10 +1,12 @@
 .brand-product {
     width: 100%;
-    height: auto; }
+    height: auto;
+    display: inline-flex;
+     }
     .brand-product .brand-product-wrapper {
       flex-wrap: wrap;
-        width: 1300px;
-        display: flex;
+       
+        display:inline-block;
         height: auto ;
         margin-right: auto;
         margin-left: auto;
@@ -17,10 +19,11 @@
     height: 430px;
     background-color: white;
     box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
-    margin-left: auto;
-    margin-right: auto;
+    margin-left: 20px;
+    margin-right: 20px;
     margin-top: 50px;
-    position: relative; }
+    display:inline-block;
+   }
   
   .product-wrapper-item:hover {
     border: 1px solid gray;
