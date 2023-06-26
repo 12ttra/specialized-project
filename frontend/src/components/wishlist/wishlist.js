@@ -64,9 +64,9 @@ const Wishlist = ({ history }) => {
               </div>
               : (
                   <Fragment>
-                      <h3 className="mt-5">Your wishlist is available : <b>{wishlistItems.length} Item</b></h3>
+                      <h3 className="mg-lr">Your wishlist is available : <b>{wishlistItems.length} Item</b></h3>
 
-                      <div className="row d-flex justify-content-between mg-top">
+                      <div className="row-2 d-flex justify-content-between mg-top mg-lr">
                           <div className="col-12 col-lg-8">
 
                               {wishlistItems.map(item => (
@@ -74,21 +74,21 @@ const Wishlist = ({ history }) => {
                                       <hr />
 
                                       <div className="wishlist-item" key={item.product}>
-                                          <div className="row ">
+                                          <div className="row">
                                               <div className="col-4 col-lg-3">
                                                   <img src={item.image} alt=".." height="90" width="115" />
                                               </div>
 
-                                              <div className="col-5 col-lg-3">
+                                              <div className="col-5 col-lg-3 line-he">
                                                   <Link to={`/product/${item.product}`}>{item.name}</Link>
                                               </div>
 
 
-                                              <div className="col-4 col-lg-2 mt-4 mt-lg-0">
+                                              <div className="col-4 col-lg-2 mt-4 mt-lg-0 line-he">
                                                   <p className='text-primary'>{(item.price).toLocaleString()}đ</p>
                                               </div>
 
-                                              <div className="col-4 col-lg-3 mt-4 mt-lg-0">
+                                              <div className="col-4 col-lg-3 mt-4 mt-lg-0 line-he">
                                                   <div className="stockCounter d-inline">
                                                       <span className="btn btn-danger minus" onClick={() => decreaseQty(item.product, item.quantity)}>-</span>
 
@@ -98,7 +98,7 @@ const Wishlist = ({ history }) => {
                                                   </div>
                                               </div>
 
-                                              <div className="col-4 col-lg-1 mt-4 mt-lg-0">
+                                              <div className="col-4 col-lg-1 mt-4 mt-lg-0 line-he">
                                                   <i id="delete_wishlist_item" className="fa fa-trash btn btn-danger" onClick={() => removeWishlistItemHandler(item.product)} ></i>
                                               </div>
 
@@ -110,7 +110,7 @@ const Wishlist = ({ history }) => {
 
                           </div>
 
-                          <div className="col-12 col-lg-4 my-4">
+                          <div className="col-12 col-lg-4 ">
                               <div id="order_summary">
                                   <h4 className='text-center'>Total Wishlist Value</h4>
                                   <hr />
