@@ -160,9 +160,11 @@ const Home = ({ match }) => {
                     <section id="products" className="">
                         {
                             <div className="brand-product">
+                                <div className='brand-product-wrapper'>
                                 {bestProducts.map(product => (
                                     <Product key={product._id} product={product} col={4} />
                                 ))}
+                                </div>
                             </div>
                         }
                     </section>

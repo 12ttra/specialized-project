@@ -325,11 +325,13 @@ html {
   height: auto; 
   display: flex;
   flex-wrap: wrap;
-  gap: 10px;}
+  gap: 10px;
+  justify-content: space-between;
+}
   .brand-product .brand-product-wrapper {
     width: 1300px;
-    min-height: 500px;
-    height: 1000px;
+    
+    height: auto ;
     margin-right: auto;
     margin-left: auto;
     }
@@ -1116,6 +1118,7 @@ body {
   display: flex;
   justify-content: flex-end; }
   #right_nav ul {
+    z-index: 999;
     display: flex;
     align-items: center; }
   #right_nav img {

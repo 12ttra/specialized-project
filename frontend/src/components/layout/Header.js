@@ -99,7 +99,7 @@ const Header = () => {
                     </div>
 
                     <div id="main_logo">
-                        <img src="/images/Image/mainlogo.png" alt="SPREZZA_logo"/>
+                        <a href="/"><img src="/images/Image/mainlogo.png" alt="SPREZZA_logo"/></a>
                     </div>
 
                     <div id="search_nav">
