@@ -18,6 +18,11 @@ const productSchema = new mongoose.Schema({
         maxLength: [7, 'Price must be less than 7 character'],
         default: 0.0
     },
+    dist_count: {
+        type: Number,
+        maxLength: [3],
+        default: 0
+    },
     description: {
         type: String,
         required: [true, 'Description must not be empty'],

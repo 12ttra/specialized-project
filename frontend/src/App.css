@@ -236,9 +236,9 @@ html {
       border-radius: 50%;
       line-height: 20px;
       text-align: center;
-      position: relative;
+      position: absolute;
       top: 15px;
-    right: 28px;}
+      left: 28px;}
   #right_nav li:hover .subnav {
     display: block; }
 
@@ -3739,7 +3739,7 @@ a {
   .cart-item a {
     color: grey;
   }
-  
+
   #delete_cart_item {
     color: red;
     background: white;
@@ -4314,4 +4314,8 @@ a {
 }
 #products-heading{
   margin-top: 95px;
+}
+span.product-item-price.old-price-small{
+  margin-left: 15px;
+  text-decoration: line-through;
 }

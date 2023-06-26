@@ -97,7 +97,7 @@ const Cart = ({ history }) => {
                                                 </div>
 
                                                 <div className="col-4 col-lg-1 mt-4 mt-lg-0">
-                                                    <i id="delete_cart_item" className="fa fa-trash btn btn-danger" onClick={() => removeCartItemHandler(item.product)} ></i>
+                                                    <i id="delete_cart_item" className="fa btn btn-danger" onClick={() => removeCartItemHandler(item.product)} >Xóa</i>
                                                 </div>
 
                                             </div>

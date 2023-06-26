@@ -2,6 +2,9 @@ import {
     ALL_PRODUCTS_REQUEST,
     ALL_PRODUCTS_SUCCESS,
     ALL_PRODUCTS_FAIL,
+    BEST_PRODUCTS_REQUEST,
+    BEST_PRODUCTS_SUCCESS,
+    BEST_PRODUCTS_FAIL,
     ADMIN_PRODUCTS_REQUEST,
     ADMIN_PRODUCTS_SUCCESS,
     ADMIN_PRODUCTS_FAIL,
@@ -31,7 +34,7 @@ import {
     DELETE_REVIEW_SUCCESS,
     DELETE_REVIEW_RESET,
     DELETE_REVIEW_FAIL,
-    CLEAR_ERRORS
+    CLEAR_ERRORS, SALE_PRODUCTS_REQUEST, SALE_PRODUCTS_SUCCESS, SALE_PRODUCTS_FAIL
 
 } from '../constants/productConstants'
 
@@ -60,6 +63,45 @@ export const productsReducer = (state = { products: [] }, action) => {
             }
 
         case ALL_PRODUCTS_FAIL:
+        case ADMIN_PRODUCTS_FAIL:
+            return {
+                loading: false,
+                error: action.payload
+            }
+
+        case CLEAR_ERRORS:
+            return {
+                ...state,
+                error: null
+            }
+
+        default:
+            return state;
+    }
+}
+
+export const bestSellerProductsReducer = (state = { bestProducts: [] }, action) => {
+    switch (action.type) {
+        case BEST_PRODUCTS_REQUEST:
+        case ADMIN_PRODUCTS_REQUEST:
+            return {
+                loading: true,
+                bestProducts: []
+            }
+
+        case BEST_PRODUCTS_SUCCESS:
+            return {
+                loading: false,
+                bestProducts: action.payload.products,
+            }
+
+        case ADMIN_PRODUCTS_SUCCESS:
+            return {
+                loading: false,
+                bestProducts: action.payload
+            }
+
+        case BEST_PRODUCTS_FAIL:
         case ADMIN_PRODUCTS_FAIL:
             return {
                 loading: false,
@@ -309,5 +351,44 @@ export const reviewReducer = (state = {}, action) => {
 
         default:
             return state
+    }
+}
+
+export const saleProductsReducer = (state = { saleProducts: [] }, action) => {
+    switch (action.type) {
+        case SALE_PRODUCTS_REQUEST:
+        case ADMIN_PRODUCTS_REQUEST:
+            return {
+                loading: true,
+                saleProducts: []
+            }
+
+        case SALE_PRODUCTS_SUCCESS:
+            return {
+                loading: false,
+                saleProducts: action.payload.products,
+            }
+
+        case ADMIN_PRODUCTS_SUCCESS:
+            return {
+                loading: false,
+                saleProducts: action.payload
+            }
+
+        case SALE_PRODUCTS_FAIL:
+        case ADMIN_PRODUCTS_FAIL:
+            return {
+                loading: false,
+                error: action.payload
+            }
+
+        case CLEAR_ERRORS:
+            return {
+                ...state,
+                error: null
+            }
+
+        default:
+            return state;
     }
 }
