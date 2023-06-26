@@ -145,4 +145,10 @@
  
   .click-item {
     text-decoration: none; }
-  
+    .add{
+      width: 30px;
+    }
+    .add button ,.wishlish button{
+      border: 0;
+      background-color: #fff;
+    }

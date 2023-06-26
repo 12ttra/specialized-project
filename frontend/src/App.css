@@ -1273,7 +1273,16 @@ body {
     /* margin-right: calc(-.5 * var(--bs-gutter-x)); */
     /* margin-left: calc(-.5 * var(--bs-gutter-x)); */
 }
-
+.csss-card{
+  margin-top: 20px;
+  margin-bottom: 40px;
+  text-align: center;
+ 
+}
+.wish-title{
+  font-size: 30px;
+  font-weight: 700;
+}
 .k-uwoE {
   display: inline-block;
   font-size: 14px;
