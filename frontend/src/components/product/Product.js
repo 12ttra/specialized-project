@@ -1,12 +1,20 @@
-import React from 'react'
+import React, {useState} from 'react'
 import { Link } from 'react-router-dom'
 
-// import { useDispatch } from 'react-redux'
-// import { useAlert } from 'react-alert';
+import { useDispatch } from 'react-redux'
+import { useAlert } from 'react-alert';
 import { ProductItemSlider } from './ProductItemSlider';
+import { addItemToCart } from '../../actions/cartActions'
 import './ProductItem.css';
 export const Product = ({ product, col}) => {
     const images = product ? product.images : '#';
+    const dispatch = useDispatch();
+    const alert = useAlert();
+    const [quantity, setQuantity] = useState(1)
+    const addToCart = (id) => {
+      dispatch(addItemToCart(id, quantity));
+      alert.success('Added to cart!')
+    }
     let priceDistCount = product.price - parseFloat(product.price)*(parseFloat(product.dist_count)/100);
 
     return (
@@ -30,7 +38,9 @@ export const Product = ({ product, col}) => {
             <a href='/wishlist'><img className="img-icon wishlist" src="/images/iconheader/heart.svg" alt="wishlist" /></a>
           </div>
           <div className="add">
-            <img className="img-icon img-buynow" src="/images/iconheader/white-shopping-bag.svg" alt="btn buy now" />
+            <button disabled={product.stock === 0} onClick={() =>addToCart(product._id)} style={{cursor: 'pointer'}}>
+              <img className="img-icon img-buynow" src="/images/iconheader/white-shopping-bag.svg" alt="btn buy now" />
+            </button>
           </div>
         </div>
       </div>
