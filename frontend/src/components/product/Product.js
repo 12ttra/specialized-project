@@ -7,6 +7,8 @@ import { ProductItemSlider } from './ProductItemSlider';
 import './ProductItem.css';
 export const Product = ({ product, col}) => {
     const images = product ? product.images : '#';
+    let priceDistCount = product.price - parseFloat(product.price)*(parseFloat(product.dist_count)/100);
+
     return (
         <div className="product-wrapper-item">
         <div className="product-item-slider">
@@ -17,11 +19,12 @@ export const Product = ({ product, col}) => {
         <Link to={`/product/${product._id}`}>{product.name}</Link>
         </div>
         <div className="css-product-item-price">
-          <h2 className="product-item-price new-price">{(product.price).toLocaleString()}  VND</h2>
+          <h2 className="product-item-price old-price">{product.price}đ</h2>
+          <h2 className="product-item-price new-price">{priceDistCount}đ</h2>
         </div>
         <div className="icon-product">
           <div className="coupon">
-            <a className="img-icon voucher" href="#">Sale 20%</a>
+            <a className="img-icon voucher" href="#">Sale {product.dist_count}%</a>
           </div>
           <div className="wishlish">
             <a href='/wishlist'><img className="img-icon wishlist" src="/images/iconheader/heart.svg" alt="wishlist" /></a>

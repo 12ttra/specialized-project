@@ -3361,7 +3361,10 @@ a {
   margin-top: 20px; }
 
 .product-item-descrip .old-price {
-  text-decoration: line-through; }
+  text-decoration: line-through;
+  font-size: 16px;
+  margin-right: 10px;
+}
 
 .click-item {
   text-decoration: none; }
