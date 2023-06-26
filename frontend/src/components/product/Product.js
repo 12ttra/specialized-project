@@ -6,6 +6,7 @@ import { useAlert } from 'react-alert';
 import { ProductItemSlider } from './ProductItemSlider';
 import { addItemToCart } from '../../actions/cartActions'
 import './ProductItem.css';
+import { addItemToWishlist } from '../../actions/wishlistAction';
 export const Product = ({ product, col}) => {
     const images = product ? product.images : '#';
     const dispatch = useDispatch();
@@ -14,6 +15,10 @@ export const Product = ({ product, col}) => {
     const addToCart = (id) => {
       dispatch(addItemToCart(id, quantity));
       alert.success('Added to cart!')
+    }
+    const addToWishlist = (id) => {
+      dispatch(addItemToWishlist(id, quantity));
+      alert.success('Added to wishlist!')
     }
     let priceDistCount = product.price - parseFloat(product.price)*(parseFloat(product.dist_count)/100);
 
@@ -35,7 +40,9 @@ export const Product = ({ product, col}) => {
             <a className="img-icon voucher" href="#">Sale {product.dist_count}%</a>
           </div>
           <div className="wishlish">
-            <a href='/wishlist'><img className="img-icon wishlist" src="/images/iconheader/heart.svg" alt="wishlist" /></a>
+            <button disabled={product.stock === 0} onClick={() =>addToWishlist(product._id)} style={{cursor: 'pointer'}}>
+              <img className="img-icon wishlist" src="/images/iconheader/heart.svg" alt="wishlist" />
+            </button>
           </div>
           <div className="add">
             <button disabled={product.stock === 0} onClick={() =>addToCart(product._id)} style={{cursor: 'pointer'}}>
