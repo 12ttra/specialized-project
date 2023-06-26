@@ -34,7 +34,7 @@ const UpdateProfile = ({ history }) => {
         }
 
         if (isUpdated) {
-            alert.success('Cập nhật thành công')
+            alert.success('Update Successfully')
             dispatch(loadUser());
 
             history.push('/me')
