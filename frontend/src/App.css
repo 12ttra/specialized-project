@@ -1258,7 +1258,21 @@ body {
     .icon img {
       width: 100%; } }
 
-
+.line-he{
+  line-height: 80px;
+}
+.mg-lr{
+  margin: 0 10px;
+}
+.row-2{
+  --bs-gutter-x: 1.5rem;
+    --bs-gutter-y: 0;
+    display: flex;
+    flex-wrap: wrap;
+    margin-top: calc(-1 * var(--bs-gutter-y));
+    /* margin-right: calc(-.5 * var(--bs-gutter-x)); */
+    /* margin-left: calc(-.5 * var(--bs-gutter-x)); */
+}
 
 .k-uwoE {
   display: inline-block;
