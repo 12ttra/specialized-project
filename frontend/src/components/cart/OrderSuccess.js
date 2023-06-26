@@ -11,15 +11,15 @@ const OrderSuccess = () => {
     return (
         <Fragment>
 
-            <MetaData title={'Hoàn tất đặt hàng'} />
+            <MetaData title={'Complete Order'} />
 
             <div className="row justify-content-center">
                 <div className="col-6 mt-5 text-center">
                     <img className="my-5 img-fluid d-block mx-auto" src="/images/order_success.png" alt="Order Success" width="200" height="200" />
 
-                    <h2>Đơn hàng của bạn đã được đặt thành công!</h2>
+                    <h2>Order Successfully!</h2>
 
-                    <Link to="/orders/me">Tự động chuyển hướng tới hóa đơn sau 5 giây ...</Link>
+                    <Link to="/orders/me">Auto redirect to homepage after 5 second...</Link>
                 </div>
 
             </div>

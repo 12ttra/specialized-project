@@ -77,13 +77,13 @@ const ProcessOrder = ({ match }) => {
                                     <hr />
 
                                     <h4 className="my-4">Status Payment</h4>
-                                    <p className={isPaid ? "greenColor" : "redColor"}><b>{isPaid ? "Đã thanh toán" : "Chưa thanh toán"}</b></p>
+                                    <p className={isPaid ? "greenColor" : "redColor"}><b>{isPaid ? "Paid" : "Unpaid"}</b></p>
 
                                     <h4 className="my-4">Stripe ID</h4>
                                     <p><b>{paymentInfo && paymentInfo.id}</b></p>
 
                                     <h4 className="my-4">Invoice Status</h4>
-                                    <p className={order.orderStatus && String(order.orderStatus).includes('Đã giao hàng') ? "greenColor" : "redColor"} ><b>{orderStatus}</b></p>
+                                    <p className={order.orderStatus && String(order.orderStatus).includes('Successful') ? "greenColor" : "redColor"} ><b>{orderStatus}</b></p>
 
 
 

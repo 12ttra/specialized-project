@@ -78,16 +78,16 @@ const ConfirmOrder = ({ history }) => {
                     <div id="order_summary">
                         <h4>Total Order Value</h4>
                         <hr />
-                        <p>Thành tiền:  <span className="order-summary-values">{(itemsPrice).toLocaleString()}đ</span></p>
-                        <p>Phí vận chuyển: <span className="order-summary-values">{(shippingPrice).toLocaleString()}đ</span></p>
-                        <p>Thuế:  <span className="order-summary-values">{(taxPrice).toLocaleString()}đ</span></p>
+                        <p>Subtotal:  <span className="order-summary-values">{(itemsPrice).toLocaleString()}đ</span></p>
+                        <p>Shipping fee: <span className="order-summary-values">{(shippingPrice).toLocaleString()}đ</span></p>
+                        <p>Tax:  <span className="order-summary-values">{(taxPrice).toLocaleString()}đ</span></p>
 
                         <hr />
 
-                        <p>Tổng tiền: <span className="order-summary-values">{(totalPrice).toLocaleString()}đ</span></p>
+                        <p>Grand Total: <span className="order-summary-values">{(totalPrice).toLocaleString()}VNDX</span></p>
 
                         <hr />
-                        <button id="checkout_btn" className="btn btn-primary btn-block" onClick={processToPayment}>Tiến hành thanh toán</button>
+                        <button id="checkout_btn" className="btn btn-primary btn-block" onClick={processToPayment}>Payment</button>
                     </div>
                 </div>
 
