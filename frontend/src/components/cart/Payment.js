@@ -124,16 +124,16 @@ const Payment = ({ history }) => {
 
     return (
         <Fragment>
-            <MetaData title={'Thông tin thẻ'} />
+            <MetaData title={'Card Information'} />
 
             <CheckoutSteps shipping confirmOrder payment />
 
             <div className="row wrapper">
                 <div className="col-10 col-lg-5">
                     <form className="shadow-lg" onSubmit={submitHandler}>
-                        <h1 className="mb-4">Thông tin thẻ</h1>
+                        <h1 className="mb-4">Card Information</h1>
                         <div className="form-group">
-                            <label htmlFor="card_num_field">Số thẻ</label>
+                            <label htmlFor="card_num_field">Card number</label>
                             <CardNumberElement
                                 type="text"
                                 id="card_num_field"
@@ -143,7 +143,7 @@ const Payment = ({ history }) => {
                         </div>
 
                         <div className="form-group">
-                            <label htmlFor="card_exp_field">Hạn thẻ</label>
+                            <label htmlFor="card_exp_field">Expired</label>
                             <CardExpiryElement
                                 type="text"
                                 id="card_exp_field"
@@ -153,7 +153,7 @@ const Payment = ({ history }) => {
                         </div>
 
                         <div className="form-group">
-                            <label htmlFor="card_cvc_field">Số CVC</label>
+                            <label htmlFor="card_cvc_field">CVC Number</label>
                             <CardCvcElement
                                 type="text"
                                 id="card_cvc_field"
@@ -168,7 +168,7 @@ const Payment = ({ history }) => {
                             type="submit"
                             className="btn btn-block py-3"
                         >
-                            Thanh toán {` - ${(orderInfo && orderInfo.totalPrice).toLocaleString()}`}đ
+                            Pay {` - ${(orderInfo && orderInfo.totalPrice).toLocaleString()}`}VND
 
                         </button>
 

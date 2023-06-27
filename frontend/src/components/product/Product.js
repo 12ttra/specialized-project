@@ -23,7 +23,8 @@ export const Product = ({ product, col}) => {
     let priceDistCount = product.price - parseFloat(product.price)*(parseFloat(product.dist_count)/100);
 
     return (
-        <div className="product-wrapper-item">
+      
+        <div className="product-wrapper-item ">
         <div className="product-item-slider">
             <ProductItemSlider images={images}/>
         </div>

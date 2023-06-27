@@ -64,6 +64,9 @@ const Wishlist = ({ history }) => {
               </div>
               : (
                   <Fragment>
+                    <div className="card-header csss-card">
+                                  <h5 className="wish-title">Wishlist</h5>
+                            </div>
                       <h3 className="mg-lr">Your wishlist is available : <b>{wishlistItems.length} Item</b></h3>
 
                       <div className="row-2 d-flex justify-content-between mg-top mg-lr">
