@@ -325,7 +325,7 @@ const ProductDetails = ({ match }) => {
                             <div className="page-product-detail__contain">
                                 <div className="page-product-detail__contain-left">
                                     <div className="product-detail page-product__detail">
-                                        <div className="szPD123">
+                                        {/* <div className="szPD123">
                                             <div className="szNPD123">PRODUCT DETAIL</div>
                                             <div className="PDO123">
                                                 <div className="PDO888">
@@ -358,7 +358,7 @@ const ProductDetails = ({ match }) => {
                                                     <div>Ho Chi Minh City</div>
                                                 </div>
                                             </div>
-                                        </div>
+                                        </div> */}
                                         <div className="szPD123">
                                             <div className="szNPD123">PRODUCT DESCRIPTION</div>
                                             <div className="PDO123">
