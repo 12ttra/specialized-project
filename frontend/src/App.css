@@ -203,7 +203,9 @@ html {
           opacity: 1; }
       .search > div > input:not(:placeholder-shown) {
         width: 200px; }
-
+.btn-login.text-center{
+  height: 30px;
+}
 #right_nav {
   width: 22%;
     height: 80px;
@@ -4255,7 +4257,9 @@ a {
   .chartTitle {
     margin-bottom: 20px;
   }
-  
+  .product-grid .brand-product-wrapper{
+    width: 1280px;
+  }
   #ul_top_hypers li {
     display: inline;
     float: right;

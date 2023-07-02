@@ -60,7 +60,7 @@ const Category = ({ match }) => {
                 <Fragment>
                     <MetaData title={'SPREZZA-Ecommerce'} />
                     <h1 id="products-heading" className="product_title">{keyword}</h1>
-                    <section id="products" className="">
+                    <section id="products" className="product-grid">
                         {
                            
                                 <Fragment>
