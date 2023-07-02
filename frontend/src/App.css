@@ -4238,7 +4238,7 @@ a {
     background: transparent;
     border-radius: 50%;
     border: 20px dashed transparent;
-    border-color: #039BE5 indianred;
+    border-color: black white;
     animation: load9 .6s infinite ease-in-out;
   }
   
