@@ -212,7 +212,9 @@ html {
     display: flex;
     justify-content: space-around;
     align-items: center;
-  margin-bottom: 0; }
+  margin-bottom: 0;
+  position: relative;
+}
   #right_nav ul {
     position: absolute;
     display: flex;
