@@ -81,9 +81,9 @@ function App() {
         <Header />
         <div>
           <Route path="/" component={Home} exact />
+          <Route path="/category/:name" component={Category}/>
           <Route path="/search/:keyword" component={Search} />
           <Route path="/product/:id" component={ProductDetails} exact />
-          <Route path="/category/:name" component={Category} exact />
 
           {!loading && (!isAuthenticated || user.role !== 'admin') && (
             <Route path="/cart" component={Cart} exact />       

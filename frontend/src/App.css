@@ -143,12 +143,6 @@ html {
       width: 100%;
       text-align: left; }
 
-#fullnav .subnav {
-  top: 80px;
-  display: none;
-  position: absolute;
-  background-color: white;
-  box-shadow: 0 0 10px rgba(0, 0, 0, 0.3); }
 
 #left_nav .subnav a {
   color: #000;
@@ -206,14 +200,18 @@ html {
           opacity: 1; }
       .search > div > input:not(:placeholder-shown) {
         width: 200px; }
-
+.btn-login.text-center{
+  height: 30px;
+}
 #right_nav {
   width: 22%;
     height: 80px;
     display: flex;
     justify-content: space-around;
     align-items: center;
-  margin-bottom: 0; }
+  margin-bottom: 0;
+  position: relative;
+}
   #right_nav ul {
     position: absolute;
     display: flex;
@@ -1072,7 +1070,9 @@ body {
   display: none;
   position: absolute;
   background-color: white;
-  box-shadow: 0 0 10px rgba(0, 0, 0, 0.3); }
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.3);
+  padding-left: 0;
+}
 
 #left_nav .subnav a {
   color: #000;
@@ -4239,7 +4239,7 @@ a {
     background: transparent;
     border-radius: 50%;
     border: 20px dashed transparent;
-    border-color: #039BE5 indianred;
+    border-color: black white;
     animation: load9 .6s infinite ease-in-out;
   }
   
@@ -4258,7 +4258,9 @@ a {
   .chartTitle {
     margin-bottom: 20px;
   }
-  
+  .product-grid .brand-product-wrapper{
+    width: 1280px;
+  }
   #ul_top_hypers li {
     display: inline;
     float: right;
