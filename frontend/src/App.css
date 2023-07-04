@@ -14,7 +14,9 @@
   margin: 0;
   padding: 0;
   box-sizing: border-box;
-font-family:  monospace, 'Courier New', Courier; }
+font-family:  monospace, 'Courier New', Courier; 
+overflow-x: none !important;
+}
 
 .dropdown-menu-login{
   display:block;
@@ -23,6 +25,7 @@ font-family:  monospace, 'Courier New', Courier; }
   text-align: center;
   
 }
+
 .css-order-details{
   margin: 0 auto;
     width: 67%;
@@ -82,8 +85,8 @@ body {
 html {
   font-family: monospace, "Space Mono"; }
 
-.container {
-  overflow-x: hidden; }
+/* .container {
+  overflow-x: hidden; } */
 
 #homepage {
   min-height: 300vh; }
@@ -877,7 +880,7 @@ body {
           line-height: 34px;
           border-radius: 2px;
           border: 0;
-          user-select: none;
+          /* user-select: none; */
           display: flex;
           flex: 0 0 5.625rem;
           align-items: center;
