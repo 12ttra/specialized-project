@@ -15,9 +15,10 @@
   padding: 0;
   box-sizing: border-box;
 font-family:  monospace, 'Courier New', Courier; 
-overflow-x: none !important;
 }
-
+body{
+  overflow-x: none !important;
+}
 .dropdown-menu-login{
   display:block;
 }
@@ -500,6 +501,7 @@ col {
     margin-bottom: 30px; } }
 
 body {
+overflow-x: none !important;
   background-image: black;
   background-size: cover;
   background-repeat: no-repeat;
