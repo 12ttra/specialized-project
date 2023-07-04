@@ -140,12 +140,6 @@ html {
       width: 100%;
       text-align: left; }
 
-#fullnav .subnav {
-  top: 80px;
-  display: none;
-  position: absolute;
-  background-color: white;
-  box-shadow: 0 0 10px rgba(0, 0, 0, 0.3); }
 
 #left_nav .subnav a {
   color: #000;
@@ -1073,7 +1067,9 @@ body {
   display: none;
   position: absolute;
   background-color: white;
-  box-shadow: 0 0 10px rgba(0, 0, 0, 0.3); }
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.3);
+  padding-left: 0;
+}
 
 #left_nav .subnav a {
   color: #000;
