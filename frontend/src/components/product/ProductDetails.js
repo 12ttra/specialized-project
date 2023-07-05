@@ -150,7 +150,7 @@ const ProductDetails = ({ match }) => {
     }
     let finalPrice = product.price - parseFloat(product.price)*(parseFloat(product.dist_count)/100);
     const getFirstImage = ()=>{
-        console.log(product.images,"aaaa");
+        console.log(product.images);
         if(product.images.length){
             return product.images[0].url;
         }
